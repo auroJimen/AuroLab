@@ -13,7 +13,7 @@ int myFunction(int, int);
 
 void setup() {
   //Serial for monitoring
-  Serial.begin(115200);+
+  Serial.begin(115200);
   Serial.println("Hola hola");
   // Basic setup to initialize the Cardputer object defined in M5's libraries
   auto cfg = M5.config();              //Creates a cfg struct as defined in M5Unified
