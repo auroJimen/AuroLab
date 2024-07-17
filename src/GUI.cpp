@@ -4,15 +4,14 @@
 
 //GUI functions
 void GraphicalUI::splashScreen(){
+    //Clears the display and pushes the splashscreen to it for 1 s
     this->Display.clearDisplay(BLACK);
-    this->Display.println("Prueba");
-    int32_t width = this->Display.width();
-    int32_t height = this->Display.height();
     this->Display.pushImage(0,0,240,135, splashscreen);
+    delay(1000);
     return;
 }
 
 void drawMainMenu(){
-    
+
 }
 
