@@ -4,14 +4,15 @@
 
 //GUI functions
 void GraphicalUI::splashScreen(){
-    this->Display.clearDisplay(GREEN);
-    //this->Display.setCursor(100,50);
+    this->Display.clearDisplay(BLACK);
     this->Display.println("Prueba");
     int32_t width = this->Display.width();
     int32_t height = this->Display.height();
-    this->Display.println("Prueba");
-    this->Display.printf("%i, %i px\n", width, height);
-    this->Display.pushImage(0,0,240,135, plantilla);
+    this->Display.pushImage(0,0,240,135, splashscreen);
     return;
+}
+
+void drawMainMenu(){
+    
 }
 

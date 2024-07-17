@@ -12,16 +12,20 @@ GraphicalUI GUI;
 int myFunction(int, int);
 
 void setup() {
+  //Serial for monitoring
+  Serial.begin(115200);+
+  Serial.println("Hola hola");
   // Basic setup to initialize the Cardputer object defined in M5's libraries
   auto cfg = M5.config();              //Creates a cfg struct as defined in M5Unified
   M5Cardputer.begin(cfg, true);       //Initialises M5Cardputer object with all the correct pointers stored
-  int result = myFunction(2, 3);
   GUI.splashScreen();
+
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  
 }
 
 // Function definitions
