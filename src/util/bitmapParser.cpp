@@ -23,7 +23,7 @@ uint16_t convert(uint8_t lowByte, uint8_t highByte){
 };
 
 int main(int argc, char* argv[]){
-    if (argc != 2) return 1;
+    if (argc < 2) return 1;
     else {
         //Variable defs
         uint32_t width;
@@ -31,6 +31,8 @@ int main(int argc, char* argv[]){
         uint32_t bytesPerPixel;
         uint32_t dataOffset;
         uint16_t bitsPerPixel;
+        string path = "";
+        if (argc > 2) path = (string) argv[2];
 
         //Read important info from header
         string filename = (string)argv[1];
@@ -89,10 +91,47 @@ int main(int argc, char* argv[]){
         //Change file extention & create new file:
         int size = filename.length();
         filename.erase(size-3,size-1);
+        int pos = filename.find_last_of('/');
+        //Erase possible path from b4 image name
+        if (pos != filename.npos) {
+
+            //cout << "Found a / @ ";
+            //cout << pos;
+            //cout << '\n';
+            filename.erase(0, pos+1);
+        }
+        else {
+
+            pos = filename.find_last_of('\\');
+            if (pos != filename.npos) {
+                //cout << "Found a \\ @ ";
+                //cout << pos;
+                //cout << '\n';   
+                filename.erase(0, pos+1);
+                //cout << filename;
+            }
+
+        }
         string imageName = filename;
         imageName.erase(imageName.length()-1);
         filename.append("h");
-        FILE* cfile = fopen(filename.c_str(), "w");
+        //Check path syntax is correct
+        pos = path.find_last_of('/');
+        if ((pos != path.npos) && (pos != (path.length() -1) )) path.append("/");
+        else {
+            pos = path.find_last_of('\\');
+            if ((pos != path.npos) && (pos != (path.length() -1) )) path.append("\\");
+            else path.append("/");
+        } 
+
+        path.append(filename);
+        system("cd");
+        cout << "Saving file as: " + path +"\n";
+        FILE* cfile = fopen(path.c_str(), "w");
+        if (cfile == NULL) {
+            cout << "Couldn't create or edit the output file\n";
+            return 1;
+        }
 
         //Begin writing image data to the text file
         fprintf(cfile, "#include <cstdint>\n");
