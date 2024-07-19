@@ -103,8 +103,8 @@ int main(int argc, char* argv[]){
             for(int j= 0; j < (unsigned int)width; j++) {
 
                 //Manipulate pixel data to convert to rgb365 (2bits per pixel)
-                lowByte = aux[i][2*j];
-                highByte = aux[i][2*j +1];
+                highByte = aux[i][2*j];
+                lowByte = aux[i][2*j +1];
                 value = (unsigned int)convert(lowByte, highByte);
 
                 //printf("%i, %i, %u, %u, %u\n", i, j, highByte, lowByte, value);
