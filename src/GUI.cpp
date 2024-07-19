@@ -1,6 +1,7 @@
 //GUI file, contains all functions needed for our GUI to work properly
 #include "GUI.h"
-#include "sprites.h"
+//#include "sprites.h"
+#include "splashscreen.h"
 //In the future put here the rest of the object instances to control all periferals
 
 //GUI functions
