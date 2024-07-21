@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <M5Cardputer.h>
+#include <SD.h>
 #include <M5GFX.h>
 #include "GUI.h"
 
@@ -18,13 +19,13 @@ void setup() {
   // Basic setup to initialize the Cardputer object defined in M5's libraries
   auto cfg = M5.config();              //Creates a cfg struct as defined in M5Unified
   M5Cardputer.begin(cfg, true);       //Initialises M5Cardputer object with all the correct pointers stored
-  GUI.splashScreen();
-
+  GUI.begin();
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  GUI.drawMainMenu();
   
 }
 

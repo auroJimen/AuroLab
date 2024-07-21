@@ -1,24 +1,66 @@
 //GUI file, contains all functions needed for our GUI to work properly
 #include "GUI.h"
-//#include "sprites.h"
-#include "splashscreen.h"
-//In the future put here the rest of the object instances to control all periferals
+
+//icon functions
+
+icon::icon(M5GFX& parent, iconType type, int state){
+    //Constructor
+    this->sprite = M5GFX(parent);
+    this->type = type;
+    this-> state = state;
+
+    //Itiliaze the sprite properly depending on the type
+    switch (type){
+        case Bat:
+        this->x = 209;
+        this->y = 18;
+        this->sprite.pushImage(this->x, this->y, 26, 2, batIconTest);
+        //this->sprite.createFromBmp(batIconTest)
+        break;
+        case Wifi:
+        case BLE:
+        case SDpresent:
+        break;
+    }
+
+}
 
 //GUI functions
-void GraphicalUI::splashScreen(){
-    //Clears the display and pushes the splashscreen to it for 1 s
+
+void GraphicalUI::begin(){
+
+    this->Display.setBaseColor(BLACK);
     this->Display.clearDisplay(BLACK);
+    this->Display.setTextSize(2.5);
+    this->Display.setTextDatum(textdatum_t::top_left);
+    this->Display.setTextColor(GREEN);
     this->Display.pushImage(0,0,240,135, splashscreen);
-    delay(1000);
-    return;
+    this->Display.setCursor(15,10);
+    this->Display.print("Loading");
+    delay(200);
+    this->Display.print(".");
+    delay(200);
+    this->Display.print(".");
+    delay(200);
+    this->Display.print(".");
+    delay(200);
+
 }
 
 void GraphicalUI::drawMainMenu(){
     //Draws the main menu
+    M5GFX disp = this->Display;
+    disp.pushImage(0,0,240,135, menuBackground);
+
+    icon test = icon(disp, Bat, 1);
+    while(1) {
+        delay(10);
+    };
+    //this->bar = topBar(this->Display);
 }
 
 void GraphicalUI::mainLoop(){
-    //MainLoop for the GUI, handles drawing the UI elements, reacting to inputs etc.
+    //MainLoop for the GUI, handles drawing the UI elements, reacts to inputs etc.
 }
 
 void GraphicalUI::loadConfFile(){
