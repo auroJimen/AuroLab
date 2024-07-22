@@ -67,10 +67,13 @@ int main(int argc, char* argv[]){
         //Manipulate image data:
 
         //The bmp format stores images as padded "scanlines" whose size must be a multiple of 4 bytes
-        int paddedRowSize = (int)(4 * ceil((float)(width) / 4.0f))*(bytesPerPixel);
         int unpaddedRowSize = width*bytesPerPixel;
+        int rem = unpaddedRowSize % 4;
+        int paddedRowSize = unpaddedRowSize + rem;
+        //int paddedRowSize = (int)(4 * ceil((float)(width) / 4.0f))*(bytesPerPixel);
+
         //The total size of the image data (in bytes) is:
-        int totalSize = unpaddedRowSize*height; 
+        int totalSize = unpaddedRowSize*height;
 
         //We are assuming rgb565 format, so two bytes per pixel
         uint8_t aux[height][unpaddedRowSize];
@@ -83,6 +86,9 @@ int main(int argc, char* argv[]){
             //Seek current row & save to aux (rows are saved inversly in the bmp)
             fseek(imageFile, dataOffset+(i*paddedRowSize), SEEK_SET);
             fread(aux[height-1-i], 1, unpaddedRowSize, imageFile);
+            //cout << "@ ";
+            //cout << dataOffset+(i*paddedRowSize);
+            //cout << "\n";
 
         }
 
@@ -125,7 +131,7 @@ int main(int argc, char* argv[]){
         } 
 
         path.append(filename);
-        system("cd");
+        //system("cd");
         cout << "Saving file as: " + path +"\n";
         FILE* cfile = fopen(path.c_str(), "w");
         if (cfile == NULL) {

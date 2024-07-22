@@ -13,8 +13,8 @@ icon::icon(M5GFX& parent, iconType type, int state){
     switch (type){
         case Bat:
         this->x = 209;
-        this->y = 18;
-        this->sprite.pushImage(this->x, this->y, 26, 2, batIconTest);
+        this->y = 3;
+        this->sprite.pushImage(this->x, this->y, 26, 15, batIconTest);
         //this->sprite.createFromBmp(batIconTest)
         break;
         case Wifi:
