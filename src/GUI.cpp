@@ -3,27 +3,59 @@
 
 //icon functions
 
-icon::icon(M5GFX& parent, iconType type, int state){
+iconBat::iconBat(M5GFX& parent, int perc){
     //Constructor
-    this->sprite = M5GFX(parent);
-    this->type = type;
-    this-> state = state;
+    this->screen = M5GFX(parent);
+    this->percent = perc;
 
-    //Itiliaze the sprite properly depending on the type
-    switch (type){
-        case Bat:
-        this->x = 209;
-        this->y = 3;
-        this->sprite.pushImage(this->x, this->y, 26, 15, batIconTest);
-        //this->sprite.createFromBmp(batIconTest)
-        break;
-        case Wifi:
-        case BLE:
-        case SDpresent:
-        break;
+    //Initialize the bat drawing the base sprite
+    this->screen.pushImage(basePos.x, basePos.y, baseSize.x, baseSize.y, batIconBase);
+    this->screen.setCursor(textPos.x,textPos.y);
+    this->screen.setTextSize(textSize);
+    this->updatePercent(perc);
+
+}
+
+int chargeLevel(int perc){
+    int result = (int)ceilf(12.0*(float)perc/100.0);
+    if (result==12) result =11;
+    //Serial.println(result);
+    return result;
+
+}
+
+void iconBat::testAnim(int mil){
+
+    for (int i = 0; i <= 100; i++){
+        
+        this->screen.pushImage(contPos.x, contPos.y, contSize.x, contSize.y, batIcons[chargeLevel(i)]);
+        this->screen.setCursor(textPos.x,textPos.y);
+        this->screen.setTextSize(textSize);
+        this->updatePercent(i);
+        delay(mil);
     }
 
 }
+
+void iconBat::updatePercent(int perc){
+    //Delete current text
+    this->screen.setTextColor(BLACK);
+    this->screen.setCursor(textPos.x,textPos.y);
+    this->screen.printf("%3d%%", percent);
+    //Update saved text
+    percent = perc;
+    //Print saved text
+    this->screen.setTextColor(GREEN);
+    this->screen.setCursor(textPos.x,textPos.y);
+    this->screen.printf("%3d%%", percent);
+
+}
+
+int iconBat::changeState(int percent){
+
+}
+
+
 
 //GUI functions
 
@@ -52,9 +84,10 @@ void GraphicalUI::drawMainMenu(){
     M5GFX disp = this->Display;
     disp.pushImage(0,0,240,135, menuBackground);
 
-    icon test = icon(disp, Bat, 1);
-    while(1) {
-        delay(10);
+    iconBat test = iconBat(disp, 1);
+    while(1) {  
+        test.testAnim(200);     
+        delay(200);
     };
     //this->bar = topBar(this->Display);
 }

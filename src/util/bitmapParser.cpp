@@ -23,6 +23,8 @@ uint16_t convert(uint8_t lowByte, uint8_t highByte){
 };
 
 int main(int argc, char* argv[]){
+    //First arg --> path of bmp
+    //Second arg --> (optional) path to savefile
     if (argc < 2) return 1;
     else {
         //Variable defs
@@ -32,6 +34,7 @@ int main(int argc, char* argv[]){
         uint32_t dataOffset;
         uint16_t bitsPerPixel;
         string path = "";
+        string opt = "";
         if (argc > 2) path = (string) argv[2];
 
         //Read important info from header
@@ -95,6 +98,8 @@ int main(int argc, char* argv[]){
         fclose(imageFile);
 
         //Change file extention & create new file:
+
+        //Create image name//
         int size = filename.length();
         filename.erase(size-3,size-1);
         int pos = filename.find_last_of('/');
@@ -120,27 +125,39 @@ int main(int argc, char* argv[]){
         }
         string imageName = filename;
         imageName.erase(imageName.length()-1);
-        filename.append("h");
-        //Check path syntax is correct
-        pos = path.find_last_of('/');
-        if ((pos != path.npos) && (pos != (path.length() -1) )) path.append("/");
-        else {
-            pos = path.find_last_of('\\');
-            if ((pos != path.npos) && (pos != (path.length() -1) )) path.append("\\");
-            else path.append("/");
-        } 
 
-        path.append(filename);
-        //system("cd");
-        cout << "Saving file as: " + path +"\n";
-        FILE* cfile = fopen(path.c_str(), "w");
+        FILE* cfile = NULL;
+        bool appendFlag = false;
+        
+        if ((path.length() > 4) && (path.compare(path.length()-4,4,".bmp"))) {
+            cout << "Appending to: " + path +"\n";
+            cfile = fopen(path.c_str(), "a");
+            appendFlag = true;
+
+        } else {
+            
+            filename.append("h");
+            //Check path syntax is correct
+            pos = path.find_last_of('/');
+            if ((pos != path.npos) && (pos != (path.length() -1) )) path.append("/");
+            else {
+                pos = path.find_last_of('\\');
+                if ((pos != path.npos) && (pos != (path.length() -1) )) path.append("\\");
+                else path.append("/");
+            } 
+            path.append(filename);
+            cout << "Saving file as: " + path +"\n";
+            cfile = fopen(path.c_str(), "w");
+            //system("cd");
+        }
         if (cfile == NULL) {
             cout << "Couldn't create or edit the output file\n";
             return 1;
         }
 
         //Begin writing image data to the text file
-        fprintf(cfile, "#include <cstdint>\n");
+        fprintf(cfile,"\n");
+        if (!appendFlag) fprintf(cfile, "#include <cstdint>\n");
         fprintf(cfile, "static const uint16_t %s[] = {\n", imageName.c_str());
 
         for(int i= 0; i < (unsigned int)height; i++) {

@@ -2,16 +2,39 @@
 #include <M5Cardputer.h>
 #include <M5GFX.h>
 #include "sprites.h"
-#include "splashscreen.h"
-#include "menuBackground.h"
-#include "batIconTest.h"
 
 //In the future put here the rest of the object instances to control all periferals
 
 
 //Declaration of all relevant classes
 
-enum iconType {SDpresent, Bat, Wifi, BLE};
+struct coord {
+    public:
+    int x;
+    int y;
+};
+
+class iconBat {
+
+    private:
+    int percent;    //Battery percent
+    coord basePos = {209,3};     //Coordinates to draw sprite base
+    coord baseSize = {26,15}; //Sprite base size
+    coord contPos = {212,5};     //Coordinates to draw sprite content
+    coord contSize = {15,11}; //Sprite content size
+    coord textPos = {173,5};     //Coordinates to write Bat percent
+    float textSize = 1.6;     //Text size
+    M5GFX screen;             //Screen object
+    public:
+    iconBat(M5GFX& screen, int percent);
+    int changeState(int perc);
+    int changeState(void);
+    void updatePercent(int perc);
+    void testAnim(int mil);
+
+};
+
+enum iconType {SDpresent, Wifi, BLE};
 
 //Icon class for the contents of the topBar
 class icon {
@@ -19,15 +42,13 @@ class icon {
     M5GFX sprite;
     iconType type;
     int state;
-    int x;
-    int y; 
+    coord pos; 
 
     
     
     public:
     icon(M5GFX& parent, iconType type, int state);
     bool changeState(bool newState);
-    int changeState(int percent); //For the battery variant
 
 
 };
@@ -39,7 +60,7 @@ class topBar{
     icon Wifi; //Wifi element to display a small sprite and the SSID
     icon BLE;  //Bluetooth low energy icon
     icon SDpresent;   //SD card icon
-    icon Bat;  //Battery indicator
+    iconBat Bat;  //Battery indicator
     public:
     topBar(LGFX_Sprite parent);
     //There should be methods to update everything in here
