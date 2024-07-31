@@ -3,20 +3,41 @@
 
 //icon functions
 
-iconBat::iconBat(M5GFX& parent, int perc){
+icon_Class::icon_Class(){
+
+}
+
+icon_Class::icon_Class(M5GFX screen, iconType type, int state){
+
+}
+
+
+//iconBat functions
+
+iconBat_Class::iconBat_Class(){};
+
+iconBat_Class::iconBat_Class(M5GFX& display, int perc){
     //Constructor
-    this->screen = M5GFX(parent);
+    this->screen = M5GFX(display);
     this->percent = perc;
 
     //Initialize the bat drawing the base sprite
     this->screen.pushImage(basePos.x, basePos.y, baseSize.x, baseSize.y, batIconBase);
-    this->screen.setCursor(textPos.x,textPos.y);
-    this->screen.setTextSize(textSize);
-    this->updatePercent(perc);
+    updateState(perc);
 
 }
 
-int chargeLevel(int perc){
+iconBat_Class::iconBat_Class(M5GFX& display){
+    //Constructor
+    this->screen = M5GFX(display);
+
+    //Initialize the bat drawing the base sprite
+    this->screen.pushImage(basePos.x, basePos.y, baseSize.x, baseSize.y, batIconBase);
+    updateState();
+
+}
+
+int iconBat_Class::chargeLevel(int perc){
     int result = (int)ceilf(12.0*(float)perc/100.0);
     if (result==12) result =11;
     //Serial.println(result);
@@ -24,42 +45,83 @@ int chargeLevel(int perc){
 
 }
 
-void iconBat::testAnim(int mil){
+void iconBat_Class::testAnim(int mil){
 
     for (int i = 0; i <= 100; i++){
         
         this->screen.pushImage(contPos.x, contPos.y, contSize.x, contSize.y, batIcons[chargeLevel(i)]);
-        this->screen.setCursor(textPos.x,textPos.y);
-        this->screen.setTextSize(textSize);
         this->updatePercent(i);
         delay(mil);
     }
 
 }
 
-void iconBat::updatePercent(int perc){
+void iconBat_Class::updatePercent(int perc){
     //Delete current text
     this->screen.setTextColor(BLACK);
     this->screen.setCursor(textPos.x,textPos.y);
+    this->screen.setTextSize(textSize);
     this->screen.printf("%3d%%", percent);
     //Update saved text
     percent = perc;
     //Print saved text
     this->screen.setTextColor(GREEN);
     this->screen.setCursor(textPos.x,textPos.y);
+    this->screen.setTextSize(textSize);
     this->screen.printf("%3d%%", percent);
 
 }
 
-int iconBat::changeState(int percent){
+void iconBat_Class::updateState(int perc){
+    //Functions that runs to update displayes bat info 
+
+    //Updates shown battery percent
+    updatePercent(perc);
+    updateChargeLevel(perc);
 
 }
 
+void iconBat_Class::updateState(){
 
+    int perc = fetchBatLevel();
+    updateState(perc);
+
+}
+
+void iconBat_Class::updateChargeLevel(int perc){
+    int level = chargeLevel(perc); //0-11 level
+    this->screen.pushImage(basePos.x, basePos.y, baseSize.x, baseSize.y, batIconBase);
+    this->screen.pushImage(contPos.x, contPos.y, contSize.x, contSize.y, batIcons[level]);
+}
+
+int iconBat_Class::fetchBatLevel(){
+    //Fetches current battery level from the Power class
+    return (int)M5Cardputer.Power.getBatteryLevel();
+
+}
+
+//topBar_Class functions
+
+topBar_Class::topBar_Class(){
+    //Constructor
+    M5GFX disp = this->Display;
+    this->Bat = iconBat_Class(disp);
+    this->Wifi = icon_Class(disp, iconType::Wifi, false);
+    this->BLE = icon_Class(disp, iconType::BLE, false);
+    this->SDpresent = icon_Class(disp, iconType::SDpresent, false);
+
+}
+
+void topBar_Class::updateIcons(){
+    //Updates the status of all topbar icons
+
+    this->Bat.updateState();
+
+}
 
 //GUI functions
 
-void GraphicalUI::begin(){
+void GUI_Class::begin(){
 
     this->Display.setBaseColor(BLACK);
     this->Display.clearDisplay(BLACK);
@@ -77,26 +139,30 @@ void GraphicalUI::begin(){
     this->Display.print(".");
     delay(200);
 
+    this->topBar = topBar_Class();
+
+
 }
 
-void GraphicalUI::drawMainMenu(){
+void GUI_Class::drawMainMenu(){
     //Draws the main menu
     M5GFX disp = this->Display;
     disp.pushImage(0,0,240,135, menuBackground);
 
-    iconBat test = iconBat(disp, 1);
-    while(1) {  
-        test.testAnim(200);     
-        delay(200);
-    };
-    //this->bar = topBar(this->Display);
+
 }
 
-void GraphicalUI::mainLoop(){
+void GUI_Class::mainLoop(){
     //MainLoop for the GUI, handles drawing the UI elements, reacts to inputs etc.
+    for(;;){
+
+        this->topBar.updateIcons();
+        delay(200);
+
+    }
 }
 
-void GraphicalUI::loadConfFile(){
+void GUI_Class::loadConfFile(){
     //Loads all saved documentation from the SD card (if present) b4 starting up the GUI
 }
 

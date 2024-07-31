@@ -14,7 +14,7 @@ struct coord {
     int y;
 };
 
-class iconBat {
+class iconBat_Class {
 
     private:
     int percent;    //Battery percent
@@ -26,48 +26,56 @@ class iconBat {
     float textSize = 1.6;     //Text size
     M5GFX screen;             //Screen object
     public:
-    iconBat(M5GFX& screen, int percent);
-    int changeState(int perc);
-    int changeState(void);
+    iconBat_Class();
+    iconBat_Class(M5GFX& screen);
+    iconBat_Class(M5GFX& screen, int perc);
+    void updateState(void);
+    void updateState(int perc);
+    void updateChargeLevel(int perc);
     void updatePercent(int perc);
     void testAnim(int mil);
+    private:
+    int fetchBatLevel();
+    int chargeLevel(int perc);
 
 };
 
 enum iconType {SDpresent, Wifi, BLE};
 
 //Icon class for the contents of the topBar
-class icon {
+class icon_Class {
     private:
     M5GFX sprite;
     iconType type;
     int state;
     coord pos; 
+    M5GFX screen;             //Screen object
 
-    
-    
     public:
-    icon(M5GFX& parent, iconType type, int state);
+    icon_Class();
+    icon_Class(M5GFX screen, iconType type, int state);
     bool changeState(bool newState);
 
 
 };
 
-class topBar{
+class topBar_Class{
     //Controls what is displayed on the top bar of the GUI on the main menu
-    private:
-    //Time element to display current time if theres wifi
-    icon Wifi; //Wifi element to display a small sprite and the SSID
-    icon BLE;  //Bluetooth low energy icon
-    icon SDpresent;   //SD card icon
-    iconBat Bat;  //Battery indicator
     public:
-    topBar(LGFX_Sprite parent);
+    //Time element to display current time if theres wifi
+    icon_Class Wifi; //Wifi element to display a small sprite and the SSID
+    icon_Class BLE;  //Bluetooth low energy icon
+    icon_Class SDpresent;   //SD card icon
+    iconBat_Class Bat;  //Battery indicator
+    M5GFX Display = M5Cardputer.Display;
+    public:
+    topBar_Class();
+    void updateIcons();
     //There should be methods to update everything in here
 
 };
 
-class GraphicalUI {
+class GUI_Class {
     //A global instance of this class controls all the GUI elements and provides the
     //method for the backend and front end to communicate
     //The GUI class depends on the M5Cardputer object defined in M5Cardputer.h
@@ -75,9 +83,9 @@ class GraphicalUI {
     //Doesnt need a constructor
     M5GFX &Display = M5Cardputer.Display;
     Keyboard_Class Keyboard = M5Cardputer.Keyboard;
-    //topBar bar;
+    topBar_Class topBar;
     public:
-    
+    TaskHandle_t task;
     void begin();
     void splashScreen();
     void drawMainMenu();
@@ -87,5 +95,5 @@ class GraphicalUI {
 };
 
 //Global GUI instance 
-extern GraphicalUI GUI;
+extern GUI_Class GUI;
 
