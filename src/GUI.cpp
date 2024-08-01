@@ -74,10 +74,12 @@ void iconBat_Class::updatePercent(int perc){
 
 void iconBat_Class::updateState(int perc){
     //Functions that runs to update displayes bat info 
-
+    if (perc != this->percent) {
     //Updates shown battery percent
     updatePercent(perc);
     updateChargeLevel(perc);
+
+    }
 
 }
 
@@ -157,7 +159,7 @@ void GUI_Class::mainLoop(){
     for(;;){
 
         this->topBar.updateIcons();
-        delay(200);
+        delay(2000);
 
     }
 }
