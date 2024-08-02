@@ -150,6 +150,7 @@ void GUI_Class::drawMainMenu(){
     //Draws the main menu
     M5GFX disp = this->Display;
     disp.pushImage(0,0,240,135, menuBackground);
+    disp.pushImage(90,41, 58, 74, terminalIcon);
 
 
 }
