@@ -13,11 +13,10 @@ icon_Class::icon_Class(M5GFX screen, iconType type, int state){
 
 
 //iconBat functions
-
 iconBat_Class::iconBat_Class(){};
 
 iconBat_Class::iconBat_Class(M5GFX& display, int perc){
-    //Constructor
+    
     this->screen = M5GFX(display);
     this->percent = perc;
 
@@ -39,7 +38,7 @@ iconBat_Class::iconBat_Class(M5GFX& display){
 
 int iconBat_Class::chargeLevel(int perc){
     int result = (int)ceilf(12.0*(float)perc/100.0);
-    if (result==12) result =11;
+    if (result>=12) result =11;
     //Serial.println(result);
     return result;
 
@@ -57,6 +56,7 @@ void iconBat_Class::testAnim(int mil){
 }
 
 void iconBat_Class::updatePercent(int perc){
+    if (perc > 100) perc = 100;
     //Delete current text
     this->screen.setTextColor(BLACK);
     this->screen.setCursor(textPos.x,textPos.y);
@@ -73,10 +73,11 @@ void iconBat_Class::updatePercent(int perc){
 }
 
 void iconBat_Class::updateState(int perc){
-    //Functions that runs to update displayes bat info 
+    if (perc > 100) perc = 100;
     if (perc != this->percent) {
     //Updates shown battery percent
     updatePercent(perc);
+    //Updates charge level
     updateChargeLevel(perc);
 
     }
@@ -91,6 +92,7 @@ void iconBat_Class::updateState(){
 }
 
 void iconBat_Class::updateChargeLevel(int perc){
+    if (perc >= 100) perc = 100;
     int level = chargeLevel(perc); //0-11 level
     this->screen.pushImage(basePos.x, basePos.y, baseSize.x, baseSize.y, batIconBase);
     this->screen.pushImage(contPos.x, contPos.y, contSize.x, contSize.y, batIcons[level]);
@@ -169,3 +171,7 @@ void GUI_Class::loadConfFile(){
     //Loads all saved documentation from the SD card (if present) b4 starting up the GUI
 }
 
+void GUI_Class::drawWifiMenu(){
+    //Prints available wifi network to allow selection & connection
+
+}
