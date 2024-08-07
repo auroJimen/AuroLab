@@ -138,12 +138,13 @@ int main(int argc, char* argv[]){
             
             filename.append("h");
             //Check path syntax is correct
+            
             pos = path.find_last_of('/');
             if ((pos != path.npos) && (pos != (path.length() -1) )) path.append("/");
             else {
                 pos = path.find_last_of('\\');
                 if ((pos != path.npos) && (pos != (path.length() -1) )) path.append("\\");
-                else path.append("/");
+                else if (argc > 2) path.append("/"); //Extra check to account for the 1 arg mode
             } 
             path.append(filename);
             cout << "Saving file as: " + path +"\n";
@@ -179,7 +180,8 @@ int main(int argc, char* argv[]){
         };
 
         fprintf(cfile, "};");
-        fclose(cfile);
+        int closed = fclose(cfile);
+        if (closed != 0) cout << "An error ocurred while saving the file\n";
 
     }
 }
