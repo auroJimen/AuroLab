@@ -130,7 +130,8 @@ class list_Class{
     int textColour;
     int backColour;
     int highlightColour;
-    M5Canvas *sprite;
+    int border;
+
 
     public:
     ///@brief Constructor for the list class
@@ -148,9 +149,9 @@ class list_Class{
     ///@param backColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to black
     ///@param highlightColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
     list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
-     coord origin, coord size, coord textPos, M5Canvas *sprite, float titleSize = 2.5, float textSize = 1.0, 
+     coord origin, coord size, coord textPos, float titleSize = 2.5, float textSize = 1.0, 
      int textColour = m5gfx::ili9341_colors::GREEN, int backColour = m5gfx::ili9341_colors::BLACK, 
-     int highlightColour = m5gfx::ili9341_colors::GREEN);
+     int highlightColour = m5gfx::ili9341_colors::GREEN, int border =5);
 
     ///@brief Draws or redraws the list on the screen
     void draw();

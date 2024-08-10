@@ -133,9 +133,8 @@ void topBar_Class::updateIcons(){
 
 //list_Class functions
 list_Class::list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
-coord origin, coord size, coord textPos, M5Canvas *sprite, float titleSize, float textSize, 
-int textColour, int backColour, 
-int highlightColour){
+coord origin, coord size, coord textPos, float titleSize, float textSize, 
+int textColour, int backColour, int highlightColour, int border){
 
     this->title = title;
     this->elementNum = elementNum;
@@ -152,38 +151,44 @@ int highlightColour){
     this->highlightColour = highlightColour;
 
     this->pos = 0;
+    this->border = border;
 
-    this->sprite = sprite;
 }
 
 void list_Class::draw(){
 
-    //Create the sprite in RAM
-    (*this->sprite).createSprite(this->size.x, this->size.y);
+    //Create the background sprite in RAM
+    M5Canvas background(&Display);
+    background.createSprite(this->size.x, this->size.y);
 
-    //Draw backgroun rectangle
-    (*this->sprite).setBaseColor(this->backColour);
-    (*this->sprite).clear();
-    (*this->sprite).setColor(this->textColour);
-    (*this->sprite).drawRoundRect(0, 0, this->size.x, this->size.y, 3);
+    //Draw background rectangle
+    background.setBaseColor(this->backColour);
+    background.clear();
+    background.setColor(this->textColour);
+    background.drawRoundRect(0, 0, this->size.x , this->size.y, 3);
+
+    //Push & delete the sprite
+    background.pushSprite(this->origin.x, this->origin.y);
+    background.deleteSprite();
     
     //Set text options
-    //coord absTextPos = origin.add(textPos);
-    (*this->sprite).setCursor(textPos.x, textPos.y);
-    //this->Display.setTextPadding(absTextPos.x); //This feels kinda bad
-    (*this->sprite).setTextColor(this->textColour);
-    (*this->sprite).setTextSize(this->titleSize);
-    (*this->sprite).println(title);
+    M5Canvas text(&Display);
+    text.createSprite(this->size.x -2*this->border, this->size.y -2*this->border);
+    text.setTextDatum(0);
+    text.setTextColor(this->textColour);
+    text.setTextSize(this->titleSize);
+    text.println(title);
 
     //Need aux function to dinamically determine how many rows fit on the rectangle from text size
 
     //For loop to draw the options (taking current pos into account)
-    (*this->sprite).setTextSize(this->textSize);
+    text.setTextSize(this->textSize);
     for(int i = pos; i <this->elementNum; i++){
-        (*this->sprite).println(this->elementName[i]);
+        text.println(this->elementName[i]);
     }
 
-    (*this->sprite).pushSprite(this->origin.x, this->origin.y);
+    text.pushSprite(origin.x +this->border, origin.y +this->border);
+    text.deleteSprite();
     
 }
 
@@ -226,8 +231,7 @@ void GUI_Class::drawMainMenu(){
     //disp.drawRoundRect(50, 30, 140, 90, 3);
     String elements[] = {"Hola", "Holaa", "Holaaa", "Holaaaa", "Holaaaaa", "Holaaaaaa", "Holaaaaaaa"};
     String *ref = elements;
-    M5Canvas sprite;
-    list_Class test = list_Class(String("Test"), 7, ref,  &testHandler, coord(50,30), coord(140,90), coord(5, 5), &sprite);
+    list_Class test = list_Class(String("Test"), 7, ref,  &testHandler, coord(50,30), coord(140,90), coord(5, 5));
     test.draw();
 }
 
