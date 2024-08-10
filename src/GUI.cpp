@@ -1,11 +1,19 @@
 //GUI file, contains all functions needed for our GUI to work properly
 #include "GUI.h"
 
+//cord functions
+coord::coord(){};
+coord::coord(int a, int b) {
+    x = a;
+    y = b;
+}
+coord coord::add(coord a){
+    return coord(x+a.x, y+a.y);
+}
+
 //icon functions
 
-icon_Class::icon_Class(){
-
-}
+icon_Class::icon_Class(){}
 
 icon_Class::icon_Class(M5GFX screen, iconType type, int state){
 
@@ -123,6 +131,67 @@ void topBar_Class::updateIcons(){
 
 }
 
+//list_Class functions
+list_Class::list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
+coord origin, coord size, coord textPos, float titleSize, float textSize, 
+int textColour, int backColour, int highlightColour, int border){
+
+    this->title = title;
+    this->elementNum = elementNum;
+    this->elementName = elementName;
+    this->handler = handler;
+
+    this->origin = origin;
+    this->size = size;
+    this->textPos = textPos;
+    this->titleSize = titleSize;
+    this->textSize = textSize;
+    this->textColour = textColour;
+    this->backColour = backColour;
+    this->highlightColour = highlightColour;
+
+    this->pos = 0;
+    this->border = border;
+
+}
+
+void list_Class::draw(){
+
+    //Create the background sprite in RAM
+    M5Canvas background(&Display);
+    background.createSprite(this->size.x, this->size.y);
+
+    //Draw background rectangle
+    background.setBaseColor(this->backColour);
+    background.clear();
+    background.setColor(this->textColour);
+    background.drawRoundRect(0, 0, this->size.x , this->size.y, 3);
+
+    //Push & delete the sprite
+    background.pushSprite(this->origin.x, this->origin.y);
+    background.deleteSprite();
+    
+    //Set text options
+    M5Canvas text(&Display);
+    text.createSprite(this->size.x -2*this->border, this->size.y -2*this->border);
+    text.setTextDatum(0);
+    text.setTextColor(this->textColour);
+    text.setTextSize(this->titleSize);
+    text.println(title);
+
+    //Need aux function to dinamically determine how many rows fit on the rectangle from text size
+
+    //For loop to draw the options (taking current pos into account)
+    text.setTextSize(this->textSize);
+    for(int i = pos; i <this->elementNum; i++){
+        text.println(this->elementName[i]);
+    }
+
+    text.pushSprite(origin.x +this->border, origin.y +this->border);
+    text.deleteSprite();
+    
+}
+
 //GUI functions
 
 void GUI_Class::begin(){
@@ -142,19 +211,28 @@ void GUI_Class::begin(){
     delay(200);
     this->Display.print(".");
     delay(200);
+    this->Display.clear();
 
     this->topBar = topBar_Class();
 
 
 }
 
+void testHandler(int a, int b) {return;};
+
 void GUI_Class::drawMainMenu(){
     //Draws the main menu
     M5GFX disp = this->Display;
-    disp.pushImage(0,0,240,135, menuBackground);
-    disp.pushImage(90,41, 58, 74, terminalIcon);
-
-
+    disp.pushImage(0,0,240,135, menuBackgroundTest);
+    //disp.pushImage(90,41, 58, 74, terminalIcon);
+    //disp.setColor(BLACK);
+    //disp.fillRoundRect(50, 30, 140, 90, 3);
+    //disp.setColor(GREEN);
+    //disp.drawRoundRect(50, 30, 140, 90, 3);
+    String elements[] = {"Hola", "Holaa", "Holaaa", "Holaaaa", "Holaaaaa", "Holaaaaaa", "Holaaaaaaa"};
+    String *ref = elements;
+    list_Class test = list_Class(String("Test"), 7, ref,  &testHandler, coord(50,30), coord(140,90), coord(5, 5));
+    test.draw();
 }
 
 void GUI_Class::mainLoop(){
@@ -172,6 +250,28 @@ void GUI_Class::loadConfFile(){
 }
 
 void GUI_Class::drawWifiMenu(){
-    //Prints available wifi network to allow selection & connection
+    //Prints available wifi networks to allow selection & connection
+
+    //Starts async scan
+    WiFi.scanNetworks(true, true);
+    //Check if scan has finished
+    while(WiFi.scanComplete() < 0) {
+        //Print something to show scan is in progress
+        delay(20);
+    }
+
+    //Get number of available networks
+    int availableNetworks = WiFi.scanComplete();
+
+    for(int i = 0; i < availableNetworks; i++){
+        //Print the ssids here in a scrollable format? 
+    }
+
+    //Wait for input loop (to scroll up and down, exit via esc etc.) 
+    //Maybe attach interrupt to keyboard events?? In general
+
+    //When selected, must ask for password, connect etc
+
+    //B4 finishing the function a redraw must be called to get rid of the wifi UI
 
 }

@@ -2,7 +2,8 @@
 #include <M5Cardputer.h>
 #include <M5GFX.h>
 #include "sprites.h"
-#include <WiFiScan.h>
+#include "menuBackground.h"
+#include <WiFi.h>
 
 //In the future put here the rest of the object instances to control all periferals
 
@@ -15,13 +16,17 @@ struct coord {
     public:
     int x;
     int y;
+
+    coord();
+    coord(int x, int y);
+    coord add(coord a);
 };
 /// @brief Battery Icon class, handles the battery icon shown on the top bar
 class iconBat_Class {
 
     private:
     int percent;                  ///< Battery percent
-    coord basePos = {209,3};     ///Coordinates to draw sprite base
+    coord basePos = {209,3};     /// Coordinates to draw sprite base
     coord baseSize = {26,15}; //Sprite base size
     coord contPos = {212,5};     //Coordinates to draw sprite content
     coord contSize = {15,11}; //Sprite content size
@@ -107,6 +112,60 @@ class topBar_Class{
     //There should be methods to update everything in here
 
 };
+
+///@brief Scrollable, selectable list class to construct menus
+class list_Class{
+    private:
+    String title;
+    int elementNum; ///< Number of elements on the list
+    String* elementName; ///< Names of the list elements
+    int pos; ///< Current highlighted position on the list
+    void (*handler)(int, int); ///< Handler function to trigger events from selecting an element
+    M5GFX Display = M5Cardputer.Display; ///> Display object
+    coord origin;
+    coord size;
+    coord textPos;
+    float titleSize;
+    float textSize;
+    int textColour;
+    int backColour;
+    int highlightColour;
+    int border;
+
+
+    public:
+    ///@brief Constructor for the list class
+    ///@param title String, list title
+    ///@param elementNum Int, number of elements on the list
+    ///@param elementName Pointer to the string array that holds the names of the list elements
+    ///@param handler Function that triggers the proper event when an element is selected,
+    /// its parameters are pos & elementNum
+    ///@param origin Coordinates where the list rectangle will be drawn
+    ///@param size Size of the list rectangle
+    ///@param textPos Coordinates where the text begins to be drawn (relative to the origin of the rectangle)
+    ///@param titleSize Float, text size of the title, defaults to 2.5
+    ///@param textSize Float, text size of the list body, defaults to 1.0
+    ///@param textColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
+    ///@param backColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to black
+    ///@param highlightColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
+    list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
+     coord origin, coord size, coord textPos, float titleSize = 2.5, float textSize = 1.0, 
+     int textColour = m5gfx::ili9341_colors::GREEN, int backColour = m5gfx::ili9341_colors::BLACK, 
+     int highlightColour = m5gfx::ili9341_colors::GREEN, int border =5);
+
+    ///@brief Draws or redraws the list on the screen
+    void draw();
+
+    ///@brief Deletes the list instance 
+    void del();
+
+    ///@brief Scrolls the list to the given position
+    ///@param newPos Position we want to scroll to
+    void scroll(int newPos);
+
+    
+};
+
 /// @brief A global instance of this class controls all the GUI elements and provides the
 /// method for the backend and front end to communicate.
 /// The GUI class depends on the M5Cardputer object defined in M5Cardputer.h
@@ -124,7 +183,7 @@ class GUI_Class {
     /// @brief Draws the main menu
     void drawMainMenu();
 
-    /// @brief Draws the wifi menu to scan & connect to networks UNIMPLEMENTED
+    /// @brief Draws the wifi menu to scan & connect to networks
     void drawWifiMenu();
 
     /// @brief Mainloop for the GUI, must be run on its own thread to prevent interference w/ backend. Handles drawing UI elements, inputs, etc. through an endless loop.
