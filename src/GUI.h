@@ -39,12 +39,8 @@ class iconBat_Class {
 
     /// @brief Constructor of the Battery Icon class
     /// @param display The M5GFX display object
-    /// @param perc Battery percent
-    iconBat_Class(M5GFX& screen);
-    
-    /// @brief Constructor of the Battery Icon class
-    /// @param display  The M5GFX display object
-    iconBat_Class(M5GFX& screen, int perc);
+    /// @param perc Battery percent (def = 0)
+    iconBat_Class(M5GFX& screen, int perc = 0);
 
     /// @brief Updates battery level and percentage fetching value from the internal power chip (only updates if the percentage has changed)
     void updateState(void);

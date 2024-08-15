@@ -30,16 +30,6 @@ iconBat_Class::iconBat_Class(M5GFX& display, int perc){
 
     //Initialize the bat drawing the base sprite
     this->screen.pushImage(basePos.x, basePos.y, baseSize.x, baseSize.y, batIconBase);
-    updateState(perc);
-
-}
-
-iconBat_Class::iconBat_Class(M5GFX& display){
-    //Constructor
-    this->screen = M5GFX(display);
-
-    //Initialize the bat drawing the base sprite
-    this->screen.pushImage(basePos.x, basePos.y, baseSize.x, baseSize.y, batIconBase);
     updateState();
 
 }
