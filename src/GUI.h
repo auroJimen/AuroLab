@@ -163,6 +163,15 @@ class list_Class{
     ///@param newPos Position we want to scroll to
     void scroll(int newPos);
 
+    private:
+
+    /// @brief Calculates the number of rows that fit 
+    /// on the screen given the height of the text sprite
+    /// and the text size
+    /// @param textSize Float, the text size multiplier used in M5GFX
+    /// @param height The height in pixels of the text sprite
+    /// @return The number of rows that fit on the text sprite as an integer
+    int displayableRows(float textSize, int height);
     
 };
 

@@ -132,6 +132,11 @@ void topBar_Class::updateIcons(){
 }
 
 //list_Class functions
+int list_Class::displayableRows(float textSize, int height){
+    int rowSize = floor(8*textSize);
+    return height/rowSize;
+}
+
 list_Class::list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
 coord origin, coord size, coord textPos, float titleSize, float textSize, 
 int textColour, int backColour, int highlightColour, int border){
@@ -171,7 +176,7 @@ void list_Class::draw(){
     background.pushSprite(this->origin.x, this->origin.y);
     background.deleteSprite();
     
-    //Set text options
+    //Create text sprite in RAM & Set text options
     M5Canvas text(&Display);
     text.createSprite(this->size.x -2*this->border, this->size.y -2*this->border);
     text.setTextDatum(0);
