@@ -11,6 +11,7 @@
         "type_traits": "cpp",
         "utility": "cpp",
         "cstdio": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "cmath": "cpp"
     }
 }

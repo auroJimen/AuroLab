@@ -118,15 +118,15 @@ class list_Class{
     int pos; ///< Current highlighted position on the list
     void (*handler)(int, int); ///< Handler function to trigger events from selecting an element
     M5GFX Display = M5Cardputer.Display; ///> Display object
-    coord origin;
-    coord size;
-    coord textPos;
-    float titleSize;
-    float textSize;
-    int textColour;
-    int backColour;
-    int highlightColour;
-    int border;
+    coord origin; ///< Coordinates where the list shall be drawn
+    coord size; ///< Absolute size of the list rectangle
+    float titleSize; ///< Text size multiplier for the title
+    float textSize; ///< Text size multiplier for the body
+    int textColour; ///< Text colour (title & body)
+    int backColour; ///< Background color
+    int highlightColour; ///< Highlight color for the currently selected option
+    int border; ///< Margin from the rectangle to the text (in all 4 sides)
+    int rows; ///< Number of rows that can be displayed @ a time
 
 
     public:
@@ -138,14 +138,13 @@ class list_Class{
     /// its parameters are pos & elementNum
     ///@param origin Coordinates where the list rectangle will be drawn
     ///@param size Size of the list rectangle
-    ///@param textPos Coordinates where the text begins to be drawn (relative to the origin of the rectangle)
     ///@param titleSize Float, text size of the title, defaults to 2.5
     ///@param textSize Float, text size of the list body, defaults to 1.0
     ///@param textColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
     ///@param backColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to black
     ///@param highlightColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
     list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
-     coord origin, coord size, coord textPos, float titleSize = 2.5, float textSize = 1.0, 
+     coord origin, coord size, float titleSize = 2.5, float textSize = 1.0, 
      int textColour = m5gfx::ili9341_colors::GREEN, int backColour = m5gfx::ili9341_colors::BLACK, 
      int highlightColour = m5gfx::ili9341_colors::GREEN, int border =5);
 
@@ -164,10 +163,16 @@ class list_Class{
     /// @brief Calculates the number of rows that fit 
     /// on the screen given the height of the text sprite
     /// and the text size
-    /// @param textSize Float, the text size multiplier used in M5GFX
+    /// @param titleSize Float, the text size multiplier used in M5GFX for the title
+    /// @param textSize Float, the text size multiplier used in M5GFX for the body
     /// @param height The height in pixels of the text sprite
     /// @return The number of rows that fit on the text sprite as an integer
-    int displayableRows(float textSize, int height);
+    int displayableRows(float titleSize, float textSize, int height);
+
+    /// @brief Calculates height in px of a line of text of given size 
+    /// @param textSize Float, the text size multiplier used in M5GFX
+    /// @return Height in px of the line
+    inline int rowSize(float textSize) {return floor(8*textSize);}
     
 };
 

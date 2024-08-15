@@ -122,13 +122,17 @@ void topBar_Class::updateIcons(){
 }
 
 //list_Class functions
-int list_Class::displayableRows(float textSize, int height){
-    int rowSize = floor(8*textSize);
-    return height/rowSize;
+
+int list_Class::displayableRows(float titleSize, float textSize, int height){
+    int titleRowSize = rowSize(titleSize);
+    int rowSize = list_Class::rowSize(textSize);
+    int rows = (height- titleRowSize)/rowSize;
+    ///log_i("Text size is %f, height is %i, rowSize is %i, %i rows fit", textSize, height, rowSize, rows);
+    return rows;
 }
 
 list_Class::list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
-coord origin, coord size, coord textPos, float titleSize, float textSize, 
+coord origin, coord size, float titleSize, float textSize, 
 int textColour, int backColour, int highlightColour, int border){
 
     this->title = title;
@@ -138,7 +142,6 @@ int textColour, int backColour, int highlightColour, int border){
 
     this->origin = origin;
     this->size = size;
-    this->textPos = textPos;
     this->titleSize = titleSize;
     this->textSize = textSize;
     this->textColour = textColour;
@@ -147,6 +150,8 @@ int textColour, int backColour, int highlightColour, int border){
 
     this->pos = 0;
     this->border = border;
+
+    this->rows = displayableRows(titleSize, textSize, size.y-2*this->border);
 
 }
 
@@ -168,23 +173,39 @@ void list_Class::draw(){
     
     //Create text sprite in RAM & Set text options
     M5Canvas text(&Display);
-    text.createSprite(this->size.x -2*this->border, this->size.y -2*this->border);
+    text.createSprite(this->size.x -2*this->border, this->size.x -2*this->border);
     text.setTextDatum(0);
     text.setTextColor(this->textColour);
     text.setTextSize(this->titleSize);
     text.println(title);
 
-    //Need aux function to dinamically determine how many rows fit on the rectangle from text size
-
     //For loop to draw the options (taking current pos into account)
     text.setTextSize(this->textSize);
-    for(int i = pos; i <this->elementNum; i++){
-        text.println(this->elementName[i]);
+    //text.setTextDatum(textdatum_t::top_centre);
+
+    int index = pos -2;
+    if (index < 0) index = 0; //If the selected pos is on 0,1,2 drawing starts @ index 0
+    else if (this->elementNum - index -1 < this->rows) index = this->elementNum-this->rows; //If the selected position is near the end, print enough to fill the rows
+    int count = 0;
+    for(int i = index; (i <this->elementNum && count < this->rows); i++){
+        if (i == pos) {
+            text.fillRoundRect(text.getCursorX(), text.getCursorY()-1, size.y -2*this->border, rowSize(this->textSize)+1, 5);
+            text.setTextColor(BLACK);
+            text.println(this->elementName[i]);
+            text.setTextColor(this->textColour);
+        } else text.println(this->elementName[i]);
+        count++;
     }
 
     text.pushSprite(origin.x +this->border, origin.y +this->border);
     text.deleteSprite();
     
+}
+
+void list_Class::scroll(int newPos) {
+    this->pos = newPos;
+    //Maybe change this latter if a redraw will be already triggered by the mainloop each x ms
+    this->draw();
 }
 
 //GUI functions
@@ -224,10 +245,6 @@ void GUI_Class::drawMainMenu(){
     //disp.fillRoundRect(50, 30, 140, 90, 3);
     //disp.setColor(GREEN);
     //disp.drawRoundRect(50, 30, 140, 90, 3);
-    String elements[] = {"Hola", "Holaa", "Holaaa", "Holaaaa", "Holaaaaa", "Holaaaaaa", "Holaaaaaaa"};
-    String *ref = elements;
-    list_Class test = list_Class(String("Test"), 7, ref,  &testHandler, coord(50,30), coord(140,90), coord(5, 5));
-    test.draw();
 }
 
 void GUI_Class::mainLoop(){
@@ -235,6 +252,14 @@ void GUI_Class::mainLoop(){
     for(;;){
 
         this->topBar.updateIcons();
+        String elements[] = {"Pos0", "Pos1", "Pos2", "Pos3", "Pos4", "Pos5", "Pos6", "Pos7", "Pos8", "Pos9"};
+        String *ref = elements;
+        list_Class test = list_Class(String("Titulo"), 10, ref,  &testHandler, coord(50,30), coord(140,90), 2.5, 2.5);
+        test.draw();
+        for(int i = 0; i < 10; i++){
+            delay(500);
+            test.scroll(i);
+        }
         delay(2000);
 
     }
