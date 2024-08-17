@@ -125,9 +125,8 @@ class list_Class{
     int textColour; ///< Text colour (title & body)
     int backColour; ///< Background color
     int highlightColour; ///< Highlight color for the currently selected option
-    int border; ///< Margin from the rectangle to the text (in all 4 sides)
+    coord border; ///< Margin from the rectangle to the text (in both directions)
     int rows; ///< Number of rows that can be displayed @ a time
-
 
     public:
     ///@brief Constructor for the list class
@@ -144,21 +143,20 @@ class list_Class{
     ///@param backColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to black
     ///@param highlightColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
     list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
-     coord origin, coord size, float titleSize = 2.5, float textSize = 1.0, 
+     coord origin, coord size, float titleSize = 2.5, float textSize = 1.5, 
      int textColour = m5gfx::ili9341_colors::GREEN, int backColour = m5gfx::ili9341_colors::BLACK, 
-     int highlightColour = m5gfx::ili9341_colors::GREEN, int border =5);
-
+     int highlightColour = m5gfx::ili9341_colors::GREEN, coord border = coord(6, 5));
     ///@brief Draws or redraws the list on the screen
     void draw();
-
     ///@brief Deletes the list instance 
     void del();
-
     ///@brief Scrolls the list to the given position
     ///@param newPos Position we want to scroll to
     void scroll(int newPos);
 
     private:
+    /// @brief Draws the options section with the current selection highlighted (called by draw & scroll)
+    void drawOptions();
 
     /// @brief Calculates the number of rows that fit 
     /// on the screen given the height of the text sprite
@@ -168,6 +166,12 @@ class list_Class{
     /// @param height The height in pixels of the text sprite
     /// @return The number of rows that fit on the text sprite as an integer
     int displayableRows(float titleSize, float textSize, int height);
+    /// @brief Calculates the number of rows that fit 
+    /// on the screen given the height of the text sprite
+    /// @param textSize Float, the text size multiplier used in M5GFX for the body
+    /// @param height The height in pixels of the text sprite
+    /// @return The number of rows that fit on the text sprite as an integer
+    int displayableRows(float textSize, int height);
 
     /// @brief Calculates height in px of a line of text of given size 
     /// @param textSize Float, the text size multiplier used in M5GFX

@@ -131,9 +131,16 @@ int list_Class::displayableRows(float titleSize, float textSize, int height){
     return rows;
 }
 
+int list_Class::displayableRows(float textSize, int height){
+    int rowSize = list_Class::rowSize(textSize);
+    int rows = height/rowSize;
+    ///log_i("Text size is %f, height is %i, rowSize is %i, %i rows fit", textSize, height, rowSize, rows);
+    return rows;
+}
+
 list_Class::list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
 coord origin, coord size, float titleSize, float textSize, 
-int textColour, int backColour, int highlightColour, int border){
+int textColour, int backColour, int highlightColour, coord border){
 
     this->title = title;
     this->elementNum = elementNum;
@@ -151,7 +158,7 @@ int textColour, int backColour, int highlightColour, int border){
     this->pos = 0;
     this->border = border;
 
-    this->rows = displayableRows(titleSize, textSize, size.y-2*this->border);
+    this->rows = displayableRows(textSize, size.y-3*this->border.y-rowSize(this->titleSize));
 
 }
 
@@ -171,41 +178,54 @@ void list_Class::draw(){
     background.pushSprite(this->origin.x, this->origin.y);
     background.deleteSprite();
     
+    //Create title sprite in RAM & Set text options
+    M5Canvas titleSprt(&Display);
+    titleSprt.createSprite(this->size.x -2*this->border.x, rowSize(this->titleSize));
+    titleSprt.setTextColor(this->textColour);
+    titleSprt.setTextSize(this->titleSize);
+    titleSprt.println(title);
+
+    //Push & delete the sprite
+    titleSprt.pushSprite(origin.x +this->border.x, origin.y +this->border.y);
+    titleSprt.deleteSprite();
+
+    //Draw options
+    this->drawOptions();
+    
+}
+
+void list_Class::drawOptions(){
     //Create text sprite in RAM & Set text options
     M5Canvas text(&Display);
-    text.createSprite(this->size.x -2*this->border, this->size.x -2*this->border);
-    text.setTextDatum(0);
+    text.createSprite(this->size.x -2*this->border.x, this->size.y -3*this->border.y -rowSize(this->titleSize));
     text.setTextColor(this->textColour);
-    text.setTextSize(this->titleSize);
-    text.println(title);
-
-    //For loop to draw the options (taking current pos into account)
     text.setTextSize(this->textSize);
-    //text.setTextDatum(textdatum_t::top_centre);
-
+    text.setTextDatum(1);
+    //For loop to draw the options (taking current pos into account)
     int index = pos -2;
     if (index < 0) index = 0; //If the selected pos is on 0,1,2 drawing starts @ index 0
     else if (this->elementNum - index -1 < this->rows) index = this->elementNum-this->rows; //If the selected position is near the end, print enough to fill the rows
     int count = 0;
     for(int i = index; (i <this->elementNum && count < this->rows); i++){
         if (i == pos) {
-            text.fillRoundRect(text.getCursorX(), text.getCursorY()-1, size.y -2*this->border, rowSize(this->textSize)+1, 5);
-            text.setTextColor(BLACK);
-            text.println(this->elementName[i]);
+            text.setColor(this->highlightColour);
+            text.fillRoundRect(text.getCursorX(), text.getCursorY()-1, size.x -2*this->border.x, rowSize(this->textSize)+1, 5);
+            text.setTextColor(this->backColour);
+            text.println(" "+this->elementName[i]);
             text.setTextColor(this->textColour);
         } else text.println(this->elementName[i]);
         count++;
     }
 
-    text.pushSprite(origin.x +this->border, origin.y +this->border);
+    text.pushSprite(origin.x +this->border.x, origin.y +2*this->border.y + rowSize(this->titleSize));
     text.deleteSprite();
-    
+
 }
 
 void list_Class::scroll(int newPos) {
     this->pos = newPos;
     //Maybe change this latter if a redraw will be already triggered by the mainloop each x ms
-    this->draw();
+    this->drawOptions();
 }
 
 //GUI functions
@@ -252,16 +272,19 @@ void GUI_Class::mainLoop(){
     for(;;){
 
         this->topBar.updateIcons();
-        String elements[] = {"Pos0", "Pos1", "Pos2", "Pos3", "Pos4", "Pos5", "Pos6", "Pos7", "Pos8", "Pos9"};
+        /*String elements[] = {"Pos0", "Pos1", "Pos2", "Pos3", "Pos4", "Pos5", "Pos6", "Pos7", "Pos8", "Pos9"};
         String *ref = elements;
-        list_Class test = list_Class(String("Titulo"), 10, ref,  &testHandler, coord(50,30), coord(140,90), 2.5, 2.5);
+        list_Class test = list_Class(String("Titulo"), 10, ref,  &testHandler, coord(50,30), coord(140,95));
         test.draw();
+
+        for(;;){
         for(int i = 0; i < 10; i++){
             delay(500);
             test.scroll(i);
         }
         delay(2000);
-
+        }*/
+       this->drawWifiMenu();
     }
 }
 
@@ -276,19 +299,29 @@ void GUI_Class::drawWifiMenu(){
     WiFi.scanNetworks(true, true);
     //Check if scan has finished
     while(WiFi.scanComplete() < 0) {
-        //Print something to show scan is in progress
+        //Print something to show scan is in progress, small windget?
         delay(20);
     }
 
     //Get number of available networks
     int availableNetworks = WiFi.scanComplete();
 
-    for(int i = 0; i < availableNetworks; i++){
-        //Print the ssids here in a scrollable format? 
+    String SSID[availableNetworks];
+    String* ptr = SSID;
+    uint8_t encript[availableNetworks];
+    int32_t RSSI[availableNetworks];
+    String BSSID[availableNetworks];
+    int32_t channel[availableNetworks];
+    for (int i= 0; i < availableNetworks; i++){
+        SSID[i] = WiFi.SSID(i);
+        encript[i] = WiFi.encryptionType(i);
+        RSSI[i] = WiFi.RSSI(i);
+        BSSID[i] = WiFi.BSSIDstr(i);
+        channel[i] = WiFi.channel(i);
     }
-
-    //Wait for input loop (to scroll up and down, exit via esc etc.) 
-    //Maybe attach interrupt to keyboard events?? In general
+    
+    list_Class wifiMenu(String("WiFi"), availableNetworks, ptr, &testHandler, coord(50,30), coord(140,95));
+    wifiMenu.draw();
 
     //When selected, must ask for password, connect etc
 
