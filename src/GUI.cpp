@@ -138,7 +138,7 @@ int list_Class::displayableRows(float textSize, int height){
     return rows;
 }
 
-list_Class::list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
+list_Class::list_Class(String title, int elementNum, String* elementName, void (*handler)(int, void*), 
 coord origin, coord size, float titleSize, float textSize, 
 int textColour, int backColour, int highlightColour, coord border){
 
@@ -254,7 +254,7 @@ void GUI_Class::begin(){
 
 }
 
-void testHandler(int a, int b) {return;};
+void testHandler(int a, void* b) {return;};
 
 void GUI_Class::drawMainMenu(){
     //Draws the main menu
