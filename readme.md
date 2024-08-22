@@ -11,8 +11,8 @@
     - [x] Top Bar
         - [x] Battery indicator
             - [x] Icon
-                -[x] Asset created
-                -[x] Code implementation
+                - [x] Asset created
+                - [x] Code implementation
             - [x] Percentage display
             - [ ] BUG: Disapearence when connected via USB
         - [ ] SD card indicator
