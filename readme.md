@@ -1,10 +1,10 @@
 <a id="readme-top"></a>
-<h3 align="center">AuroLab</h3>
-AuroLab is a personal project developed to turn the Cardputer into an usefull device for my daily work (with a nice UI that caters 100% to me).
+<h2 align="center">AuroLab</h3>
+<p align="center">AuroLab is a personal project developed to turn the Cardputer into an usefull device for my daily work (with a nice UI that caters 100% to me).</p>
 
-The firmware is currently being developed in C++, through PlatformIO for VS Code.
+<p align="center">The firmware is currently being developed in C++, through PlatformIO for VS Code.</p>
 
-Current feature Roadmap:
+<h3>Current feature Roadmap:</h3>
 
 <!-- ROADMAP -->
 ## Roadmap
