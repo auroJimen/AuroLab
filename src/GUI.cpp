@@ -200,7 +200,7 @@ void list_Class::drawOptions(){
     text.createSprite(this->size.x -2*this->border.x, this->size.y -3*this->border.y -rowSize(this->titleSize));
     text.setTextColor(this->textColour);
     text.setTextSize(this->textSize);
-    text.setTextDatum(1);
+    text.setCursor(0,1);
     //For loop to draw the options (taking current pos into account)
     int index = pos -2;
     if (index < 0) index = 0; //If the selected pos is on 0,1,2 drawing starts @ index 0
@@ -274,7 +274,7 @@ void GUI_Class::mainLoop(){
         this->topBar.updateIcons();
         /*String elements[] = {"Pos0", "Pos1", "Pos2", "Pos3", "Pos4", "Pos5", "Pos6", "Pos7", "Pos8", "Pos9"};
         String *ref = elements;
-        list_Class test = list_Class(String("Titulo"), 10, ref,  &testHandler, coord(50,30), coord(140,95));
+        list_Class test = list_Class(String("Titulo"), 10, ref,  &testHandler, coord(50,30), coord(140,96));
         test.draw();
 
         for(;;){
@@ -300,6 +300,8 @@ void GUI_Class::drawWifiMenu(){
     //Check if scan has finished
     while(WiFi.scanComplete() < 0) {
         //Print something to show scan is in progress, small windget?
+        //I want to draw a scanning animation if possible, should be left for future
+        //this->Display.drawRect(105, 53, 30, 29, GREEN);
         delay(20);
     }
 
@@ -320,7 +322,7 @@ void GUI_Class::drawWifiMenu(){
         channel[i] = WiFi.channel(i);
     }
     
-    list_Class wifiMenu(String("WiFi"), availableNetworks, ptr, &testHandler, coord(50,30), coord(140,95));
+    list_Class wifiMenu(String("WiFi"), availableNetworks, ptr, &testHandler, coord(50,30), coord(140,96));
     wifiMenu.draw();
 
     //When selected, must ask for password, connect etc
