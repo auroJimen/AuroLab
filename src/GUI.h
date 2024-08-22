@@ -39,12 +39,8 @@ class iconBat_Class {
 
     /// @brief Constructor of the Battery Icon class
     /// @param display The M5GFX display object
-    /// @param perc Battery percent
-    iconBat_Class(M5GFX& screen);
-    
-    /// @brief Constructor of the Battery Icon class
-    /// @param display  The M5GFX display object
-    iconBat_Class(M5GFX& screen, int perc);
+    /// @param perc Battery percent (def = 0)
+    iconBat_Class(M5GFX& screen, int perc = 0);
 
     /// @brief Updates battery level and percentage fetching value from the internal power chip (only updates if the percentage has changed)
     void updateState(void);
@@ -120,18 +116,17 @@ class list_Class{
     int elementNum; ///< Number of elements on the list
     String* elementName; ///< Names of the list elements
     int pos; ///< Current highlighted position on the list
-    void (*handler)(int, int); ///< Handler function to trigger events from selecting an element
+    void (*handler)(int, void*); ///< Handler function to trigger events from selecting an element
     M5GFX Display = M5Cardputer.Display; ///> Display object
-    coord origin;
-    coord size;
-    coord textPos;
-    float titleSize;
-    float textSize;
-    int textColour;
-    int backColour;
-    int highlightColour;
-    int border;
-
+    coord origin; ///< Coordinates where the list shall be drawn
+    coord size; ///< Absolute size of the list rectangle
+    float titleSize; ///< Text size multiplier for the title
+    float textSize; ///< Text size multiplier for the body
+    int textColour; ///< Text colour (title & body)
+    int backColour; ///< Background color
+    int highlightColour; ///< Highlight color for the currently selected option
+    coord border; ///< Margin from the rectangle to the text (in both directions)
+    int rows; ///< Number of rows that can be displayed @ a time
 
     public:
     ///@brief Constructor for the list class
@@ -142,27 +137,46 @@ class list_Class{
     /// its parameters are pos & elementNum
     ///@param origin Coordinates where the list rectangle will be drawn
     ///@param size Size of the list rectangle
-    ///@param textPos Coordinates where the text begins to be drawn (relative to the origin of the rectangle)
     ///@param titleSize Float, text size of the title, defaults to 2.5
     ///@param textSize Float, text size of the list body, defaults to 1.0
     ///@param textColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
     ///@param backColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to black
     ///@param highlightColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
-    list_Class(String title, int elementNum, String* elementName, void (*handler)(int, int), 
-     coord origin, coord size, coord textPos, float titleSize = 2.5, float textSize = 1.0, 
+    list_Class(String title, int elementNum, String* elementName, void (*handler)(int, void*), 
+     coord origin, coord size, float titleSize = 2.5, float textSize = 1.5, 
      int textColour = m5gfx::ili9341_colors::GREEN, int backColour = m5gfx::ili9341_colors::BLACK, 
-     int highlightColour = m5gfx::ili9341_colors::GREEN, int border =5);
-
+     int highlightColour = m5gfx::ili9341_colors::GREEN, coord border = coord(6, 5));
     ///@brief Draws or redraws the list on the screen
     void draw();
-
     ///@brief Deletes the list instance 
     void del();
-
     ///@brief Scrolls the list to the given position
     ///@param newPos Position we want to scroll to
     void scroll(int newPos);
 
+    private:
+    /// @brief Draws the options section with the current selection highlighted (called by draw & scroll)
+    void drawOptions();
+
+    /// @brief Calculates the number of rows that fit 
+    /// on the screen given the height of the text sprite
+    /// and the text size
+    /// @param titleSize Float, the text size multiplier used in M5GFX for the title
+    /// @param textSize Float, the text size multiplier used in M5GFX for the body
+    /// @param height The height in pixels of the text sprite
+    /// @return The number of rows that fit on the text sprite as an integer
+    int displayableRows(float titleSize, float textSize, int height);
+    /// @brief Calculates the number of rows that fit 
+    /// on the screen given the height of the text sprite
+    /// @param textSize Float, the text size multiplier used in M5GFX for the body
+    /// @param height The height in pixels of the text sprite
+    /// @return The number of rows that fit on the text sprite as an integer
+    int displayableRows(float textSize, int height);
+
+    /// @brief Calculates height in px of a line of text of given size 
+    /// @param textSize Float, the text size multiplier used in M5GFX
+    /// @return Height in px of the line
+    inline int rowSize(float textSize) {return floor(8*textSize);}
     
 };
 
@@ -185,6 +199,12 @@ class GUI_Class {
 
     /// @brief Draws the wifi menu to scan & connect to networks
     void drawWifiMenu();
+
+    /// @brief Handler for the option selected event, in the wifi menu case it must draw a
+    /// screen with all the selected network info & allow to choose wether to connect or go back to the previous menu
+    /// @param pos The selected position at the time of the event, int
+    /// @param  b A void pointer to whatever object we may want to pass as a reference to the handler
+    void wifiMenuHandler(int pos, void* b);
 
     /// @brief Mainloop for the GUI, must be run on its own thread to prevent interference w/ backend. Handles drawing UI elements, inputs, etc. through an endless loop.
     void mainLoop();

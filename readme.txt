@@ -1,1 +1,0 @@
-AuroLab firmware for the Cardputer platform
