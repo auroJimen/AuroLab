@@ -9,7 +9,7 @@ Current feature Roadmap:
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Main menu
+- Main menu
     - [x] Top Bar
         - [x] Battery indicator
             - [x] Icon
@@ -41,7 +41,7 @@ Current feature Roadmap:
                 - [x] Code implementation
             - [x] Display available networks via list
             - [ ] Connect
-- [] General GUI/IO
+- General GUI/IO
     - [ ] Interactive list class
         - [x] Create & display scrollable class
         - [x] Scroll event
