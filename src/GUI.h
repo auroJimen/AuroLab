@@ -109,41 +109,6 @@ class topBar_Class{
 
 };
 
-/// @brief Text input box class to construct menus
-class textBox_Class{
-    private:
-    bool inputEnabled; ///< Wether inputing is currently enabled
-    String defText; ///< Text displayed on the text box when its first created
-    String* text; ///< Pointer to the string where the text will be shaved when a enter event is triggered
-    coord pos; ///< Where the text box should be drawn
-    coord size; ///< Size of the text box
-    float textSize; ///< Text size multiplier for the body
-    int textColour; ///< Text colour
-    int backColour; ///< Background colour
-    int cursorColour; ///< Cursor colour
-    public:
-    /// @brief Constructor for the textBox class
-    /// @param pos Coord position where the textBox will be drawn
-    /// @param size Coord size of the textBox
-    /// @param text Pointer to a string where the text will be saved when an enter event is triggered
-    /// @param inputEnabled Sets wether inputing to the box is currently enabled, def to false
-    /// @param defText Text displayed on the box when it's created, def to ""
-    /// @param TextSize Float text size multiplayer, def to 1.5
-    /// @param textColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
-    /// @param backColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to black
-    /// @param cursorColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
-    textBox_Class(coord pos, coord size, String* text, bool inputEnabled=false, String defText="", 
-     float TextSize=1.5, int textColour = m5gfx::ili9341_colors::GREEN,
-     int backColour = m5gfx::ili9341_colors::BLACK, int cursorColour = m5gfx::ili9341_colors::GREEN);
-    /// @brief Enables the textInput and launches a keyboard listener if it isn't already running
-    void enableTextInput();
-    /// @brief Disables textInput and kills the keyboard listener process
-    void disableTextInput();
-    /// @brief Returns the value of enableTextInput
-    /// @return Bool, enableTextInput
-    bool getEnableTextInput();
-};
-
 ///@brief Scrollable, selectable list class to construct menus
 class list_Class{
     private:
