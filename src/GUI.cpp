@@ -284,7 +284,7 @@ void GUI_Class::mainLoop(){
         }
         delay(2000);
         }*/
-       this->drawWifiMenu();
+        //this->drawWifiMenu();
     }
 }
 
