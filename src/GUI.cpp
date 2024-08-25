@@ -223,14 +223,39 @@ void list_Class::drawOptions(){
 }
 
 void list_Class::scroll(int newPos) {
-    this->pos = newPos;
-    //Maybe change this latter if a redraw will be already triggered by the mainloop each x ms
-    this->drawOptions();
+    if (newPos > 0 && newPos < this->elementNum) {
+        this->pos = newPos;
+        //Maybe change this latter if a redraw will be already triggered by the mainloop each x ms
+        this->drawOptions();
+    }
+}
+
+void list_Class::scrollDown(){
+    this->scroll(this->pos+1);
+}
+
+void list_Class::scrollUp(){
+    this->scroll(this->pos-1);
 }
 
 //GUI functions
 
 void GUI_Class::begin(){
+
+    //Launch gui execution thread
+    BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->task, 0); //Creates thread for the GUI code on core 0
+    if (gui != pdPASS) log_i("ERR");
+    Buffer.begin();                      //Initialises Keyboard buffer in tis separate execution thread
+
+}
+
+void GUIloop(void* parameter){
+    //This code runs on a separate core
+    GUI.mainLoop();
+
+}
+
+void GUI_Class::splashScreen(){
 
     this->Display.setBaseColor(BLACK);
     this->Display.clearDisplay(BLACK);
@@ -249,9 +274,6 @@ void GUI_Class::begin(){
     delay(200);
     this->Display.clear();
 
-    this->topBar = topBar_Class();
-
-
 }
 
 void testHandler(int a, void* b) {return;};
@@ -268,6 +290,12 @@ void GUI_Class::drawMainMenu(){
 }
 
 void GUI_Class::mainLoop(){
+    //Draw splashscreen
+    this->splashScreen();
+    //Create topBar
+    this->topBar = topBar_Class();
+    //Draw main manu
+    this->drawMainMenu();
     //MainLoop for the GUI, handles drawing the UI elements, reacts to inputs etc.
     for(;;){
 
@@ -284,7 +312,7 @@ void GUI_Class::mainLoop(){
         }
         delay(2000);
         }*/
-        //this->drawWifiMenu();
+        this->drawWifiMenu();
     }
 }
 
@@ -325,8 +353,33 @@ void GUI_Class::drawWifiMenu(){
     list_Class wifiMenu(String("WiFi"), availableNetworks, ptr, &testHandler, coord(50,30), coord(140,96));
     wifiMenu.draw();
 
+    //Wait for user input loop:
+    Buffer.keyboardEnable = true;
+    for(;;){
+        //Check if any relevant key has been pressed
+        /*if (buffer.length() == 1) {
+            char key = buffer[0];
+            switch(key){
+                case '.':
+                case '/': wifiMenu.scrollDown();
+                          break;
+                case ';':
+                case ',': wifiMenu.scrollUp();
+                          break;
+                case '`': keyBoardEnable = false;
+                          //wifiMenu.del();
+                          break;
+                
+            }
+            buffer.clear(); //Reset buffer
+        }*/
+
+
+
+    }
+
     //When selected, must ask for password, connect etc
 
-    //B4 finishing the function a redraw must be called to get rid of the wifi UI
+    //B4 finishing the function a redraw must be called to get rid of the wifi UI, and delete the 
 
 }

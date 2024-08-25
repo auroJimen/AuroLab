@@ -1,9 +1,10 @@
 #include <Arduino.h>
 #include <M5Cardputer.h>
 #include <M5GFX.h>
+#include <WiFi.h>
 #include "sprites.h"
 #include "menuBackground.h"
-#include <WiFi.h>
+#include "keyboardTask.h"
 
 //In the future put here the rest of the object instances to control all periferals
 
@@ -183,11 +184,15 @@ class list_Class{
      int highlightColour = m5gfx::ili9341_colors::GREEN, coord border = coord(6, 5));
     ///@brief Draws or redraws the list on the screen
     void draw();
-    ///@brief Deletes the list instance 
+    ///@brief Deletes the list instance UNIMPLEMENTED
     void del();
-    ///@brief Scrolls the list to the given position
+    ///@brief Scrolls the list to the given position if it's a valid one
     ///@param newPos Position we want to scroll to
     void scroll(int newPos);
+    /// @brief Scrolls down one position
+    void scrollDown();
+    /// @brief Scrolls up one positon
+    void scrollUp();
 
     private:
     /// @brief Draws the options section with the current selection highlighted (called by draw & scroll)
@@ -226,8 +231,11 @@ class GUI_Class {
     topBar_Class topBar;
     public:
     TaskHandle_t task;
-    /// @brief Starts up the GUI, showing the splashscreen
+    /// @brief Starts up the GUI, laubnching it's execution thread and executing mainLoop()
     void begin();
+
+    /// @brief Draws the splashscreen
+    void splashScreen();
 
     /// @brief Draws the main menu
     void drawMainMenu();
@@ -249,6 +257,11 @@ class GUI_Class {
 
 };
 
+/// @brief Task handler function, isolated since it mustn't be a class function
+/// @param parameter Standar parameter for handler functions, a nullptr is passed if it is not needed
+void GUIloop(void* parameter);
+
 //Global GUI instance 
 extern GUI_Class GUI;
-
+//Global variables related to keyboard
+extern buffer_Class Buffer;
