@@ -2,7 +2,7 @@
 #include <M5Cardputer.h>
 //Functions that handle the independent keyboard ex thread & its communication with other threads
 enum mode {text, nav};
-enum navSignal {ESC, DEL, UP, DOWN, LEFT, RIGHT,ENTER, NP};
+enum navSignal {ESC, DEL, UP, DOWN, LEFT, RIGHT,ENTER, OPT, NP};
 /// @brief A struct with all needed elements & functions to create & control a 
 ///50 character buffer htat serves as the connection between the leyboard thread
 ///& the rest of the system

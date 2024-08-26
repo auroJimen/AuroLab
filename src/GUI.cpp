@@ -342,11 +342,15 @@ void GUI_Class::drawWifiMenu(){
     loadingAnim.pushImage(0,0,50,50,compassIcon);
     //Check if scan has finished
     float i = 0.0;
+    this->Display.setCursor(70,100);
+    this->Display.setTextSize(1.5);
+    this->Display.print("Scanning...");
     while(WiFi.scanComplete() < 0) {
         loadingAnim.pushRotatedWithAA(i);
         i+= 5.0;
         delay(20);
     }
+    loadingAnim.deleteSprite();
 
     //Get number of available networks
     int availableNetworks = WiFi.scanComplete();
@@ -389,8 +393,11 @@ void GUI_Class::drawWifiMenu(){
                                         log_i("Scroll down event");
                                         wifiMenu.scrollDown();
                                         break;
-                case navSignal::ENTER:  //Option selected event must be triggered UNIMPLEMENTED
-                                    break;
+                case navSignal::ENTER:  //Element selected event must be triggered UNIMPLEMENTED
+                                        break;
+                case navSignal::OPT:    //Option event
+                                        log_i("Option event");
+                                        //wifiMenu.option();
             }
             Buffer.signal = navSignal::NP; //Clear signal flag
             Buffer.keyboardEnable = true; //Reactivate after

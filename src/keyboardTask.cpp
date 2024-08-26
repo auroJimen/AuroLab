@@ -161,8 +161,11 @@ void keyBoardLoop(void* parameters) {
         } else if (status.enter) {
             Buffer.signal = navSignal::ENTER;
             log_i("ENTER signal");
+        } else if (status.opt){
+            Buffer.signal = navSignal::OPT;
+            log_i("OPT signal");
         } else if (status.alt||status.ctrl||status.del||status.fn||
-                 status.opt||status.shift||status.space) Buffer.signal = navSignal::NP;
+                  status.shift||status.space) Buffer.signal = navSignal::NP;
         else log_i("Keboard release");
         log_i("Nav signal: %i\n", Buffer.signal);
     }
