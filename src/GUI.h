@@ -3,6 +3,7 @@
 #include <M5GFX.h>
 #include <WiFi.h>
 #include "sprites.h"
+#include "compassIcon.h"
 #include "menuBackground.h"
 #include "keyboardTask.h"
 
@@ -193,7 +194,9 @@ class list_Class{
     void scrollDown();
     /// @brief Scrolls up one positon
     void scrollUp();
-    /// @Handles the element selected event triggered by ENTER navSignal
+    /// @brief  Handles the element options event trigerred by OPTN navSignal
+    void optnEvent();
+    /// @brief Handles the element selected event triggered by ENTER navSignal
     void enterEvent();
 
     private:
@@ -214,11 +217,22 @@ class list_Class{
     /// @param height The height in pixels of the text sprite
     /// @return The number of rows that fit on the text sprite as an integer
     int displayableRows(float textSize, int height);
+    /// @brief How many rows of text will the given string takes up
+    /// @param textLen length of a string
+    /// @param textSize Float, the text size multiplier used in M5GFX
+    /// @param spriteWidth Width of the sprite in px
+    /// @return Int,l number of rows the string takes up
+    int rowsOccupied(int textLen, float textSize, int spriteWidth);
 
     /// @brief Calculates height in px of a line of text of given size 
     /// @param textSize Float, the text size multiplier used in M5GFX
     /// @return Height in px of the line
     inline int rowSize(float textSize) {return floor(8*textSize);}
+    /// @brief Calculates length in px of a line of text of given size & character length
+    /// @param textSize Float, the text size multiplier used in M5GFX
+    /// @param length Length of the string in characters
+    /// @return Length of the string in pixels
+    inline int rowWidth(float textSize, int length) {return floor(length*6*textSize);}
     
 };
 

@@ -36,7 +36,7 @@
         - [ ] Icon asset created
         - [ ] Wifi selection menu
             - [ ] Scanning
-                - [ ] Scanning animation asset created
+                - [x] Scanning animation asset created
                 - [x] Code implementation
             - [x] Display available networks via list
                 - [ ] Display wifi info when OPTN is presed

@@ -131,6 +131,11 @@ int list_Class::displayableRows(float titleSize, float textSize, int height){
     return rows;
 }
 
+int list_Class::rowsOccupied(int textLen, float textSize, int spriteWidth){
+    int pxWidth = list_Class::rowWidth(textSize, textLen);
+    return ceil((float)pxWidth/(float)spriteWidth);
+}
+
 int list_Class::displayableRows(float textSize, int height){
     int rowSize = list_Class::rowSize(textSize);
     int rows = height/rowSize;
@@ -209,7 +214,8 @@ void list_Class::drawOptions(){
     for(int i = index; (i <this->elementNum && count < this->rows); i++){
         if (i == pos) {
             text.setColor(this->highlightColour);
-            text.fillRoundRect(text.getCursorX(), text.getCursorY()-1, size.x -2*this->border.x, rowSize(this->textSize)+1, 5);
+            int rows = list_Class::rowsOccupied(this->elementName[i].length() +1, this->textSize, this->size.x -2*this->border.x);
+            text.fillRoundRect(text.getCursorX()-1, text.getCursorY()-2, size.x -2*this->border.x, rows*rowSize(this->textSize)+1, 5);
             text.setTextColor(this->backColour);
             text.println(" "+this->elementName[i]);
             text.setTextColor(this->textColour);
@@ -236,6 +242,12 @@ void list_Class::scrollDown(){
 
 void list_Class::scrollUp(){
     this->scroll(this->pos-1);
+}
+
+void list_Class::optnEvent(){
+
+    //Create non scrollable daughter list, need to find a way to kill it
+
 }
 
 //GUI functions
@@ -325,11 +337,14 @@ void GUI_Class::drawWifiMenu(){
 
     //Starts async scan
     WiFi.scanNetworks(true, true);
+    M5Canvas loadingAnim(&Display);
+    loadingAnim.createSprite(50,50);
+    loadingAnim.pushImage(0,0,50,50,compassIcon);
     //Check if scan has finished
+    float i = 0.0;
     while(WiFi.scanComplete() < 0) {
-        //Print something to show scan is in progress, small windget?
-        //I want to draw a scanning animation if possible, should be left for future
-        //this->Display.drawRect(105, 53, 30, 29, GREEN);
+        loadingAnim.pushRotatedWithAA(i);
+        i+= 5.0;
         delay(20);
     }
 
