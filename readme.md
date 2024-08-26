@@ -28,6 +28,7 @@
         - [ ] Telnet support
         - [ ] UART support through grove?
     - [ ] I2C logger app
+    - [ ] Bi (Vi clone)
     - [ ] Simple IR remote app
     - [ ] RFID app?
     - [ ] Car data logger, fuel efficiency?
@@ -38,18 +39,25 @@
                 - [ ] Scanning animation asset created
                 - [x] Code implementation
             - [x] Display available networks via list
+                - [ ] Display wifi info when OPTN is presed
             - [ ] Connect
 - General GUI/IO
     - [ ] Interactive list class
         - [x] Create & display scrollable class
         - [x] Scroll event
             - [x] Event implemented in code
-            - [ ] Trigger event from keyboard input
+            - [x] Trigger event from keyboard input
+                - Scroll bugs when scrolling to last & werid disappearences
         - [ ] Select event
             - [ ] Event implemented in code
                 - [x] Event handler function assigned
             - [ ] Trigger event from keyboard
-    - [ ] Input via keyboard & G0 button
-        - Work in progress
+    - [x] Input via keyboard & G0 button
+        - [ ] G0 button support
+        - [x] Asincronous keyboard buffer
+            - [x] Customizable size
+            - [x] Comunication with other execution threads
+            - [x] Text entry mode with support for control characters
+            - [x] Navigtion mode for menus
 - Future objectives:
     - [ ] Port to non M5 alternative libraries

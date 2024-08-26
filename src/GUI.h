@@ -193,6 +193,8 @@ class list_Class{
     void scrollDown();
     /// @brief Scrolls up one positon
     void scrollUp();
+    /// @Handles the element selected event triggered by ENTER navSignal
+    void enterEvent();
 
     private:
     /// @brief Draws the options section with the current selection highlighted (called by draw & scroll)

@@ -223,7 +223,7 @@ void list_Class::drawOptions(){
 }
 
 void list_Class::scroll(int newPos) {
-    if (newPos > 0 && newPos < this->elementNum) {
+    if (newPos >= 0 && newPos < this->elementNum) {
         this->pos = newPos;
         //Maybe change this latter if a redraw will be already triggered by the mainloop each x ms
         this->drawOptions();
@@ -245,7 +245,7 @@ void GUI_Class::begin(){
     //Launch gui execution thread
     BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->task, 0); //Creates thread for the GUI code on core 0
     if (gui != pdPASS) log_i("ERR");
-    Buffer.begin(true, mode::text);                      //Initialises Keyboard buffer in tis separate execution thread
+    Buffer.begin();                      //Initialises Keyboard buffer in tis separate execution thread
 
 }
 
@@ -343,7 +343,7 @@ void GUI_Class::drawWifiMenu(){
     String BSSID[availableNetworks];
     int32_t channel[availableNetworks];
     for (int i= 0; i < availableNetworks; i++){
-        SSID[i] = WiFi.SSID(i);
+        SSID[i] = (WiFi.SSID(i) == "") ? "Hidden_network" : WiFi.SSID(i);
         encript[i] = WiFi.encryptionType(i);
         RSSI[i] = WiFi.RSSI(i);
         BSSID[i] = WiFi.BSSIDstr(i);
@@ -356,26 +356,31 @@ void GUI_Class::drawWifiMenu(){
     //Wait for user input loop:
     Buffer.keyboardEnable = true;
     for(;;){
-        //Check if any relevant key has been pressed
-        /*if (buffer.length() == 1) {
-            char key = buffer[0];
-            switch(key){
-                case '.':
-                case '/': wifiMenu.scrollDown();
-                          break;
-                case ';':
-                case ',': wifiMenu.scrollUp();
-                          break;
-                case '`': keyBoardEnable = false;
-                          //wifiMenu.del();
-                          break;
-                
+        //Nav signal listener
+        vTaskDelay(10 / portTICK_PERIOD_MS);
+        if (Buffer.signal != navSignal::NP) {
+            log_i("Nav signal detected");
+            Buffer.keyboardEnable = false; //Deactivate keyboard during execution
+            switch (Buffer.signal){
+                case navSignal::ESC:    //Close the menu, UNIMPLEMENTED
+                                        break;
+                case navSignal::UP:
+                case navSignal::LEFT:   //Scroll up
+                                        log_i("Scroll up event");
+                                        wifiMenu.scrollUp();
+                                        break;
+                case navSignal::DOWN:   
+                case navSignal::RIGHT:  //Scroll down
+                                        log_i("Scroll down event");
+                                        wifiMenu.scrollDown();
+                                        break;
+                case navSignal::ENTER:  //Option selected event must be triggered UNIMPLEMENTED
+                                    break;
             }
-            buffer.clear(); //Reset buffer
-        }*/
-
-
-
+            Buffer.signal = navSignal::NP; //Clear signal flag
+            Buffer.keyboardEnable = true; //Reactivate after
+            log_i("Keyboard input reactivated");
+        }
     }
 
     //When selected, must ask for password, connect etc

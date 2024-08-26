@@ -18,7 +18,7 @@ buffer_Class::buffer_Class(int size){
 }
 
 void buffer_Class::begin(bool keyboardEnable, mode Mode){
-    BaseType_t key = xTaskCreatePinnedToCore(keyBoardLoop, "Keyboard thread", 10000, NULL, 1, &this->keyboardTask, 1); //Creates thread for the keyboard on core 1
+    BaseType_t key = xTaskCreatePinnedToCore(keyBoardLoop, "Keyboard thread", 10000, NULL, 0, &this->keyboardTask, 0); //Creates thread for the keyboard on core 0
     if (key != pdPASS) log_i("ERR");
     else log_i("Keyboard task created");
     this->keyboardEnable = keyboardEnable;
@@ -89,12 +89,10 @@ void keyBoardLoop(void* parameters) {
   //be executed, succesive calls to resuming won't affect an already resumed task, & the loop suspends the task
   //once the round is finished
   for(;;){
-
     Keyboard_Class::KeysState status = M5Cardputer.Keyboard.keysState();
     //Handle keyboard presses
     if (Buffer.Mode == mode::text) {
         //We are in text entry mode
-        log_i("Keyboard pressed, text entry mode, word is %i char", status.word.size());
         if (Buffer.cursor == Buffer.getBufferSize()) Buffer.clearBuffer(); //Check if the buffer is full
         
         if (status.word.size() == 0) {
@@ -128,7 +126,8 @@ void keyBoardLoop(void* parameters) {
                     Buffer.getData()[Buffer.cursor] = '\n';
                     Buffer.cursor++;
                 }
-            } else Buffer.signal = navSignal::NP;
+            } else if (status.alt || status.ctrl || status.fn || status.opt || status.shift || status.space) Buffer.signal = navSignal::NP;
+            else log_i("Keyboard release");
 
             //Maybe implement opt, alt & ctrl? for text mode? 
             //Opt should bring out the conf menu for the programme,
@@ -138,6 +137,7 @@ void keyBoardLoop(void* parameters) {
             //Other possible idea is fn+shift = BLOCK MAYUS, 
             //only if i find an elegant way to show it is active to the user
         } else {
+            log_i("Keyboard pressed, text entry mode, word is %i char", status.word.size());
             for(int i= 0; i< status.word.size(); i++){
                 if (status.fn) {
                     //Nav controls for text editing
@@ -154,12 +154,16 @@ void keyBoardLoop(void* parameters) {
         log_i("Nav signal: %i\n", Buffer.signal);
     } else {
         //we are in navigation mode
-        log_i("Keyboard pressed, menu navigation mode");
         if (status.word.size() ==1) {
+            log_i("Keyboard pressed, menu navigation mode");
             char aux = status.word[0];
             Buffer.signal = navSwitch(aux);
-        } else if (status.enter) Buffer.signal = navSignal::ENTER;
-        else Buffer.signal = navSignal::NP;
+        } else if (status.enter) {
+            Buffer.signal = navSignal::ENTER;
+            log_i("ENTER signal");
+        } else if (status.alt||status.ctrl||status.del||status.fn||
+                 status.opt||status.shift||status.space) Buffer.signal = navSignal::NP;
+        else log_i("Keboard release");
         log_i("Nav signal: %i\n", Buffer.signal);
     }
     //Suspend itself until it's called again
