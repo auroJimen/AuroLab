@@ -94,21 +94,19 @@ void keyBoardLoop(void* parameters) {
     //Handle keyboard presses
     if (Buffer.Mode == mode::text) {
         //We are in text entry mode
-        log_i("Keyboard pressed, text entry mode");
-        //Special cases
-        if (status.del) {
+        log_i("Keyboard pressed, text entry mode, word is %i char", status.word.size());
+        if (Buffer.cursor == Buffer.getBufferSize()) Buffer.clearBuffer(); //Check if the buffer is full
+        
+        if (status.word.size() == 0) {
+            //Special cases
+            if (status.del) {
                 if (status.fn) {
                     //supr / del
                     log_i("Supr pressed");
-                    for(int i = Buffer.cursor+1; i < Buffer.getBufferSize(); i++){
-                        if (i == 49) Buffer.getData()[i] = ' ';
-                        else {
+                    for(int i = Buffer.cursor+1; i < Buffer.getBufferSize() -1; i++){
                             Buffer.getData()[i] = Buffer.getData()[i+1];
-                        }
                     }
-
-                }
-                else {
+                } else {
                     //Backspace
                     log_i("Backspace pressed");
                     if (Buffer.cursor != 0) {
@@ -117,29 +115,52 @@ void keyBoardLoop(void* parameters) {
                     }
                     
                 }
-        }
-        for(int i= 0; i< status.word.size(); i++){
-            if (Buffer.cursor == Buffer.getBufferSize()) Buffer.clearBuffer();
-            if (status.fn) {
-                //Nav controls for text editing
-                char aux = status.word[i];
-                Buffer.signal = navSwitch(aux);
-            } else {
-                //Normal keys 
-                Buffer.getData()[Buffer.cursor + i] = status.word[i];
+            } else if (status.tab){
+                //Tab single press, insert \t
+                log_i("Tab pressed");
+                Buffer.getData()[Buffer.cursor] = '\t';
                 Buffer.cursor++;
+            } else if (status.enter){
+                if (status.fn) Buffer.signal = navSignal::ENTER;
+                else {
+                    //Enter single press, insert \n
+                    log_i("Enter pressed");
+                    Buffer.getData()[Buffer.cursor] = '\n';
+                    Buffer.cursor++;
+                }
+            } else Buffer.signal = navSignal::NP;
+
+            //Maybe implement opt, alt & ctrl? for text mode? 
+            //Opt should bring out the conf menu for the programme,
+            //Alt & ctrl should be used in some way for keyboard shortcuts, but they should be programme specific,
+            //I'm not sure how i wanna implement that 
+            //(maybe add a possible navSwicht style func given when creating the buffer?)
+            //Other possible idea is fn+shift = BLOCK MAYUS, 
+            //only if i find an elegant way to show it is active to the user
+        } else {
+            for(int i= 0; i< status.word.size(); i++){
+                if (status.fn) {
+                    //Nav controls for text editing
+                    char aux = status.word[i];
+                    Buffer.signal = navSwitch(aux);
+                } else {
+                    //Normal keys 
+                    Buffer.getData()[Buffer.cursor] = status.word[i];
+                    Buffer.cursor++;
+                }
             }
         }
-        log_i("%s\n", Buffer.getDataStr().c_str());
-    
+        log_i("Buffer: \"%s\"\n", Buffer.getDataStr().c_str());
+        log_i("Nav signal: %i\n", Buffer.signal);
     } else {
         //we are in navigation mode
         log_i("Keyboard pressed, menu navigation mode");
         if (status.word.size() ==1) {
             char aux = status.word[0];
             Buffer.signal = navSwitch(aux);
-            log_i("Nav signal: %i\n", Buffer.signal);
-        }
+        } else if (status.enter) Buffer.signal = navSignal::ENTER;
+        else Buffer.signal = navSignal::NP;
+        log_i("Nav signal: %i\n", Buffer.signal);
     }
     //Suspend itself until it's called again
     vTaskSuspend(NULL);

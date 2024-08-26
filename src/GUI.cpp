@@ -245,7 +245,7 @@ void GUI_Class::begin(){
     //Launch gui execution thread
     BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->task, 0); //Creates thread for the GUI code on core 0
     if (gui != pdPASS) log_i("ERR");
-    Buffer.begin();                      //Initialises Keyboard buffer in tis separate execution thread
+    Buffer.begin(true, mode::text);                      //Initialises Keyboard buffer in tis separate execution thread
 
 }
 
