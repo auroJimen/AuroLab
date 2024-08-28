@@ -148,12 +148,11 @@ class textBox_Class{
 
 ///@brief Scrollable, selectable list class to construct menus
 class list_Class{
-    private:
+    protected: //So that daughter classes can access them
     String title; ///< Title of the list
     int elementNum; ///< Number of elements on the list
     String* elementName; ///< Names of the list elements
     int pos; ///< Current highlighted position on the list
-    void (*handler)(int, void*); ///< Handler function to trigger events from selecting an element
     M5GFX Display = M5Cardputer.Display; ///> Display object
     coord origin; ///< Coordinates where the list shall be drawn
     coord size; ///< Absolute size of the list rectangle
@@ -170,8 +169,6 @@ class list_Class{
     ///@param title String, list title
     ///@param elementNum Int, number of elements on the list
     ///@param elementName Pointer to the string array that holds the names of the list elements
-    ///@param handler Function that triggers the proper event when an element is selected,
-    /// its parameters are pos & elementNum
     ///@param origin Coordinates where the list rectangle will be drawn
     ///@param size Size of the list rectangle
     ///@param titleSize Float, text size of the title, defaults to 2.5
@@ -179,7 +176,7 @@ class list_Class{
     ///@param textColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
     ///@param backColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to black
     ///@param highlightColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
-    list_Class(String title, int elementNum, String* elementName, void (*handler)(int, void*), 
+    list_Class(String title, int elementNum, String* elementName,
      coord origin, coord size, float titleSize = 2.5, float textSize = 1.5, 
      int textColour = m5gfx::ili9341_colors::GREEN, int backColour = m5gfx::ili9341_colors::BLACK, 
      int highlightColour = m5gfx::ili9341_colors::GREEN, coord border = coord(6, 5));
@@ -194,12 +191,10 @@ class list_Class{
     void scrollDown();
     /// @brief Scrolls up one positon
     void scrollUp();
-    /// @brief  Handles the element options event trigerred by OPTN navSignal
-    void optnEvent();
     /// @brief Handles the element selected event triggered by ENTER navSignal
     void enterEvent();
 
-    private:
+    protected:
     /// @brief Draws the options section with the current selection highlighted (called by draw & scroll)
     void drawOptions();
 
@@ -231,9 +226,31 @@ class list_Class{
     /// @brief Calculates length in px of a line of text of given size & character length
     /// @param textSize Float, the text size multiplier used in M5GFX
     /// @param length Length of the string in characters
-    /// @return Length of the string in pixels
+    /// @return Length of the string in pixel
     inline int rowWidth(float textSize, int length) {return floor(length*6*textSize);}
     
+};
+
+/// @brief Class for displaying the wifi connection menu, inherits from the list_Class & adds specific functionality
+class wifiMenu_Class : public list_Class{
+    private:
+    uint8_t* encript;
+    int32_t* RSSI;
+    String* BSSID;
+    int32_t* channel;
+    public:
+    /// @brief Constructor for the wifi menu class, creates an empty list with the correct name, size & handlers
+    /// @param optHandler Handler for the option event
+    /// @param enterHandler Handler for the option selected event;
+    wifiMenu_Class();
+    /// @brief Scans for available networks & initialaizes them as options
+    void scan();
+    /// @brief The app loop for the scan menu, draws to the screen, listens to input...
+    void appLoop();
+    /// @brief  Handles the element options event trigerred by OPTN navSignal
+    void optnEvent();
+    /// @brief Frees up the dinamically allocated memory
+    void del();
 };
 
 /// @brief A global instance of this class controls all the GUI elements and provides the

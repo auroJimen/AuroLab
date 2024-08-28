@@ -2,7 +2,7 @@
 #include <M5Cardputer.h>
 //Functions that handle the independent keyboard ex thread & its communication with other threads
 enum mode {text, nav};
-enum navSignal {ESC, DEL, UP, DOWN, LEFT, RIGHT,ENTER, OPT, NP};
+enum navSignal {ESC, DEL, UP, DOWN, LEFT, RIGHT,ENTER, OPT, CTRL, NP};
 /// @brief A struct with all needed elements & functions to create & control a 
 ///50 character buffer htat serves as the connection between the leyboard thread
 ///& the rest of the system
@@ -49,7 +49,7 @@ class buffer_Class {
   int del(int cursor);
   /// @brief Clears the buffer & moves the cursor to the first pos
   void clearBuffer();
-  /// @brief Kills the current Keyboard task safely
+  /// @brief Kills the current Keyboard task safely & frees up memory
   void killTask();
 };
 

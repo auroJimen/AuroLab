@@ -4,6 +4,8 @@
 #include <M5GFX.h>
 #include "GUI.h"
 
+#define LOG_ENABLE false
+
 //Global variables
 GUI_Class GUI;
 buffer_Class Buffer;
@@ -20,8 +22,8 @@ void setup() {
 }
 
 void loop() {
-  // Debuggin what's running in which core
-  if (CORE_DEBUG_LEVEL >= 5){
+  if (CORE_DEBUG_LEVEL >= 5 && LOG_ENABLE){
+    // Debuggin what's running in which core
     TaskHandle_t  core0 = xTaskGetCurrentTaskHandleForCPU(0);
     int pri0 = uxTaskPriorityGet(core0);
     String core0Task = pcTaskGetName(core0);
