@@ -1,0 +1,799 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classlist___class" kind="class" language="C++" prot="public">
+    <compoundname>list_Class</compoundname>
+    <includes refid="_g_u_i_8h" local="no">GUI.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classlist___class_1a5414de1e8a8ac30ab1f03baf5e710f3c" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String list_Class::title</definition>
+        <argsstring></argsstring>
+        <name>title</name>
+        <qualifiedname>list_Class::title</qualifiedname>
+        <briefdescription>
+<para>Title of the list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="152" column="12" bodyfile="src/GUI.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1a1343001263263df83a0e2a09e528e7bb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int list_Class::elementNum</definition>
+        <argsstring></argsstring>
+        <name>elementNum</name>
+        <qualifiedname>list_Class::elementNum</qualifiedname>
+        <briefdescription>
+<para>Number of elements on the list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="153" column="9" bodyfile="src/GUI.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1ae578e30c59f80e55bef2b709e885c89d" prot="private" static="no" mutable="no">
+        <type>String *</type>
+        <definition>String* list_Class::elementName</definition>
+        <argsstring></argsstring>
+        <name>elementName</name>
+        <qualifiedname>list_Class::elementName</qualifiedname>
+        <briefdescription>
+<para>Names of the list elements. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="154" column="12" bodyfile="src/GUI.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1a54af455510377220a429c3ab5d3dc541" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int list_Class::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <qualifiedname>list_Class::pos</qualifiedname>
+        <briefdescription>
+<para>Current highlighted position on the list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="155" column="9" bodyfile="src/GUI.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1a0114c18f9e57b6cd3c23f05b677ba5e5" prot="private" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* list_Class::handler) (int, void *)</definition>
+        <argsstring>)(int, void *)</argsstring>
+        <name>handler</name>
+        <qualifiedname>list_Class::handler</qualifiedname>
+        <briefdescription>
+<para>Handler function to trigger events from selecting an element. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="156" column="5" bodyfile="src/GUI.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1ac4731610b332b83a2c9741c23cb7712d" prot="private" static="no" mutable="no">
+        <type>M5GFX</type>
+        <definition>M5GFX list_Class::Display</definition>
+        <argsstring></argsstring>
+        <name>Display</name>
+        <qualifiedname>list_Class::Display</qualifiedname>
+        <initializer>= M5Cardputer.Display</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="157" column="11" bodyfile="src/GUI.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1aa237c376089fce7d563a51f4721cd9c4" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord list_Class::origin</definition>
+        <argsstring></argsstring>
+        <name>origin</name>
+        <qualifiedname>list_Class::origin</qualifiedname>
+        <briefdescription>
+<para>Coordinates where the list shall be drawn. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><blockquote><para><zwj/>Display object </para>
+</blockquote></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="158" column="11" bodyfile="src/GUI.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1a52b4d4daa14c969502e2e49147f2de19" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord list_Class::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>list_Class::size</qualifiedname>
+        <briefdescription>
+<para>Absolute size of the list rectangle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="159" column="11" bodyfile="src/GUI.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1a6f62693d6a66d2c9b802200e12bf5db0" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float list_Class::titleSize</definition>
+        <argsstring></argsstring>
+        <name>titleSize</name>
+        <qualifiedname>list_Class::titleSize</qualifiedname>
+        <briefdescription>
+<para>Text size multiplier for the title. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="160" column="11" bodyfile="src/GUI.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1a5e07639339dfc03d03045e911468d0b4" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float list_Class::textSize</definition>
+        <argsstring></argsstring>
+        <name>textSize</name>
+        <qualifiedname>list_Class::textSize</qualifiedname>
+        <briefdescription>
+<para>Text size multiplier for the body. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="161" column="11" bodyfile="src/GUI.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1abcb0e01917cd2d39be92b51f5ea54162" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int list_Class::textColour</definition>
+        <argsstring></argsstring>
+        <name>textColour</name>
+        <qualifiedname>list_Class::textColour</qualifiedname>
+        <briefdescription>
+<para>Text colour (title &amp; body) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="162" column="9" bodyfile="src/GUI.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1a4f36c4dce78e0912a02b5625ad95bc7f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int list_Class::backColour</definition>
+        <argsstring></argsstring>
+        <name>backColour</name>
+        <qualifiedname>list_Class::backColour</qualifiedname>
+        <briefdescription>
+<para>Background color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="163" column="9" bodyfile="src/GUI.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1a77cd52ddd6832ae26001045a35ce7d19" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int list_Class::highlightColour</definition>
+        <argsstring></argsstring>
+        <name>highlightColour</name>
+        <qualifiedname>list_Class::highlightColour</qualifiedname>
+        <briefdescription>
+<para>Highlight color for the currently selected option. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="164" column="9" bodyfile="src/GUI.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1a3f196f0abbfff0245c8fd66bf6d424a4" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord list_Class::border</definition>
+        <argsstring></argsstring>
+        <name>border</name>
+        <qualifiedname>list_Class::border</qualifiedname>
+        <briefdescription>
+<para>Margin from the rectangle to the text (in both directions) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="165" column="11" bodyfile="src/GUI.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlist___class_1ae0e5d622a7b8d36d0c20f79d1edde567" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int list_Class::rows</definition>
+        <argsstring></argsstring>
+        <name>rows</name>
+        <qualifiedname>list_Class::rows</qualifiedname>
+        <briefdescription>
+<para>Number of rows that can be displayed @ a time. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="166" column="9" bodyfile="src/GUI.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlist___class_1a978dd4124a5baec5cd27eeed29dd7c63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>list_Class::list_Class</definition>
+        <argsstring>(String title, int elementNum, String *elementName, void(*handler)(int, void *), coord origin, coord size, float titleSize=2.5, float textSize=1.5, int textColour=m5gfx::ili9341_colors::GREEN, int backColour=m5gfx::ili9341_colors::BLACK, int highlightColour=m5gfx::ili9341_colors::GREEN, coord border=coord(6, 5))</argsstring>
+        <name>list_Class</name>
+        <qualifiedname>list_Class::list_Class</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>elementNum</declname>
+        </param>
+        <param>
+          <type>String *</type>
+          <declname>elementName</declname>
+        </param>
+        <param>
+          <type>void(*)(int, void *)</type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>titleSize</declname>
+          <defval>2.5</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>textSize</declname>
+          <defval>1.5</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>textColour</declname>
+          <defval>m5gfx::ili9341_colors::GREEN</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>backColour</declname>
+          <defval>m5gfx::ili9341_colors::BLACK</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>highlightColour</declname>
+          <defval>m5gfx::ili9341_colors::GREEN</defval>
+        </param>
+        <param>
+          <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+          <declname>border</declname>
+          <defval><ref refid="structcoord" kindref="compound">coord</ref>(6, 5)</defval>
+        </param>
+        <briefdescription>
+<para>Constructor for the list class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String, list title </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>elementNum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Int, number of elements on the list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>elementName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the string array that holds the names of the list elements </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function that triggers the proper event when an element is selected, its parameters are pos &amp; elementNum </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordinates where the list rectangle will be drawn </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the list rectangle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>titleSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float, text size of the title, defaults to 2.5 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>textSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float, text size of the list body, defaults to 1.0 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>textColour</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Int, colour as defined in the m5gfx::ili9341_colors space defaults to green </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>backColour</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Int, colour as defined in the m5gfx::ili9341_colors space defaults to black </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>highlightColour</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Int, colour as defined in the m5gfx::ili9341_colors space defaults to green </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="182" column="5" bodyfile="src/GUI.cpp" bodystart="146" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_Class::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <qualifiedname>list_Class::draw</qualifiedname>
+        <briefdescription>
+<para>Draws or redraws the list on the screen. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="187" column="10" bodyfile="src/GUI.cpp" bodystart="170" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1a8694d87f64e84085a5a65eed3906f130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_Class::del</definition>
+        <argsstring>()</argsstring>
+        <name>del</name>
+        <qualifiedname>list_Class::del</qualifiedname>
+        <briefdescription>
+<para>Deletes the list instance UNIMPLEMENTED. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="189" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1a0abc13669b1a6a16df89694545a173c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_Class::scroll</definition>
+        <argsstring>(int newPos)</argsstring>
+        <name>scroll</name>
+        <qualifiedname>list_Class::scroll</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>newPos</declname>
+        </param>
+        <briefdescription>
+<para>Scrolls the list to the given position if it&apos;s a valid one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position we want to scroll to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="192" column="10" bodyfile="src/GUI.cpp" bodystart="231" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_Class::scrollDown</definition>
+        <argsstring>()</argsstring>
+        <name>scrollDown</name>
+        <qualifiedname>list_Class::scrollDown</qualifiedname>
+        <briefdescription>
+<para>Scrolls down one position. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="194" column="10" bodyfile="src/GUI.cpp" bodystart="239" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1a48eeb6911110ba094e2f979fc824f252" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_Class::scrollUp</definition>
+        <argsstring>()</argsstring>
+        <name>scrollUp</name>
+        <qualifiedname>list_Class::scrollUp</qualifiedname>
+        <briefdescription>
+<para>Scrolls up one positon. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="196" column="10" bodyfile="src/GUI.cpp" bodystart="243" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1acafcdd491b89bfd476dcfd43d32786a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_Class::optnEvent</definition>
+        <argsstring>()</argsstring>
+        <name>optnEvent</name>
+        <qualifiedname>list_Class::optnEvent</qualifiedname>
+        <briefdescription>
+<para>Handles the element options event trigerred by OPTN navSignal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="198" column="10" bodyfile="src/GUI.cpp" bodystart="247" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_Class::enterEvent</definition>
+        <argsstring>()</argsstring>
+        <name>enterEvent</name>
+        <qualifiedname>list_Class::enterEvent</qualifiedname>
+        <briefdescription>
+<para>Handles the element selected event triggered by ENTER navSignal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="200" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classlist___class_1aa1d6914207e6453e61d86fc4ee867f14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void list_Class::drawOptions</definition>
+        <argsstring>()</argsstring>
+        <name>drawOptions</name>
+        <qualifiedname>list_Class::drawOptions</qualifiedname>
+        <briefdescription>
+<para>Draws the options section with the current selection highlighted (called by draw &amp; scroll) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="204" column="10" bodyfile="src/GUI.cpp" bodystart="202" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1a55209f4763a54c2b2e2a7d39514cafdc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_Class::displayableRows</definition>
+        <argsstring>(float titleSize, float textSize, int height)</argsstring>
+        <name>displayableRows</name>
+        <qualifiedname>list_Class::displayableRows</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>titleSize</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>textSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of rows that fit on the screen given the height of the text sprite and the text size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>titleSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float, the text size multiplier used in M5GFX for the title </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>textSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float, the text size multiplier used in M5GFX for the body </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height in pixels of the text sprite </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of rows that fit on the text sprite as an integer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>log_i(&quot;Text size is %f, height is %i, rowSize is %i, %i rows fit&quot;, textSize, height, rowSize, rows);</para>
+        </inbodydescription>
+        <location file="src/GUI.h" line="213" column="9" bodyfile="src/GUI.cpp" bodystart="126" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1a32108743b53a5cd861b1670c92f8e777" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_Class::displayableRows</definition>
+        <argsstring>(float textSize, int height)</argsstring>
+        <name>displayableRows</name>
+        <qualifiedname>list_Class::displayableRows</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>textSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of rows that fit on the screen given the height of the text sprite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>textSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float, the text size multiplier used in M5GFX for the body </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height in pixels of the text sprite </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of rows that fit on the text sprite as an integer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>log_i(&quot;Text size is %f, height is %i, rowSize is %i, %i rows fit&quot;, textSize, height, rowSize, rows);</para>
+        </inbodydescription>
+        <location file="src/GUI.h" line="219" column="9" bodyfile="src/GUI.cpp" bodystart="139" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1a0f99364a80894e96121d2dbce38f4187" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_Class::rowsOccupied</definition>
+        <argsstring>(int textLen, float textSize, int spriteWidth)</argsstring>
+        <name>rowsOccupied</name>
+        <qualifiedname>list_Class::rowsOccupied</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>textLen</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>textSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>spriteWidth</declname>
+        </param>
+        <briefdescription>
+<para>How many rows of text will the given string takes up. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>textLen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>length of a string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>textSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float, the text size multiplier used in M5GFX </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>spriteWidth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of the sprite in px </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Int,l number of rows the string takes up </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="225" column="9" bodyfile="src/GUI.cpp" bodystart="134" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1a8cd17992d2ddd9f01a7c5b4bbee2bbdc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_Class::rowSize</definition>
+        <argsstring>(float textSize)</argsstring>
+        <name>rowSize</name>
+        <qualifiedname>list_Class::rowSize</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>textSize</declname>
+        </param>
+        <briefdescription>
+<para>Calculates height in px of a line of text of given size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>textSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float, the text size multiplier used in M5GFX </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Height in px of the line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="230" column="16" bodyfile="src/GUI.h" bodystart="230" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="classlist___class_1a4f6cb0796835c5f19811eb05e2003ab6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int list_Class::rowWidth</definition>
+        <argsstring>(float textSize, int length)</argsstring>
+        <name>rowWidth</name>
+        <qualifiedname>list_Class::rowWidth</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>textSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Calculates length in px of a line of text of given size &amp; character length. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>textSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float, the text size multiplier used in M5GFX </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the string in characters </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Length of the string in pixels </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="235" column="16" bodyfile="src/GUI.h" bodystart="235" bodyend="235"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Scrollable, selectable list class to construct menus. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/GUI.h" line="150" column="1" bodyfile="src/GUI.h" bodystart="150" bodyend="237"/>
+    <listofallmembers>
+      <member refid="classlist___class_1a4f36c4dce78e0912a02b5625ad95bc7f" prot="private" virt="non-virtual"><scope>list_Class</scope><name>backColour</name></member>
+      <member refid="classlist___class_1a3f196f0abbfff0245c8fd66bf6d424a4" prot="private" virt="non-virtual"><scope>list_Class</scope><name>border</name></member>
+      <member refid="classlist___class_1a8694d87f64e84085a5a65eed3906f130" prot="public" virt="non-virtual"><scope>list_Class</scope><name>del</name></member>
+      <member refid="classlist___class_1ac4731610b332b83a2c9741c23cb7712d" prot="private" virt="non-virtual"><scope>list_Class</scope><name>Display</name></member>
+      <member refid="classlist___class_1a55209f4763a54c2b2e2a7d39514cafdc" prot="private" virt="non-virtual"><scope>list_Class</scope><name>displayableRows</name></member>
+      <member refid="classlist___class_1a32108743b53a5cd861b1670c92f8e777" prot="private" virt="non-virtual"><scope>list_Class</scope><name>displayableRows</name></member>
+      <member refid="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" prot="public" virt="non-virtual"><scope>list_Class</scope><name>draw</name></member>
+      <member refid="classlist___class_1aa1d6914207e6453e61d86fc4ee867f14" prot="private" virt="non-virtual"><scope>list_Class</scope><name>drawOptions</name></member>
+      <member refid="classlist___class_1ae578e30c59f80e55bef2b709e885c89d" prot="private" virt="non-virtual"><scope>list_Class</scope><name>elementName</name></member>
+      <member refid="classlist___class_1a1343001263263df83a0e2a09e528e7bb" prot="private" virt="non-virtual"><scope>list_Class</scope><name>elementNum</name></member>
+      <member refid="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" prot="public" virt="non-virtual"><scope>list_Class</scope><name>enterEvent</name></member>
+      <member refid="classlist___class_1a0114c18f9e57b6cd3c23f05b677ba5e5" prot="private" virt="non-virtual"><scope>list_Class</scope><name>handler</name></member>
+      <member refid="classlist___class_1a77cd52ddd6832ae26001045a35ce7d19" prot="private" virt="non-virtual"><scope>list_Class</scope><name>highlightColour</name></member>
+      <member refid="classlist___class_1a978dd4124a5baec5cd27eeed29dd7c63" prot="public" virt="non-virtual"><scope>list_Class</scope><name>list_Class</name></member>
+      <member refid="classlist___class_1acafcdd491b89bfd476dcfd43d32786a7" prot="public" virt="non-virtual"><scope>list_Class</scope><name>optnEvent</name></member>
+      <member refid="classlist___class_1aa237c376089fce7d563a51f4721cd9c4" prot="private" virt="non-virtual"><scope>list_Class</scope><name>origin</name></member>
+      <member refid="classlist___class_1a54af455510377220a429c3ab5d3dc541" prot="private" virt="non-virtual"><scope>list_Class</scope><name>pos</name></member>
+      <member refid="classlist___class_1ae0e5d622a7b8d36d0c20f79d1edde567" prot="private" virt="non-virtual"><scope>list_Class</scope><name>rows</name></member>
+      <member refid="classlist___class_1a8cd17992d2ddd9f01a7c5b4bbee2bbdc" prot="private" virt="non-virtual"><scope>list_Class</scope><name>rowSize</name></member>
+      <member refid="classlist___class_1a0f99364a80894e96121d2dbce38f4187" prot="private" virt="non-virtual"><scope>list_Class</scope><name>rowsOccupied</name></member>
+      <member refid="classlist___class_1a4f6cb0796835c5f19811eb05e2003ab6" prot="private" virt="non-virtual"><scope>list_Class</scope><name>rowWidth</name></member>
+      <member refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" prot="public" virt="non-virtual"><scope>list_Class</scope><name>scroll</name></member>
+      <member refid="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" prot="public" virt="non-virtual"><scope>list_Class</scope><name>scrollDown</name></member>
+      <member refid="classlist___class_1a48eeb6911110ba094e2f979fc824f252" prot="public" virt="non-virtual"><scope>list_Class</scope><name>scrollUp</name></member>
+      <member refid="classlist___class_1a52b4d4daa14c969502e2e49147f2de19" prot="private" virt="non-virtual"><scope>list_Class</scope><name>size</name></member>
+      <member refid="classlist___class_1abcb0e01917cd2d39be92b51f5ea54162" prot="private" virt="non-virtual"><scope>list_Class</scope><name>textColour</name></member>
+      <member refid="classlist___class_1a5e07639339dfc03d03045e911468d0b4" prot="private" virt="non-virtual"><scope>list_Class</scope><name>textSize</name></member>
+      <member refid="classlist___class_1a5414de1e8a8ac30ab1f03baf5e710f3c" prot="private" virt="non-virtual"><scope>list_Class</scope><name>title</name></member>
+      <member refid="classlist___class_1a6f62693d6a66d2c9b802200e12bf5db0" prot="private" virt="non-virtual"><scope>list_Class</scope><name>titleSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

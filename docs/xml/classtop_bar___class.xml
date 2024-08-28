@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classtop_bar___class" kind="class" language="C++" prot="public">
+    <compoundname>topBar_Class</compoundname>
+    <includes refid="_g_u_i_8h" local="no">GUI.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtop_bar___class_1a92e7c42fb6dcc5b212010d19a62452c3" prot="public" static="no" mutable="no">
+        <type><ref refid="classicon___class" kindref="compound">icon_Class</ref></type>
+        <definition>icon_Class topBar_Class::Wifi</definition>
+        <argsstring></argsstring>
+        <name>Wifi</name>
+        <qualifiedname>topBar_Class::Wifi</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="100" column="16" bodyfile="src/GUI.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtop_bar___class_1adb92bc4bf453489fce808f126fc5c785" prot="public" static="no" mutable="no">
+        <type><ref refid="classicon___class" kindref="compound">icon_Class</ref></type>
+        <definition>icon_Class topBar_Class::BLE</definition>
+        <argsstring></argsstring>
+        <name>BLE</name>
+        <qualifiedname>topBar_Class::BLE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="101" column="16" bodyfile="src/GUI.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtop_bar___class_1abd05d88cf9363e054fd2d0c3e8e23117" prot="public" static="no" mutable="no">
+        <type><ref refid="classicon___class" kindref="compound">icon_Class</ref></type>
+        <definition>icon_Class topBar_Class::SDpresent</definition>
+        <argsstring></argsstring>
+        <name>SDpresent</name>
+        <qualifiedname>topBar_Class::SDpresent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="102" column="16" bodyfile="src/GUI.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtop_bar___class_1a307dc7f3d2d7a6336895bdf6cb832fdc" prot="public" static="no" mutable="no">
+        <type><ref refid="classicon_bat___class" kindref="compound">iconBat_Class</ref></type>
+        <definition>iconBat_Class topBar_Class::Bat</definition>
+        <argsstring></argsstring>
+        <name>Bat</name>
+        <qualifiedname>topBar_Class::Bat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="103" column="19" bodyfile="src/GUI.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtop_bar___class_1a5c7034f1807e682e9e96743b1c280a76" prot="public" static="no" mutable="no">
+        <type>M5GFX</type>
+        <definition>M5GFX topBar_Class::Display</definition>
+        <argsstring></argsstring>
+        <name>Display</name>
+        <qualifiedname>topBar_Class::Display</qualifiedname>
+        <initializer>= M5Cardputer.Display</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="104" column="11" bodyfile="src/GUI.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtop_bar___class_1a2a2e420feda4cf58b96ed363b918d633" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>topBar_Class::topBar_Class</definition>
+        <argsstring>()</argsstring>
+        <name>topBar_Class</name>
+        <qualifiedname>topBar_Class::topBar_Class</qualifiedname>
+        <briefdescription>
+<para>Constructor for the Top bar class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="107" column="5" bodyfile="src/GUI.cpp" bodystart="107" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classtop_bar___class_1a555351fcf48dbea120ac40f8c010dce8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void topBar_Class::updateIcons</definition>
+        <argsstring>()</argsstring>
+        <name>updateIcons</name>
+        <qualifiedname>topBar_Class::updateIcons</qualifiedname>
+        <briefdescription>
+<para>Updates the state of all icons in the Top Bar. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="109" column="10" bodyfile="src/GUI.cpp" bodystart="117" bodyend="122"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Controls what is displayed on the top bar of the GUI on the main menu. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>iconBat_Class</label>
+        <link refid="classicon_bat___class"/>
+      </node>
+      <node id="2">
+        <label>icon_Class</label>
+        <link refid="classicon___class"/>
+      </node>
+      <node id="1">
+        <label>topBar_Class</label>
+        <link refid="classtop_bar___class"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>BLE</edgelabel>
+          <edgelabel>SDpresent</edgelabel>
+          <edgelabel>Wifi</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Bat</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/GUI.h" line="97" column="1" bodyfile="src/GUI.h" bodystart="97" bodyend="112"/>
+    <listofallmembers>
+      <member refid="classtop_bar___class_1a307dc7f3d2d7a6336895bdf6cb832fdc" prot="public" virt="non-virtual"><scope>topBar_Class</scope><name>Bat</name></member>
+      <member refid="classtop_bar___class_1adb92bc4bf453489fce808f126fc5c785" prot="public" virt="non-virtual"><scope>topBar_Class</scope><name>BLE</name></member>
+      <member refid="classtop_bar___class_1a5c7034f1807e682e9e96743b1c280a76" prot="public" virt="non-virtual"><scope>topBar_Class</scope><name>Display</name></member>
+      <member refid="classtop_bar___class_1abd05d88cf9363e054fd2d0c3e8e23117" prot="public" virt="non-virtual"><scope>topBar_Class</scope><name>SDpresent</name></member>
+      <member refid="classtop_bar___class_1a2a2e420feda4cf58b96ed363b918d633" prot="public" virt="non-virtual"><scope>topBar_Class</scope><name>topBar_Class</name></member>
+      <member refid="classtop_bar___class_1a555351fcf48dbea120ac40f8c010dce8" prot="public" virt="non-virtual"><scope>topBar_Class</scope><name>updateIcons</name></member>
+      <member refid="classtop_bar___class_1a92e7c42fb6dcc5b212010d19a62452c3" prot="public" virt="non-virtual"><scope>topBar_Class</scope><name>Wifi</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

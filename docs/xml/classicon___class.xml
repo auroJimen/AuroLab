@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classicon___class" kind="class" language="C++" prot="public">
+    <compoundname>icon_Class</compoundname>
+    <includes refid="_g_u_i_8h" local="no">GUI.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classicon___class_1aaf574747b89b2e31eb17a3b01364b2b5" prot="private" static="no" mutable="no">
+        <type>M5GFX</type>
+        <definition>M5GFX icon_Class::sprite</definition>
+        <argsstring></argsstring>
+        <name>sprite</name>
+        <qualifiedname>icon_Class::sprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="83" column="11" bodyfile="src/GUI.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon___class_1aa4e6c905d4e51e4bc07ee7e602e535cf" prot="private" static="no" mutable="no">
+        <type>iconType</type>
+        <definition>iconType icon_Class::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>icon_Class::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="84" column="14" bodyfile="src/GUI.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon___class_1a0e75ec78ed71d4c26035b29cacfedb76" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int icon_Class::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <qualifiedname>icon_Class::state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="85" column="9" bodyfile="src/GUI.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon___class_1aaa8c72040722b4b38cf0545b6553e4e3" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord icon_Class::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <qualifiedname>icon_Class::pos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="86" column="11" bodyfile="src/GUI.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon___class_1a301e7bbdf3500f1669ea404464419741" prot="private" static="no" mutable="no">
+        <type>M5GFX</type>
+        <definition>M5GFX icon_Class::screen</definition>
+        <argsstring></argsstring>
+        <name>screen</name>
+        <qualifiedname>icon_Class::screen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="87" column="11" bodyfile="src/GUI.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classicon___class_1a867b4b374a1b66dda80686760de8de27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>icon_Class::icon_Class</definition>
+        <argsstring>()</argsstring>
+        <name>icon_Class</name>
+        <qualifiedname>icon_Class::icon_Class</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="90" column="5" bodyfile="src/GUI.cpp" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classicon___class_1a3f11f3dc80e8448e7286c61c75c5875c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>icon_Class::icon_Class</definition>
+        <argsstring>(M5GFX screen, iconType type, int state)</argsstring>
+        <name>icon_Class</name>
+        <qualifiedname>icon_Class::icon_Class</qualifiedname>
+        <param>
+          <type>M5GFX</type>
+          <declname>screen</declname>
+        </param>
+        <param>
+          <type>iconType</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="91" column="5" bodyfile="src/GUI.cpp" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classicon___class_1a8bfff8027a340d92748b64347bc5a71e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool icon_Class::changeState</definition>
+        <argsstring>(bool newState)</argsstring>
+        <name>changeState</name>
+        <qualifiedname>icon_Class::changeState</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>newState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="92" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Icon class for the contents of the topBar. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/GUI.h" line="81" column="1" bodyfile="src/GUI.h" bodystart="81" bodyend="95"/>
+    <listofallmembers>
+      <member refid="classicon___class_1a8bfff8027a340d92748b64347bc5a71e" prot="public" virt="non-virtual"><scope>icon_Class</scope><name>changeState</name></member>
+      <member refid="classicon___class_1a867b4b374a1b66dda80686760de8de27" prot="public" virt="non-virtual"><scope>icon_Class</scope><name>icon_Class</name></member>
+      <member refid="classicon___class_1a3f11f3dc80e8448e7286c61c75c5875c" prot="public" virt="non-virtual"><scope>icon_Class</scope><name>icon_Class</name></member>
+      <member refid="classicon___class_1aaa8c72040722b4b38cf0545b6553e4e3" prot="private" virt="non-virtual"><scope>icon_Class</scope><name>pos</name></member>
+      <member refid="classicon___class_1a301e7bbdf3500f1669ea404464419741" prot="private" virt="non-virtual"><scope>icon_Class</scope><name>screen</name></member>
+      <member refid="classicon___class_1aaf574747b89b2e31eb17a3b01364b2b5" prot="private" virt="non-virtual"><scope>icon_Class</scope><name>sprite</name></member>
+      <member refid="classicon___class_1a0e75ec78ed71d4c26035b29cacfedb76" prot="private" virt="non-virtual"><scope>icon_Class</scope><name>state</name></member>
+      <member refid="classicon___class_1aa4e6c905d4e51e4bc07ee7e602e535cf" prot="private" virt="non-virtual"><scope>icon_Class</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

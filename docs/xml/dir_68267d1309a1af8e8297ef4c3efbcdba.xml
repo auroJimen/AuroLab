@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_b7878ad5ecbf2506f4125b9d34c97e45">src/util</innerdir>
+    <innerfile refid="compass_icon_8h">compassIcon.h</innerfile>
+    <innerfile refid="_g_u_i_8cpp">GUI.cpp</innerfile>
+    <innerfile refid="_g_u_i_8h">GUI.h</innerfile>
+    <innerfile refid="keyboard_task_8cpp">keyboardTask.cpp</innerfile>
+    <innerfile refid="keyboard_task_8h">keyboardTask.h</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="menu_background_8h">menuBackground.h</innerfile>
+    <innerfile refid="mock_up_8h">mockUp.h</innerfile>
+    <innerfile refid="splashscreen_8h">splashscreen.h</innerfile>
+    <innerfile refid="sprites_8h">sprites.h</innerfile>
+    <innerfile refid="sprites_cpy_8h">spritesCpy.h</innerfile>
+    <innerfile refid="terminal_8cpp">terminal.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classtext_box___class" kind="class" language="C++" prot="public">
+    <compoundname>textBox_Class</compoundname>
+    <includes refid="_g_u_i_8h" local="no">GUI.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtext_box___class_1a1bf29022abb5d7ccb12bd242c136975e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool textBox_Class::inputEnabled</definition>
+        <argsstring></argsstring>
+        <name>inputEnabled</name>
+        <qualifiedname>textBox_Class::inputEnabled</qualifiedname>
+        <briefdescription>
+<para>Wether inputing is currently enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="117" column="10" bodyfile="src/GUI.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtext_box___class_1a242cd8bd5d1c8e61b9b357316dd98e08" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String textBox_Class::defText</definition>
+        <argsstring></argsstring>
+        <name>defText</name>
+        <qualifiedname>textBox_Class::defText</qualifiedname>
+        <briefdescription>
+<para>Text displayed on the text box when its first created. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="118" column="12" bodyfile="src/GUI.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtext_box___class_1aeb44ef09332727d341dea481b6773f4d" prot="private" static="no" mutable="no">
+        <type>String *</type>
+        <definition>String* textBox_Class::text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <qualifiedname>textBox_Class::text</qualifiedname>
+        <briefdescription>
+<para>Pointer to the string where the text will be shaved when a enter event is triggered. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="119" column="12" bodyfile="src/GUI.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtext_box___class_1a28777adb9716c732e5f888dfdeb70c66" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord textBox_Class::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <qualifiedname>textBox_Class::pos</qualifiedname>
+        <briefdescription>
+<para>Where the text box should be drawn. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="120" column="11" bodyfile="src/GUI.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtext_box___class_1a42c9ec6421da276d00eb7af0e677f1e3" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord textBox_Class::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>textBox_Class::size</qualifiedname>
+        <briefdescription>
+<para>Size of the text box. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="121" column="11" bodyfile="src/GUI.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtext_box___class_1a15d0a7411675ca7561e3ab9eafeaede3" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float textBox_Class::textSize</definition>
+        <argsstring></argsstring>
+        <name>textSize</name>
+        <qualifiedname>textBox_Class::textSize</qualifiedname>
+        <briefdescription>
+<para>Text size multiplier for the body. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="122" column="11" bodyfile="src/GUI.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtext_box___class_1a8604cab0db9cf7899009b68c8e140fa4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int textBox_Class::textColour</definition>
+        <argsstring></argsstring>
+        <name>textColour</name>
+        <qualifiedname>textBox_Class::textColour</qualifiedname>
+        <briefdescription>
+<para>Text colour. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="123" column="9" bodyfile="src/GUI.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtext_box___class_1a644fe252eafc758a6a928e34ecba5008" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int textBox_Class::backColour</definition>
+        <argsstring></argsstring>
+        <name>backColour</name>
+        <qualifiedname>textBox_Class::backColour</qualifiedname>
+        <briefdescription>
+<para>Background colour. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="124" column="9" bodyfile="src/GUI.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtext_box___class_1a836ab3fd6702ea6968a34068b9b96ad8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int textBox_Class::cursorColour</definition>
+        <argsstring></argsstring>
+        <name>cursorColour</name>
+        <qualifiedname>textBox_Class::cursorColour</qualifiedname>
+        <briefdescription>
+<para>Cursor colour. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="125" column="9" bodyfile="src/GUI.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtext_box___class_1ac62b0360b7bedf1a9d30bd51f5e01007" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>textBox_Class::textBox_Class</definition>
+        <argsstring>(coord pos, coord size, String *text, bool inputEnabled=false, String defText=&quot;&quot;, float TextSize=1.5, int textColour=m5gfx::ili9341_colors::GREEN, int backColour=m5gfx::ili9341_colors::BLACK, int cursorColour=m5gfx::ili9341_colors::GREEN)</argsstring>
+        <name>textBox_Class</name>
+        <qualifiedname>textBox_Class::textBox_Class</qualifiedname>
+        <param>
+          <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>String *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inputEnabled</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>defText</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>TextSize</declname>
+          <defval>1.5</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>textColour</declname>
+          <defval>m5gfx::ili9341_colors::GREEN</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>backColour</declname>
+          <defval>m5gfx::ili9341_colors::BLACK</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cursorColour</declname>
+          <defval>m5gfx::ili9341_colors::GREEN</defval>
+        </param>
+        <briefdescription>
+<para>Constructor for the textBox class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coord position where the textBox will be drawn </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coord size of the textBox </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a string where the text will be saved when an enter event is triggered </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>inputEnabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sets wether inputing to the box is currently enabled, def to false </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text displayed on the box when it&apos;s created, def to &quot;&quot; </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TextSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float text size multiplayer, def to 1.5 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>textColour</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Int, colour as defined in the m5gfx::ili9341_colors space defaults to green </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>backColour</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Int, colour as defined in the m5gfx::ili9341_colors space defaults to black </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cursorColour</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Int, colour as defined in the m5gfx::ili9341_colors space defaults to green </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="137" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classtext_box___class_1a4f508e0fd1645f5209b3dce4459adb07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void textBox_Class::enableTextInput</definition>
+        <argsstring>()</argsstring>
+        <name>enableTextInput</name>
+        <qualifiedname>textBox_Class::enableTextInput</qualifiedname>
+        <briefdescription>
+<para>Enables the textInput and launches a keyboard listener if it isn&apos;t already running. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="141" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classtext_box___class_1ae4b2f9d68261d89824bf496462067a4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void textBox_Class::disableTextInput</definition>
+        <argsstring>()</argsstring>
+        <name>disableTextInput</name>
+        <qualifiedname>textBox_Class::disableTextInput</qualifiedname>
+        <briefdescription>
+<para>Disables textInput and kills the keyboard listener process. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="143" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classtext_box___class_1a9341bfa7a03d269d49ca517db9064d38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool textBox_Class::getEnableTextInput</definition>
+        <argsstring>()</argsstring>
+        <name>getEnableTextInput</name>
+        <qualifiedname>textBox_Class::getEnableTextInput</qualifiedname>
+        <briefdescription>
+<para>Returns the value of enableTextInput. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Bool, enableTextInput </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="146" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Text input box class to construct menus. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/GUI.h" line="115" column="1" bodyfile="src/GUI.h" bodystart="115" bodyend="147"/>
+    <listofallmembers>
+      <member refid="classtext_box___class_1a644fe252eafc758a6a928e34ecba5008" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>backColour</name></member>
+      <member refid="classtext_box___class_1a836ab3fd6702ea6968a34068b9b96ad8" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>cursorColour</name></member>
+      <member refid="classtext_box___class_1a242cd8bd5d1c8e61b9b357316dd98e08" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>defText</name></member>
+      <member refid="classtext_box___class_1ae4b2f9d68261d89824bf496462067a4f" prot="public" virt="non-virtual"><scope>textBox_Class</scope><name>disableTextInput</name></member>
+      <member refid="classtext_box___class_1a4f508e0fd1645f5209b3dce4459adb07" prot="public" virt="non-virtual"><scope>textBox_Class</scope><name>enableTextInput</name></member>
+      <member refid="classtext_box___class_1a9341bfa7a03d269d49ca517db9064d38" prot="public" virt="non-virtual"><scope>textBox_Class</scope><name>getEnableTextInput</name></member>
+      <member refid="classtext_box___class_1a1bf29022abb5d7ccb12bd242c136975e" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>inputEnabled</name></member>
+      <member refid="classtext_box___class_1a28777adb9716c732e5f888dfdeb70c66" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>pos</name></member>
+      <member refid="classtext_box___class_1a42c9ec6421da276d00eb7af0e677f1e3" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>size</name></member>
+      <member refid="classtext_box___class_1aeb44ef09332727d341dea481b6773f4d" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>text</name></member>
+      <member refid="classtext_box___class_1ac62b0360b7bedf1a9d30bd51f5e01007" prot="public" virt="non-virtual"><scope>textBox_Class</scope><name>textBox_Class</name></member>
+      <member refid="classtext_box___class_1a8604cab0db9cf7899009b68c8e140fa4" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>textColour</name></member>
+      <member refid="classtext_box___class_1a15d0a7411675ca7561e3ab9eafeaede3" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>textSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.12.0" xml:lang="en-US">
+  <compound refid="classbuffer___class" kind="class"><name>buffer_Class</name>
+    <member refid="classbuffer___class_1a3f1eb0ad450e4f7fe3245b588c3403b6" kind="variable"><name>keyboardTask</name></member>
+    <member refid="classbuffer___class_1ae810e90ec52bd3fb1c96e8d87e130995" kind="variable"><name>timer</name></member>
+    <member refid="classbuffer___class_1a048be46b6f71c7c1463727679e1f5927" kind="variable"><name>size</name></member>
+    <member refid="classbuffer___class_1a5dc877cbb22a0200a2a3a375496916ab" kind="variable"><name>data</name></member>
+    <member refid="classbuffer___class_1a3ab4b8088883189f50066d32c59f3761" kind="variable"><name>cursor</name></member>
+    <member refid="classbuffer___class_1a0b98b8aef328ebdd93ae50b1139bc06e" kind="variable"><name>keyboardEnable</name></member>
+    <member refid="classbuffer___class_1a1ac63f7a07b68c3d7e13e56da6689413" kind="variable"><name>Mode</name></member>
+    <member refid="classbuffer___class_1af0d32aa1fdeac32dc3ee1a0282de80be" kind="variable"><name>signal</name></member>
+    <member refid="classbuffer___class_1a0a59b9bc631ed522318eaf21ce465bba" kind="function"><name>buffer_Class</name></member>
+    <member refid="classbuffer___class_1a04c135f6f3445c7d16b862cb5890fe53" kind="function"><name>buffer_Class</name></member>
+    <member refid="classbuffer___class_1a2db51cdf715f303efc54f2a97fad5785" kind="function"><name>getTaskHandle</name></member>
+    <member refid="classbuffer___class_1a1868135a1d4c1885afac8e601a171057" kind="function"><name>getHardwareTimer</name></member>
+    <member refid="classbuffer___class_1a2c8542d9cbe7433a80c3a8dedc5dbb51" kind="function"><name>begin</name></member>
+    <member refid="classbuffer___class_1ace4fcd26fb004aeb309d96b263b69a22" kind="function"><name>getData</name></member>
+    <member refid="classbuffer___class_1a9debd110754d53e4e49dab7391689ee5" kind="function"><name>getDataStr</name></member>
+    <member refid="classbuffer___class_1a6c2aa2166c5fafbbfe583eb1c4411e49" kind="function"><name>getBufferSize</name></member>
+    <member refid="classbuffer___class_1a3e7fefdd89f9d087f79e04f66dc3ef8c" kind="function"><name>del</name></member>
+    <member refid="classbuffer___class_1a692844f0abdde0a1111152441a112cff" kind="function"><name>del</name></member>
+    <member refid="classbuffer___class_1a6b423be6bc54130652e70f0e9010b619" kind="function"><name>clearBuffer</name></member>
+    <member refid="classbuffer___class_1a9501def46c3074fc723c828e8b4fba03" kind="function"><name>killTask</name></member>
+  </compound>
+  <compound refid="structcoord" kind="struct"><name>coord</name>
+    <member refid="structcoord_1ac3e93ff628aa19d2888c5f6fa26f430d" kind="variable"><name>x</name></member>
+    <member refid="structcoord_1a2b099692d87f98e4844b615136ca37fb" kind="variable"><name>y</name></member>
+    <member refid="structcoord_1a9d2917c7adced7ee91fe33558fb538b1" kind="function"><name>coord</name></member>
+    <member refid="structcoord_1a420d2df22c044db935f60ead330da9bb" kind="function"><name>coord</name></member>
+    <member refid="structcoord_1a60b5831159c22df316d9257adf7e3a63" kind="function"><name>add</name></member>
+  </compound>
+  <compound refid="class_g_u_i___class" kind="class"><name>GUI_Class</name>
+    <member refid="class_g_u_i___class_1aaf95e362d0c7cfe31c44cf0a9cc30f4d" kind="variable"><name>Display</name></member>
+    <member refid="class_g_u_i___class_1a9e1c41d173e6bff8e86b0be613ee5a87" kind="variable"><name>Keyboard</name></member>
+    <member refid="class_g_u_i___class_1a6c38676f91154cd7e49a03ef143b4ade" kind="variable"><name>topBar</name></member>
+    <member refid="class_g_u_i___class_1a3b5933a3f4f189338a610019a3c0dae4" kind="variable"><name>task</name></member>
+    <member refid="class_g_u_i___class_1aca65997e1615dbb0ddee2671aa95ae92" kind="function"><name>begin</name></member>
+    <member refid="class_g_u_i___class_1af0d6b5d535fa64ef2fdecdf1a7771b49" kind="function"><name>splashScreen</name></member>
+    <member refid="class_g_u_i___class_1ab6d29667f048b28a6d867cab6d4e958c" kind="function"><name>drawMainMenu</name></member>
+    <member refid="class_g_u_i___class_1a72000c590917f97769bfaae8f97a19bd" kind="function"><name>drawWifiMenu</name></member>
+    <member refid="class_g_u_i___class_1a25bfb4fdb73cbb16298d09fbc12fb379" kind="function"><name>wifiMenuHandler</name></member>
+    <member refid="class_g_u_i___class_1a1e0dd033f8ab0d55d0e039ea5d305adb" kind="function"><name>mainLoop</name></member>
+    <member refid="class_g_u_i___class_1a91db0ecb5a53420b1a2b62757328e114" kind="function"><name>loadConfFile</name></member>
+  </compound>
+  <compound refid="classicon___class" kind="class"><name>icon_Class</name>
+    <member refid="classicon___class_1aaf574747b89b2e31eb17a3b01364b2b5" kind="variable"><name>sprite</name></member>
+    <member refid="classicon___class_1aa4e6c905d4e51e4bc07ee7e602e535cf" kind="variable"><name>type</name></member>
+    <member refid="classicon___class_1a0e75ec78ed71d4c26035b29cacfedb76" kind="variable"><name>state</name></member>
+    <member refid="classicon___class_1aaa8c72040722b4b38cf0545b6553e4e3" kind="variable"><name>pos</name></member>
+    <member refid="classicon___class_1a301e7bbdf3500f1669ea404464419741" kind="variable"><name>screen</name></member>
+    <member refid="classicon___class_1a867b4b374a1b66dda80686760de8de27" kind="function"><name>icon_Class</name></member>
+    <member refid="classicon___class_1a3f11f3dc80e8448e7286c61c75c5875c" kind="function"><name>icon_Class</name></member>
+    <member refid="classicon___class_1a8bfff8027a340d92748b64347bc5a71e" kind="function"><name>changeState</name></member>
+  </compound>
+  <compound refid="classicon_bat___class" kind="class"><name>iconBat_Class</name>
+    <member refid="classicon_bat___class_1afb762abd3032850494fa5e46d7f7cf5d" kind="variable"><name>percent</name></member>
+    <member refid="classicon_bat___class_1abefa48b49e5011442cc10736853b43b8" kind="variable"><name>basePos</name></member>
+    <member refid="classicon_bat___class_1a0f13206c5fe92def1dd4bb50e7189e4f" kind="variable"><name>baseSize</name></member>
+    <member refid="classicon_bat___class_1a566a57b09b5af8d19d15f74b75fb4f90" kind="variable"><name>contPos</name></member>
+    <member refid="classicon_bat___class_1a4fd2eaac8b05b30e8812599b4a8a2f42" kind="variable"><name>contSize</name></member>
+    <member refid="classicon_bat___class_1a055cc5ae2ab4dea9333985be9b32e0b4" kind="variable"><name>textPos</name></member>
+    <member refid="classicon_bat___class_1aa5245a59290af488725123719877a273" kind="variable"><name>textSize</name></member>
+    <member refid="classicon_bat___class_1a07687dff512a0ae545825a7e5ffd2fcc" kind="variable"><name>screen</name></member>
+    <member refid="classicon_bat___class_1ab5d44064f5edf2ecc03dcc86eafd841b" kind="function"><name>iconBat_Class</name></member>
+    <member refid="classicon_bat___class_1af7a5643cf31119f4777ebc1c58c6f15a" kind="function"><name>iconBat_Class</name></member>
+    <member refid="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" kind="function"><name>updateState</name></member>
+    <member refid="classicon_bat___class_1a523a17c318459aba2c8ae1c7635295af" kind="function"><name>updateState</name></member>
+    <member refid="classicon_bat___class_1a3885a352f82a852267a5ceab6443f147" kind="function"><name>updateChargeLevel</name></member>
+    <member refid="classicon_bat___class_1abea3617d80f87acba7be39b078ea8611" kind="function"><name>updatePercent</name></member>
+    <member refid="classicon_bat___class_1acb7cbb4f2b6cb2366fcd5f9e63587bc9" kind="function"><name>testAnim</name></member>
+    <member refid="classicon_bat___class_1a4fe7a81d9936fa946094b8b0debba293" kind="function"><name>fetchBatLevel</name></member>
+    <member refid="classicon_bat___class_1ad991324620a0dde08fe72c7298ab065a" kind="function"><name>chargeLevel</name></member>
+  </compound>
+  <compound refid="classlist___class" kind="class"><name>list_Class</name>
+    <member refid="classlist___class_1a5414de1e8a8ac30ab1f03baf5e710f3c" kind="variable"><name>title</name></member>
+    <member refid="classlist___class_1a1343001263263df83a0e2a09e528e7bb" kind="variable"><name>elementNum</name></member>
+    <member refid="classlist___class_1ae578e30c59f80e55bef2b709e885c89d" kind="variable"><name>elementName</name></member>
+    <member refid="classlist___class_1a54af455510377220a429c3ab5d3dc541" kind="variable"><name>pos</name></member>
+    <member refid="classlist___class_1a0114c18f9e57b6cd3c23f05b677ba5e5" kind="variable"><name>handler</name></member>
+    <member refid="classlist___class_1ac4731610b332b83a2c9741c23cb7712d" kind="variable"><name>Display</name></member>
+    <member refid="classlist___class_1aa237c376089fce7d563a51f4721cd9c4" kind="variable"><name>origin</name></member>
+    <member refid="classlist___class_1a52b4d4daa14c969502e2e49147f2de19" kind="variable"><name>size</name></member>
+    <member refid="classlist___class_1a6f62693d6a66d2c9b802200e12bf5db0" kind="variable"><name>titleSize</name></member>
+    <member refid="classlist___class_1a5e07639339dfc03d03045e911468d0b4" kind="variable"><name>textSize</name></member>
+    <member refid="classlist___class_1abcb0e01917cd2d39be92b51f5ea54162" kind="variable"><name>textColour</name></member>
+    <member refid="classlist___class_1a4f36c4dce78e0912a02b5625ad95bc7f" kind="variable"><name>backColour</name></member>
+    <member refid="classlist___class_1a77cd52ddd6832ae26001045a35ce7d19" kind="variable"><name>highlightColour</name></member>
+    <member refid="classlist___class_1a3f196f0abbfff0245c8fd66bf6d424a4" kind="variable"><name>border</name></member>
+    <member refid="classlist___class_1ae0e5d622a7b8d36d0c20f79d1edde567" kind="variable"><name>rows</name></member>
+    <member refid="classlist___class_1a978dd4124a5baec5cd27eeed29dd7c63" kind="function"><name>list_Class</name></member>
+    <member refid="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" kind="function"><name>draw</name></member>
+    <member refid="classlist___class_1a8694d87f64e84085a5a65eed3906f130" kind="function"><name>del</name></member>
+    <member refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" kind="function"><name>scroll</name></member>
+    <member refid="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" kind="function"><name>scrollDown</name></member>
+    <member refid="classlist___class_1a48eeb6911110ba094e2f979fc824f252" kind="function"><name>scrollUp</name></member>
+    <member refid="classlist___class_1acafcdd491b89bfd476dcfd43d32786a7" kind="function"><name>optnEvent</name></member>
+    <member refid="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" kind="function"><name>enterEvent</name></member>
+    <member refid="classlist___class_1aa1d6914207e6453e61d86fc4ee867f14" kind="function"><name>drawOptions</name></member>
+    <member refid="classlist___class_1a55209f4763a54c2b2e2a7d39514cafdc" kind="function"><name>displayableRows</name></member>
+    <member refid="classlist___class_1a32108743b53a5cd861b1670c92f8e777" kind="function"><name>displayableRows</name></member>
+    <member refid="classlist___class_1a0f99364a80894e96121d2dbce38f4187" kind="function"><name>rowsOccupied</name></member>
+    <member refid="classlist___class_1a8cd17992d2ddd9f01a7c5b4bbee2bbdc" kind="function"><name>rowSize</name></member>
+    <member refid="classlist___class_1a4f6cb0796835c5f19811eb05e2003ab6" kind="function"><name>rowWidth</name></member>
+  </compound>
+  <compound refid="classtext_box___class" kind="class"><name>textBox_Class</name>
+    <member refid="classtext_box___class_1a1bf29022abb5d7ccb12bd242c136975e" kind="variable"><name>inputEnabled</name></member>
+    <member refid="classtext_box___class_1a242cd8bd5d1c8e61b9b357316dd98e08" kind="variable"><name>defText</name></member>
+    <member refid="classtext_box___class_1aeb44ef09332727d341dea481b6773f4d" kind="variable"><name>text</name></member>
+    <member refid="classtext_box___class_1a28777adb9716c732e5f888dfdeb70c66" kind="variable"><name>pos</name></member>
+    <member refid="classtext_box___class_1a42c9ec6421da276d00eb7af0e677f1e3" kind="variable"><name>size</name></member>
+    <member refid="classtext_box___class_1a15d0a7411675ca7561e3ab9eafeaede3" kind="variable"><name>textSize</name></member>
+    <member refid="classtext_box___class_1a8604cab0db9cf7899009b68c8e140fa4" kind="variable"><name>textColour</name></member>
+    <member refid="classtext_box___class_1a644fe252eafc758a6a928e34ecba5008" kind="variable"><name>backColour</name></member>
+    <member refid="classtext_box___class_1a836ab3fd6702ea6968a34068b9b96ad8" kind="variable"><name>cursorColour</name></member>
+    <member refid="classtext_box___class_1ac62b0360b7bedf1a9d30bd51f5e01007" kind="function"><name>textBox_Class</name></member>
+    <member refid="classtext_box___class_1a4f508e0fd1645f5209b3dce4459adb07" kind="function"><name>enableTextInput</name></member>
+    <member refid="classtext_box___class_1ae4b2f9d68261d89824bf496462067a4f" kind="function"><name>disableTextInput</name></member>
+    <member refid="classtext_box___class_1a9341bfa7a03d269d49ca517db9064d38" kind="function"><name>getEnableTextInput</name></member>
+  </compound>
+  <compound refid="classtop_bar___class" kind="class"><name>topBar_Class</name>
+    <member refid="classtop_bar___class_1a92e7c42fb6dcc5b212010d19a62452c3" kind="variable"><name>Wifi</name></member>
+    <member refid="classtop_bar___class_1adb92bc4bf453489fce808f126fc5c785" kind="variable"><name>BLE</name></member>
+    <member refid="classtop_bar___class_1abd05d88cf9363e054fd2d0c3e8e23117" kind="variable"><name>SDpresent</name></member>
+    <member refid="classtop_bar___class_1a307dc7f3d2d7a6336895bdf6cb832fdc" kind="variable"><name>Bat</name></member>
+    <member refid="classtop_bar___class_1a5c7034f1807e682e9e96743b1c280a76" kind="variable"><name>Display</name></member>
+    <member refid="classtop_bar___class_1a2a2e420feda4cf58b96ed363b918d633" kind="function"><name>topBar_Class</name></member>
+    <member refid="classtop_bar___class_1a555351fcf48dbea120ac40f8c010dce8" kind="function"><name>updateIcons</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="readme_8md" kind="file"><name>readme.md</name>
+  </compound>
+  <compound refid="compass_icon_8h" kind="file"><name>compassIcon.h</name>
+    <member refid="compass_icon_8h_1a8a370c87aa842caf84fb94c8b742f762" kind="variable"><name>compassIcon</name></member>
+  </compound>
+  <compound refid="_g_u_i_8cpp" kind="file"><name>GUI.cpp</name>
+    <member refid="_g_u_i_8cpp_1a2b01188edf99a98f9add079b790e9ff8" kind="function"><name>GUIloop</name></member>
+    <member refid="_g_u_i_8cpp_1a5db4d43cd4e019ceedf4debfe4d0b038" kind="function"><name>testHandler</name></member>
+  </compound>
+  <compound refid="_g_u_i_8h" kind="file"><name>GUI.h</name>
+    <member refid="_g_u_i_8h_1af884dec1383d9d7d8d6b7e5e25922c8c" kind="enum"><name>iconType</name></member>
+    <member refid="_g_u_i_8h_1af884dec1383d9d7d8d6b7e5e25922c8ca567534ad0fc3fff03ffdfef6b81b630a" kind="enumvalue"><name>SDpresent</name></member>
+    <member refid="_g_u_i_8h_1af884dec1383d9d7d8d6b7e5e25922c8ca61f0e1c8b13e6a6a7b41851f338333ff" kind="enumvalue"><name>Wifi</name></member>
+    <member refid="_g_u_i_8h_1af884dec1383d9d7d8d6b7e5e25922c8ca83ac6cc3119966e1e5a7908c9e2e3b6a" kind="enumvalue"><name>BLE</name></member>
+    <member refid="_g_u_i_8h_1a1c7831cab950a92c8124fe4e2f6723e5" kind="variable"><name>GUI</name></member>
+    <member refid="_g_u_i_8h_1a7d37674f503dac4c08ab7830b07e282c" kind="variable"><name>Buffer</name></member>
+    <member refid="_g_u_i_8h_1a2b01188edf99a98f9add079b790e9ff8" kind="function"><name>GUIloop</name></member>
+  </compound>
+  <compound refid="keyboard_task_8cpp" kind="file"><name>keyboardTask.cpp</name>
+    <member refid="keyboard_task_8cpp_1ae64f4525ae457ae982db2ec17710180f" kind="function"><name>keyBoardLoop</name></member>
+    <member refid="keyboard_task_8cpp_1aede5659edabbe94cde2dcdd9e0ccef4a" kind="function"><name>navSwitch</name></member>
+    <member refid="keyboard_task_8cpp_1af3ce5ff30e830a34b29fb2940e47630d" kind="function"><name>keyBoardISR</name></member>
+  </compound>
+  <compound refid="keyboard_task_8h" kind="file"><name>keyboardTask.h</name>
+    <member refid="keyboard_task_8h_1a1a6b6fb557d8d37d59700faf4e4c9167" kind="enum"><name>mode</name></member>
+    <member refid="keyboard_task_8h_1a1a6b6fb557d8d37d59700faf4e4c9167a0e17259309839615d215adfe7a44fb50" kind="enumvalue"><name>text</name></member>
+    <member refid="keyboard_task_8h_1a1a6b6fb557d8d37d59700faf4e4c9167a1c214f0c06a8280b10407774cb30d5b8" kind="enumvalue"><name>nav</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2" kind="enum"><name>navSignal</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2af5297152557c7da396243000ca240e89" kind="enumvalue"><name>ESC</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2a11563127ec3be864b514a1784c5d37a6" kind="enumvalue"><name>DEL</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2aba595d8bca8bc5e67c37c0a9d89becfa" kind="enumvalue"><name>UP</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2a9b0b4a95b99523966e0e34ffdadac9da" kind="enumvalue"><name>DOWN</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2adb45120aafd37a973140edee24708065" kind="enumvalue"><name>LEFT</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2aec8379af7490bb9eaaf579cf17876f38" kind="enumvalue"><name>RIGHT</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2a951ab68bb8f7daafb78951107080904e" kind="enumvalue"><name>ENTER</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2afbd0f14f73cfbbf6b15ca1b4418a6209" kind="enumvalue"><name>OPT</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2a4bab504a61d7f2923c2225dc896c91c6" kind="enumvalue"><name>NP</name></member>
+    <member refid="keyboard_task_8h_1a7d37674f503dac4c08ab7830b07e282c" kind="variable"><name>Buffer</name></member>
+    <member refid="keyboard_task_8h_1ae64f4525ae457ae982db2ec17710180f" kind="function"><name>keyBoardLoop</name></member>
+    <member refid="keyboard_task_8h_1af3ce5ff30e830a34b29fb2940e47630d" kind="function"><name>keyBoardISR</name></member>
+    <member refid="keyboard_task_8h_1aede5659edabbe94cde2dcdd9e0ccef4a" kind="function"><name>navSwitch</name></member>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a1c7831cab950a92c8124fe4e2f6723e5" kind="variable"><name>GUI</name></member>
+    <member refid="main_8cpp_1a7d37674f503dac4c08ab7830b07e282c" kind="variable"><name>Buffer</name></member>
+    <member refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kind="function"><name>setup</name></member>
+    <member refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kind="function"><name>loop</name></member>
+  </compound>
+  <compound refid="menu_background_8h" kind="file"><name>menuBackground.h</name>
+    <member refid="menu_background_8h_1ac51d9d10ffb7d381a837ba428b52b326" kind="variable"><name>menuBackgroundTest</name></member>
+  </compound>
+  <compound refid="mock_up_8h" kind="file"><name>mockUp.h</name>
+    <member refid="mock_up_8h_1a37302c3bc0b28f173440ae3b90c77bde" kind="variable"><name>mockUp</name></member>
+  </compound>
+  <compound refid="_r_e_a_d_m_e___t_e_m_p_l_a_t_e_8md" kind="file"><name>README_TEMPLATE.md</name>
+  </compound>
+  <compound refid="splashscreen_8h" kind="file"><name>splashscreen.h</name>
+    <member refid="splashscreen_8h_1aa1e9c0d31c4a40384771c4aef54fc466" kind="variable"><name>splashscreen</name></member>
+  </compound>
+  <compound refid="sprites_8h" kind="file"><name>sprites.h</name>
+    <member refid="sprites_8h_1aa1e9c0d31c4a40384771c4aef54fc466" kind="variable"><name>splashscreen</name></member>
+    <member refid="sprites_8h_1a17e407627d5ef7f178db2aba3662cb36" kind="variable"><name>menuBackground</name></member>
+    <member refid="sprites_8h_1aa3e47194f92c165793a2f0c3bacd2581" kind="variable"><name>batIconBase</name></member>
+    <member refid="sprites_8h_1ab21970e195826b3d0fdb2da93c9bf60f" kind="variable"><name>batIcons</name></member>
+    <member refid="sprites_8h_1afdd7a40490d400556f3661481a23f103" kind="variable"><name>terminalIcon</name></member>
+  </compound>
+  <compound refid="sprites_cpy_8h" kind="file"><name>spritesCpy.h</name>
+    <member refid="sprites_cpy_8h_1aa1e9c0d31c4a40384771c4aef54fc466" kind="variable"><name>splashscreen</name></member>
+    <member refid="sprites_cpy_8h_1a17e407627d5ef7f178db2aba3662cb36" kind="variable"><name>menuBackground</name></member>
+    <member refid="sprites_cpy_8h_1aa3e47194f92c165793a2f0c3bacd2581" kind="variable"><name>batIconBase</name></member>
+    <member refid="sprites_cpy_8h_1ab21970e195826b3d0fdb2da93c9bf60f" kind="variable"><name>batIcons</name></member>
+  </compound>
+  <compound refid="terminal_8cpp" kind="file"><name>terminal.cpp</name>
+  </compound>
+  <compound refid="bitmap_parser_8cpp" kind="file"><name>bitmapParser.cpp</name>
+    <member refid="bitmap_parser_8cpp_1a068a04c3357658a71c8cbd68de38a1d0" kind="define"><name>DATA_OFFSET_OFFSET</name></member>
+    <member refid="bitmap_parser_8cpp_1a6a6dbe125418de8a9f11943d009ef9ae" kind="define"><name>WIDTH_OFFSET</name></member>
+    <member refid="bitmap_parser_8cpp_1abeaed8ebfced11028a9e1e4521a7a1bd" kind="define"><name>HEIGHT_OFFSET</name></member>
+    <member refid="bitmap_parser_8cpp_1a3f6e89debd1c384b4592a0df898dff56" kind="define"><name>BITS_PER_PIXEL_OFFSET</name></member>
+    <member refid="bitmap_parser_8cpp_1a49999be01380f41cc0d0f1f1406fb277" kind="define"><name>HEADER_SIZE</name></member>
+    <member refid="bitmap_parser_8cpp_1a021879045d7ce866f25971a7fa70497e" kind="define"><name>INFO_HEADER_SIZE</name></member>
+    <member refid="bitmap_parser_8cpp_1ae007f7efcb649937cd1ef4e3f4e8e94e" kind="define"><name>NO_COMPRESION</name></member>
+    <member refid="bitmap_parser_8cpp_1a9d3c0470019a469654351bbf889024ca" kind="define"><name>MAX_NUMBER_OF_COLORS</name></member>
+    <member refid="bitmap_parser_8cpp_1acc41e09c63aae7f85191a7fe0e656f1b" kind="define"><name>ALL_COLORS_REQUIRED</name></member>
+    <member refid="bitmap_parser_8cpp_1adcf6da3cbfd33893f79401fa1367223b" kind="function"><name>convert</name></member>
+    <member refid="bitmap_parser_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="md_readme" kind="page"><name>md_readme</name>
+  </compound>
+  <compound refid="md_src_2_r_e_a_d_m_e___t_e_m_p_l_a_t_e" kind="page"><name>md_src_2_r_e_a_d_m_e___t_e_m_p_l_a_t_e</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_b7878ad5ecbf2506f4125b9d34c97e45" kind="dir"><name>src/util</name>
+  </compound>
+</doxygenindex>

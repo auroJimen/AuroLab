@@ -1,0 +1,86 @@
+\doxysection{text\+Box\+\_\+\+Class Class Reference}
+\hypertarget{classtext_box___class}{}\label{classtext_box___class}\index{textBox\_Class@{textBox\_Class}}
+
+
+Text input box class to construct menus.  
+
+
+
+
+{\ttfamily \#include $<$GUI.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtext_box___class_ac62b0360b7bedf1a9d30bd51f5e01007}{text\+Box\+\_\+\+Class}} (\mbox{\hyperlink{structcoord}{coord}} pos, \mbox{\hyperlink{structcoord}{coord}} size, String \texorpdfstring{$\ast$}{*}text, bool input\+Enabled=false, String def\+Text="{}"{}, float Text\+Size=1.\+5, int text\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, int back\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+BLACK, int cursor\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN)
+\begin{DoxyCompactList}\small\item\em Constructor for the text\+Box class. \end{DoxyCompactList}\item 
+\Hypertarget{classtext_box___class_a4f508e0fd1645f5209b3dce4459adb07}\label{classtext_box___class_a4f508e0fd1645f5209b3dce4459adb07} 
+void {\bfseries enable\+Text\+Input} ()
+\begin{DoxyCompactList}\small\item\em Enables the text\+Input and launches a keyboard listener if it isn\textquotesingle{}t already running. \end{DoxyCompactList}\item 
+\Hypertarget{classtext_box___class_ae4b2f9d68261d89824bf496462067a4f}\label{classtext_box___class_ae4b2f9d68261d89824bf496462067a4f} 
+void {\bfseries disable\+Text\+Input} ()
+\begin{DoxyCompactList}\small\item\em Disables text\+Input and kills the keyboard listener process. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtext_box___class_a9341bfa7a03d269d49ca517db9064d38}{get\+Enable\+Text\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Returns the value of enable\+Text\+Input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Text input box class to construct menus. 
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00115}{115}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtext_box___class_ac62b0360b7bedf1a9d30bd51f5e01007}\index{textBox\_Class@{textBox\_Class}!textBox\_Class@{textBox\_Class}}
+\index{textBox\_Class@{textBox\_Class}!textBox\_Class@{textBox\_Class}}
+\doxysubsubsection{\texorpdfstring{textBox\_Class()}{textBox\_Class()}}
+{\footnotesize\ttfamily \label{classtext_box___class_ac62b0360b7bedf1a9d30bd51f5e01007} 
+text\+Box\+\_\+\+Class\+::text\+Box\+\_\+\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoord}{coord}}}]{pos}{, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{size}{, }\item[{String \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{bool}]{input\+Enabled}{ = {\ttfamily false}, }\item[{String}]{def\+Text}{ = {\ttfamily "{}"{}}, }\item[{float}]{Text\+Size}{ = {\ttfamily 1.5}, }\item[{int}]{text\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}, }\item[{int}]{back\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:BLACK}, }\item[{int}]{cursor\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}}\end{DoxyParamCaption})}
+
+
+
+Constructor for the text\+Box class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Coord position where the text\+Box will be drawn \\
+\hline
+{\em size} & Coord size of the text\+Box \\
+\hline
+{\em text} & Pointer to a string where the text will be saved when an enter event is triggered \\
+\hline
+{\em input\+Enabled} & Sets wether inputing to the box is currently enabled, def to false \\
+\hline
+{\em def\+Text} & Text displayed on the box when it\textquotesingle{}s created, def to "{}"{} \\
+\hline
+{\em Text\+Size} & Float text size multiplayer, def to 1.\+5 \\
+\hline
+{\em text\+Colour} & Int, colour as defined in the m5gfx\+::ili9341\+\_\+colors space defaults to green \\
+\hline
+{\em back\+Colour} & Int, colour as defined in the m5gfx\+::ili9341\+\_\+colors space defaults to black \\
+\hline
+{\em cursor\+Colour} & Int, colour as defined in the m5gfx\+::ili9341\+\_\+colors space defaults to green \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtext_box___class_a9341bfa7a03d269d49ca517db9064d38}\index{textBox\_Class@{textBox\_Class}!getEnableTextInput@{getEnableTextInput}}
+\index{getEnableTextInput@{getEnableTextInput}!textBox\_Class@{textBox\_Class}}
+\doxysubsubsection{\texorpdfstring{getEnableTextInput()}{getEnableTextInput()}}
+{\footnotesize\ttfamily \label{classtext_box___class_a9341bfa7a03d269d49ca517db9064d38} 
+bool text\+Box\+\_\+\+Class\+::get\+Enable\+Text\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value of enable\+Text\+Input. 
+
+\begin{DoxyReturn}{Returns}
+Bool, enable\+Text\+Input 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/GUI.\+h\end{DoxyCompactItemize}

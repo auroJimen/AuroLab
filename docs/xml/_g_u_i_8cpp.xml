@@ -1,0 +1,544 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_g_u_i_8cpp" kind="file" language="C++">
+    <compoundname>GUI.cpp</compoundname>
+    <includes refid="_g_u_i_8h" local="yes">GUI.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+      <node id="1">
+        <label>src/GUI.cpp</label>
+        <link refid="_g_u_i_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>GUI.h</label>
+        <link refid="_g_u_i_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>compassIcon.h</label>
+        <link refid="compass_icon_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>keyboardTask.h</label>
+        <link refid="keyboard_task_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>menuBackground.h</label>
+        <link refid="menu_background_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>sprites.h</label>
+        <link refid="sprites_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>M5Cardputer.h</label>
+      </node>
+      <node id="5">
+        <label>M5GFX.h</label>
+      </node>
+      <node id="6">
+        <label>WiFi.h</label>
+      </node>
+      <node id="8">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_g_u_i_8cpp_1a2b01188edf99a98f9add079b790e9ff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GUIloop</definition>
+        <argsstring>(void *parameter)</argsstring>
+        <name>GUIloop</name>
+        <param>
+          <type>void *</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+<para>Task handler function, isolated since it mustn&apos;t be a class function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parameter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standar parameter for handler functions, a nullptr is passed if it is not needed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.cpp" line="264" column="6" bodyfile="src/GUI.cpp" bodystart="264" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="_g_u_i_8cpp_1a5db4d43cd4e019ceedf4debfe4d0b038" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void testHandler</definition>
+        <argsstring>(int a, void *b)</argsstring>
+        <name>testHandler</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.cpp" line="291" column="6" bodyfile="src/GUI.cpp" bodystart="291" bodyend="291"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//GUI<sp/>file,<sp/>contains<sp/>all<sp/>functions<sp/>needed<sp/>for<sp/>our<sp/>GUI<sp/>to<sp/>work<sp/>properly</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GUI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//cord<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">coord::coord(){};</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">coord::coord(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b)<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>a;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>b;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="structcoord" kindref="compound">coord</ref><sp/>coord::add(<ref refid="structcoord" kindref="compound">coord</ref><sp/>a){</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structcoord" kindref="compound">coord</ref>(x+a.x,<sp/>y+a.y);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//icon<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">icon_Class::icon_Class(){}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">icon_Class::icon_Class(M5GFX<sp/>screen,<sp/>iconType<sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state){</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//iconBat<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classicon_bat___class_1ab5d44064f5edf2ecc03dcc86eafd841b" refkind="member"><highlight class="normal"><ref refid="classicon_bat___class_1ab5d44064f5edf2ecc03dcc86eafd841b" kindref="member">iconBat_Class::iconBat_Class</ref>(){};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classicon_bat___class_1af7a5643cf31119f4777ebc1c58c6f15a" refkind="member"><highlight class="normal"><ref refid="classicon_bat___class_1ab5d44064f5edf2ecc03dcc86eafd841b" kindref="member">iconBat_Class::iconBat_Class</ref>(M5GFX&amp;<sp/>display,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc){</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen<sp/>=<sp/>M5GFX(display);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;percent<sp/>=<sp/>perc;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Initialize<sp/>the<sp/>bat<sp/>drawing<sp/>the<sp/>base<sp/>sprite</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.pushImage(basePos.x,<sp/>basePos.y,<sp/>baseSize.x,<sp/>baseSize.y,<sp/>batIconBase);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" kindref="member">updateState</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iconBat_Class::chargeLevel(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc){</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>(int)ceilf(12.0*(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)perc/100.0);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result&gt;=12)<sp/>result<sp/>=11;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Serial.println(result);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classicon_bat___class_1acb7cbb4f2b6cb2366fcd5f9e63587bc9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classicon_bat___class_1acb7cbb4f2b6cb2366fcd5f9e63587bc9" kindref="member">iconBat_Class::testAnim</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mil){</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;=<sp/>100;<sp/>i++){</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;screen.pushImage(contPos.x,<sp/>contPos.y,<sp/>contSize.x,<sp/>contSize.y,<sp/>batIcons[chargeLevel(i)]);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classicon_bat___class_1abea3617d80f87acba7be39b078ea8611" kindref="member">updatePercent</ref>(i);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay(mil);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classicon_bat___class_1abea3617d80f87acba7be39b078ea8611" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classicon_bat___class_1abea3617d80f87acba7be39b078ea8611" kindref="member">iconBat_Class::updatePercent</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc){</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(perc<sp/>&gt;<sp/>100)<sp/>perc<sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Delete<sp/>current<sp/>text</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.setTextColor(BLACK);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.setCursor(textPos.x,textPos.y);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.setTextSize(textSize);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.printf(</highlight><highlight class="stringliteral">&quot;%3d%%&quot;</highlight><highlight class="normal">,<sp/>percent);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Update<sp/>saved<sp/>text</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>percent<sp/>=<sp/>perc;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Print<sp/>saved<sp/>text</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.setTextColor(GREEN);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.setCursor(textPos.x,textPos.y);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.setTextSize(textSize);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.printf(</highlight><highlight class="stringliteral">&quot;%3d%%&quot;</highlight><highlight class="normal">,<sp/>percent);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classicon_bat___class_1a523a17c318459aba2c8ae1c7635295af" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" kindref="member">iconBat_Class::updateState</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc){</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(perc<sp/>&gt;<sp/>100)<sp/>perc<sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(perc<sp/>!=<sp/>this-&gt;percent)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Updates<sp/>shown<sp/>battery<sp/>percent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon_bat___class_1abea3617d80f87acba7be39b078ea8611" kindref="member">updatePercent</ref>(perc);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Updates<sp/>charge<sp/>level</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon_bat___class_1a3885a352f82a852267a5ceab6443f147" kindref="member">updateChargeLevel</ref>(perc);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" kindref="member">iconBat_Class::updateState</ref>(){</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc<sp/>=<sp/>fetchBatLevel();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" kindref="member">updateState</ref>(perc);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="classicon_bat___class_1a3885a352f82a852267a5ceab6443f147" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classicon_bat___class_1a3885a352f82a852267a5ceab6443f147" kindref="member">iconBat_Class::updateChargeLevel</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc){</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(perc<sp/>&gt;=<sp/>100)<sp/>perc<sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>level<sp/>=<sp/>chargeLevel(perc);<sp/></highlight><highlight class="comment">//0-11<sp/>level</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.pushImage(basePos.x,<sp/>basePos.y,<sp/>baseSize.x,<sp/>baseSize.y,<sp/>batIconBase);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;screen.pushImage(contPos.x,<sp/>contPos.y,<sp/>contSize.x,<sp/>contSize.y,<sp/>batIcons[level]);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iconBat_Class::fetchBatLevel(){</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Fetches<sp/>current<sp/>battery<sp/>level<sp/>from<sp/>the<sp/>Power<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)M5Cardputer.Power.getBatteryLevel();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">//topBar_Class<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="classtop_bar___class_1a2a2e420feda4cf58b96ed363b918d633" refkind="member"><highlight class="normal"><ref refid="classtop_bar___class_1a2a2e420feda4cf58b96ed363b918d633" kindref="member">topBar_Class::topBar_Class</ref>(){</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>M5GFX<sp/>disp<sp/>=<sp/>this-&gt;Display;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Bat<sp/>=<sp/><ref refid="classicon_bat___class" kindref="compound">iconBat_Class</ref>(disp);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Wifi<sp/>=<sp/><ref refid="classicon___class" kindref="compound">icon_Class</ref>(disp,<sp/>iconType::Wifi,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;BLE<sp/>=<sp/><ref refid="classicon___class" kindref="compound">icon_Class</ref>(disp,<sp/>iconType::BLE,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;SDpresent<sp/>=<sp/><ref refid="classicon___class" kindref="compound">icon_Class</ref>(disp,<sp/>iconType::SDpresent,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="classtop_bar___class_1a555351fcf48dbea120ac40f8c010dce8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtop_bar___class_1a555351fcf48dbea120ac40f8c010dce8" kindref="member">topBar_Class::updateIcons</ref>(){</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Updates<sp/>the<sp/>status<sp/>of<sp/>all<sp/>topbar<sp/>icons</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Bat.<ref refid="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" kindref="member">updateState</ref>();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">//list_Class<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>list_Class::displayableRows(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>titleSize,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height){</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>titleRowSize<sp/>=<sp/>rowSize(titleSize);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowSize<sp/>=<sp/>list_Class::rowSize(textSize);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows<sp/>=<sp/>(height-<sp/>titleRowSize)/rowSize;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rows;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>list_Class::rowsOccupied(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>textLen,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>spriteWidth){</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pxWidth<sp/>=<sp/>list_Class::rowWidth(textSize,<sp/>textLen);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ceil((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)pxWidth/(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)spriteWidth);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>list_Class::displayableRows(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height){</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowSize<sp/>=<sp/>list_Class::rowSize(textSize);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows<sp/>=<sp/>height/rowSize;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rows;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="classlist___class_1a978dd4124a5baec5cd27eeed29dd7c63" refkind="member"><highlight class="normal"><ref refid="classlist___class_1a978dd4124a5baec5cd27eeed29dd7c63" kindref="member">list_Class::list_Class</ref>(String<sp/>title,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elementNum,<sp/>String*<sp/>elementName,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*handler)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*),<sp/></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><ref refid="structcoord" kindref="compound">coord</ref><sp/>origin,<sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>titleSize,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize,<sp/></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>textColour,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>backColour,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>highlightColour,<sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>border){</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;title<sp/>=<sp/>title;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;elementNum<sp/>=<sp/>elementNum;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;elementName<sp/>=<sp/>elementName;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;handler<sp/>=<sp/>handler;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;origin<sp/>=<sp/>origin;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;size<sp/>=<sp/>size;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;titleSize<sp/>=<sp/>titleSize;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;textSize<sp/>=<sp/>textSize;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;textColour<sp/>=<sp/>textColour;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;backColour<sp/>=<sp/>backColour;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;highlightColour<sp/>=<sp/>highlightColour;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;pos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;border<sp/>=<sp/>border;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;rows<sp/>=<sp/>displayableRows(textSize,<sp/>size.y-3*this-&gt;border.y-rowSize(this-&gt;titleSize));</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" kindref="member">list_Class::draw</ref>(){</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Create<sp/>the<sp/>background<sp/>sprite<sp/>in<sp/>RAM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>M5Canvas<sp/>background(&amp;Display);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>background.createSprite(this-&gt;size.x,<sp/>this-&gt;size.y);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Draw<sp/>background<sp/>rectangle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>background.setBaseColor(this-&gt;backColour);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>background.clear();</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>background.setColor(this-&gt;textColour);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>background.drawRoundRect(0,<sp/>0,<sp/>this-&gt;size.x<sp/>,<sp/>this-&gt;size.y,<sp/>3);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Push<sp/>&amp;<sp/>delete<sp/>the<sp/>sprite</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>background.pushSprite(this-&gt;origin.x,<sp/>this-&gt;origin.y);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>background.deleteSprite();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Create<sp/>title<sp/>sprite<sp/>in<sp/>RAM<sp/>&amp;<sp/>Set<sp/>text<sp/>options</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>M5Canvas<sp/>titleSprt(&amp;Display);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>titleSprt.createSprite(this-&gt;size.x<sp/>-2*this-&gt;border.x,<sp/>rowSize(this-&gt;titleSize));</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>titleSprt.setTextColor(this-&gt;textColour);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>titleSprt.setTextSize(this-&gt;titleSize);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>titleSprt.println(title);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Push<sp/>&amp;<sp/>delete<sp/>the<sp/>sprite</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>titleSprt.pushSprite(origin.x<sp/>+this-&gt;border.x,<sp/>origin.y<sp/>+this-&gt;border.y);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>titleSprt.deleteSprite();</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Draw<sp/>options</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;drawOptions();</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>list_Class::drawOptions(){</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Create<sp/>text<sp/>sprite<sp/>in<sp/>RAM<sp/>&amp;<sp/>Set<sp/>text<sp/>options</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>M5Canvas<sp/>text(&amp;Display);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>text.createSprite(this-&gt;size.x<sp/>-2*this-&gt;border.x,<sp/>this-&gt;size.y<sp/>-3*this-&gt;border.y<sp/>-rowSize(this-&gt;titleSize));</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>text.setTextColor(this-&gt;textColour);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>text.setTextSize(this-&gt;textSize);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>text.setCursor(0,1);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//For<sp/>loop<sp/>to<sp/>draw<sp/>the<sp/>options<sp/>(taking<sp/>current<sp/>pos<sp/>into<sp/>account)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>pos<sp/>-2;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>&lt;<sp/>0)<sp/>index<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//If<sp/>the<sp/>selected<sp/>pos<sp/>is<sp/>on<sp/>0,1,2<sp/>drawing<sp/>starts<sp/>@<sp/>index<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;elementNum<sp/>-<sp/>index<sp/>-1<sp/>&lt;<sp/>this-&gt;rows)<sp/>index<sp/>=<sp/>this-&gt;elementNum-this-&gt;rows;<sp/></highlight><highlight class="comment">//If<sp/>the<sp/>selected<sp/>position<sp/>is<sp/>near<sp/>the<sp/>end,<sp/>print<sp/>enough<sp/>to<sp/>fill<sp/>the<sp/>rows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>index;<sp/>(i<sp/>&lt;this-&gt;elementNum<sp/>&amp;&amp;<sp/>count<sp/>&lt;<sp/>this-&gt;rows);<sp/>i++){</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>pos)<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text.setColor(this-&gt;highlightColour);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows<sp/>=<sp/>list_Class::rowsOccupied(this-&gt;elementName[i].length()<sp/>+1,<sp/>this-&gt;textSize,<sp/>this-&gt;size.x<sp/>-2*this-&gt;border.x);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text.fillRoundRect(text.getCursorX()-1,<sp/>text.getCursorY()-2,<sp/>size.x<sp/>-2*this-&gt;border.x,<sp/>rows*rowSize(this-&gt;textSize)+1,<sp/>5);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text.setTextColor(this-&gt;backColour);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text.println(</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">+this-&gt;elementName[i]);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text.setTextColor(this-&gt;textColour);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>text.println(this-&gt;elementName[i]);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>text.pushSprite(origin.x<sp/>+this-&gt;border.x,<sp/>origin.y<sp/>+2*this-&gt;border.y<sp/>+<sp/>rowSize(this-&gt;titleSize));</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>text.deleteSprite();</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231" refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" kindref="member">list_Class::scroll</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newPos)<sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newPos<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>newPos<sp/>&lt;<sp/>this-&gt;elementNum)<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;pos<sp/>=<sp/>newPos;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Maybe<sp/>change<sp/>this<sp/>latter<sp/>if<sp/>a<sp/>redraw<sp/>will<sp/>be<sp/>already<sp/>triggered<sp/>by<sp/>the<sp/>mainloop<sp/>each<sp/>x<sp/>ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;drawOptions();</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" kindref="member">list_Class::scrollDown</ref>(){</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" kindref="member">scroll</ref>(this-&gt;pos+1);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243" refid="classlist___class_1a48eeb6911110ba094e2f979fc824f252" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1a48eeb6911110ba094e2f979fc824f252" kindref="member">list_Class::scrollUp</ref>(){</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" kindref="member">scroll</ref>(this-&gt;pos-1);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247" refid="classlist___class_1acafcdd491b89bfd476dcfd43d32786a7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1acafcdd491b89bfd476dcfd43d32786a7" kindref="member">list_Class::optnEvent</ref>(){</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Create<sp/>non<sp/>scrollable<sp/>daughter<sp/>list,<sp/>need<sp/>to<sp/>find<sp/>a<sp/>way<sp/>to<sp/>kill<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="comment">//GUI<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255" refid="class_g_u_i___class_1aca65997e1615dbb0ddee2671aa95ae92" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1aca65997e1615dbb0ddee2671aa95ae92" kindref="member">GUI_Class::begin</ref>(){</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Launch<sp/>gui<sp/>execution<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>BaseType_t<sp/>gui<sp/>=<sp/>xTaskCreatePinnedToCore(GUIloop,<sp/></highlight><highlight class="stringliteral">&quot;GUI<sp/>thread&quot;</highlight><highlight class="normal">,<sp/>10000,<sp/>NULL,<sp/>0,<sp/>&amp;this-&gt;task,<sp/>0);<sp/></highlight><highlight class="comment">//Creates<sp/>thread<sp/>for<sp/>the<sp/>GUI<sp/>code<sp/>on<sp/>core<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gui<sp/>!=<sp/>pdPASS)<sp/>log_i(</highlight><highlight class="stringliteral">&quot;ERR&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>Buffer.<ref refid="classbuffer___class_1a2c8542d9cbe7433a80c3a8dedc5dbb51" kindref="member">begin</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Initialises<sp/>Keyboard<sp/>buffer<sp/>in<sp/>tis<sp/>separate<sp/>execution<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GUIloop(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>parameter){</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//This<sp/>code<sp/>runs<sp/>on<sp/>a<sp/>separate<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>GUI.<ref refid="class_g_u_i___class_1a1e0dd033f8ab0d55d0e039ea5d305adb" kindref="member">mainLoop</ref>();</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270" refid="class_g_u_i___class_1af0d6b5d535fa64ef2fdecdf1a7771b49" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1af0d6b5d535fa64ef2fdecdf1a7771b49" kindref="member">GUI_Class::splashScreen</ref>(){</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.setBaseColor(BLACK);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.clearDisplay(BLACK);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.setTextSize(2.5);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.setTextDatum(textdatum_t::top_left);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.setTextColor(GREEN);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.pushImage(0,0,240,135,<sp/>splashscreen);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.setCursor(15,10);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.print(</highlight><highlight class="stringliteral">&quot;Loading&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>delay(200);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.print(</highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>delay(200);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.print(</highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>delay(200);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.print(</highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>delay(200);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.clear();</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>testHandler(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>b)<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;};</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293" refid="class_g_u_i___class_1ab6d29667f048b28a6d867cab6d4e958c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1ab6d29667f048b28a6d867cab6d4e958c" kindref="member">GUI_Class::drawMainMenu</ref>(){</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Draws<sp/>the<sp/>main<sp/>menu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>M5GFX<sp/>disp<sp/>=<sp/>this-&gt;Display;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>disp.pushImage(0,0,240,135,<sp/>menuBackgroundTest);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//disp.pushImage(90,41,<sp/>58,<sp/>74,<sp/>terminalIcon);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//disp.setColor(BLACK);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//disp.fillRoundRect(50,<sp/>30,<sp/>140,<sp/>90,<sp/>3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//disp.setColor(GREEN);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//disp.drawRoundRect(50,<sp/>30,<sp/>140,<sp/>90,<sp/>3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304" refid="class_g_u_i___class_1a1e0dd033f8ab0d55d0e039ea5d305adb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1a1e0dd033f8ab0d55d0e039ea5d305adb" kindref="member">GUI_Class::mainLoop</ref>(){</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Draw<sp/>splashscreen</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_g_u_i___class_1af0d6b5d535fa64ef2fdecdf1a7771b49" kindref="member">splashScreen</ref>();</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Create<sp/>topBar</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;topBar<sp/>=<sp/><ref refid="classtop_bar___class" kindref="compound">topBar_Class</ref>();</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Draw<sp/>main<sp/>manu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_g_u_i___class_1ab6d29667f048b28a6d867cab6d4e958c" kindref="member">drawMainMenu</ref>();</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//MainLoop<sp/>for<sp/>the<sp/>GUI,<sp/>handles<sp/>drawing<sp/>the<sp/>UI<sp/>elements,<sp/>reacts<sp/>to<sp/>inputs<sp/>etc.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;){</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;topBar.<ref refid="classtop_bar___class_1a555351fcf48dbea120ac40f8c010dce8" kindref="member">updateIcons</ref>();</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*String<sp/>elements[]<sp/>=<sp/>{&quot;Pos0&quot;,<sp/>&quot;Pos1&quot;,<sp/>&quot;Pos2&quot;,<sp/>&quot;Pos3&quot;,<sp/>&quot;Pos4&quot;,<sp/>&quot;Pos5&quot;,<sp/>&quot;Pos6&quot;,<sp/>&quot;Pos7&quot;,<sp/>&quot;Pos8&quot;,<sp/>&quot;Pos9&quot;};</highlight></codeline>
+<codeline lineno="316"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>String<sp/>*ref<sp/>=<sp/>elements;</highlight></codeline>
+<codeline lineno="317"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_Class<sp/>test<sp/>=<sp/>list_Class(String(&quot;Titulo&quot;),<sp/>10,<sp/>ref,<sp/><sp/>&amp;testHandler,<sp/>coord(50,30),<sp/>coord(140,96));</highlight></codeline>
+<codeline lineno="318"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>test.draw();</highlight></codeline>
+<codeline lineno="319"><highlight class="comment"></highlight></codeline>
+<codeline lineno="320"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for(;;){</highlight></codeline>
+<codeline lineno="321"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>10;<sp/>i++){</highlight></codeline>
+<codeline lineno="322"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay(500);</highlight></codeline>
+<codeline lineno="323"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>test.scroll(i);</highlight></codeline>
+<codeline lineno="324"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="325"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay(2000);</highlight></codeline>
+<codeline lineno="326"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_g_u_i___class_1a72000c590917f97769bfaae8f97a19bd" kindref="member">drawWifiMenu</ref>();</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="329"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331" refid="class_g_u_i___class_1a91db0ecb5a53420b1a2b62757328e114" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1a91db0ecb5a53420b1a2b62757328e114" kindref="member">GUI_Class::loadConfFile</ref>(){</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Loads<sp/>all<sp/>saved<sp/>documentation<sp/>from<sp/>the<sp/>SD<sp/>card<sp/>(if<sp/>present)<sp/>b4<sp/>starting<sp/>up<sp/>the<sp/>GUI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335" refid="class_g_u_i___class_1a72000c590917f97769bfaae8f97a19bd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1a72000c590917f97769bfaae8f97a19bd" kindref="member">GUI_Class::drawWifiMenu</ref>(){</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Prints<sp/>available<sp/>wifi<sp/>networks<sp/>to<sp/>allow<sp/>selection<sp/>&amp;<sp/>connection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Starts<sp/>async<sp/>scan</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>WiFi.scanNetworks(</highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>M5Canvas<sp/>loadingAnim(&amp;Display);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>loadingAnim.createSprite(50,50);</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/>loadingAnim.pushImage(0,0,50,50,compassIcon);</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Check<sp/>if<sp/>scan<sp/>has<sp/>finished</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.setCursor(70,100);</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.setTextSize(1.5);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;Display.print(</highlight><highlight class="stringliteral">&quot;Scanning...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(WiFi.scanComplete()<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loadingAnim.pushRotatedWithAA(i);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i+=<sp/>5.0;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay(20);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>loadingAnim.deleteSprite();</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Get<sp/>number<sp/>of<sp/>available<sp/>networks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>availableNetworks<sp/>=<sp/>WiFi.scanComplete();</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/>SSID[availableNetworks];</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>String*<sp/>ptr<sp/>=<sp/>SSID;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>encript[availableNetworks];</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>RSSI[availableNetworks];</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/>BSSID[availableNetworks];</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/>channel[availableNetworks];</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=<sp/>0;<sp/>i<sp/>&lt;<sp/>availableNetworks;<sp/>i++){</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SSID[i]<sp/>=<sp/>(WiFi.SSID(i)<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Hidden_network&quot;</highlight><highlight class="normal"><sp/>:<sp/>WiFi.SSID(i);</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>encript[i]<sp/>=<sp/>WiFi.encryptionType(i);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RSSI[i]<sp/>=<sp/>WiFi.RSSI(i);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BSSID[i]<sp/>=<sp/>WiFi.BSSIDstr(i);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>channel[i]<sp/>=<sp/>WiFi.channel(i);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlist___class" kindref="compound">list_Class</ref><sp/>wifiMenu(String(</highlight><highlight class="stringliteral">&quot;WiFi&quot;</highlight><highlight class="normal">),<sp/>availableNetworks,<sp/>ptr,<sp/>&amp;testHandler,<sp/><ref refid="structcoord" kindref="compound">coord</ref>(50,30),<sp/><ref refid="structcoord" kindref="compound">coord</ref>(140,96));</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/>wifiMenu.<ref refid="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" kindref="member">draw</ref>();</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Wait<sp/>for<sp/>user<sp/>input<sp/>loop:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/>Buffer.<ref refid="classbuffer___class_1a0b98b8aef328ebdd93ae50b1139bc06e" kindref="member">keyboardEnable</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;){</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Nav<sp/>signal<sp/>listener</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vTaskDelay(10<sp/>/<sp/>portTICK_PERIOD_MS);</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Buffer.<ref refid="classbuffer___class_1af0d32aa1fdeac32dc3ee1a0282de80be" kindref="member">signal</ref><sp/>!=<sp/>navSignal::NP)<sp/>{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>log_i(</highlight><highlight class="stringliteral">&quot;Nav<sp/>signal<sp/>detected&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Buffer.<ref refid="classbuffer___class_1a0b98b8aef328ebdd93ae50b1139bc06e" kindref="member">keyboardEnable</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Deactivate<sp/>keyboard<sp/>during<sp/>execution</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(Buffer.<ref refid="classbuffer___class_1af0d32aa1fdeac32dc3ee1a0282de80be" kindref="member">signal</ref>){</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>navSignal::ESC:<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Close<sp/>the<sp/>menu,<sp/>UNIMPLEMENTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>navSignal::UP:</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>navSignal::LEFT:<sp/><sp/><sp/></highlight><highlight class="comment">//Scroll<sp/>up</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>log_i(</highlight><highlight class="stringliteral">&quot;Scroll<sp/>up<sp/>event&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wifiMenu.<ref refid="classlist___class_1a48eeb6911110ba094e2f979fc824f252" kindref="member">scrollUp</ref>();</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>navSignal::DOWN:<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>navSignal::RIGHT:<sp/><sp/></highlight><highlight class="comment">//Scroll<sp/>down</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>log_i(</highlight><highlight class="stringliteral">&quot;Scroll<sp/>down<sp/>event&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wifiMenu.<ref refid="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" kindref="member">scrollDown</ref>();</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>navSignal::ENTER:<sp/><sp/></highlight><highlight class="comment">//Element<sp/>selected<sp/>event<sp/>must<sp/>be<sp/>triggered<sp/>UNIMPLEMENTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>navSignal::OPT:<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Option<sp/>event</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>log_i(</highlight><highlight class="stringliteral">&quot;Option<sp/>event&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//wifiMenu.option();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Buffer.<ref refid="classbuffer___class_1af0d32aa1fdeac32dc3ee1a0282de80be" kindref="member">signal</ref><sp/>=<sp/>navSignal::NP;<sp/></highlight><highlight class="comment">//Clear<sp/>signal<sp/>flag</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Buffer.<ref refid="classbuffer___class_1a0b98b8aef328ebdd93ae50b1139bc06e" kindref="member">keyboardEnable</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//Reactivate<sp/>after</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>log_i(</highlight><highlight class="stringliteral">&quot;Keyboard<sp/>input<sp/>reactivated&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//When<sp/>selected,<sp/>must<sp/>ask<sp/>for<sp/>password,<sp/>connect<sp/>etc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//B4<sp/>finishing<sp/>the<sp/>function<sp/>a<sp/>redraw<sp/>must<sp/>be<sp/>called<sp/>to<sp/>get<sp/>rid<sp/>of<sp/>the<sp/>wifi<sp/>UI,<sp/>and<sp/>delete<sp/>the<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/GUI.cpp"/>
+  </compounddef>
+</doxygen>

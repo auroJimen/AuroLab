@@ -1,0 +1,193 @@
+\doxysection{bitmap\+Parser.\+cpp}
+\hypertarget{bitmap_parser_8cpp_source}{}\label{bitmap_parser_8cpp_source}\index{src/util/bitmapParser.cpp@{src/util/bitmapParser.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <inttypes.h>}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00006}00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00008}00008\ \textcolor{comment}{//BMP\ file\ structure}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#define\ DATA\_OFFSET\_OFFSET\ 0x000A}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#define\ WIDTH\_OFFSET\ 0x0012}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#define\ HEIGHT\_OFFSET\ 0x0016}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#define\ BITS\_PER\_PIXEL\_OFFSET\ 0x001C}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#define\ HEADER\_SIZE\ 14}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#define\ INFO\_HEADER\_SIZE\ 40}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#define\ NO\_COMPRESION\ 0}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#define\ MAX\_NUMBER\_OF\_COLORS\ 0}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#define\ ALL\_COLORS\_REQUIRED\ 0}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00019}00019\ uint16\_t\ convert(uint8\_t\ lowByte,\ uint8\_t\ highByte)\{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int})(highByte\ <<\ 8\ |\ lowByte);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00023}00023\ \};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00025}00025\ \textcolor{keywordtype}{int}\ main(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//First\ arg\ -\/-\/>\ path\ of\ bmp}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//Second\ arg\ -\/-\/>\ (optional)\ path\ to\ savefile}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ <\ 2)\ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Variable\ defs}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ uint32\_t\ width;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ uint32\_t\ height;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ uint32\_t\ bytesPerPixel;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ uint32\_t\ dataOffset;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ uint16\_t\ bitsPerPixel;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ path\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ opt\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ >\ 2)\ path\ =\ (string)\ argv[2];}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Read\ important\ info\ from\ header}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ filename\ =\ (string)argv[1];}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ FILE*\ imageFile\ =\ fopen(filename.c\_str(),\ \textcolor{stringliteral}{"{}rb"{}});\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Open\ file}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageFile\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}File\ not\ found"{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ fseek(imageFile,\ DATA\_OFFSET\_OFFSET,\ SEEK\_SET);\ \ \ \ \ \textcolor{comment}{//Move\ to\ where\ data\ offset\ is\ stored}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ fread(\&dataOffset,\ 4,\ 1,\ imageFile);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Save\ data\ offset}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ fseek(imageFile,\ WIDTH\_OFFSET,\ SEEK\_SET);\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Move\ to\ width\ offset\ location}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ fread(\&width,\ 4,\ 1,\ imageFile);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Save\ width\ value}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ fseek(imageFile,\ HEIGHT\_OFFSET,\ SEEK\_SET);\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Move\ to\ height\ offset\ location}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ fread(\&height,\ 4,\ 1,\ imageFile);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Save\ height\ value}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ fseek(imageFile,\ BITS\_PER\_PIXEL\_OFFSET,\ SEEK\_SET);\ \ \textcolor{comment}{//Move\ to\ bitsPerPixel\ location}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ fread(\&bitsPerPixel,\ 2,\ 1,\ imageFile);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Save\ bitsPerPixel\ value}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ bytesPerPixel\ =\ ((uint32\_t)bitsPerPixel)\ /\ 8;\ \ \ \ \ \ \ \textcolor{comment}{//Convert\ val\ to\ bytes}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Output\ header\ info}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ cout\ <<\ (\textcolor{stringliteral}{"{}Information\ read\ from\ "{}}+(string)filename+\textcolor{stringliteral}{"{}\ header\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Data\ offset:\ "{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ cout\ <<\ dataOffset;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nSize:\ "{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ cout\ <<\ width;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}x"{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ cout\ <<\ height;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ px\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ cout\ <<\ (\textcolor{stringliteral}{"{}Bytes\ per\ pixel:\ "{}}+\ to\_string(bytesPerPixel)+\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bytesPerPixel\ !=\ 2)\ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Manipulate\ image\ data:}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//The\ bmp\ format\ stores\ images\ as\ padded\ "{}scanlines"{}\ whose\ size\ must\ be\ a\ multiple\ of\ 4\ bytes}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ unpaddedRowSize\ =\ width*bytesPerPixel;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rem\ =\ unpaddedRowSize\ \%\ 4;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ paddedRowSize\ =\ unpaddedRowSize\ +\ rem;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//int\ paddedRowSize\ =\ (int)(4\ *\ ceil((float)(width)\ /\ 4.0f))*(bytesPerPixel);}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//The\ total\ size\ of\ the\ image\ data\ (in\ bytes)\ is:}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalSize\ =\ unpaddedRowSize*height;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{//We\ are\ assuming\ rgb565\ format,\ so\ two\ bytes\ per\ pixel}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ uint8\_t\ aux[height][unpaddedRowSize];}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ uint8\_t\ lowByte;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ uint8\_t\ highByte;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ uint16\_t\ value;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ height;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Seek\ current\ row\ \&\ save\ to\ aux\ (rows\ are\ saved\ inversly\ in\ the\ bmp)}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ fseek(imageFile,\ dataOffset+(i*paddedRowSize),\ SEEK\_SET);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ fread(aux[height-\/1-\/i],\ 1,\ unpaddedRowSize,\ imageFile);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ "{}@\ "{};}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ dataOffset+(i*paddedRowSize);}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ fclose(imageFile);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Change\ file\ extention\ \&\ create\ new\ file:}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Create\ image\ name//}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ filename.length();}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ filename.erase(size-\/3,size-\/1);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pos\ =\ filename.find\_last\_of(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Erase\ possible\ path\ from\ b4\ image\ name}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ !=\ filename.npos)\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ "{}Found\ a\ /\ @\ "{};}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ pos;}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ filename.erase(0,\ pos+1);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ filename.find\_last\_of(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ !=\ filename.npos)\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ "{}Found\ a\ \(\backslash\)\(\backslash\)\ @\ "{};}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ pos;}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ '\(\backslash\)n';\ \ \ }}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filename.erase(0,\ pos+1);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ filename;}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ imageName\ =\ filename;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ imageName.erase(imageName.length()-\/1);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ FILE*\ cfile\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ appendFlag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((path.length()\ >\ 4)\ \&\&\ (path.compare(path.length()-\/4,4,\textcolor{stringliteral}{"{}.bmp"{}})))\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Appending\ to:\ "{}}\ +\ path\ +\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ cfile\ =\ fopen(path.c\_str(),\ \textcolor{stringliteral}{"{}a"{}});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ appendFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ filename.append(\textcolor{stringliteral}{"{}h"{}});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Check\ path\ syntax\ is\ correct}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ path.find\_last\_of(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((pos\ !=\ path.npos)\ \&\&\ (pos\ !=\ (path.length()\ -\/1)\ ))\ path.append(\textcolor{stringliteral}{"{}/"{}});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos\ =\ path.find\_last\_of(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((pos\ !=\ path.npos)\ \&\&\ (pos\ !=\ (path.length()\ -\/1)\ ))\ path.append(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (argc\ >\ 2)\ path.append(\textcolor{stringliteral}{"{}/"{}});\ \textcolor{comment}{//Extra\ check\ to\ account\ for\ the\ 1\ arg\ mode}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ path.append(filename);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Saving\ file\ as:\ "{}}\ +\ path\ +\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ cfile\ =\ fopen(path.c\_str(),\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//system("{}cd"{});}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cfile\ ==\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Couldn't\ create\ or\ edit\ the\ output\ file\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Begin\ writing\ image\ data\ to\ the\ text\ file}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ fprintf(cfile,\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!appendFlag)\ fprintf(cfile,\ \textcolor{stringliteral}{"{}\#include\ <cstdint>\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ fprintf(cfile,\ \textcolor{stringliteral}{"{}static\ const\ uint16\_t\ \%s[]\ =\ \{\(\backslash\)n"{}},\ imageName.c\_str());}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=\ 0;\ i\ <\ (\textcolor{keywordtype}{unsigned}\ int)height;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=\ 0;\ j\ <\ (\textcolor{keywordtype}{unsigned}\ int)width;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Manipulate\ pixel\ data\ to\ convert\ to\ rgb365\ (2bits\ per\ pixel)}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ highByte\ =\ aux[i][2*j];}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lowByte\ =\ aux[i][2*j\ +1];}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ (\textcolor{keywordtype}{unsigned}\ int)convert(lowByte,\ highByte);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//printf("{}\%i,\ \%i,\ \%u,\ \%u,\ \%u\(\backslash\)n"{},\ i,\ j,\ highByte,\ lowByte,\ value);}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ ==\ (width-\/1))\ fprintf(cfile,\ \textcolor{stringliteral}{"{}0x\%04x,\(\backslash\)n\ "{}},\ value);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ fprintf(cfile,\ \textcolor{stringliteral}{"{}0x\%04x,\ "{}},\ value);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ fprintf(cfile,\ \textcolor{stringliteral}{"{}\};"{}});}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ closed\ =\ fclose(cfile);}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (closed\ !=\ 0)\ cout\ <<\ \textcolor{stringliteral}{"{}An\ error\ ocurred\ while\ saving\ the\ file\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00186}00186\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bitmap_parser_8cpp_source_l00187}00187\ \}}
+
+\end{DoxyCode}

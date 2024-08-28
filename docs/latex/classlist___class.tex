@@ -1,0 +1,165 @@
+\doxysection{list\+\_\+\+Class Class Reference}
+\hypertarget{classlist___class}{}\label{classlist___class}\index{list\_Class@{list\_Class}}
+
+
+Scrollable, selectable list class to construct menus.  
+
+
+
+
+{\ttfamily \#include $<$GUI.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlist___class_a978dd4124a5baec5cd27eeed29dd7c63}{list\+\_\+\+Class}} (String title, int element\+Num, String \texorpdfstring{$\ast$}{*}element\+Name, void(\texorpdfstring{$\ast$}{*}handler)(int, void \texorpdfstring{$\ast$}{*}), \mbox{\hyperlink{structcoord}{coord}} origin, \mbox{\hyperlink{structcoord}{coord}} size, float title\+Size=2.\+5, float text\+Size=1.\+5, int text\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, int back\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+BLACK, int highlight\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, \mbox{\hyperlink{structcoord}{coord}} border=\mbox{\hyperlink{structcoord}{coord}}(6, 5))
+\begin{DoxyCompactList}\small\item\em Constructor for the list class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Draws or redraws the list on the screen. \end{DoxyCompactList}\item 
+\Hypertarget{classlist___class_a8694d87f64e84085a5a65eed3906f130}\label{classlist___class_a8694d87f64e84085a5a65eed3906f130} 
+void {\bfseries del} ()
+\begin{DoxyCompactList}\small\item\em Deletes the list instance UNIMPLEMENTED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlist___class_a0abc13669b1a6a16df89694545a173c5}{scroll}} (int new\+Pos)
+\begin{DoxyCompactList}\small\item\em Scrolls the list to the given position if it\textquotesingle{}s a valid one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}{scroll\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Scrolls down one position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlist___class_a48eeb6911110ba094e2f979fc824f252}{scroll\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Scrolls up one positon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlist___class_acafcdd491b89bfd476dcfd43d32786a7}{optn\+Event}} ()
+\begin{DoxyCompactList}\small\item\em Handles the element options event trigerred by OPTN nav\+Signal. \end{DoxyCompactList}\item 
+\Hypertarget{classlist___class_ab2676ecc5c076b8159249d2726f7707d}\label{classlist___class_ab2676ecc5c076b8159249d2726f7707d} 
+void {\bfseries enter\+Event} ()
+\begin{DoxyCompactList}\small\item\em Handles the element selected event triggered by ENTER nav\+Signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Scrollable, selectable list class to construct menus. 
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00150}{150}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlist___class_a978dd4124a5baec5cd27eeed29dd7c63}\index{list\_Class@{list\_Class}!list\_Class@{list\_Class}}
+\index{list\_Class@{list\_Class}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{list\_Class()}{list\_Class()}}
+{\footnotesize\ttfamily \label{classlist___class_a978dd4124a5baec5cd27eeed29dd7c63} 
+list\+\_\+\+Class\+::list\+\_\+\+Class (\begin{DoxyParamCaption}\item[{String}]{title}{, }\item[{int}]{element\+Num}{, }\item[{String \texorpdfstring{$\ast$}{*}}]{element\+Name}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{handler~}{)(int, void \texorpdfstring{$\ast$}{*}), }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{origin}{, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{size}{, }\item[{float}]{title\+Size}{ = {\ttfamily 2.5}, }\item[{float}]{text\+Size}{ = {\ttfamily 1.5}, }\item[{int}]{text\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}, }\item[{int}]{back\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:BLACK}, }\item[{int}]{highlight\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{border}{ = {\ttfamily \mbox{\hyperlink{structcoord}{coord}}(6,~5)}}\end{DoxyParamCaption})}
+
+
+
+Constructor for the list class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & String, list title \\
+\hline
+{\em element\+Num} & Int, number of elements on the list \\
+\hline
+{\em element\+Name} & Pointer to the string array that holds the names of the list elements \\
+\hline
+{\em handler} & Function that triggers the proper event when an element is selected, its parameters are pos \& element\+Num \\
+\hline
+{\em origin} & Coordinates where the list rectangle will be drawn \\
+\hline
+{\em size} & Size of the list rectangle \\
+\hline
+{\em title\+Size} & Float, text size of the title, defaults to 2.\+5 \\
+\hline
+{\em text\+Size} & Float, text size of the list body, defaults to 1.\+0 \\
+\hline
+{\em text\+Colour} & Int, colour as defined in the m5gfx\+::ili9341\+\_\+colors space defaults to green \\
+\hline
+{\em back\+Colour} & Int, colour as defined in the m5gfx\+::ili9341\+\_\+colors space defaults to black \\
+\hline
+{\em highlight\+Colour} & Int, colour as defined in the m5gfx\+::ili9341\+\_\+colors space defaults to green \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}\index{list\_Class@{list\_Class}!draw@{draw}}
+\index{draw@{draw}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{classlist___class_a1273f131504b3aac51886d1a0fb4da7f} 
+void list\+\_\+\+Class\+::draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Draws or redraws the list on the screen. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classlist___class_acafcdd491b89bfd476dcfd43d32786a7}\index{list\_Class@{list\_Class}!optnEvent@{optnEvent}}
+\index{optnEvent@{optnEvent}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{optnEvent()}{optnEvent()}}
+{\footnotesize\ttfamily \label{classlist___class_acafcdd491b89bfd476dcfd43d32786a7} 
+void list\+\_\+\+Class\+::optn\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles the element options event trigerred by OPTN nav\+Signal. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00247}{247}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classlist___class_a0abc13669b1a6a16df89694545a173c5}\index{list\_Class@{list\_Class}!scroll@{scroll}}
+\index{scroll@{scroll}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{scroll()}{scroll()}}
+{\footnotesize\ttfamily \label{classlist___class_a0abc13669b1a6a16df89694545a173c5} 
+void list\+\_\+\+Class\+::scroll (\begin{DoxyParamCaption}\item[{int}]{new\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Scrolls the list to the given position if it\textquotesingle{}s a valid one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Pos} & Position we want to scroll to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00231}{231}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}\index{list\_Class@{list\_Class}!scrollDown@{scrollDown}}
+\index{scrollDown@{scrollDown}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{scrollDown()}{scrollDown()}}
+{\footnotesize\ttfamily \label{classlist___class_acf90db9b4d96f50415436d5ddac7a3af} 
+void list\+\_\+\+Class\+::scroll\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Scrolls down one position. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00239}{239}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classlist___class_a48eeb6911110ba094e2f979fc824f252}\index{list\_Class@{list\_Class}!scrollUp@{scrollUp}}
+\index{scrollUp@{scrollUp}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{scrollUp()}{scrollUp()}}
+{\footnotesize\ttfamily \label{classlist___class_a48eeb6911110ba094e2f979fc824f252} 
+void list\+\_\+\+Class\+::scroll\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Scrolls up one positon. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00243}{243}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/GUI.\+h\item 
+src/GUI.\+cpp\end{DoxyCompactItemize}

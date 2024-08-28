@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="class_g_u_i___class" kind="class" language="C++" prot="public">
+    <compoundname>GUI_Class</compoundname>
+    <includes refid="_g_u_i_8h" local="no">GUI.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_g_u_i___class_1aaf95e362d0c7cfe31c44cf0a9cc30f4d" prot="private" static="no" mutable="no">
+        <type>M5GFX &amp;</type>
+        <definition>M5GFX&amp; GUI_Class::Display</definition>
+        <argsstring></argsstring>
+        <name>Display</name>
+        <qualifiedname>GUI_Class::Display</qualifiedname>
+        <initializer>= M5Cardputer.Display</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="245" column="11" bodyfile="src/GUI.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_g_u_i___class_1a9e1c41d173e6bff8e86b0be613ee5a87" prot="private" static="no" mutable="no">
+        <type>Keyboard_Class</type>
+        <definition>Keyboard_Class GUI_Class::Keyboard</definition>
+        <argsstring></argsstring>
+        <name>Keyboard</name>
+        <qualifiedname>GUI_Class::Keyboard</qualifiedname>
+        <initializer>= M5Cardputer.Keyboard</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="246" column="20" bodyfile="src/GUI.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_g_u_i___class_1a6c38676f91154cd7e49a03ef143b4ade" prot="private" static="no" mutable="no">
+        <type><ref refid="classtop_bar___class" kindref="compound">topBar_Class</ref></type>
+        <definition>topBar_Class GUI_Class::topBar</definition>
+        <argsstring></argsstring>
+        <name>topBar</name>
+        <qualifiedname>GUI_Class::topBar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="247" column="18" bodyfile="src/GUI.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_g_u_i___class_1a3b5933a3f4f189338a610019a3c0dae4" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t GUI_Class::task</definition>
+        <argsstring></argsstring>
+        <name>task</name>
+        <qualifiedname>GUI_Class::task</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="249" column="18" bodyfile="src/GUI.h" bodystart="249" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_g_u_i___class_1aca65997e1615dbb0ddee2671aa95ae92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GUI_Class::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>GUI_Class::begin</qualifiedname>
+        <briefdescription>
+<para>Starts up the GUI, launching it&apos;s execution thread and executing <ref refid="class_g_u_i___class_1a1e0dd033f8ab0d55d0e039ea5d305adb" kindref="member">mainLoop()</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="251" column="10" bodyfile="src/GUI.cpp" bodystart="255" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_u_i___class_1af0d6b5d535fa64ef2fdecdf1a7771b49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GUI_Class::splashScreen</definition>
+        <argsstring>()</argsstring>
+        <name>splashScreen</name>
+        <qualifiedname>GUI_Class::splashScreen</qualifiedname>
+        <briefdescription>
+<para>Draws the splashscreen. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="254" column="10" bodyfile="src/GUI.cpp" bodystart="270" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_u_i___class_1ab6d29667f048b28a6d867cab6d4e958c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GUI_Class::drawMainMenu</definition>
+        <argsstring>()</argsstring>
+        <name>drawMainMenu</name>
+        <qualifiedname>GUI_Class::drawMainMenu</qualifiedname>
+        <briefdescription>
+<para>Draws the main menu. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="257" column="10" bodyfile="src/GUI.cpp" bodystart="293" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_u_i___class_1a72000c590917f97769bfaae8f97a19bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GUI_Class::drawWifiMenu</definition>
+        <argsstring>()</argsstring>
+        <name>drawWifiMenu</name>
+        <qualifiedname>GUI_Class::drawWifiMenu</qualifiedname>
+        <briefdescription>
+<para>Draws the wifi menu to scan &amp; connect to networks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="260" column="10" bodyfile="src/GUI.cpp" bodystart="335" bodyend="412"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_u_i___class_1a25bfb4fdb73cbb16298d09fbc12fb379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GUI_Class::wifiMenuHandler</definition>
+        <argsstring>(int pos, void *b)</argsstring>
+        <name>wifiMenuHandler</name>
+        <qualifiedname>GUI_Class::wifiMenuHandler</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Handler for the option selected event, in the wifi menu case it must draw a screen with all the selected network info &amp; allow to choose wether to connect or go back to the previous menu. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The selected position at the time of the event, int </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A void pointer to whatever object we may want to pass as a reference to the handler </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="266" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_u_i___class_1a1e0dd033f8ab0d55d0e039ea5d305adb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GUI_Class::mainLoop</definition>
+        <argsstring>()</argsstring>
+        <name>mainLoop</name>
+        <qualifiedname>GUI_Class::mainLoop</qualifiedname>
+        <briefdescription>
+<para>Mainloop for the GUI, must be run on its own thread to prevent interference w/ backend. Handles drawing UI elements, inputs, etc. through an endless loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="269" column="10" bodyfile="src/GUI.cpp" bodystart="304" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_u_i___class_1a91db0ecb5a53420b1a2b62757328e114" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GUI_Class::loadConfFile</definition>
+        <argsstring>()</argsstring>
+        <name>loadConfFile</name>
+        <qualifiedname>GUI_Class::loadConfFile</qualifiedname>
+        <briefdescription>
+<para>Loads configuration file from SD UNIMPLEMENTED. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="272" column="10" bodyfile="src/GUI.cpp" bodystart="331" bodyend="333"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A global instance of this class controls all the GUI elements and provides the method for the backend and front end to communicate. The GUI class depends on the M5Cardputer object defined in M5Cardputer.h. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/GUI.h" line="242" column="1" bodyfile="src/GUI.h" bodystart="242" bodyend="274"/>
+    <listofallmembers>
+      <member refid="class_g_u_i___class_1aca65997e1615dbb0ddee2671aa95ae92" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>begin</name></member>
+      <member refid="class_g_u_i___class_1aaf95e362d0c7cfe31c44cf0a9cc30f4d" prot="private" virt="non-virtual"><scope>GUI_Class</scope><name>Display</name></member>
+      <member refid="class_g_u_i___class_1ab6d29667f048b28a6d867cab6d4e958c" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>drawMainMenu</name></member>
+      <member refid="class_g_u_i___class_1a72000c590917f97769bfaae8f97a19bd" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>drawWifiMenu</name></member>
+      <member refid="class_g_u_i___class_1a9e1c41d173e6bff8e86b0be613ee5a87" prot="private" virt="non-virtual"><scope>GUI_Class</scope><name>Keyboard</name></member>
+      <member refid="class_g_u_i___class_1a91db0ecb5a53420b1a2b62757328e114" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>loadConfFile</name></member>
+      <member refid="class_g_u_i___class_1a1e0dd033f8ab0d55d0e039ea5d305adb" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>mainLoop</name></member>
+      <member refid="class_g_u_i___class_1af0d6b5d535fa64ef2fdecdf1a7771b49" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>splashScreen</name></member>
+      <member refid="class_g_u_i___class_1a3b5933a3f4f189338a610019a3c0dae4" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>task</name></member>
+      <member refid="class_g_u_i___class_1a6c38676f91154cd7e49a03ef143b4ade" prot="private" virt="non-virtual"><scope>GUI_Class</scope><name>topBar</name></member>
+      <member refid="class_g_u_i___class_1a25bfb4fdb73cbb16298d09fbc12fb379" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>wifiMenuHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

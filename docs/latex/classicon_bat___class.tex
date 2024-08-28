@@ -1,0 +1,172 @@
+\doxysection{icon\+Bat\+\_\+\+Class Class Reference}
+\hypertarget{classicon_bat___class}{}\label{classicon_bat___class}\index{iconBat\_Class@{iconBat\_Class}}
+
+
+Battery Icon class, handles the battery icon shown on the top bar.  
+
+
+
+
+{\ttfamily \#include $<$GUI.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classicon_bat___class_ab5d44064f5edf2ecc03dcc86eafd841b}{icon\+Bat\+\_\+\+Class}} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor for the Battery Class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classicon_bat___class_af7a5643cf31119f4777ebc1c58c6f15a}{icon\+Bat\+\_\+\+Class}} (M5\+GFX \&screen, int perc=0)
+\begin{DoxyCompactList}\small\item\em Constructor of the Battery Icon class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classicon_bat___class_af3a75b28723155bb2bd69f868b0ef3fd}{update\+State}} (void)
+\begin{DoxyCompactList}\small\item\em Updates battery level and percentage fetching value from the internal power chip (only updates if the percentage has changed) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classicon_bat___class_a523a17c318459aba2c8ae1c7635295af}{update\+State}} (int perc)
+\begin{DoxyCompactList}\small\item\em Updates battery level and percentage from given percentage (only updates if the percentage has changed) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classicon_bat___class_a3885a352f82a852267a5ceab6443f147}{update\+Charge\+Level}} (int perc)
+\begin{DoxyCompactList}\small\item\em Updates shown charge level in the icon from the given percent value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classicon_bat___class_abea3617d80f87acba7be39b078ea8611}{update\+Percent}} (int perc)
+\begin{DoxyCompactList}\small\item\em Updates the battery percentage shown on the top\+Bar, deleting the previous one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classicon_bat___class_acb7cbb4f2b6cb2366fcd5f9e63587bc9}{test\+Anim}} (int mil)
+\begin{DoxyCompactList}\small\item\em Animation to show the different levels of the battery icon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Battery Icon class, handles the battery icon shown on the top bar. 
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00027}{27}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classicon_bat___class_ab5d44064f5edf2ecc03dcc86eafd841b}\index{iconBat\_Class@{iconBat\_Class}!iconBat\_Class@{iconBat\_Class}}
+\index{iconBat\_Class@{iconBat\_Class}!iconBat\_Class@{iconBat\_Class}}
+\doxysubsubsection{\texorpdfstring{iconBat\_Class()}{iconBat\_Class()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classicon_bat___class_ab5d44064f5edf2ecc03dcc86eafd841b} 
+icon\+Bat\+\_\+\+Class\+::icon\+Bat\+\_\+\+Class (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Empty constructor for the Battery Class. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classicon_bat___class_af7a5643cf31119f4777ebc1c58c6f15a}\index{iconBat\_Class@{iconBat\_Class}!iconBat\_Class@{iconBat\_Class}}
+\index{iconBat\_Class@{iconBat\_Class}!iconBat\_Class@{iconBat\_Class}}
+\doxysubsubsection{\texorpdfstring{iconBat\_Class()}{iconBat\_Class()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classicon_bat___class_af7a5643cf31119f4777ebc1c58c6f15a} 
+icon\+Bat\+\_\+\+Class\+::icon\+Bat\+\_\+\+Class (\begin{DoxyParamCaption}\item[{M5\+GFX \&}]{screen}{, }\item[{int}]{perc}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Constructor of the Battery Icon class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & The M5\+GFX display object \\
+\hline
+{\em perc} & Battery percent (def = 0) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classicon_bat___class_acb7cbb4f2b6cb2366fcd5f9e63587bc9}\index{iconBat\_Class@{iconBat\_Class}!testAnim@{testAnim}}
+\index{testAnim@{testAnim}!iconBat\_Class@{iconBat\_Class}}
+\doxysubsubsection{\texorpdfstring{testAnim()}{testAnim()}}
+{\footnotesize\ttfamily \label{classicon_bat___class_acb7cbb4f2b6cb2366fcd5f9e63587bc9} 
+void icon\+Bat\+\_\+\+Class\+::test\+Anim (\begin{DoxyParamCaption}\item[{int}]{mil}{}\end{DoxyParamCaption})}
+
+
+
+Animation to show the different levels of the battery icon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mil} & Delay in ms between state changes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classicon_bat___class_a3885a352f82a852267a5ceab6443f147}\index{iconBat\_Class@{iconBat\_Class}!updateChargeLevel@{updateChargeLevel}}
+\index{updateChargeLevel@{updateChargeLevel}!iconBat\_Class@{iconBat\_Class}}
+\doxysubsubsection{\texorpdfstring{updateChargeLevel()}{updateChargeLevel()}}
+{\footnotesize\ttfamily \label{classicon_bat___class_a3885a352f82a852267a5ceab6443f147} 
+void icon\+Bat\+\_\+\+Class\+::update\+Charge\+Level (\begin{DoxyParamCaption}\item[{int}]{perc}{}\end{DoxyParamCaption})}
+
+
+
+Updates shown charge level in the icon from the given percent value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em perc} & Battery percentage int 1-\/100; \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classicon_bat___class_abea3617d80f87acba7be39b078ea8611}\index{iconBat\_Class@{iconBat\_Class}!updatePercent@{updatePercent}}
+\index{updatePercent@{updatePercent}!iconBat\_Class@{iconBat\_Class}}
+\doxysubsubsection{\texorpdfstring{updatePercent()}{updatePercent()}}
+{\footnotesize\ttfamily \label{classicon_bat___class_abea3617d80f87acba7be39b078ea8611} 
+void icon\+Bat\+\_\+\+Class\+::update\+Percent (\begin{DoxyParamCaption}\item[{int}]{perc}{}\end{DoxyParamCaption})}
+
+
+
+Updates the battery percentage shown on the top\+Bar, deleting the previous one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em perc} & New battery percentage, int \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classicon_bat___class_a523a17c318459aba2c8ae1c7635295af}\index{iconBat\_Class@{iconBat\_Class}!updateState@{updateState}}
+\index{updateState@{updateState}!iconBat\_Class@{iconBat\_Class}}
+\doxysubsubsection{\texorpdfstring{updateState()}{updateState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classicon_bat___class_a523a17c318459aba2c8ae1c7635295af} 
+void icon\+Bat\+\_\+\+Class\+::update\+State (\begin{DoxyParamCaption}\item[{int}]{perc}{}\end{DoxyParamCaption})}
+
+
+
+Updates battery level and percentage from given percentage (only updates if the percentage has changed) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em perc} & Battery percentage, int 1-\/100 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classicon_bat___class_af3a75b28723155bb2bd69f868b0ef3fd}\index{iconBat\_Class@{iconBat\_Class}!updateState@{updateState}}
+\index{updateState@{updateState}!iconBat\_Class@{iconBat\_Class}}
+\doxysubsubsection{\texorpdfstring{updateState()}{updateState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classicon_bat___class_af3a75b28723155bb2bd69f868b0ef3fd} 
+void icon\+Bat\+\_\+\+Class\+::update\+State (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Updates battery level and percentage fetching value from the internal power chip (only updates if the percentage has changed) 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/GUI.\+h\item 
+src/GUI.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="terminal_8cpp" kind="file" language="C++">
+    <compoundname>terminal.cpp</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//Contains<sp/>fuctions<sp/>related<sp/>to<sp/>the<sp/>backend<sp/>of<sp/>the<sp/>terminal<sp/>app</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//Should<sp/>support<sp/>ssh,<sp/>possibly<sp/>telnet,<sp/>serial<sp/>over<sp/>usb<sp/>and<sp/>serial<sp/>over<sp/>uart<sp/>trough<sp/>port<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/terminal.cpp"/>
+  </compounddef>
+</doxygen>

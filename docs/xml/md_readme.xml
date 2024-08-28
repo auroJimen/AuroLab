@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="md_readme" kind="page">
+    <compoundname>md_readme</compoundname>
+    <title>readme</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="_1readme-top"/> <heading level="1">AuroLab</heading>
+</para>
+<para></para>
+<para>AuroLab is a personal project developed to turn the Cardputer into an usefull device for my daily work (with a nice UI that caters 100% to me).</para>
+<para></para>
+<para>The firmware is currently being developed in C++, through PlatformIO for VS Code.</para>
+<sect1 id="md_readme_1autotoc_md0_1s1"><sect2 id="md_readme_1autotoc_md0">
+<title>Current feature roadmap</title><para><itemizedlist>
+<listitem><para>Main menu<itemizedlist>
+<listitem override="checked"><para>Top Bar<itemizedlist>
+<listitem override="checked"><para>Battery indicator<itemizedlist>
+<listitem override="checked"><para>Icon<itemizedlist>
+<listitem override="checked"><para>Asset created</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Code implementation</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Percentage display</para>
+</listitem><listitem override="unchecked"><para>BUG: Disapearence when connected via USB</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem override="unchecked"><para>SD card indicator<itemizedlist>
+<listitem override="checked"><para>Icon asset created</para>
+</listitem><listitem override="unchecked"><para>Code implementation</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>WiFi indicator<itemizedlist>
+<listitem override="unchecked"><para>Icon asset created</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>Code implementation</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem override="unchecked"><para>Terminal App<itemizedlist>
+<listitem override="checked"><para>Icon asset created</para>
+</listitem><listitem override="unchecked"><para>Terminal core app</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>SSH support</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>Telnet support</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>UART support through grove?</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>I2C logger app</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>Bi (Vi clone)</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>Simple IR remote app</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>RFID app?</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>Car data logger, fuel efficiency?</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>Configuration App<itemizedlist>
+<listitem override="unchecked"><para>Icon asset created</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>Wifi selection menu<itemizedlist>
+<listitem override="unchecked"><para>Scanning<itemizedlist>
+<listitem override="checked"><para>Scanning animation asset created</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Code implementation</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Display available networks via list<itemizedlist>
+<listitem override="unchecked"><para>Display wifi info when OPTN is presed</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem override="unchecked"><para>Connect</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>General GUI/IO<itemizedlist>
+<listitem override="unchecked"><para>Interactive list class<itemizedlist>
+<listitem override="checked"><para>Create &amp; display scrollable class</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Scroll event<itemizedlist>
+<listitem override="checked"><para>Event implemented in code</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Trigger event from keyboard input<itemizedlist>
+<listitem><para>Scroll bugs when scrolling to last &amp; werid disappearences</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem override="unchecked"><para>Select event<itemizedlist>
+<listitem override="unchecked"><para>Event implemented in code<itemizedlist>
+<listitem override="checked"><para>Event handler function assigned</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="unchecked"><para>Trigger event from keyboard</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Input via keyboard &amp; G0 button<itemizedlist>
+<listitem override="unchecked"><para>G0 button support</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Asincronous keyboard buffer<itemizedlist>
+<listitem override="checked"><para>Customizable size</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Comunication with other execution threads</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Text entry mode with support for control characters</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Navigtion mode for menus</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Future objectives:<itemizedlist>
+<listitem override="unchecked"><para>Port to non M5 alternative libraries </para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect2></sect1>
+    </detaileddescription>
+    <location file="readme.md"/>
+  </compounddef>
+</doxygen>

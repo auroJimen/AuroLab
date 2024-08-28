@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_g_u_i_8h" kind="file" language="C++">
+    <compoundname>GUI.h</compoundname>
+    <includes local="no">Arduino.h</includes>
+    <includes local="no">M5Cardputer.h</includes>
+    <includes local="no">M5GFX.h</includes>
+    <includes local="no">WiFi.h</includes>
+    <includes refid="sprites_8h" local="yes">sprites.h</includes>
+    <includes refid="compass_icon_8h" local="yes">compassIcon.h</includes>
+    <includes refid="menu_background_8h" local="yes">menuBackground.h</includes>
+    <includes refid="keyboard_task_8h" local="yes">keyboardTask.h</includes>
+    <includedby refid="_g_u_i_8cpp" local="yes">src/GUI.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+      <node id="1">
+        <label>src/GUI.h</label>
+        <link refid="_g_u_i_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>compassIcon.h</label>
+        <link refid="compass_icon_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>keyboardTask.h</label>
+        <link refid="keyboard_task_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>menuBackground.h</label>
+        <link refid="menu_background_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>sprites.h</label>
+        <link refid="sprites_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>M5Cardputer.h</label>
+      </node>
+      <node id="4">
+        <label>M5GFX.h</label>
+      </node>
+      <node id="5">
+        <label>WiFi.h</label>
+      </node>
+      <node id="7">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/GUI.cpp</label>
+        <link refid="_g_u_i_8cpp_source"/>
+      </node>
+      <node id="1">
+        <label>src/GUI.h</label>
+        <link refid="_g_u_i_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structcoord" prot="public">coord</innerclass>
+    <innerclass refid="classicon_bat___class" prot="public">iconBat_Class</innerclass>
+    <innerclass refid="classicon___class" prot="public">icon_Class</innerclass>
+    <innerclass refid="classtop_bar___class" prot="public">topBar_Class</innerclass>
+    <innerclass refid="classtext_box___class" prot="public">textBox_Class</innerclass>
+    <innerclass refid="classlist___class" prot="public">list_Class</innerclass>
+    <innerclass refid="class_g_u_i___class" prot="public">GUI_Class</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="_g_u_i_8h_1af884dec1383d9d7d8d6b7e5e25922c8c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>iconType</name>
+        <enumvalue id="_g_u_i_8h_1af884dec1383d9d7d8d6b7e5e25922c8ca567534ad0fc3fff03ffdfef6b81b630a" prot="public">
+          <name>SDpresent</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_g_u_i_8h_1af884dec1383d9d7d8d6b7e5e25922c8ca61f0e1c8b13e6a6a7b41851f338333ff" prot="public">
+          <name>Wifi</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_g_u_i_8h_1af884dec1383d9d7d8d6b7e5e25922c8ca83ac6cc3119966e1e5a7908c9e2e3b6a" prot="public">
+          <name>BLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum of the diffent types of icons. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="78" column="1" bodyfile="src/GUI.h" bodystart="78" bodyend="78"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="_g_u_i_8h_1a1c7831cab950a92c8124fe4e2f6723e5" prot="public" static="no" extern="yes" mutable="no">
+        <type><ref refid="class_g_u_i___class" kindref="compound">GUI_Class</ref></type>
+        <definition>GUI_Class GUI</definition>
+        <argsstring></argsstring>
+        <name>GUI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="281" column="18" bodyfile="src/main.cpp" bodystart="8" bodyend="-1" declfile="src/GUI.h" declline="281" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="variable" id="_g_u_i_8h_1a7d37674f503dac4c08ab7830b07e282c" prot="public" static="no" extern="yes" mutable="no">
+        <type><ref refid="classbuffer___class" kindref="compound">buffer_Class</ref></type>
+        <definition>buffer_Class Buffer</definition>
+        <argsstring></argsstring>
+        <name>Buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="283" column="21" bodyfile="src/main.cpp" bodystart="9" bodyend="-1" declfile="src/GUI.h" declline="283" declcolumn="21"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="_g_u_i_8h_1a2b01188edf99a98f9add079b790e9ff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GUIloop</definition>
+        <argsstring>(void *parameter)</argsstring>
+        <name>GUIloop</name>
+        <param>
+          <type>void *</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+<para>Task handler function, isolated since it mustn&apos;t be a class function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parameter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standar parameter for handler functions, a nullptr is passed if it is not needed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="278" column="6" bodyfile="src/GUI.cpp" bodystart="264" bodyend="268" declfile="src/GUI.h" declline="278" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;M5Cardputer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;M5GFX.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;WiFi.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sprites.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;compassIcon.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;menuBackground.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;keyboardTask.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//In<sp/>the<sp/>future<sp/>put<sp/>here<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>object<sp/>instances<sp/>to<sp/>control<sp/>all<sp/>periferals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//Declaration<sp/>of<sp/>all<sp/>relevant<sp/>classes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="structcoord" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcoord" kindref="compound">coord</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>add(<ref refid="structcoord" kindref="compound">coord</ref><sp/>a);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27" refid="classicon_bat___class" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classicon_bat___class" kindref="compound">iconBat_Class</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>percent;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>basePos<sp/>=<sp/>{209,3};<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>baseSize<sp/>=<sp/>{26,15};<sp/></highlight><highlight class="comment">//Sprite<sp/>base<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>contPos<sp/>=<sp/>{212,5};<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Coordinates<sp/>to<sp/>draw<sp/>sprite<sp/>content</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>contSize<sp/>=<sp/>{15,11};<sp/></highlight><highlight class="comment">//Sprite<sp/>content<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>textPos<sp/>=<sp/>{173,5};<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Coordinates<sp/>to<sp/>write<sp/>Bat<sp/>percent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize<sp/>=<sp/>1.6;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Text<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>M5GFX<sp/>screen;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Screen<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon_bat___class_1ab5d44064f5edf2ecc03dcc86eafd841b" kindref="member">iconBat_Class</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon_bat___class_1ab5d44064f5edf2ecc03dcc86eafd841b" kindref="member">iconBat_Class</ref>(M5GFX&amp;<sp/>screen,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" kindref="member">updateState</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" kindref="member">updateState</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classicon_bat___class_1a3885a352f82a852267a5ceab6443f147" kindref="member">updateChargeLevel</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classicon_bat___class_1abea3617d80f87acba7be39b078ea8611" kindref="member">updatePercent</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classicon_bat___class_1acb7cbb4f2b6cb2366fcd5f9e63587bc9" kindref="member">testAnim</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mil);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fetchBatLevel();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>chargeLevel(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>perc);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>iconType<sp/>{SDpresent,<sp/>Wifi,<sp/>BLE};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classicon___class" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classicon___class" kindref="compound">icon_Class</ref><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>M5GFX<sp/>sprite;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>iconType<sp/>type;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>pos;<sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>M5GFX<sp/>screen;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Screen<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon___class" kindref="compound">icon_Class</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon___class" kindref="compound">icon_Class</ref>(M5GFX<sp/>screen,<sp/>iconType<sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>changeState(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>newState);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="97" refid="classtop_bar___class" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtop_bar___class" kindref="compound">topBar_Class</ref>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Time<sp/>element<sp/>to<sp/>display<sp/>current<sp/>time<sp/>if<sp/>theres<sp/>wifi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon___class" kindref="compound">icon_Class</ref><sp/>Wifi;<sp/></highlight><highlight class="comment">//Wifi<sp/>element<sp/>to<sp/>display<sp/>a<sp/>small<sp/>sprite<sp/>and<sp/>the<sp/>SSID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon___class" kindref="compound">icon_Class</ref><sp/>BLE;<sp/><sp/></highlight><highlight class="comment">//Bluetooth<sp/>low<sp/>energy<sp/>icon</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon___class" kindref="compound">icon_Class</ref><sp/>SDpresent;<sp/><sp/><sp/></highlight><highlight class="comment">//SD<sp/>card<sp/>icon</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classicon_bat___class" kindref="compound">iconBat_Class</ref><sp/>Bat;<sp/><sp/></highlight><highlight class="comment">//Battery<sp/>indicator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>M5GFX<sp/>Display<sp/>=<sp/>M5Cardputer.Display;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtop_bar___class_1a2a2e420feda4cf58b96ed363b918d633" kindref="member">topBar_Class</ref>();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtop_bar___class_1a555351fcf48dbea120ac40f8c010dce8" kindref="member">updateIcons</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//There<sp/>should<sp/>be<sp/>methods<sp/>to<sp/>update<sp/>everything<sp/>in<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classtext_box___class" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtext_box___class" kindref="compound">textBox_Class</ref>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inputEnabled;<sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/>defText;<sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>String*<sp/>text;<sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>pos;<sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>size;<sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize;<sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>textColour;<sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>backColour;<sp/></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cursorColour;<sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="137" refid="classtext_box___class_1ac62b0360b7bedf1a9d30bd51f5e01007" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtext_box___class_1ac62b0360b7bedf1a9d30bd51f5e01007" kindref="member">textBox_Class</ref>(<ref refid="structcoord" kindref="compound">coord</ref><sp/>pos,<sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>size,<sp/>String*<sp/>text,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inputEnabled=</highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>String<sp/>defText=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>TextSize=1.5,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>textColour<sp/>=<sp/>m5gfx::ili9341_colors::GREEN,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>backColour<sp/>=<sp/>m5gfx::ili9341_colors::BLACK,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cursorColour<sp/>=<sp/>m5gfx::ili9341_colors::GREEN);</highlight></codeline>
+<codeline lineno="141" refid="classtext_box___class_1a4f508e0fd1645f5209b3dce4459adb07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtext_box___class_1a4f508e0fd1645f5209b3dce4459adb07" kindref="member">enableTextInput</ref>();</highlight></codeline>
+<codeline lineno="143" refid="classtext_box___class_1ae4b2f9d68261d89824bf496462067a4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtext_box___class_1ae4b2f9d68261d89824bf496462067a4f" kindref="member">disableTextInput</ref>();</highlight></codeline>
+<codeline lineno="146" refid="classtext_box___class_1a9341bfa7a03d269d49ca517db9064d38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtext_box___class_1a9341bfa7a03d269d49ca517db9064d38" kindref="member">getEnableTextInput</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="classlist___class" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classlist___class" kindref="compound">list_Class</ref>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/>title;<sp/></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elementNum;<sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>String*<sp/>elementName;<sp/></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos;<sp/></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>(*handler)(int,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*);<sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>M5GFX<sp/>Display<sp/>=<sp/>M5Cardputer.Display;<sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>origin;<sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>size;<sp/></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>titleSize;<sp/></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize;<sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>textColour;<sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>backColour;<sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>highlightColour;<sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>border;<sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows;<sp/></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classlist___class_1a978dd4124a5baec5cd27eeed29dd7c63" kindref="member">list_Class</ref>(String<sp/>title,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>elementNum,<sp/>String*<sp/>elementName,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*handler)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*),<sp/></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>origin,<sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>titleSize<sp/>=<sp/>2.5,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize<sp/>=<sp/>1.5,<sp/></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>textColour<sp/>=<sp/>m5gfx::ili9341_colors::GREEN,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>backColour<sp/>=<sp/>m5gfx::ili9341_colors::BLACK,<sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>highlightColour<sp/>=<sp/>m5gfx::ili9341_colors::GREEN,<sp/><ref refid="structcoord" kindref="compound">coord</ref><sp/>border<sp/>=<sp/><ref refid="structcoord" kindref="compound">coord</ref>(6,<sp/>5));</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" kindref="member">draw</ref>();</highlight></codeline>
+<codeline lineno="189" refid="classlist___class_1a8694d87f64e84085a5a65eed3906f130" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1a8694d87f64e84085a5a65eed3906f130" kindref="member">del</ref>();</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" kindref="member">scroll</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newPos);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" kindref="member">scrollDown</ref>();</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1a48eeb6911110ba094e2f979fc824f252" kindref="member">scrollUp</ref>();</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1acafcdd491b89bfd476dcfd43d32786a7" kindref="member">optnEvent</ref>();</highlight></codeline>
+<codeline lineno="200" refid="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" kindref="member">enterEvent</ref>();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawOptions();</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>displayableRows(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>titleSize,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>displayableRows(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowsOccupied(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>textLen,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>spriteWidth);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowSize(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize)<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>floor(8*textSize);}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowWidth(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>textSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length)<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>floor(length*6*textSize);}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="237"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242" refid="class_g_u_i___class" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_g_u_i___class" kindref="compound">GUI_Class</ref><sp/>{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Doesnt<sp/>need<sp/>a<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>M5GFX<sp/>&amp;Display<sp/>=<sp/>M5Cardputer.Display;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>Keyboard_Class<sp/>Keyboard<sp/>=<sp/>M5Cardputer.Keyboard;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtop_bar___class" kindref="compound">topBar_Class</ref><sp/>topBar;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>TaskHandle_t<sp/>task;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1aca65997e1615dbb0ddee2671aa95ae92" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1af0d6b5d535fa64ef2fdecdf1a7771b49" kindref="member">splashScreen</ref>();</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1ab6d29667f048b28a6d867cab6d4e958c" kindref="member">drawMainMenu</ref>();</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1a72000c590917f97769bfaae8f97a19bd" kindref="member">drawWifiMenu</ref>();</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="class_g_u_i___class_1a25bfb4fdb73cbb16298d09fbc12fb379" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1a25bfb4fdb73cbb16298d09fbc12fb379" kindref="member">wifiMenuHandler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>b);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1a1e0dd033f8ab0d55d0e039ea5d305adb" kindref="member">mainLoop</ref>();</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class_1a91db0ecb5a53420b1a2b62757328e114" kindref="member">loadConfFile</ref>();</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GUIloop(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>parameter);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="comment">//Global<sp/>GUI<sp/>instance<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="class_g_u_i___class" kindref="compound">GUI_Class</ref><sp/>GUI;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="comment">//Global<sp/>variables<sp/>related<sp/>to<sp/>keyboard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="classbuffer___class" kindref="compound">buffer_Class</ref><sp/>Buffer;</highlight></codeline>
+    </programlisting>
+    <location file="src/GUI.h"/>
+  </compounddef>
+</doxygen>

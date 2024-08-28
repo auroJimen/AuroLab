@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="readme_8md" kind="file" language="Markdown">
+    <compoundname>readme.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;a<sp/>id=&quot;readme-top&quot;&gt;&lt;/a&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;h1<sp/>align=&quot;center&quot;&gt;AuroLab&lt;/h1&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;AuroLab<sp/>is<sp/>a<sp/>personal<sp/>project<sp/>developed<sp/>to<sp/>turn<sp/>the<sp/>Cardputer<sp/>into<sp/>an<sp/>usefull<sp/>device<sp/>for<sp/>my<sp/>daily<sp/>work<sp/>(with<sp/>a<sp/>nice<sp/>UI<sp/>that<sp/>caters<sp/>100%<sp/>to<sp/>me).&lt;/p&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;The<sp/>firmware<sp/>is<sp/>currently<sp/>being<sp/>developed<sp/>in<sp/>C++,<sp/>through<sp/>PlatformIO<sp/>for<sp/>VS<sp/>Code.&lt;/p&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;!--<sp/>ROADMAP<sp/>--&gt;</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>Current<sp/>feature<sp/>roadmap</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Main<sp/>menu</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Top<sp/>Bar</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Battery<sp/>indicator</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Icon</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Asset<sp/>created</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Code<sp/>implementation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Percentage<sp/>display</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>BUG:<sp/>Disapearence<sp/>when<sp/>connected<sp/>via<sp/>USB</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>SD<sp/>card<sp/>indicator</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Icon<sp/>asset<sp/>created</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Code<sp/>implementation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>WiFi<sp/>indicator</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Icon<sp/>asset<sp/>created</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Code<sp/>implementation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Terminal<sp/>App</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Icon<sp/>asset<sp/>created</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Terminal<sp/>core<sp/>app</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>SSH<sp/>support</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Telnet<sp/>support</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>UART<sp/>support<sp/>through<sp/>grove?</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>I2C<sp/>logger<sp/>app</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Bi<sp/>(Vi<sp/>clone)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Simple<sp/>IR<sp/>remote<sp/>app</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>RFID<sp/>app?</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Car<sp/>data<sp/>logger,<sp/>fuel<sp/>efficiency?</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Configuration<sp/>App</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Icon<sp/>asset<sp/>created</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Wifi<sp/>selection<sp/>menu</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Scanning</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Scanning<sp/>animation<sp/>asset<sp/>created</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Code<sp/>implementation</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Display<sp/>available<sp/>networks<sp/>via<sp/>list</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Display<sp/>wifi<sp/>info<sp/>when<sp/>OPTN<sp/>is<sp/>presed</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Connect</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>General<sp/>GUI/IO</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Interactive<sp/>list<sp/>class</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Create<sp/>&amp;<sp/>display<sp/>scrollable<sp/>class</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Scroll<sp/>event</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Event<sp/>implemented<sp/>in<sp/>code</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Trigger<sp/>event<sp/>from<sp/>keyboard<sp/>input</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Scroll<sp/>bugs<sp/>when<sp/>scrolling<sp/>to<sp/>last<sp/>&amp;<sp/>werid<sp/>disappearences</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Select<sp/>event</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Event<sp/>implemented<sp/>in<sp/>code</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Event<sp/>handler<sp/>function<sp/>assigned</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Trigger<sp/>event<sp/>from<sp/>keyboard</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Input<sp/>via<sp/>keyboard<sp/>&amp;<sp/>G0<sp/>button</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>G0<sp/>button<sp/>support</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Asincronous<sp/>keyboard<sp/>buffer</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Customizable<sp/>size</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Comunication<sp/>with<sp/>other<sp/>execution<sp/>threads</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Text<sp/>entry<sp/>mode<sp/>with<sp/>support<sp/>for<sp/>control<sp/>characters</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Navigtion<sp/>mode<sp/>for<sp/>menus</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Future<sp/>objectives:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Port<sp/>to<sp/>non<sp/>M5<sp/>alternative<sp/>libraries</highlight></codeline>
+    </programlisting>
+    <location file="readme.md"/>
+  </compounddef>
+</doxygen>

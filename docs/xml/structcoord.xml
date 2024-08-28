@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="structcoord" kind="struct" language="C++" prot="public">
+    <compoundname>coord</compoundname>
+    <includes refid="_g_u_i_8h" local="no">GUI.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcoord_1ac3e93ff628aa19d2888c5f6fa26f430d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int coord::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>coord::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="19" column="9" bodyfile="src/GUI.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcoord_1a2b099692d87f98e4844b615136ca37fb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int coord::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>coord::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="20" column="9" bodyfile="src/GUI.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structcoord_1a9d2917c7adced7ee91fe33558fb538b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>coord::coord</definition>
+        <argsstring>()</argsstring>
+        <name>coord</name>
+        <qualifiedname>coord::coord</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="22" column="5" bodyfile="src/GUI.cpp" bodystart="5" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="structcoord_1a420d2df22c044db935f60ead330da9bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>coord::coord</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>coord</name>
+        <qualifiedname>coord::coord</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="23" column="5" bodyfile="src/GUI.cpp" bodystart="6" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structcoord_1a60b5831159c22df316d9257adf7e3a63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord coord::add</definition>
+        <argsstring>(coord a)</argsstring>
+        <name>add</name>
+        <qualifiedname>coord::add</qualifiedname>
+        <param>
+          <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="24" column="11" bodyfile="src/GUI.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simple coordinates struct to handle positions on the LCD. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/GUI.h" line="17" column="1" bodyfile="src/GUI.h" bodystart="17" bodyend="25"/>
+    <listofallmembers>
+      <member refid="structcoord_1a60b5831159c22df316d9257adf7e3a63" prot="public" virt="non-virtual"><scope>coord</scope><name>add</name></member>
+      <member refid="structcoord_1a9d2917c7adced7ee91fe33558fb538b1" prot="public" virt="non-virtual"><scope>coord</scope><name>coord</name></member>
+      <member refid="structcoord_1a420d2df22c044db935f60ead330da9bb" prot="public" virt="non-virtual"><scope>coord</scope><name>coord</name></member>
+      <member refid="structcoord_1ac3e93ff628aa19d2888c5f6fa26f430d" prot="public" virt="non-virtual"><scope>coord</scope><name>x</name></member>
+      <member refid="structcoord_1a2b099692d87f98e4844b615136ca37fb" prot="public" virt="non-virtual"><scope>coord</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

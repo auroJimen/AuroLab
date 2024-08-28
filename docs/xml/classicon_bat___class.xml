@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classicon_bat___class" kind="class" language="C++" prot="public">
+    <compoundname>iconBat_Class</compoundname>
+    <includes refid="_g_u_i_8h" local="no">GUI.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classicon_bat___class_1afb762abd3032850494fa5e46d7f7cf5d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int iconBat_Class::percent</definition>
+        <argsstring></argsstring>
+        <name>percent</name>
+        <qualifiedname>iconBat_Class::percent</qualifiedname>
+        <briefdescription>
+<para>Battery percent. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="30" column="9" bodyfile="src/GUI.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon_bat___class_1abefa48b49e5011442cc10736853b43b8" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord iconBat_Class::basePos</definition>
+        <argsstring></argsstring>
+        <name>basePos</name>
+        <qualifiedname>iconBat_Class::basePos</qualifiedname>
+        <initializer>= {209,3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="31" column="11" bodyfile="src/GUI.h" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon_bat___class_1a0f13206c5fe92def1dd4bb50e7189e4f" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord iconBat_Class::baseSize</definition>
+        <argsstring></argsstring>
+        <name>baseSize</name>
+        <qualifiedname>iconBat_Class::baseSize</qualifiedname>
+        <initializer>= {26,15}</initializer>
+        <briefdescription>
+<para>Coordinates to draw sprite base. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="32" column="11" bodyfile="src/GUI.h" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon_bat___class_1a566a57b09b5af8d19d15f74b75fb4f90" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord iconBat_Class::contPos</definition>
+        <argsstring></argsstring>
+        <name>contPos</name>
+        <qualifiedname>iconBat_Class::contPos</qualifiedname>
+        <initializer>= {212,5}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="33" column="11" bodyfile="src/GUI.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon_bat___class_1a4fd2eaac8b05b30e8812599b4a8a2f42" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord iconBat_Class::contSize</definition>
+        <argsstring></argsstring>
+        <name>contSize</name>
+        <qualifiedname>iconBat_Class::contSize</qualifiedname>
+        <initializer>= {15,11}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="34" column="11" bodyfile="src/GUI.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon_bat___class_1a055cc5ae2ab4dea9333985be9b32e0b4" prot="private" static="no" mutable="no">
+        <type><ref refid="structcoord" kindref="compound">coord</ref></type>
+        <definition>coord iconBat_Class::textPos</definition>
+        <argsstring></argsstring>
+        <name>textPos</name>
+        <qualifiedname>iconBat_Class::textPos</qualifiedname>
+        <initializer>= {173,5}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="35" column="11" bodyfile="src/GUI.h" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon_bat___class_1aa5245a59290af488725123719877a273" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float iconBat_Class::textSize</definition>
+        <argsstring></argsstring>
+        <name>textSize</name>
+        <qualifiedname>iconBat_Class::textSize</qualifiedname>
+        <initializer>= 1.6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="36" column="11" bodyfile="src/GUI.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classicon_bat___class_1a07687dff512a0ae545825a7e5ffd2fcc" prot="private" static="no" mutable="no">
+        <type>M5GFX</type>
+        <definition>M5GFX iconBat_Class::screen</definition>
+        <argsstring></argsstring>
+        <name>screen</name>
+        <qualifiedname>iconBat_Class::screen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="37" column="11" bodyfile="src/GUI.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classicon_bat___class_1ab5d44064f5edf2ecc03dcc86eafd841b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>iconBat_Class::iconBat_Class</definition>
+        <argsstring>()</argsstring>
+        <name>iconBat_Class</name>
+        <qualifiedname>iconBat_Class::iconBat_Class</qualifiedname>
+        <briefdescription>
+<para>Empty constructor for the Battery Class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="40" column="5" bodyfile="src/GUI.cpp" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classicon_bat___class_1af7a5643cf31119f4777ebc1c58c6f15a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>iconBat_Class::iconBat_Class</definition>
+        <argsstring>(M5GFX &amp;screen, int perc=0)</argsstring>
+        <name>iconBat_Class</name>
+        <qualifiedname>iconBat_Class::iconBat_Class</qualifiedname>
+        <param>
+          <type>M5GFX &amp;</type>
+          <declname>screen</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>perc</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Constructor of the Battery Icon class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The M5GFX display object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>perc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Battery percent (def = 0) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="45" column="5" bodyfile="src/GUI.cpp" bodystart="26" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void iconBat_Class::updateState</definition>
+        <argsstring>(void)</argsstring>
+        <name>updateState</name>
+        <qualifiedname>iconBat_Class::updateState</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Updates battery level and percentage fetching value from the internal power chip (only updates if the percentage has changed) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="48" column="10" bodyfile="src/GUI.cpp" bodystart="85" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classicon_bat___class_1a523a17c318459aba2c8ae1c7635295af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void iconBat_Class::updateState</definition>
+        <argsstring>(int perc)</argsstring>
+        <name>updateState</name>
+        <qualifiedname>iconBat_Class::updateState</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>perc</declname>
+        </param>
+        <briefdescription>
+<para>Updates battery level and percentage from given percentage (only updates if the percentage has changed) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>perc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Battery percentage, int 1-100 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="52" column="10" bodyfile="src/GUI.cpp" bodystart="73" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classicon_bat___class_1a3885a352f82a852267a5ceab6443f147" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void iconBat_Class::updateChargeLevel</definition>
+        <argsstring>(int perc)</argsstring>
+        <name>updateChargeLevel</name>
+        <qualifiedname>iconBat_Class::updateChargeLevel</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>perc</declname>
+        </param>
+        <briefdescription>
+<para>Updates shown charge level in the icon from the given percent value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>perc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Battery percentage int 1-100; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="56" column="10" bodyfile="src/GUI.cpp" bodystart="92" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classicon_bat___class_1abea3617d80f87acba7be39b078ea8611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void iconBat_Class::updatePercent</definition>
+        <argsstring>(int perc)</argsstring>
+        <name>updatePercent</name>
+        <qualifiedname>iconBat_Class::updatePercent</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>perc</declname>
+        </param>
+        <briefdescription>
+<para>Updates the battery percentage shown on the topBar, deleting the previous one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>perc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New battery percentage, int </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="60" column="10" bodyfile="src/GUI.cpp" bodystart="56" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classicon_bat___class_1acb7cbb4f2b6cb2366fcd5f9e63587bc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void iconBat_Class::testAnim</definition>
+        <argsstring>(int mil)</argsstring>
+        <name>testAnim</name>
+        <qualifiedname>iconBat_Class::testAnim</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>mil</declname>
+        </param>
+        <briefdescription>
+<para>Animation to show the different levels of the battery icon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mil</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delay in ms between state changes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="64" column="10" bodyfile="src/GUI.cpp" bodystart="45" bodyend="54"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classicon_bat___class_1a4fe7a81d9936fa946094b8b0debba293" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int iconBat_Class::fetchBatLevel</definition>
+        <argsstring>()</argsstring>
+        <name>fetchBatLevel</name>
+        <qualifiedname>iconBat_Class::fetchBatLevel</qualifiedname>
+        <briefdescription>
+<para>Fetches battery level from power chip via the method included in the M5Cardputer library PRIVATE METHOD. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Battery percentage, int 1-100 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="68" column="9" bodyfile="src/GUI.cpp" bodystart="99" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classicon_bat___class_1ad991324620a0dde08fe72c7298ab065a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int iconBat_Class::chargeLevel</definition>
+        <argsstring>(int perc)</argsstring>
+        <name>chargeLevel</name>
+        <qualifiedname>iconBat_Class::chargeLevel</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>perc</declname>
+        </param>
+        <briefdescription>
+<para>Returns the charge level 0-11 from a percentage for displaying the correct icon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>perc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Battery percentage, int 1-100 if greater than 100% returns 11 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Battery level 0-11 for the battery icon </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="73" column="9" bodyfile="src/GUI.cpp" bodystart="37" bodyend="43"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Battery Icon class, handles the battery icon shown on the top bar. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/GUI.h" line="27" column="1" bodyfile="src/GUI.h" bodystart="27" bodyend="75"/>
+    <listofallmembers>
+      <member refid="classicon_bat___class_1abefa48b49e5011442cc10736853b43b8" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>basePos</name></member>
+      <member refid="classicon_bat___class_1a0f13206c5fe92def1dd4bb50e7189e4f" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>baseSize</name></member>
+      <member refid="classicon_bat___class_1ad991324620a0dde08fe72c7298ab065a" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>chargeLevel</name></member>
+      <member refid="classicon_bat___class_1a566a57b09b5af8d19d15f74b75fb4f90" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>contPos</name></member>
+      <member refid="classicon_bat___class_1a4fd2eaac8b05b30e8812599b4a8a2f42" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>contSize</name></member>
+      <member refid="classicon_bat___class_1a4fe7a81d9936fa946094b8b0debba293" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>fetchBatLevel</name></member>
+      <member refid="classicon_bat___class_1ab5d44064f5edf2ecc03dcc86eafd841b" prot="public" virt="non-virtual"><scope>iconBat_Class</scope><name>iconBat_Class</name></member>
+      <member refid="classicon_bat___class_1af7a5643cf31119f4777ebc1c58c6f15a" prot="public" virt="non-virtual"><scope>iconBat_Class</scope><name>iconBat_Class</name></member>
+      <member refid="classicon_bat___class_1afb762abd3032850494fa5e46d7f7cf5d" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>percent</name></member>
+      <member refid="classicon_bat___class_1a07687dff512a0ae545825a7e5ffd2fcc" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>screen</name></member>
+      <member refid="classicon_bat___class_1acb7cbb4f2b6cb2366fcd5f9e63587bc9" prot="public" virt="non-virtual"><scope>iconBat_Class</scope><name>testAnim</name></member>
+      <member refid="classicon_bat___class_1a055cc5ae2ab4dea9333985be9b32e0b4" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>textPos</name></member>
+      <member refid="classicon_bat___class_1aa5245a59290af488725123719877a273" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>textSize</name></member>
+      <member refid="classicon_bat___class_1a3885a352f82a852267a5ceab6443f147" prot="public" virt="non-virtual"><scope>iconBat_Class</scope><name>updateChargeLevel</name></member>
+      <member refid="classicon_bat___class_1abea3617d80f87acba7be39b078ea8611" prot="public" virt="non-virtual"><scope>iconBat_Class</scope><name>updatePercent</name></member>
+      <member refid="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" prot="public" virt="non-virtual"><scope>iconBat_Class</scope><name>updateState</name></member>
+      <member refid="classicon_bat___class_1a523a17c318459aba2c8ae1c7635295af" prot="public" virt="non-virtual"><scope>iconBat_Class</scope><name>updateState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
