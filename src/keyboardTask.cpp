@@ -2,27 +2,29 @@
 
 //buffer_Class functions
 buffer_Class::buffer_Class(){
-    this->size = 50;
+    this->size = DEF_BUFFER_SIZE_NAV_MODE;
+    this->Mode = mode::nav; //Navigation mode
     this->data = (char*)calloc(this->size,1);
     this->cursor = 0;
-    this->keyboardEnable = false;
+    this->keyboardEnable = false; //Keyboard starts up disabled
     this->timer =  timerBegin(2, 80, true); //Create timer on core 1 (timers are 0,1,2,3 2 per core)
+    
 }
 
-buffer_Class::buffer_Class(int size){
+buffer_Class::buffer_Class(mode Mode, int size){
     this->size = size;
+    this->Mode = Mode;
     this->data = (char*)calloc(this->size,1);
     this->cursor = 0;
     this->keyboardEnable = false;
     this->timer =  timerBegin(2, 80, true); //Create timer on core 1 (timers are 0,1,2,3 2 per core)
 }
 
-void buffer_Class::begin(bool keyboardEnable, mode Mode){
+void buffer_Class::begin(bool keyboardEnable){
     BaseType_t key = xTaskCreatePinnedToCore(keyBoardLoop, "Keyboard thread", 10000, NULL, 0, &this->keyboardTask, 0); //Creates thread for the keyboard on core 0
     if (key != pdPASS) log_i("ERR");
     else log_i("Keyboard task created");
     this->keyboardEnable = keyboardEnable;
-    this->Mode = Mode;
 }
 
 TaskHandle_t* buffer_Class::getTaskHandle(){
@@ -71,6 +73,7 @@ void buffer_Class::clearBuffer(){
 }
 
 void buffer_Class::killTask(){
+    log_i("Keyboard task & Buffer deleted");
     free(this->data);
     vTaskDelete(this->keyboardTask);
     timerDetachInterrupt(this->timer);

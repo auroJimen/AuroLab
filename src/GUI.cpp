@@ -121,8 +121,11 @@ void topBar_Class::updateIcons(){
 
 }
 
-//list_Class functions
+//textBox_class functions
 
+
+
+//list_Class functions
 int list_Class::displayableRows(float titleSize, float textSize, int height){
     int titleRowSize = rowSize(titleSize);
     int rowSize = list_Class::rowSize(textSize);
@@ -245,6 +248,11 @@ void list_Class::scrollUp(){
 
 void list_Class::enterEvent(){
     //Handles conexion to the selected network
+    
+    //First we change mode to text input, and increase the size of the buffer
+    Buffer.killTask(); //Kill current buffer class, free up memory
+    Buffer = buffer_Class(mode::text); //Reinitilize Buffer in text mode w/DEF_BUFFER_SIZE_TEXT_MODE buffer
+
 };
 
 //wifiMenu fuctions
@@ -463,11 +471,12 @@ void wifiMenu_Class::del() {
 //GUI functions
 void GUI_Class::begin(){
 
+    //Keyboard stuff
+    Buffer = buffer_Class();  //Reinitilizes the Buffer class to make sure its on the correct mode
+    Buffer.begin();  //Starts up the separate thread that processes keyboard input, also enables input by def
     //Launch gui execution thread
     BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->task, 0); //Creates thread for the GUI code on core 0
     if (gui != pdPASS) log_i("ERR");
-    Buffer.begin();                      //Initialises Keyboard buffer in tis separate execution thread
-
 }
 
 void GUIloop(void* parameter){

@@ -1,5 +1,8 @@
 #include <Arduino.h>
 #include <M5Cardputer.h>
+
+#define DEF_BUFFER_SIZE_NAV_MODE 5
+#define DEF_BUFFER_SIZE_TEXT_MODE 50
 //Functions that handle the independent keyboard ex thread & its communication with other threads
 enum mode {text, nav};
 enum navSignal {ESC, DEL, UP, DOWN, LEFT, RIGHT,ENTER, OPT, CTRL, NP};
@@ -21,8 +24,11 @@ class buffer_Class {
   public:
   /// @brief Def constructor, 50 char buffer
   buffer_Class();
-  /// @brief Constructor with especified buffer size
-  buffer_Class(int size);
+  /// @brief Constructor with specified mode & buffer size, if called with only mode, 
+  ///defaults to DEF_BUFFER_SIZE_TEXT_MODE buffer size
+  /// @param Mode Enum, marks wether the keyboard is in text entry or navigation mode, defs to navigation
+  /// @param size Int, buffer size in char, defs to DEF_BUFFER_SIZE_TEXT_MODE
+  buffer_Class(mode Mode, int size = DEF_BUFFER_SIZE_TEXT_MODE);
   /// @brief Getter function for the keyboardTask TaskHandle_t
   /// @return A pointer to the keyboardTask
   TaskHandle_t* getTaskHandle();
@@ -31,8 +37,7 @@ class buffer_Class {
   hw_timer_t* getHardwareTimer();
   /// @brief Creates the keyboard class, passes itself to it
   /// @param keyboardEnable Wether the keyboard is enabled, defs to true
-  /// @param Mode Enum, marks wether the keyboard is in text entry or navigation mode, defs to navigation
-  void begin(bool keyboardEnable = true, mode Mode = mode::nav);
+  void begin(bool keyboardEnable = true);
   /// @brief Getter function for the data char array
   /// @return A pointer to the 50 characters char array data
   char* getData();
