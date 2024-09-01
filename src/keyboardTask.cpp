@@ -97,7 +97,6 @@ void keyBoardLoop(void* parameters) {
     //Handle keyboard presses
     if (Buffer.Mode == mode::text) {
         //We are in text entry mode
-        if (Buffer.cursor == Buffer.getBufferSize()) Buffer.clearBuffer(); //Check if the buffer is full
         
         if (status.word.size() == 0) {
             //Special cases
@@ -143,6 +142,7 @@ void keyBoardLoop(void* parameters) {
         } else {
             log_i("Keyboard pressed, text entry mode, word is %i char", status.word.size());
             for(int i= 0; i< status.word.size(); i++){
+                if (Buffer.cursor == Buffer.getBufferSize()) Buffer.clearBuffer(); //Check if the buffer is full
                 if (status.fn) {
                     //Nav controls for text editing
                     char aux = status.word[i];
