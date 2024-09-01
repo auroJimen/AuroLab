@@ -8,7 +8,7 @@ buffer_Class::buffer_Class(){
     this->cursor = 0;
     this->keyboardEnable = false; //Keyboard starts up disabled
     this->timer =  timerBegin(2, 80, true); //Create timer on core 1 (timers are 0,1,2,3 2 per core)
-    
+    this->signal = navSignal::NP;
 }
 
 buffer_Class::buffer_Class(mode Mode, int size){
@@ -18,6 +18,7 @@ buffer_Class::buffer_Class(mode Mode, int size){
     this->cursor = 0;
     this->keyboardEnable = false;
     this->timer =  timerBegin(2, 80, true); //Create timer on core 1 (timers are 0,1,2,3 2 per core)
+    this->signal = navSignal::NP;
 }
 
 void buffer_Class::begin(bool keyboardEnable){
