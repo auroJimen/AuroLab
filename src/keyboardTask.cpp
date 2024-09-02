@@ -45,7 +45,7 @@ String buffer_Class::getDataStr(){
     for (int i = 0; i <this->size; i++){
         dataStr += this->data[i];
     }
-
+    dataStr = String(this->data);
     return dataStr;
 }
 
@@ -68,7 +68,7 @@ int buffer_Class::getBufferSize(){
 
 void buffer_Class::clearBuffer(){
     for (int i= 0; i < this->size; i++){
-        this->data[i] = ' ';
+        this->data[i] = '\0';
     }
     Buffer.cursor = 0;
 }
@@ -105,14 +105,23 @@ void keyBoardLoop(void* parameters) {
                     //supr / del
                     log_i("Supr pressed");
                     for(int i = Buffer.cursor+1; i < Buffer.getBufferSize() -1; i++){
-                            Buffer.getData()[i] = Buffer.getData()[i+1];
+                        if(Buffer.getData()[i] == '\0') break; //End of string reached
+                        Buffer.getData()[i] = Buffer.getData()[i+1];
                     }
                 } else {
                     //Backspace
                     log_i("Backspace pressed");
                     if (Buffer.cursor != 0) {
                         Buffer.cursor --;
-                        Buffer.getData()[Buffer.cursor] = ' ';
+                        //If the next char is the null term, set to null term
+                        if (Buffer.getData()[Buffer.cursor+1] == '\0') Buffer.getData()[Buffer.cursor] = '\0';
+                        else {
+                            //We are not @ the end of the string, must move back everything
+                            for (int i = Buffer.cursor; i < Buffer.getBufferSize() -1; i++){
+                                if(Buffer.getData()[i] == '\0') break; //End of string reached
+                                else Buffer.getData()[i] = Buffer.getData()[i+1];
+                            }
+                        }
                     }
                     
                 }
@@ -146,9 +155,13 @@ void keyBoardLoop(void* parameters) {
                 if (status.fn) {
                     //Nav controls for text editing
                     char aux = status.word[i];
+                    //Export nav singals that should be handled externally
                     Buffer.signal = navSwitch(aux);
+                    //Handle the internal ones (cursor movement)
+                    if (Buffer.signal == navSignal::LEFT && Buffer.cursor > 0) Buffer.cursor --;
+                    else if (Buffer.signal == navSignal::RIGHT && Buffer.cursor < Buffer.getBufferSize() -1) Buffer.cursor ++;
                 } else {
-                    //Normal keys 
+                    //Normal keys
                     Buffer.getData()[Buffer.cursor] = status.word[i];
                     Buffer.cursor++;
                 }
