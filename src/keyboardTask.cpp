@@ -160,10 +160,18 @@ void keyBoardLoop(void* parameters) {
                     //Handle the internal ones (cursor movement)
                     if (Buffer.signal == navSignal::LEFT && Buffer.cursor > 0) Buffer.cursor --;
                     else if (Buffer.signal == navSignal::RIGHT && Buffer.cursor < Buffer.getBufferSize() -1) Buffer.cursor ++;
-                } else {
-                    //Normal keys
+                } else if (status.opt){
+                    //Option key pressed overwrite mode
                     Buffer.getData()[Buffer.cursor] = status.word[i];
                     Buffer.cursor++;
+                } else {
+                    //Normal mode (insert text)
+                    String aux = Buffer.getDataStr().substring(Buffer.cursor); //Save everythin thats after the cursor
+                    Buffer.getData()[Buffer.cursor] = status.word[i];
+                    Buffer.cursor++;
+                    for(int i= 0; i < aux.length(); i++){
+                        Buffer.getData()[Buffer.cursor +i] = aux[i];
+                    }
                 }
             }
         }
