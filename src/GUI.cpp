@@ -122,26 +122,135 @@ void topBar_Class::updateIcons(){
 }
 
 //textBox_class functions
+textBox_Class::textBox_Class(coord pos, coord size, String* text, String defText, M5Canvas* parent,
+    coord border, float textSize, int textColour, int backColour, int cursorColour){
+        this->pos = pos;
+        this->size = size;
+        this->text = text;
+        this->border = border;
+        this->parent = parent;
+        this->defText = defText;
+        this->textSize = textSize;
+        this->textColour = textColour;
+        this->backColour = backColour;
+        this->cursorColour = cursorColour;
+        this->dispLen = rowWidth(this->size.x -2*this->border.x, this->textSize);
+        this->cursorSize = coord(6*this->textSize +1, 8*this->textSize+1);
+}
 
+void textBox_Class::draw(){
+    
+    //Create sprite for background
+    log_i("Drawing textBox");
+    M5Canvas background = (this->parent == nullptr) ? M5Canvas(&Display): M5Canvas(parent);
+    background.createSprite(this->size.x, this->size.y);
+    background.setBaseColor(this->backColour);
+    background.clear();
+    background.setColor(this->textColour);
+    background.drawRoundRect(0,0,this->size.x, this->size.y, 5);
+
+    //Push & delete
+    background.pushSprite(this->pos.x, this->pos.y);
+    background.deleteSprite();
+
+    //Create sprite for text
+    M5Canvas text = (this->parent == nullptr) ? M5Canvas(&Display): M5Canvas(parent);
+    text.createSprite(this->size.x -2*this->border.x, this->size.y -2*this->border.y);
+    text.setTextScroll(true);
+    text.setTextSize(this->textSize);
+    text.setTextColor(this->textColour);
+    text.print(this->defText);
+
+    //Push & delete
+    text.pushSprite(this->pos.x + this->border.x, this->pos.y + this->border.y);
+    text.deleteSprite();
+
+};
+
+void textBox_Class::enableTextInput(){
+
+    //First we change mode to text input, and increase the size of the buffer if it's not already set that way
+    if(Buffer.Mode != mode::text || Buffer.getBufferSize() != DEF_BUFFER_SIZE_TEXT_MODE
+        || eTaskGetState(Buffer.getTaskHandle()) == eTaskState::eDeleted
+        || eTaskGetState(Buffer.getTaskHandle()) == eTaskState::eInvalid) {
+        //Checks wether the Buffer is set to an incorrect mode, or the keyboard task has been killed
+        //if either of these conditions are met, it reinstantiates the buffer in the correct mode
+        Buffer.killTask(); //Kill current buffer class, free up memory
+        Buffer = buffer_Class(mode::text); //Reinitilize Buffer in text mode w/DEF_BUFFER_SIZE_TEXT_MODE buffer
+        Buffer.begin(); //Create keyboard task and begin running it
+    }
+
+    //Then we enable input
+    Buffer.keyboardEnable = true;
+}
+
+void textBox_Class:: disableTextInput(){
+    Buffer.keyboardEnable = false;
+}
+
+void textBox_Class::update(){
+    //Updates the text part of the sprite with the curent contents of the buffer
+    M5Canvas text = (this->parent == nullptr) ? M5Canvas(&Display): M5Canvas(parent);
+    text.createSprite(this->size.x -2*this->border.x, this->size.y -2*this->border.y);
+    text.setTextWrap(true);
+    text.setTextScroll(true);
+    text.setTextSize(this->textSize);
+    text.setTextColor(this->textColour);
+
+    String aux = Buffer.getDataStr();
+    if (Buffer.cursor < this->dispLen) { //Text from 0 to cursor fits
+        //Print everything before the cursor
+        text.print(aux.substring(0, Buffer.cursor)); 
+
+        //Print cursor
+        text.setColor(this->cursorColour);
+        text.setTextColor(this->backColour);
+        text.fillRect(text.getCursorX()-1, text.getCursorY()-1, this->cursorSize.x, this->cursorSize.y);
+        text.print(aux[Buffer.cursor]);
+        text.setTextColor(this->textColour);
+
+        //Print everything after the cursor that still fits
+        int end = (aux.length() > this->dispLen) ? this->dispLen : aux.length();
+        text.print(aux.substring(Buffer.cursor+1, end));
+    }
+    else { //Text from 0 to cursor doesn't fit
+        //Shift the start to the right as much as the cursor is greater than the display length
+        text.print(aux.substring(Buffer.cursor - (this->dispLen -1), Buffer.cursor));
+    
+        //Print cursor
+        text.setColor(this->cursorColour);
+        text.setTextColor(this->backColour);
+        text.fillRect(text.getCursorX()-1, text.getCursorY()-1, this->cursorSize.x, this->cursorSize.y);
+        text.print(aux[Buffer.cursor]);
+        text.setTextColor(this->textColour);
+
+        //There's no space to print anything after
+
+    }
+    //Push & delete
+    text.pushSprite(this->pos.x + this->border.x, this->pos.y + this->border.y);
+    text.deleteSprite();
+
+}
 
 
 //list_Class functions
 int list_Class::displayableRows(float titleSize, float textSize, int height){
-    int titleRowSize = rowSize(titleSize);
-    int rowSize = list_Class::rowSize(textSize);
-    int rows = (height- titleRowSize)/rowSize;
+    int titleSizePx = rowSize(titleSize);
+    int size = rowSize(textSize);
+    int rows = (height- titleSizePx)/size;
     ///log_i("Text size is %f, height is %i, rowSize is %i, %i rows fit", textSize, height, rowSize, rows);
     return rows;
 }
 
 int list_Class::rowsOccupied(int textLen, float textSize, int spriteWidth){
-    int pxWidth = list_Class::rowWidth(textSize, textLen);
+    int pxWidth = rowWidth(textSize, textLen);
     return ceil((float)pxWidth/(float)spriteWidth);
 }
 
 int list_Class::displayableRows(float textSize, int height){
-    int rowSize = list_Class::rowSize(textSize);
-    int rows = height/rowSize;
+    int size = rowSize(textSize);
+    int rows = height/size;
     ///log_i("Text size is %f, height is %i, rowSize is %i, %i rows fit", textSize, height, rowSize, rows);
     return rows;
 }
@@ -245,16 +354,7 @@ void list_Class::scrollDown(){
 void list_Class::scrollUp(){
     this->scroll(this->pos-1);
 }
-
-void list_Class::enterEvent(){
-    //Handles conexion to the selected network
-    
-    //First we change mode to text input, and increase the size of the buffer
-    Buffer.killTask(); //Kill current buffer class, free up memory
-    Buffer = buffer_Class(mode::text); //Reinitilize Buffer in text mode w/DEF_BUFFER_SIZE_TEXT_MODE buffer
-
-};
-
+void list_Class::enterEvent(){};
 //wifiMenu fuctions
 
 wifiMenu_Class::wifiMenu_Class() :  list_Class(String("WiFi"), 0, nullptr, coord(50,30), coord(140,96)){
@@ -422,6 +522,8 @@ void wifiMenu_Class::optnEvent(){
     text.printf("Encryption: %s\n", encriptType(this->encript[this->pos]));
     text.printf("BSSID: %i\n", this->BSSID[this->pos]);
     text.println("Press ESC to return.");
+
+    //Push & delete the sprite
     text.pushSprite(origin.x +this->border.x, origin.y +2*this->border.y + rowSize(this->titleSize));
     text.deleteSprite();
     bool flag = false;
@@ -446,6 +548,67 @@ void wifiMenu_Class::optnEvent(){
 
 
 };
+
+void wifiMenu_Class::enterEvent(){
+    //Handles conection to the selected network
+
+    //Create the background sprite in RAM
+    M5Canvas background(&Display);
+    background.createSprite(this->size.x, this->size.y);
+
+    //Draw background rectangle
+    background.setBaseColor(this->backColour);
+    background.clear();
+    background.setColor(this->textColour);
+    background.drawRoundRect(0, 0, this->size.x , this->size.y, 3);
+
+    //Push & delete the sprite
+    background.pushSprite(this->origin.x, this->origin.y);
+    background.deleteSprite();
+    
+    //Create title sprite in RAM & Set text options
+    M5Canvas titleSprt(&Display);
+    titleSprt.createSprite(this->size.x -2*this->border.x, rowSize(this->titleSize));
+    titleSprt.setTextColor(this->textColour);
+    titleSprt.setTextSize(this->titleSize);
+    titleSprt.println(this->elementName[this->pos]);
+
+    //Push & delete the sprite
+    titleSprt.pushSprite(origin.x +this->border.x, origin.y +this->border.y);
+    titleSprt.deleteSprite();
+
+    //Create text sprite
+    M5Canvas text(&Display);
+    text.createSprite(this->size.x -2*this->border.x, this->size.y -3*this->border.y -rowSize(this->titleSize));
+    text.setTextColor(this->textColour);
+    text.setTextSize(1.3);
+    text.setCursor(0,1);
+    text.println("\nEnter the network password:");
+
+    //Create textBox
+    String password = "";
+    textBox_Class psswrd(coord(0,40), coord(this->size.x -2*this->border.x, rowSize(this->titleSize)), &password, "Prueba", &text);
+    //Push sprite
+    psswrd.draw();
+    text.pushSprite(origin.x +this->border.x, origin.y +2*this->border.y + rowSize(this->titleSize));
+
+    bool flag = false;
+    psswrd.enableTextInput();
+    log_i("Entered input loop");
+    while(!flag) {
+        //Wait for user input
+        //Nav signal listener
+        vTaskDelay(10 / portTICK_PERIOD_MS); //Alows other things to update, housekeeping etc
+        psswrd.update(); //Updates the displayed string to be the current contents of the buffer
+        text.pushSprite(origin.x +this->border.x, origin.y +2*this->border.y + rowSize(this->titleSize));
+    }
+
+    text.deleteSprite();
+
+
+
+}
+
 
 
 void wifiMenu_Class::del() {

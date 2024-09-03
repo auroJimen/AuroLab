@@ -114,33 +114,42 @@ class topBar_Class{
 /// @brief Text input box class to construct menus
 class textBox_Class{
     private:
-    bool inputEnabled; ///< Wether inputing is currently enabled
     String defText; ///< Text displayed on the text box when its first created
-    String* text; ///< Pointer to the string where the text will be shaved when a enter event is triggered
+    String* text; ///< Pointer to the string where the text will be saved when a enter event is triggered
     coord pos; ///< Where the text box should be drawn
     coord size; ///< Size of the text box
+    coord border; ///< Margin from the rectangle to the text (in both directions)
+    M5GFX Display = M5Cardputer.Display; ///> Display object
+    M5Canvas* parent; ///< Optional parent sprite object
     float textSize; ///< Text size multiplier for the body
     int textColour; ///< Text colour
     int backColour; ///< Background colour
     int cursorColour; ///< Cursor colour
+    int dispLen; ///< Length of the maximum # of char that can be displayed @ a time
+    coord cursorSize; ///< Size in px of the cursor rectangle
     public:
     /// @brief Constructor for the textBox class
     /// @param pos Coord position where the textBox will be drawn
     /// @param size Coord size of the textBox
     /// @param text Pointer to a string where the text will be saved when an enter event is triggered
-    /// @param inputEnabled Sets wether inputing to the box is currently enabled, def to false
     /// @param defText Text displayed on the box when it's created, def to ""
-    /// @param TextSize Float text size multiplayer, def to 1.5
+    /// @param parent Parent M5Canvas object to print to instead of directly to the screen (def to NULL)
+    /// @param border Coord, the border margin from the rectanle to text in both directions
+    /// @param textSize Float text size multiplayer, def to 1.5
     /// @param textColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
     /// @param backColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to black
     /// @param cursorColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
-    textBox_Class(coord pos, coord size, String* text, bool inputEnabled=false, String defText="", 
-     float TextSize=1.5, int textColour = m5gfx::ili9341_colors::GREEN,
+    textBox_Class(coord pos, coord size, String* text, String defText="", M5Canvas* parent = nullptr, coord border=coord(4, 6), 
+     float textSize=1.1, int textColour = m5gfx::ili9341_colors::GREEN,
      int backColour = m5gfx::ili9341_colors::BLACK, int cursorColour = m5gfx::ili9341_colors::GREEN);
+    /// @brief Draws or redraws the textBox on the screen
+    void draw();
     /// @brief Enables the textInput and launches a keyboard listener if it isn't already running
     void enableTextInput();
     /// @brief Disables textInput and kills the keyboard listener process
     void disableTextInput();
+    /// @brief Updates the contents of the displayed textBox to the current buffer contents
+    void update();
     /// @brief Returns the value of enableTextInput
     /// @return Bool, enableTextInput
     bool getEnableTextInput();
@@ -176,6 +185,7 @@ class list_Class{
     ///@param textColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
     ///@param backColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to black
     ///@param highlightColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
+    ///@param border Coord, the border margin from the rectanle to text in both directions
     list_Class(String title, int elementNum, String* elementName,
      coord origin, coord size, float titleSize = 2.5, float textSize = 1.5, 
      int textColour = m5gfx::ili9341_colors::GREEN, int backColour = m5gfx::ili9341_colors::BLACK, 
@@ -192,7 +202,7 @@ class list_Class{
     /// @brief Scrolls up one positon
     void scrollUp();
     /// @brief Handles the element selected event triggered by ENTER navSignal
-    void enterEvent();
+    virtual void enterEvent();
 
     protected:
     /// @brief Draws the options section with the current selection highlighted (called by draw & scroll)
@@ -218,18 +228,25 @@ class list_Class{
     /// @param spriteWidth Width of the sprite in px
     /// @return Int,l number of rows the string takes up
     int rowsOccupied(int textLen, float textSize, int spriteWidth);
-
-    /// @brief Calculates height in px of a line of text of given size 
-    /// @param textSize Float, the text size multiplier used in M5GFX
-    /// @return Height in px of the line
-    inline int rowSize(float textSize) {return floor(8*textSize);}
-    /// @brief Calculates length in px of a line of text of given size & character length
-    /// @param textSize Float, the text size multiplier used in M5GFX
-    /// @param length Length of the string in characters
-    /// @return Length of the string in pixel
-    inline int rowWidth(float textSize, int length) {return floor(length*6*textSize);}
     
 };
+
+/// Auxiliary shared GUI related functions
+
+/// @brief Calculates height in px of a line of text of given size 
+/// @param textSize Float, the text size multiplier used in M5GFX
+/// @return Height in px of the line
+inline int rowSize(float textSize) {return floor(8*textSize);}
+/// @brief Calculates length in px of a line of text of given size & character length
+/// @param textSize Float, the text size multiplier used in M5GFX
+/// @param length Length of the string in characters
+/// @return Length of the string in pixel
+inline int rowWidth(float textSize, int length) {return floor(length*6*textSize);}
+/// @brief Calculates the maximum length of a String to be displayed in the given px w/ the given size
+/// @param pxSize Int, width in px of the space were the string will be displayed
+/// @param textSize Float, the text size multiplier used in M5GFX
+/// @return Length of the maximum possible displayable stirng in characterts
+inline int rowWidth(int pxSize, float textSize){return ceil(pxSize/(floor(6*textSize)));}
 
 /// @brief Class for displaying the wifi connection menu, inherits from the list_Class & adds specific functionality
 class wifiMenu_Class : public list_Class{
@@ -249,6 +266,8 @@ class wifiMenu_Class : public list_Class{
     void appLoop();
     /// @brief  Handles the element options event trigerred by OPTN navSignal
     void optnEvent();
+    /// @brief Handles the element selected event (is defined on parent, overridden here)
+    void enterEvent() override;
     /// @brief Frees up the dinamically allocated memory
     void del();
 };
