@@ -158,8 +158,10 @@ void keyBoardLoop(void* parameters) {
                     //Export nav singals that should be handled externally
                     Buffer.signal = navSwitch(aux);
                     //Handle the internal ones (cursor movement)
+                    //Cursor should never be negative
                     if (Buffer.signal == navSignal::LEFT && Buffer.cursor > 0) Buffer.cursor --;
-                    else if (Buffer.signal == navSignal::RIGHT && Buffer.cursor < Buffer.getBufferSize() -1) Buffer.cursor ++;
+                    //Cursor can be up to the next character to the end of the current string (to be able to enlarge it)
+                    else if (Buffer.signal == navSignal::RIGHT && Buffer.cursor < Buffer.getDataStr().length()) Buffer.cursor ++;
                 } else if (status.opt){
                     //Option key pressed overwrite mode
                     Buffer.getData()[Buffer.cursor] = status.word[i];
@@ -175,8 +177,14 @@ void keyBoardLoop(void* parameters) {
                 }
             }
         }
-        log_i("Buffer: \"%s\"\n", Buffer.getDataStr().c_str());
-        log_i("Nav signal: %i\n", Buffer.signal);
+        if (CORE_DEBUG_LEVEL >= 5){
+            log_i("Buffer: \"%s\"", Buffer.getDataStr().c_str());
+            String aux = "";
+            int dataLen = Buffer.getDataStr().length();
+            for(int i = 0; i < dataLen +1; i++) aux+= (i == Buffer.cursor) ? '^' :' ';
+            log_i("Cursor: \"%s\"\n", aux);
+            log_i("Nav signal: %i\n", Buffer.signal);
+        }
     } else {
         //we are in navigation mode
         if (status.word.size() ==1) {
