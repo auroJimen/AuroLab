@@ -34,30 +34,37 @@
     - [ ] Car data logger, fuel efficiency?
     - [ ] Configuration App
         - [ ] Icon asset created
-        - [ ] Wifi selection menu
-            - [ ] Scanning
+        - [x] Wifi selection menu
+            - [x] Scanning
                 - [x] Scanning animation asset created
                 - [x] Code implementation
             - [x] Display available networks via list
-                - [ ] Display wifi info when OPTN is presed
+                - [x] Display wifi info when OPTN is presed
             - [ ] Connect
 - General GUI/IO
-    - [ ] Interactive list class
+    - [x] Interactive list class
         - [x] Create & display scrollable class
         - [x] Scroll event
             - [x] Event implemented in code
             - [x] Trigger event from keyboard input
-                - Scroll bugs when scrolling to last & werid disappearences
-        - [ ] Select event
-            - [ ] Event implemented in code
+        - [x] Select event
+            - [x] Event implemented in code
                 - [x] Event handler function assigned
-            - [ ] Trigger event from keyboard
+            - [x] Trigger event from keyboard
     - [x] Input via keyboard & G0 button
         - [ ] G0 button support
         - [x] Asincronous keyboard buffer
             - [x] Customizable size
             - [x] Comunication with other execution threads
             - [x] Text entry mode with support for control characters
+                - [x] Cursor movement support
+                    - [x] Insert text (standard) mode
+                    - [x] Overwrite text when OPT is pressed
             - [x] Navigtion mode for menus
+    - [ ] Interactive text box class
+        - [x] Custom size
+        - [x] Async update (from the Keyboard thread)
+        - [ ] GUI editing with cursor movements
+            - Solving bugs with proper cursor placement and text rendering
 - Future objectives:
     - [ ] Port to non M5 alternative libraries
