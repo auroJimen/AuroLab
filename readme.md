@@ -3,6 +3,7 @@
 <p align="center">AuroLab is a personal project developed to turn the Cardputer into an usefull device for my daily work (with a nice UI that caters 100% to me).</p>
 
 <p align="center">The firmware is currently being developed in C++, through PlatformIO for VS Code.</p>
+<h2 align="left">Wiki:</h2> <a link="https://aurojimen.github.io/AuroLab/files.html">Wiki (UNDER CONSTRUCTION)</a>
 
 <!-- ROADMAP -->
 ## Current feature roadmap
