@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['updatechargelevel_0',['updateChargeLevel',['../classicon_bat___class.html#a3885a352f82a852267a5ceab6443f147',1,'iconBat_Class']]],
-  ['updateicons_1',['updateIcons',['../classtop_bar___class.html#a555351fcf48dbea120ac40f8c010dce8',1,'topBar_Class']]],
-  ['updatepercent_2',['updatePercent',['../classicon_bat___class.html#abea3617d80f87acba7be39b078ea8611',1,'iconBat_Class']]],
-  ['updatestate_3',['updateState',['../classicon_bat___class.html#af3a75b28723155bb2bd69f868b0ef3fd',1,'iconBat_Class::updateState(void)'],['../classicon_bat___class.html#a523a17c318459aba2c8ae1c7635295af',1,'iconBat_Class::updateState(int perc)']]]
+  ['scan_0',['scan',['../classwifi_menu___class.html#ab3c0dd806d2918230ad0b9165c239ef4',1,'wifiMenu_Class']]],
+  ['scroll_1',['scroll',['../classlist___class.html#a0abc13669b1a6a16df89694545a173c5',1,'list_Class']]],
+  ['scrolldown_2',['scrollDown',['../classlist___class.html#acf90db9b4d96f50415436d5ddac7a3af',1,'list_Class']]],
+  ['scrollup_3',['scrollUp',['../classlist___class.html#a48eeb6911110ba094e2f979fc824f252',1,'list_Class']]],
+  ['splashscreen_4',['splashScreen',['../class_g_u_i___class.html#af0d6b5d535fa64ef2fdecdf1a7771b49',1,'GUI_Class']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['mainloop_0',['mainLoop',['../class_g_u_i___class.html#a1e0dd033f8ab0d55d0e039ea5d305adb',1,'GUI_Class']]],
-  ['mode_1',['Mode',['../classbuffer___class.html#a1ac63f7a07b68c3d7e13e56da6689413',1,'buffer_Class']]]
+  ['license_0',['License',['../md_src_2_r_e_a_d_m_e___t_e_m_p_l_a_t_e.html#autotoc_md10',1,'']]],
+  ['list_5fclass_1',['list_Class',['../classlist___class.html',1,'list_Class'],['../classlist___class.html#aaa491172eec7c8bc481c0beaf29cf520',1,'list_Class::list_Class()']]],
+  ['loadconffile_2',['loadConfFile',['../class_g_u_i___class.html#a91db0ecb5a53420b1a2b62757328e114',1,'GUI_Class']]]
 ];

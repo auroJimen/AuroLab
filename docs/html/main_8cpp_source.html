@@ -97,48 +97,45 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;M5GFX.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;GUI.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//Global variables</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><a class="code hl_class" href="class_g_u_i___class.html">GUI_Class</a> GUI;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><a class="code hl_class" href="classbuffer___class.html">buffer_Class</a> Buffer;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//In the future put here the rest of the object instances to control all periferal</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> setup() {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="comment">//Serial for monitoring</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  Serial.begin(115200);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="comment">// Basic setup to initialize the Cardputer object defined in M5&#39;s libraries</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">auto</span> cfg = M5.config();              <span class="comment">//Creates a cfg struct as defined in M5Unified</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  M5Cardputer.begin(cfg, <span class="keyword">true</span>);       <span class="comment">//Initialises M5Cardputer object with all the correct pointers stored</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  GUI.<a class="code hl_function" href="class_g_u_i___class.html#aca65997e1615dbb0ddee2671aa95ae92">begin</a>();                        <span class="comment">//Initialises GUI in its separate execution thread</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> loop() {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="comment">// Debuggin what&#39;s running in which core</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  TaskHandle_t  core0 = xTaskGetCurrentTaskHandleForCPU(0);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">int</span> pri0 = uxTaskPriorityGet(core0);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  String core0Task = pcTaskGetName(core0);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  TaskHandle_t  core1 = xTaskGetCurrentTaskHandleForCPU(1);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  String core1Task = pcTaskGetName(core1);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">int</span> pri1 = uxTaskPriorityGet(core1);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  eTaskState keyboardState = eTaskGetState(Buffer.<a class="code hl_function" href="classbuffer___class.html#a2db51cdf715f303efc54f2a97fad5785">getTaskHandle</a>());</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordtype">int</span> priKey = uxTaskPriorityGet(Buffer.<a class="code hl_function" href="classbuffer___class.html#a2db51cdf715f303efc54f2a97fad5785">getTaskHandle</a>());</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  String data = <span class="stringliteral">&quot;\nRunning:\nCore0-&gt;&quot;</span> + core0Task + <span class="stringliteral">&quot; p=&quot;</span>+pri0+<span class="stringliteral">&quot;\nCore1-&gt; &quot;</span> + core1Task + <span class="stringliteral">&quot; p=&quot;</span>+pri1+<span class="stringliteral">&quot;\nKeboard task state: &quot;</span>+keyboardState+<span class="stringliteral">&quot;\nKeyboard task pri: &quot;</span>+priKey+<span class="stringliteral">&quot;\nKeyboard input: &quot;</span>+Buffer.<a class="code hl_variable" href="classbuffer___class.html#a0b98b8aef328ebdd93ae50b1139bc06e">keyboardEnable</a>+<span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  log_i(<span class="stringliteral">&quot;%s&quot;</span>, data.c_str());</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="comment">/*M5Canvas debug(&amp;M5Cardputer.Display);</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">  debug.createSprite(140,96);</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">  debug.print(data);</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">  debug.println(&quot;Data: &quot;+ Buffer.getDataStr());</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">  debug.println(&quot;Nav char: &quot; + String(Buffer.navChar));</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">  debug.pushSprite(50,30);</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">  debug.deleteSprite();*/</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  vTaskDelay(3000 / portTICK_PERIOD_MS);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
-<div class="ttc" id="aclass_g_u_i___class_html"><div class="ttname"><a href="class_g_u_i___class.html">GUI_Class</a></div><div class="ttdoc">A global instance of this class controls all the GUI elements and provides the method for the backend...</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8h_source.html#l00242">GUI.h:242</a></div></div>
-<div class="ttc" id="aclass_g_u_i___class_html_aca65997e1615dbb0ddee2671aa95ae92"><div class="ttname"><a href="class_g_u_i___class.html#aca65997e1615dbb0ddee2671aa95ae92">GUI_Class::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdoc">Starts up the GUI, launching it's execution thread and executing mainLoop()</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00255">GUI.cpp:255</a></div></div>
-<div class="ttc" id="aclassbuffer___class_html"><div class="ttname"><a href="classbuffer___class.html">buffer_Class</a></div><div class="ttdoc">A struct with all needed elements &amp; functions to create &amp; control a 50 character buffer htat serves a...</div><div class="ttdef"><b>Definition</b> <a href="keyboard_task_8h_source.html#l00009">keyboardTask.h:9</a></div></div>
-<div class="ttc" id="aclassbuffer___class_html_a0b98b8aef328ebdd93ae50b1139bc06e"><div class="ttname"><a href="classbuffer___class.html#a0b98b8aef328ebdd93ae50b1139bc06e">buffer_Class::keyboardEnable</a></div><div class="ttdeci">bool keyboardEnable</div><div class="ttdoc">Wether the keyboard data entry is currently enabled.</div><div class="ttdef"><b>Definition</b> <a href="keyboard_task_8h_source.html#l00017">keyboardTask.h:17</a></div></div>
-<div class="ttc" id="aclassbuffer___class_html_a2db51cdf715f303efc54f2a97fad5785"><div class="ttname"><a href="classbuffer___class.html#a2db51cdf715f303efc54f2a97fad5785">buffer_Class::getTaskHandle</a></div><div class="ttdeci">TaskHandle_t * getTaskHandle()</div><div class="ttdoc">Getter function for the keyboardTask TaskHandle_t.</div><div class="ttdef"><b>Definition</b> <a href="keyboard_task_8cpp_source.html#l00028">keyboardTask.cpp:28</a></div></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define LOG_ENABLE false</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//Global variables</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_class" href="class_g_u_i___class.html">GUI_Class</a> GUI;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><a class="code hl_class" href="classbuffer___class.html">buffer_Class</a> Buffer;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//In the future put here the rest of the object instances to control all periferal</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> setup() {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="comment">//Serial for monitoring</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  Serial.begin(115200);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="comment">// Basic setup to initialize the Cardputer object defined in M5&#39;s libraries</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">auto</span> cfg = M5.config();              <span class="comment">//Creates a cfg struct as defined in M5Unified</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  M5Cardputer.begin(cfg, <span class="keyword">true</span>);       <span class="comment">//Initialises M5Cardputer object with all the correct pointers stored</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  GUI.<a class="code hl_function" href="class_g_u_i___class.html#aca65997e1615dbb0ddee2671aa95ae92">begin</a>();                        <span class="comment">//Initialises GUI in its separate execution thread</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> loop() {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">if</span> (CORE_DEBUG_LEVEL &gt;= 5 &amp;&amp; LOG_ENABLE){</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// Debuggin what&#39;s running in which core</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    TaskHandle_t  core0 = xTaskGetCurrentTaskHandleForCPU(0);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">int</span> pri0 = uxTaskPriorityGet(core0);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    String core0Task = pcTaskGetName(core0);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    TaskHandle_t  core1 = xTaskGetCurrentTaskHandleForCPU(1);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    String core1Task = pcTaskGetName(core1);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">int</span> pri1 = uxTaskPriorityGet(core1);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    eTaskState keyboardState = eTaskGetState(Buffer.<a class="code hl_function" href="classbuffer___class.html#a2db51cdf715f303efc54f2a97fad5785">getTaskHandle</a>());</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">int</span> priKey = uxTaskPriorityGet(Buffer.<a class="code hl_function" href="classbuffer___class.html#a2db51cdf715f303efc54f2a97fad5785">getTaskHandle</a>());</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    String data = <span class="stringliteral">&quot;\nRunning:\nCore0-&gt;&quot;</span> + core0Task + <span class="stringliteral">&quot; p=&quot;</span>+pri0+<span class="stringliteral">&quot;\nCore1-&gt; &quot;</span> + core1Task + <span class="stringliteral">&quot; p=&quot;</span>+pri1+<span class="stringliteral">&quot;\nKeboard task state: &quot;</span>+keyboardState+<span class="stringliteral">&quot;\nKeyboard task pri: &quot;</span>+priKey+<span class="stringliteral">&quot;\nKeyboard input: &quot;</span>+Buffer.<a class="code hl_variable" href="classbuffer___class.html#a0b98b8aef328ebdd93ae50b1139bc06e">keyboardEnable</a>+<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    log_i(<span class="stringliteral">&quot;%s&quot;</span>, data.c_str());</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  vTaskDelay(3000 / portTICK_PERIOD_MS);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="ttc" id="aclass_g_u_i___class_html"><div class="ttname"><a href="class_g_u_i___class.html">GUI_Class</a></div><div class="ttdoc">A global instance of this class controls all the GUI elements and provides the method for the backend...</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8h_source.html#l00275">GUI.h:275</a></div></div>
+<div class="ttc" id="aclass_g_u_i___class_html_aca65997e1615dbb0ddee2671aa95ae92"><div class="ttname"><a href="class_g_u_i___class.html#aca65997e1615dbb0ddee2671aa95ae92">GUI_Class::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdoc">Starts up the GUI, launching it's execution thread and executing mainLoop()</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00635">GUI.cpp:635</a></div></div>
+<div class="ttc" id="aclassbuffer___class_html"><div class="ttname"><a href="classbuffer___class.html">buffer_Class</a></div><div class="ttdoc">A struct with all needed elements &amp; functions to create &amp; control a 50 character buffer htat serves a...</div><div class="ttdef"><b>Definition</b> <a href="keyboard_task_8h_source.html#l00012">keyboardTask.h:12</a></div></div>
+<div class="ttc" id="aclassbuffer___class_html_a0b98b8aef328ebdd93ae50b1139bc06e"><div class="ttname"><a href="classbuffer___class.html#a0b98b8aef328ebdd93ae50b1139bc06e">buffer_Class::keyboardEnable</a></div><div class="ttdeci">bool keyboardEnable</div><div class="ttdoc">Wether the keyboard data entry is currently enabled.</div><div class="ttdef"><b>Definition</b> <a href="keyboard_task_8h_source.html#l00020">keyboardTask.h:20</a></div></div>
+<div class="ttc" id="aclassbuffer___class_html_a2db51cdf715f303efc54f2a97fad5785"><div class="ttname"><a href="classbuffer___class.html#a2db51cdf715f303efc54f2a97fad5785">buffer_Class::getTaskHandle</a></div><div class="ttdeci">TaskHandle_t * getTaskHandle()</div><div class="ttdoc">Getter function for the keyboardTask TaskHandle_t.</div><div class="ttdef"><b>Definition</b> <a href="keyboard_task_8cpp_source.html#l00031">keyboardTask.cpp:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
