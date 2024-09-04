@@ -120,16 +120,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a91db0ecb5a53420b1a2b62757328e114" id="r_a91db0ecb5a53420b1a2b62757328e114"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91db0ecb5a53420b1a2b62757328e114">loadConfFile</a> ()</td></tr>
 <tr class="memdesc:a91db0ecb5a53420b1a2b62757328e114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads configuration file from SD UNIMPLEMENTED.  <br /></td></tr>
 <tr class="separator:a91db0ecb5a53420b1a2b62757328e114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acadffe99b600efea71c1322935cd1a2a" id="r_acadffe99b600efea71c1322935cd1a2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acadffe99b600efea71c1322935cd1a2a">updateTopBar</a> ()</td></tr>
+<tr class="memdesc:acadffe99b600efea71c1322935cd1a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the state of the icons on the topBar.  <br /></td></tr>
+<tr class="separator:acadffe99b600efea71c1322935cd1a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a3b5933a3f4f189338a610019a3c0dae4" id="r_a3b5933a3f4f189338a610019a3c0dae4"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b5933a3f4f189338a610019a3c0dae4">task</a></td></tr>
 <tr class="separator:a3b5933a3f4f189338a610019a3c0dae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58293828d0e25452e060c4b169a4d20c" id="r_a58293828d0e25452e060c4b169a4d20c"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58293828d0e25452e060c4b169a4d20c">topBarTask</a></td></tr>
+<tr class="separator:a58293828d0e25452e060c4b169a4d20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A global instance of this class controls all the GUI elements and provides the method for the backend and front end to communicate. The GUI class depends on the M5Cardputer object defined in M5Cardputer.h. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00242">242</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00275">275</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aca65997e1615dbb0ddee2671aa95ae92" name="aca65997e1615dbb0ddee2671aa95ae92"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca65997e1615dbb0ddee2671aa95ae92">&#9670;&#160;</a></span>begin()</h2>
@@ -148,7 +153,7 @@ Public Attributes</h2></td></tr>
 
 <p>Starts up the GUI, launching it's execution thread and executing <a class="el" href="#a1e0dd033f8ab0d55d0e039ea5d305adb" title="Mainloop for the GUI, must be run on its own thread to prevent interference w/ backend....">mainLoop()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00255">255</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00635">635</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,7 +174,7 @@ Public Attributes</h2></td></tr>
 
 <p>Draws the main menu. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00293">293</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00706">706</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
@@ -190,7 +195,7 @@ Public Attributes</h2></td></tr>
 
 <p>Draws the wifi menu to scan &amp; connect to networks. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00335">335</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00752">752</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
@@ -211,7 +216,7 @@ Public Attributes</h2></td></tr>
 
 <p>Loads configuration file from SD UNIMPLEMENTED. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00331">331</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00744">744</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
@@ -232,7 +237,7 @@ Public Attributes</h2></td></tr>
 
 <p>Mainloop for the GUI, must be run on its own thread to prevent interference w/ backend. Handles drawing UI elements, inputs, etc. through an endless loop. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00304">304</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00717">717</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
@@ -253,7 +258,28 @@ Public Attributes</h2></td></tr>
 
 <p>Draws the splashscreen. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00270">270</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00685">685</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acadffe99b600efea71c1322935cd1a2a" name="acadffe99b600efea71c1322935cd1a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acadffe99b600efea71c1322935cd1a2a">&#9670;&#160;</a></span>updateTopBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GUI_Class::updateTopBar </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the state of the icons on the topBar. </p>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00748">748</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
@@ -300,7 +326,23 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00249">249</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00282">282</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+
+</div>
+</div>
+<a id="a58293828d0e25452e060c4b169a4d20c" name="a58293828d0e25452e060c4b169a4d20c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58293828d0e25452e060c4b169a4d20c">&#9670;&#160;</a></span>topBarTask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t GUI_Class::topBarTask</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00283">283</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
 
 </div>
 </div>

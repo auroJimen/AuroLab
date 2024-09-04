@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keyboardenable_0',['keyboardEnable',['../classbuffer___class.html#a0b98b8aef328ebdd93ae50b1139bc06e',1,'buffer_Class']]]
+  ['cursor_0',['cursor',['../classbuffer___class.html#a3ab4b8088883189f50066d32c59f3761',1,'buffer_Class']]]
 ];
