@@ -87,6 +87,19 @@
         <label>cstdint</label>
       </node>
     </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="main_8cpp_1aba0050d0d9182386e51d25ec355f4f8d" prot="public" static="no">
+        <name>LOG_ENABLE</name>
+        <initializer>false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="7" column="9" bodyfile="src/main.cpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
     <sectiondef kind="var">
       <memberdef kind="variable" id="main_8cpp_1a1c7831cab950a92c8124fe4e2f6723e5" prot="public" static="no" mutable="no">
         <type><ref refid="class_g_u_i___class" kindref="compound">GUI_Class</ref></type>
@@ -99,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/main.cpp" line="8" column="11" bodyfile="src/main.cpp" bodystart="8" bodyend="-1"/>
+        <location file="src/main.cpp" line="10" column="11" bodyfile="src/main.cpp" bodystart="10" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="main_8cpp_1a7d37674f503dac4c08ab7830b07e282c" prot="public" static="no" mutable="no">
         <type><ref refid="classbuffer___class" kindref="compound">buffer_Class</ref></type>
@@ -112,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/main.cpp" line="9" column="14" bodyfile="src/main.cpp" bodystart="9" bodyend="-1"/>
+        <location file="src/main.cpp" line="11" column="14" bodyfile="src/main.cpp" bodystart="11" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -127,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/main.cpp" line="13" column="6" bodyfile="src/main.cpp" bodystart="13" bodyend="20"/>
+        <location file="src/main.cpp" line="15" column="6" bodyfile="src/main.cpp" bodystart="15" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -140,7 +153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/main.cpp" line="22" column="6" bodyfile="src/main.cpp" bodystart="22" bodyend="43"/>
+        <location file="src/main.cpp" line="24" column="6" bodyfile="src/main.cpp" bodystart="24" bodyend="40"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -154,43 +167,40 @@
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;M5GFX.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GUI.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//Global<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><ref refid="class_g_u_i___class" kindref="compound">GUI_Class</ref><sp/>GUI;</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><ref refid="classbuffer___class" kindref="compound">buffer_Class</ref><sp/>Buffer;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//In<sp/>the<sp/>future<sp/>put<sp/>here<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>object<sp/>instances<sp/>to<sp/>control<sp/>all<sp/>periferal</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setup()<sp/>{</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Serial<sp/>for<sp/>monitoring</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/>Serial.begin(115200);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Basic<sp/>setup<sp/>to<sp/>initialize<sp/>the<sp/>Cardputer<sp/>object<sp/>defined<sp/>in<sp/>M5&apos;s<sp/>libraries</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>cfg<sp/>=<sp/>M5.config();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Creates<sp/>a<sp/>cfg<sp/>struct<sp/>as<sp/>defined<sp/>in<sp/>M5Unified</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/>M5Cardputer.begin(cfg,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Initialises<sp/>M5Cardputer<sp/>object<sp/>with<sp/>all<sp/>the<sp/>correct<sp/>pointers<sp/>stored</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/>GUI.<ref refid="class_g_u_i___class_1aca65997e1615dbb0ddee2671aa95ae92" kindref="member">begin</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Initialises<sp/>GUI<sp/>in<sp/>its<sp/>separate<sp/>execution<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>loop()<sp/>{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Debuggin<sp/>what&apos;s<sp/>running<sp/>in<sp/>which<sp/>core</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/>TaskHandle_t<sp/><sp/>core0<sp/>=<sp/>xTaskGetCurrentTaskHandleForCPU(0);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pri0<sp/>=<sp/>uxTaskPriorityGet(core0);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/>String<sp/>core0Task<sp/>=<sp/>pcTaskGetName(core0);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/>TaskHandle_t<sp/><sp/>core1<sp/>=<sp/>xTaskGetCurrentTaskHandleForCPU(1);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/>String<sp/>core1Task<sp/>=<sp/>pcTaskGetName(core1);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pri1<sp/>=<sp/>uxTaskPriorityGet(core1);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/>eTaskState<sp/>keyboardState<sp/>=<sp/>eTaskGetState(Buffer.<ref refid="classbuffer___class_1a2db51cdf715f303efc54f2a97fad5785" kindref="member">getTaskHandle</ref>());</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priKey<sp/>=<sp/>uxTaskPriorityGet(Buffer.<ref refid="classbuffer___class_1a2db51cdf715f303efc54f2a97fad5785" kindref="member">getTaskHandle</ref>());</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/>String<sp/>data<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;\nRunning:\nCore0-&gt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>core0Task<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>p=&quot;</highlight><highlight class="normal">+pri0+</highlight><highlight class="stringliteral">&quot;\nCore1-&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>core1Task<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>p=&quot;</highlight><highlight class="normal">+pri1+</highlight><highlight class="stringliteral">&quot;\nKeboard<sp/>task<sp/>state:<sp/>&quot;</highlight><highlight class="normal">+keyboardState+</highlight><highlight class="stringliteral">&quot;\nKeyboard<sp/>task<sp/>pri:<sp/>&quot;</highlight><highlight class="normal">+priKey+</highlight><highlight class="stringliteral">&quot;\nKeyboard<sp/>input:<sp/>&quot;</highlight><highlight class="normal">+Buffer.<ref refid="classbuffer___class_1a0b98b8aef328ebdd93ae50b1139bc06e" kindref="member">keyboardEnable</ref>+</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/>log_i(</highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/>data.c_str());</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*M5Canvas<sp/>debug(&amp;M5Cardputer.Display);</highlight></codeline>
-<codeline lineno="35"><highlight class="comment"><sp/><sp/>debug.createSprite(140,96);</highlight></codeline>
-<codeline lineno="36"><highlight class="comment"><sp/><sp/>debug.print(data);</highlight></codeline>
-<codeline lineno="37"><highlight class="comment"><sp/><sp/>debug.println(&quot;Data:<sp/>&quot;+<sp/>Buffer.getDataStr());</highlight></codeline>
-<codeline lineno="38"><highlight class="comment"><sp/><sp/>debug.println(&quot;Nav<sp/>char:<sp/>&quot;<sp/>+<sp/>String(Buffer.navChar));</highlight></codeline>
-<codeline lineno="39"><highlight class="comment"><sp/><sp/>debug.pushSprite(50,30);</highlight></codeline>
-<codeline lineno="40"><highlight class="comment"><sp/><sp/>debug.deleteSprite();*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/>vTaskDelay(3000<sp/>/<sp/>portTICK_PERIOD_MS);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight></codeline>
-<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_ENABLE<sp/>false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//Global<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="class_g_u_i___class" kindref="compound">GUI_Class</ref><sp/>GUI;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="classbuffer___class" kindref="compound">buffer_Class</ref><sp/>Buffer;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//In<sp/>the<sp/>future<sp/>put<sp/>here<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>object<sp/>instances<sp/>to<sp/>control<sp/>all<sp/>periferal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setup()<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Serial<sp/>for<sp/>monitoring</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>Serial.begin(115200);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Basic<sp/>setup<sp/>to<sp/>initialize<sp/>the<sp/>Cardputer<sp/>object<sp/>defined<sp/>in<sp/>M5&apos;s<sp/>libraries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>cfg<sp/>=<sp/>M5.config();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Creates<sp/>a<sp/>cfg<sp/>struct<sp/>as<sp/>defined<sp/>in<sp/>M5Unified</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>M5Cardputer.begin(cfg,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Initialises<sp/>M5Cardputer<sp/>object<sp/>with<sp/>all<sp/>the<sp/>correct<sp/>pointers<sp/>stored</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>GUI.<ref refid="class_g_u_i___class_1aca65997e1615dbb0ddee2671aa95ae92" kindref="member">begin</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Initialises<sp/>GUI<sp/>in<sp/>its<sp/>separate<sp/>execution<sp/>thread</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>loop()<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(CORE_DEBUG_LEVEL<sp/>&gt;=<sp/>5<sp/>&amp;&amp;<sp/>LOG_ENABLE){</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Debuggin<sp/>what&apos;s<sp/>running<sp/>in<sp/>which<sp/>core</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>TaskHandle_t<sp/><sp/>core0<sp/>=<sp/>xTaskGetCurrentTaskHandleForCPU(0);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pri0<sp/>=<sp/>uxTaskPriorityGet(core0);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/>core0Task<sp/>=<sp/>pcTaskGetName(core0);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>TaskHandle_t<sp/><sp/>core1<sp/>=<sp/>xTaskGetCurrentTaskHandleForCPU(1);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/>core1Task<sp/>=<sp/>pcTaskGetName(core1);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pri1<sp/>=<sp/>uxTaskPriorityGet(core1);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>eTaskState<sp/>keyboardState<sp/>=<sp/>eTaskGetState(Buffer.<ref refid="classbuffer___class_1a2db51cdf715f303efc54f2a97fad5785" kindref="member">getTaskHandle</ref>());</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priKey<sp/>=<sp/>uxTaskPriorityGet(Buffer.<ref refid="classbuffer___class_1a2db51cdf715f303efc54f2a97fad5785" kindref="member">getTaskHandle</ref>());</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/>data<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;\nRunning:\nCore0-&gt;&quot;</highlight><highlight class="normal"><sp/>+<sp/>core0Task<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>p=&quot;</highlight><highlight class="normal">+pri0+</highlight><highlight class="stringliteral">&quot;\nCore1-&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>core1Task<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>p=&quot;</highlight><highlight class="normal">+pri1+</highlight><highlight class="stringliteral">&quot;\nKeboard<sp/>task<sp/>state:<sp/>&quot;</highlight><highlight class="normal">+keyboardState+</highlight><highlight class="stringliteral">&quot;\nKeyboard<sp/>task<sp/>pri:<sp/>&quot;</highlight><highlight class="normal">+priKey+</highlight><highlight class="stringliteral">&quot;\nKeyboard<sp/>input:<sp/>&quot;</highlight><highlight class="normal">+Buffer.<ref refid="classbuffer___class_1a0b98b8aef328ebdd93ae50b1139bc06e" kindref="member">keyboardEnable</ref>+</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>log_i(</highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/>data.c_str());</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>vTaskDelay(3000<sp/>/<sp/>portTICK_PERIOD_MS);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="src/main.cpp"/>
   </compounddef>

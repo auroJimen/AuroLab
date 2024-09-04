@@ -81,8 +81,8 @@
 <listitem override="unchecked"><para>Icon asset created</para>
 </listitem></itemizedlist>
 <itemizedlist>
-<listitem override="unchecked"><para>Wifi selection menu<itemizedlist>
-<listitem override="unchecked"><para>Scanning<itemizedlist>
+<listitem override="checked"><para>Wifi selection menu<itemizedlist>
+<listitem override="checked"><para>Scanning<itemizedlist>
 <listitem override="checked"><para>Scanning animation asset created</para>
 </listitem></itemizedlist>
 <itemizedlist>
@@ -92,7 +92,7 @@
 </listitem></itemizedlist>
 <itemizedlist>
 <listitem override="checked"><para>Display available networks via list<itemizedlist>
-<listitem override="unchecked"><para>Display wifi info when OPTN is presed</para>
+<listitem override="checked"><para>Display wifi info when OPTN is presed</para>
 </listitem></itemizedlist>
 </para>
 </listitem><listitem override="unchecked"><para>Connect</para>
@@ -103,7 +103,7 @@
 </listitem></itemizedlist>
 </para>
 </listitem><listitem><para>General GUI/IO<itemizedlist>
-<listitem override="unchecked"><para>Interactive list class<itemizedlist>
+<listitem override="checked"><para>Interactive list class<itemizedlist>
 <listitem override="checked"><para>Create &amp; display scrollable class</para>
 </listitem></itemizedlist>
 <itemizedlist>
@@ -111,20 +111,19 @@
 <listitem override="checked"><para>Event implemented in code</para>
 </listitem></itemizedlist>
 <itemizedlist>
-<listitem override="checked"><para>Trigger event from keyboard input<itemizedlist>
-<listitem><para>Scroll bugs when scrolling to last &amp; werid disappearences</para>
+<listitem override="checked"><para>Trigger event from keyboard input</para>
 </listitem></itemizedlist>
 </para>
 </listitem></itemizedlist>
-</para>
-</listitem><listitem override="unchecked"><para>Select event<itemizedlist>
-<listitem override="unchecked"><para>Event implemented in code<itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Select event<itemizedlist>
+<listitem override="checked"><para>Event implemented in code<itemizedlist>
 <listitem override="checked"><para>Event handler function assigned</para>
 </listitem></itemizedlist>
 </para>
 </listitem></itemizedlist>
 <itemizedlist>
-<listitem override="unchecked"><para>Trigger event from keyboard</para>
+<listitem override="checked"><para>Trigger event from keyboard</para>
 </listitem></itemizedlist>
 </para>
 </listitem></itemizedlist>
@@ -142,10 +141,30 @@
 <listitem override="checked"><para>Comunication with other execution threads</para>
 </listitem></itemizedlist>
 <itemizedlist>
-<listitem override="checked"><para>Text entry mode with support for control characters</para>
+<listitem override="checked"><para>Text entry mode with support for control characters<itemizedlist>
+<listitem override="checked"><para>Cursor movement support<itemizedlist>
+<listitem override="checked"><para>Insert text (standard) mode</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Overwrite text when OPT is pressed</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
 </listitem></itemizedlist>
 <itemizedlist>
 <listitem override="checked"><para>Navigtion mode for menus</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem override="unchecked"><para>Interactive text box class<itemizedlist>
+<listitem override="checked"><para>Custom size</para>
+</listitem></itemizedlist>
+<itemizedlist>
+<listitem override="checked"><para>Async update (from the Keyboard thread)</para>
+</listitem><listitem override="unchecked"><para>GUI editing with cursor movements<itemizedlist>
+<listitem><para>Solving bugs with proper cursor placement and text rendering</para>
 </listitem></itemizedlist>
 </para>
 </listitem></itemizedlist>

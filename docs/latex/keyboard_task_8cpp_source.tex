@@ -6,205 +6,241 @@
 \DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00002}00002\ }
 \DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00003}00003\ \textcolor{comment}{//buffer\_Class\ functions}}
 \DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00004}\mbox{\hyperlink{classbuffer___class_a0a59b9bc631ed522318eaf21ce465bba}{00004}}\ \mbox{\hyperlink{classbuffer___class_a0a59b9bc631ed522318eaf21ce465bba}{buffer\_Class::buffer\_Class}}()\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00005}00005\ \ \ \ \ this-\/>size\ =\ 50;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00006}00006\ \ \ \ \ this-\/>data\ =\ (\textcolor{keywordtype}{char}*)calloc(this-\/>size,1);}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00007}00007\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00008}00008\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00009}00009\ \ \ \ \ this-\/>timer\ =\ \ timerBegin(2,\ 80,\ \textcolor{keyword}{true});\ \textcolor{comment}{//Create\ timer\ on\ core\ 1\ (timers\ are\ 0,1,2,3\ 2\ per\ core)}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00010}00010\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00012}\mbox{\hyperlink{classbuffer___class_a04c135f6f3445c7d16b862cb5890fe53}{00012}}\ \mbox{\hyperlink{classbuffer___class_a0a59b9bc631ed522318eaf21ce465bba}{buffer\_Class::buffer\_Class}}(\textcolor{keywordtype}{int}\ size)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00013}00013\ \ \ \ \ this-\/>size\ =\ size;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00014}00014\ \ \ \ \ this-\/>data\ =\ (\textcolor{keywordtype}{char}*)calloc(this-\/>size,1);}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00015}00015\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00016}00016\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00017}00017\ \ \ \ \ this-\/>timer\ =\ \ timerBegin(2,\ 80,\ \textcolor{keyword}{true});\ \textcolor{comment}{//Create\ timer\ on\ core\ 1\ (timers\ are\ 0,1,2,3\ 2\ per\ core)}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00018}00018\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00020}\mbox{\hyperlink{classbuffer___class_a2c8542d9cbe7433a80c3a8dedc5dbb51}{00020}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbuffer___class_a2c8542d9cbe7433a80c3a8dedc5dbb51}{buffer\_Class::begin}}(\textcolor{keywordtype}{bool}\ keyboardEnable,\ mode\ Mode)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00021}00021\ \ \ \ \ BaseType\_t\ key\ =\ xTaskCreatePinnedToCore(keyBoardLoop,\ \textcolor{stringliteral}{"{}Keyboard\ thread"{}},\ 10000,\ NULL,\ 0,\ \&this-\/>keyboardTask,\ 0);\ \textcolor{comment}{//Creates\ thread\ for\ the\ keyboard\ on\ core\ 0}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ !=\ pdPASS)\ log\_i(\textcolor{stringliteral}{"{}ERR"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{else}\ log\_i(\textcolor{stringliteral}{"{}Keyboard\ task\ created"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00024}00024\ \ \ \ \ this-\/>keyboardEnable\ =\ \mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00025}00025\ \ \ \ \ this-\/>Mode\ =\ \mbox{\hyperlink{classbuffer___class_a1ac63f7a07b68c3d7e13e56da6689413}{Mode}};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00026}00026\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00028}\mbox{\hyperlink{classbuffer___class_a2db51cdf715f303efc54f2a97fad5785}{00028}}\ TaskHandle\_t*\ \mbox{\hyperlink{classbuffer___class_a2db51cdf715f303efc54f2a97fad5785}{buffer\_Class::getTaskHandle}}()\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \&this-\/>keyboardTask;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00030}00030\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00032}\mbox{\hyperlink{classbuffer___class_a1868135a1d4c1885afac8e601a171057}{00032}}\ hw\_timer\_t*\ \mbox{\hyperlink{classbuffer___class_a1868135a1d4c1885afac8e601a171057}{buffer\_Class::getHardwareTimer}}()\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>timer;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00034}00034\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00036}\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{00036}}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{buffer\_Class::getData}}()\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>data;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00038}00038\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00040}\mbox{\hyperlink{classbuffer___class_a9debd110754d53e4e49dab7391689ee5}{00040}}\ String\ \mbox{\hyperlink{classbuffer___class_a9debd110754d53e4e49dab7391689ee5}{buffer\_Class::getDataStr}}()\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00041}00041\ \ \ \ \ String\ dataStr\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <this-\/>size;\ i++)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ dataStr\ +=\ this-\/>data[i];}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00044}00044\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{return}\ dataStr;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00047}00047\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00049}\mbox{\hyperlink{classbuffer___class_a3e7fefdd89f9d087f79e04f66dc3ef8c}{00049}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbuffer___class_a3e7fefdd89f9d087f79e04f66dc3ef8c}{buffer\_Class::del}}()\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00050}00050\ \ \ \ \ this-\/>data[this-\/>\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ \textcolor{charliteral}{'\ '};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00051}00051\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00053}\mbox{\hyperlink{classbuffer___class_a692844f0abdde0a1111152441a112cff}{00053}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbuffer___class_a3e7fefdd89f9d087f79e04f66dc3ef8c}{buffer\_Class::del}}(\textcolor{keywordtype}{int}\ cursor)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor\ <\ 0\ ||\ cursor\ >}}\ Buffer.size)\ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ this-\/>cursor\ =\ \mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a3e7fefdd89f9d087f79e04f66dc3ef8c}{del}}();}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00059}00059\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00060}00060\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00062}\mbox{\hyperlink{classbuffer___class_a6c2aa2166c5fafbbfe583eb1c4411e49}{00062}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbuffer___class_a6c2aa2166c5fafbbfe583eb1c4411e49}{buffer\_Class::getBufferSize}}()\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>size;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00064}00064\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00066}\mbox{\hyperlink{classbuffer___class_a6b423be6bc54130652e70f0e9010b619}{00066}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbuffer___class_a6b423be6bc54130652e70f0e9010b619}{buffer\_Class::clearBuffer}}()\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=\ 0;\ i\ <\ this-\/>size;\ i++)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ this-\/>data[i]\ =\ \textcolor{charliteral}{'\ '};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00069}00069\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00070}00070\ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00071}00071\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00072}00072\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00073}\mbox{\hyperlink{classbuffer___class_a9501def46c3074fc723c828e8b4fba03}{00073}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbuffer___class_a9501def46c3074fc723c828e8b4fba03}{buffer\_Class::killTask}}()\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00074}00074\ \ \ \ \ free(this-\/>data);}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00075}00075\ \ \ \ \ vTaskDelete(this-\/>keyboardTask);}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00076}00076\ \ \ \ \ timerDetachInterrupt(this-\/>timer);}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00077}00077\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00078}00078\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00080}00080\ \textcolor{keywordtype}{void}\ keyBoardLoop(\textcolor{keywordtype}{void}*\ parameters)\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00081}00081\ \ \ log\_i(\textcolor{stringliteral}{"{}Keyboard\ task\ created"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00082}00082\ \ \ \textcolor{comment}{//Create\ the\ interrupt\ we'll\ use\ to\ time\ how\ many\ times\ per\ second\ we\ check\ the\ keyboard\ input}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00083}00083\ \ \ timerAttachInterrupt(Buffer.\mbox{\hyperlink{classbuffer___class_a1868135a1d4c1885afac8e601a171057}{getHardwareTimer}}(),\ \&keyBoardISR,\ \textcolor{keyword}{false});\ \textcolor{comment}{//Atach\ interrupt\ to\ the\ timer}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00084}00084\ \ \ timerAlarmWrite(Buffer.\mbox{\hyperlink{classbuffer___class_a1868135a1d4c1885afac8e601a171057}{getHardwareTimer}}(),\ 50000,\ \textcolor{keyword}{true});\ \textcolor{comment}{//Set\ the\ alarm\ that\ triggers\ the\ interrupt}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00085}00085\ \ \ timerAlarmEnable(Buffer.\mbox{\hyperlink{classbuffer___class_a1868135a1d4c1885afac8e601a171057}{getHardwareTimer}}());\ \textcolor{comment}{//Enable\ the\ alarm}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00086}00086\ \ \ \textcolor{comment}{//Suspend\ the\ current\ task\ (it'll\ resume\ from\ here\ once\ the\ interrupt\ is\ triggered)}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00087}00087\ \ \ vTaskSuspend(NULL);}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00088}00088\ \ \ \textcolor{comment}{//Infinite\ loop,\ each\ time\ xTaskResumeFromISR\ is\ called\ from\ within\ the\ ISR,\ a\ round\ of\ this\ loop\ will}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00089}00089\ \ \ \textcolor{comment}{//be\ executed,\ succesive\ calls\ to\ resuming\ won't\ affect\ an\ already\ resumed\ task,\ \&\ the\ loop\ suspends\ the\ task}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00090}00090\ \ \ \textcolor{comment}{//once\ the\ round\ is\ finished}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00091}00091\ \ \ \textcolor{keywordflow}{for}(;;)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00092}00092\ \ \ \ \ Keyboard\_Class::KeysState\ status\ =\ M5Cardputer.Keyboard.keysState();}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//Handle\ keyboard\ presses}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_a1ac63f7a07b68c3d7e13e56da6689413}{Mode}}\ ==\ mode::text)\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//We\ are\ in\ text\ entry\ mode}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ ==\ Buffer.\mbox{\hyperlink{classbuffer___class_a6c2aa2166c5fafbbfe583eb1c4411e49}{getBufferSize}}())\ Buffer.\mbox{\hyperlink{classbuffer___class_a6b423be6bc54130652e70f0e9010b619}{clearBuffer}}();\ \textcolor{comment}{//Check\ if\ the\ buffer\ is\ full}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.word.size()\ ==\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Special\ cases}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.del)\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.fn)\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//supr\ /\ del}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Supr\ pressed"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}+1;\ i\ <\ Buffer.\mbox{\hyperlink{classbuffer___class_a6c2aa2166c5fafbbfe583eb1c4411e49}{getBufferSize}}()\ -\/1;\ i++)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[i]\ =\ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[i+1];}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Backspace}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Backspace\ pressed"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ !=\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ -\/-\/;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ \textcolor{charliteral}{'\ '};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.tab)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Tab\ single\ press,\ insert\ \(\backslash\)t}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Tab\ pressed"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ \textcolor{charliteral}{'\(\backslash\)t'};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}++;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.enter)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.fn)\ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::ENTER;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Enter\ single\ press,\ insert\ \(\backslash\)n}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Enter\ pressed"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}++;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.alt\ ||\ status.ctrl\ ||\ status.fn\ ||\ status.opt\ ||\ status.shift\ ||\ status.space)\ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::NP;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ log\_i(\textcolor{stringliteral}{"{}Keyboard\ release"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00131}00131\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Maybe\ implement\ opt,\ alt\ \&\ ctrl?\ for\ text\ mode?\ }}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Opt\ should\ bring\ out\ the\ conf\ menu\ for\ the\ programme,}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Alt\ \&\ ctrl\ should\ be\ used\ in\ some\ way\ for\ keyboard\ shortcuts,\ but\ they\ should\ be\ programme\ specific,}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//I'm\ not\ sure\ how\ i\ wanna\ implement\ that\ }}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//(maybe\ add\ a\ possible\ navSwicht\ style\ func\ given\ when\ creating\ the\ buffer?)}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Other\ possible\ idea\ is\ fn+shift\ =\ BLOCK\ MAYUS,\ }}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//only\ if\ i\ find\ an\ elegant\ way\ to\ show\ it\ is\ active\ to\ the\ user}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Keyboard\ pressed,\ text\ entry\ mode,\ word\ is\ \%i\ char"{}},\ status.word.size());}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=\ 0;\ i<\ status.word.size();\ i++)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.fn)\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Nav\ controls\ for\ text\ editing}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ aux\ =\ status.word[i];}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSwitch(aux);}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Normal\ keys\ }}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ status.word[i];}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}++;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Buffer:\ \(\backslash\)"{}\%s\(\backslash\)"{}\(\backslash\)n"{}},\ Buffer.\mbox{\hyperlink{classbuffer___class_a9debd110754d53e4e49dab7391689ee5}{getDataStr}}().c\_str());}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Nav\ signal:\ \%i\(\backslash\)n"{}},\ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00155}00155\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//we\ are\ in\ navigation\ mode}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.word.size()\ ==1)\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Keyboard\ pressed,\ menu\ navigation\ mode"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ aux\ =\ status.word[0];}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSwitch(aux);}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.enter)\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::ENTER;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}ENTER\ signal"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.opt)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::OPT;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}OPT\ signal"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.alt||status.ctrl||status.del||status.fn||}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ status.shift||status.space)\ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::NP;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ log\_i(\textcolor{stringliteral}{"{}Keboard\ release"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Nav\ signal:\ \%i\(\backslash\)n"{}},\ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00171}00171\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{comment}{//Suspend\ itself\ until\ it's\ called\ again}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00173}00173\ \ \ \ \ vTaskSuspend(NULL);}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00174}00174\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00175}00175\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00176}00176\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00177}00177\ navSignal\ navSwitch(\textcolor{keywordtype}{char}\ aux)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keywordflow}{switch}(aux)\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'`'}:}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\string~'}:\ log\_i(\textcolor{stringliteral}{"{}Esc\ signal"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ navSignal::ESC;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{';'}:}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{':'}:\ log\_i(\textcolor{stringliteral}{"{}UP\ signal"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ navSignal::UP;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'.'}:}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'>'}:\ log\_i(\textcolor{stringliteral}{"{}DOWN\ signal"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ navSignal::DOWN;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{','}:}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'<'}:\ log\_i(\textcolor{stringliteral}{"{}LEFT\ signal"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ navSignal::LEFT;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'/'}:}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'?'}:\ log\_i(\textcolor{stringliteral}{"{}RIGHT\ signal"{}});}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ navSignal::RIGHT;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ navSignal::NP;}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00195}00195\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00196}00196\ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00197}00197\ }
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00198}00198\ \textcolor{keywordtype}{void}\ IRAM\_ATTR\ keyBoardISR()\{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00199}00199\ \ \ \textcolor{comment}{//log\_i("{}Interrupt\ triggered"{});}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00200}00200\ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}})\ \{}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00201}00201\ \ \ \ \ M5Cardputer.update();}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{keywordflow}{if}\ (M5Cardputer.Keyboard.isChange())\ xTaskResumeFromISR(*Buffer.\mbox{\hyperlink{classbuffer___class_a2db51cdf715f303efc54f2a97fad5785}{getTaskHandle}}());}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00203}00203\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00204}00204\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00005}00005\ \ \ \ \ this-\/>size\ =\ DEF\_BUFFER\_SIZE\_NAV\_MODE;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00006}00006\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a1ac63f7a07b68c3d7e13e56da6689413}{Mode}}\ =\ mode::nav;\ \textcolor{comment}{//Navigation\ mode}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00007}00007\ \ \ \ \ this-\/>data\ =\ (\textcolor{keywordtype}{char}*)calloc(this-\/>size,1);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00008}00008\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00009}00009\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Keyboard\ starts\ up\ disabled}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00010}00010\ \ \ \ \ this-\/>timer\ =\ \ timerBegin(2,\ 80,\ \textcolor{keyword}{true});\ \textcolor{comment}{//Create\ timer\ on\ core\ 1\ (timers\ are\ 0,1,2,3\ 2\ per\ core)}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00011}00011\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::NP;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00014}\mbox{\hyperlink{classbuffer___class_a8e6cf0c5636a8f8a791aab6311c3ad67}{00014}}\ \mbox{\hyperlink{classbuffer___class_a0a59b9bc631ed522318eaf21ce465bba}{buffer\_Class::buffer\_Class}}(mode\ Mode,\ \textcolor{keywordtype}{int}\ size)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00015}00015\ \ \ \ \ this-\/>size\ =\ size;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00016}00016\ \ \ \ \ this-\/>Mode\ =\ \mbox{\hyperlink{classbuffer___class_a1ac63f7a07b68c3d7e13e56da6689413}{Mode}};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00017}00017\ \ \ \ \ this-\/>data\ =\ (\textcolor{keywordtype}{char}*)calloc(this-\/>size,1);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00018}00018\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00019}00019\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00020}00020\ \ \ \ \ this-\/>timer\ =\ \ timerBegin(0,\ 80,\ \textcolor{keyword}{true});\ \textcolor{comment}{//Create\ timer\ on\ core\ 0\ (timers\ are\ 0,1,2,3\ 2\ per\ core)}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00021}00021\ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::NP;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00024}\mbox{\hyperlink{classbuffer___class_a13060699985b87e93228f36f749b1d3c}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbuffer___class_a13060699985b87e93228f36f749b1d3c}{buffer\_Class::begin}}(\textcolor{keywordtype}{bool}\ keyboardEnable)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00025}00025\ \ \ \ \ BaseType\_t\ key\ =\ xTaskCreatePinnedToCore(keyBoardLoop,\ \textcolor{stringliteral}{"{}Keyboard\ thread"{}},\ 10000,\ NULL,\ 0,\ \&this-\/>keyboardTask,\ 0);\ \textcolor{comment}{//Creates\ thread\ for\ the\ keyboard\ on\ core\ 0}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ !=\ pdPASS)\ log\_i(\textcolor{stringliteral}{"{}ERR"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{else}\ log\_i(\textcolor{stringliteral}{"{}Keyboard\ task\ created"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00028}00028\ \ \ \ \ this-\/>keyboardEnable\ =\ \mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00031}\mbox{\hyperlink{classbuffer___class_a2db51cdf715f303efc54f2a97fad5785}{00031}}\ TaskHandle\_t*\ \mbox{\hyperlink{classbuffer___class_a2db51cdf715f303efc54f2a97fad5785}{buffer\_Class::getTaskHandle}}()\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ \&this-\/>keyboardTask;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00035}\mbox{\hyperlink{classbuffer___class_a1868135a1d4c1885afac8e601a171057}{00035}}\ hw\_timer\_t*\ \mbox{\hyperlink{classbuffer___class_a1868135a1d4c1885afac8e601a171057}{buffer\_Class::getHardwareTimer}}()\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>timer;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00039}\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{00039}}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{buffer\_Class::getData}}()\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>data;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00043}\mbox{\hyperlink{classbuffer___class_a9debd110754d53e4e49dab7391689ee5}{00043}}\ String\ \mbox{\hyperlink{classbuffer___class_a9debd110754d53e4e49dab7391689ee5}{buffer\_Class::getDataStr}}()\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00044}00044\ \ \ \ \ String\ dataStr\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <this-\/>size;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ dataStr\ +=\ this-\/>data[i];}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00048}00048\ \ \ \ \ dataStr\ =\ String(this-\/>data);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{return}\ dataStr;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00052}\mbox{\hyperlink{classbuffer___class_a3e7fefdd89f9d087f79e04f66dc3ef8c}{00052}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbuffer___class_a3e7fefdd89f9d087f79e04f66dc3ef8c}{buffer\_Class::del}}()\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00053}00053\ \ \ \ \ this-\/>data[this-\/>\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00056}\mbox{\hyperlink{classbuffer___class_a692844f0abdde0a1111152441a112cff}{00056}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbuffer___class_a3e7fefdd89f9d087f79e04f66dc3ef8c}{buffer\_Class::del}}(\textcolor{keywordtype}{int}\ cursor)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor\ <\ 0\ ||\ cursor\ >}}\ Buffer.size)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ this-\/>cursor\ =\ \mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classbuffer___class_a3e7fefdd89f9d087f79e04f66dc3ef8c}{del}}();}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00065}\mbox{\hyperlink{classbuffer___class_a6c2aa2166c5fafbbfe583eb1c4411e49}{00065}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbuffer___class_a6c2aa2166c5fafbbfe583eb1c4411e49}{buffer\_Class::getBufferSize}}()\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>size;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00069}\mbox{\hyperlink{classbuffer___class_a6b423be6bc54130652e70f0e9010b619}{00069}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbuffer___class_a6b423be6bc54130652e70f0e9010b619}{buffer\_Class::clearBuffer}}()\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=\ 0;\ i\ <\ this-\/>size;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ this-\/>data[i]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00073}00073\ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00076}\mbox{\hyperlink{classbuffer___class_a9501def46c3074fc723c828e8b4fba03}{00076}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbuffer___class_a9501def46c3074fc723c828e8b4fba03}{buffer\_Class::killTask}}()\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00077}00077\ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Keyboard\ task\ \&\ Buffer\ deleted"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00078}00078\ \ \ \ \ free(this-\/>data);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00079}00079\ \ \ \ \ vTaskDelete(this-\/>keyboardTask);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00080}00080\ \ \ \ \ timerDetachInterrupt(this-\/>timer);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00084}00084\ \textcolor{keywordtype}{void}\ keyBoardLoop(\textcolor{keywordtype}{void}*\ parameters)\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00085}00085\ \ \ log\_i(\textcolor{stringliteral}{"{}Keyboard\ task\ created"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00086}00086\ \ \ \textcolor{comment}{//Create\ the\ interrupt\ we'll\ use\ to\ time\ how\ many\ times\ per\ second\ we\ check\ the\ keyboard\ input}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00087}00087\ \ \ timerAttachInterrupt(Buffer.\mbox{\hyperlink{classbuffer___class_a1868135a1d4c1885afac8e601a171057}{getHardwareTimer}}(),\ \&keyBoardISR,\ \textcolor{keyword}{false});\ \textcolor{comment}{//Atach\ interrupt\ to\ the\ timer}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00088}00088\ \ \ timerAlarmWrite(Buffer.\mbox{\hyperlink{classbuffer___class_a1868135a1d4c1885afac8e601a171057}{getHardwareTimer}}(),\ 50000,\ \textcolor{keyword}{true});\ \textcolor{comment}{//Set\ the\ alarm\ that\ triggers\ the\ interrupt}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00089}00089\ \ \ timerAlarmEnable(Buffer.\mbox{\hyperlink{classbuffer___class_a1868135a1d4c1885afac8e601a171057}{getHardwareTimer}}());\ \textcolor{comment}{//Enable\ the\ alarm}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00090}00090\ \ \ \textcolor{comment}{//Suspend\ the\ current\ task\ (it'll\ resume\ from\ here\ once\ the\ interrupt\ is\ triggered)}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00091}00091\ \ \ vTaskSuspend(NULL);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00092}00092\ \ \ \textcolor{comment}{//Infinite\ loop,\ each\ time\ xTaskResumeFromISR\ is\ called\ from\ within\ the\ ISR,\ a\ round\ of\ this\ loop\ will}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00093}00093\ \ \ \textcolor{comment}{//be\ executed,\ succesive\ calls\ to\ resuming\ won't\ affect\ an\ already\ resumed\ task,\ \&\ the\ loop\ suspends\ the\ task}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00094}00094\ \ \ \textcolor{comment}{//once\ the\ round\ is\ finished}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00095}00095\ \ \ \textcolor{keywordflow}{for}(;;)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00096}00096\ \ \ \ \ Keyboard\_Class::KeysState\ status\ =\ M5Cardputer.Keyboard.keysState();}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//Handle\ keyboard\ presses}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_a1ac63f7a07b68c3d7e13e56da6689413}{Mode}}\ ==\ mode::text)\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//We\ are\ in\ text\ entry\ mode}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.word.size()\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Special\ cases}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.del)\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.fn)\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//supr\ /\ del}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Supr\ pressed"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}+1;\ i\ <\ Buffer.\mbox{\hyperlink{classbuffer___class_a6c2aa2166c5fafbbfe583eb1c4411e49}{getBufferSize}}()\ -\/1;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//End\ of\ string\ reached}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[i]\ =\ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[i+1];}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Backspace}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Backspace\ pressed"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ -\/-\/;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//If\ the\ next\ char\ is\ the\ null\ term,\ set\ to\ null\ term}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}+1]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})\ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//We\ are\ not\ @\ the\ end\ of\ the\ string,\ must\ move\ back\ everything}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}};\ i\ <\ Buffer.\mbox{\hyperlink{classbuffer___class_a6c2aa2166c5fafbbfe583eb1c4411e49}{getBufferSize}}()\ -\/1;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'})\ \textcolor{keywordflow}{break};\ \textcolor{comment}{//End\ of\ string\ reached}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[i]\ =\ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[i+1];}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.tab)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Tab\ single\ press,\ insert\ \(\backslash\)t}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Tab\ pressed"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ \textcolor{charliteral}{'\(\backslash\)t'};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}++;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.enter)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.fn)\ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::ENTER;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Enter\ single\ press,\ insert\ \(\backslash\)n}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Enter\ pressed"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}++;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.alt\ ||\ status.ctrl\ ||\ status.fn\ ||\ status.opt\ ||\ status.shift\ ||\ status.space)\ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::NP;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ log\_i(\textcolor{stringliteral}{"{}Keyboard\ release"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Maybe\ implement\ opt,\ alt\ \&\ ctrl?\ for\ text\ mode?\ }}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Opt\ should\ bring\ out\ the\ conf\ menu\ for\ the\ programme,}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Alt\ \&\ ctrl\ should\ be\ used\ in\ some\ way\ for\ keyboard\ shortcuts,\ but\ they\ should\ be\ programme\ specific,}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//I'm\ not\ sure\ how\ i\ wanna\ implement\ that\ }}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//(maybe\ add\ a\ possible\ navSwicht\ style\ func\ given\ when\ creating\ the\ buffer?)}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Other\ possible\ idea\ is\ fn+shift\ =\ BLOCK\ MAYUS,\ }}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//only\ if\ i\ find\ an\ elegant\ way\ to\ show\ it\ is\ active\ to\ the\ user}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Keyboard\ pressed,\ text\ entry\ mode,\ word\ is\ \%i\ char"{}},\ status.word.size());}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=\ 0;\ i<\ status.word.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ ==\ Buffer.\mbox{\hyperlink{classbuffer___class_a6c2aa2166c5fafbbfe583eb1c4411e49}{getBufferSize}}())\ Buffer.\mbox{\hyperlink{classbuffer___class_a6b423be6bc54130652e70f0e9010b619}{clearBuffer}}();\ \textcolor{comment}{//Check\ if\ the\ buffer\ is\ full}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.fn)\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Nav\ controls\ for\ text\ editing}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ aux\ =\ status.word[i];}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Export\ nav\ singals\ that\ should\ be\ handled\ externally}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSwitch(aux);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Handle\ the\ internal\ ones\ (cursor\ movement)}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Cursor\ should\ never\ be\ negative}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ ==\ navSignal::LEFT\ \&\&\ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ >\ 0)\ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ -\/-\/;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Cursor\ can\ be\ up\ to\ the\ next\ character\ to\ the\ end\ of\ the\ current\ string\ (to\ be\ able\ to\ enlarge\ it)}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ ==\ navSignal::RIGHT\ \&\&\ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ <\ Buffer.\mbox{\hyperlink{classbuffer___class_a9debd110754d53e4e49dab7391689ee5}{getDataStr}}().length())\ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ ++;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.opt)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Option\ key\ pressed\ overwrite\ mode}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ status.word[i];}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}++;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Normal\ mode\ (insert\ text)}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ aux\ =\ Buffer.\mbox{\hyperlink{classbuffer___class_a9debd110754d53e4e49dab7391689ee5}{getDataStr}}().substring(Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}});\ \textcolor{comment}{//Save\ everythin\ thats\ after\ the\ cursor}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]\ =\ status.word[i];}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}++;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=\ 0;\ i\ <\ aux.length();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_ace4fcd26fb004aeb309d96b263b69a22}{getData}}()[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ +i]\ =\ aux[i];}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CORE\_DEBUG\_LEVEL\ >=\ 5)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Buffer:\ \(\backslash\)"{}\%s\(\backslash\)"{}"{}},\ Buffer.\mbox{\hyperlink{classbuffer___class_a9debd110754d53e4e49dab7391689ee5}{getDataStr}}().c\_str());}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ String\ aux\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dataLen\ =\ Buffer.\mbox{\hyperlink{classbuffer___class_a9debd110754d53e4e49dab7391689ee5}{getDataStr}}().length();}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ dataLen\ +1;\ i++)\ aux+=\ (i\ ==\ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}})\ ?\ \textcolor{charliteral}{'\string^'}\ :\textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Cursor:\ \(\backslash\)"{}\%s\(\backslash\)"{}\(\backslash\)n"{}},\ aux);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Nav\ signal:\ \%i\(\backslash\)n"{}},\ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00188}00188\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{comment}{//we\ are\ in\ navigation\ mode}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (status.word.size()\ ==1)\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Keyboard\ pressed,\ menu\ navigation\ mode"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ aux\ =\ status.word[0];}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSwitch(aux);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.enter)\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::ENTER;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}ENTER\ signal"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(status.ctrl)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}CTRL\ signal"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::CTRL;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.opt)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::OPT;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}OPT\ signal"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (status.alt||status.del||status.fn||}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ status.shift||status.space)\ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::NP;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ log\_i(\textcolor{stringliteral}{"{}Keboard\ release"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Nav\ signal:\ \%i\(\backslash\)n"{}},\ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00207}00207\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00208}00208\ \ \ \ \ \textcolor{comment}{//Suspend\ itself\ until\ it's\ called\ again}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00209}00209\ \ \ \ \ vTaskSuspend(NULL);}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00210}00210\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00213}00213\ navSignal\ navSwitch(\textcolor{keywordtype}{char}\ aux)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keywordflow}{switch}(aux)\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'`'}:}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\string~'}:\ log\_i(\textcolor{stringliteral}{"{}Esc\ signal"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ navSignal::ESC;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{';'}:}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{':'}:\ log\_i(\textcolor{stringliteral}{"{}UP\ signal"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ navSignal::UP;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'.'}:}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'>'}:\ log\_i(\textcolor{stringliteral}{"{}DOWN\ signal"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ navSignal::DOWN;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{','}:}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'<'}:\ log\_i(\textcolor{stringliteral}{"{}LEFT\ signal"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ navSignal::LEFT;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'/'}:}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'?'}:\ log\_i(\textcolor{stringliteral}{"{}RIGHT\ signal"{}});}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ navSignal::RIGHT;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ navSignal::NP;}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00231}00231\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00232}00232\ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00234}00234\ \textcolor{keywordtype}{void}\ IRAM\_ATTR\ keyBoardISR()\{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00235}00235\ \ \ \textcolor{comment}{//log\_i("{}Interrupt\ triggered"{});}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00236}00236\ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}})\ \{}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00237}00237\ \ \ \ \ M5Cardputer.update();}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00238}00238\ \ \ \ \ \textcolor{keywordflow}{if}\ (M5Cardputer.Keyboard.isChange())\ xTaskResumeFromISR(*Buffer.\mbox{\hyperlink{classbuffer___class_a2db51cdf715f303efc54f2a97fad5785}{getTaskHandle}}());}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00239}00239\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{keyboard_task_8cpp_source_l00240}00240\ \}}
 
 \end{DoxyCode}

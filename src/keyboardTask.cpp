@@ -17,7 +17,7 @@ buffer_Class::buffer_Class(mode Mode, int size){
     this->data = (char*)calloc(this->size,1);
     this->cursor = 0;
     this->keyboardEnable = false;
-    this->timer =  timerBegin(2, 80, true); //Create timer on core 1 (timers are 0,1,2,3 2 per core)
+    this->timer =  timerBegin(0, 80, true); //Create timer on core 0 (timers are 0,1,2,3 2 per core)
     this->signal = navSignal::NP;
 }
 

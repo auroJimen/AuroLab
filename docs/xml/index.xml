@@ -10,10 +10,10 @@
     <member refid="classbuffer___class_1a1ac63f7a07b68c3d7e13e56da6689413" kind="variable"><name>Mode</name></member>
     <member refid="classbuffer___class_1af0d32aa1fdeac32dc3ee1a0282de80be" kind="variable"><name>signal</name></member>
     <member refid="classbuffer___class_1a0a59b9bc631ed522318eaf21ce465bba" kind="function"><name>buffer_Class</name></member>
-    <member refid="classbuffer___class_1a04c135f6f3445c7d16b862cb5890fe53" kind="function"><name>buffer_Class</name></member>
+    <member refid="classbuffer___class_1a8e6cf0c5636a8f8a791aab6311c3ad67" kind="function"><name>buffer_Class</name></member>
     <member refid="classbuffer___class_1a2db51cdf715f303efc54f2a97fad5785" kind="function"><name>getTaskHandle</name></member>
     <member refid="classbuffer___class_1a1868135a1d4c1885afac8e601a171057" kind="function"><name>getHardwareTimer</name></member>
-    <member refid="classbuffer___class_1a2c8542d9cbe7433a80c3a8dedc5dbb51" kind="function"><name>begin</name></member>
+    <member refid="classbuffer___class_1a13060699985b87e93228f36f749b1d3c" kind="function"><name>begin</name></member>
     <member refid="classbuffer___class_1ace4fcd26fb004aeb309d96b263b69a22" kind="function"><name>getData</name></member>
     <member refid="classbuffer___class_1a9debd110754d53e4e49dab7391689ee5" kind="function"><name>getDataStr</name></member>
     <member refid="classbuffer___class_1a6c2aa2166c5fafbbfe583eb1c4411e49" kind="function"><name>getBufferSize</name></member>
@@ -34,6 +34,7 @@
     <member refid="class_g_u_i___class_1a9e1c41d173e6bff8e86b0be613ee5a87" kind="variable"><name>Keyboard</name></member>
     <member refid="class_g_u_i___class_1a6c38676f91154cd7e49a03ef143b4ade" kind="variable"><name>topBar</name></member>
     <member refid="class_g_u_i___class_1a3b5933a3f4f189338a610019a3c0dae4" kind="variable"><name>task</name></member>
+    <member refid="class_g_u_i___class_1a58293828d0e25452e060c4b169a4d20c" kind="variable"><name>topBarTask</name></member>
     <member refid="class_g_u_i___class_1aca65997e1615dbb0ddee2671aa95ae92" kind="function"><name>begin</name></member>
     <member refid="class_g_u_i___class_1af0d6b5d535fa64ef2fdecdf1a7771b49" kind="function"><name>splashScreen</name></member>
     <member refid="class_g_u_i___class_1ab6d29667f048b28a6d867cab6d4e958c" kind="function"><name>drawMainMenu</name></member>
@@ -41,6 +42,7 @@
     <member refid="class_g_u_i___class_1a25bfb4fdb73cbb16298d09fbc12fb379" kind="function"><name>wifiMenuHandler</name></member>
     <member refid="class_g_u_i___class_1a1e0dd033f8ab0d55d0e039ea5d305adb" kind="function"><name>mainLoop</name></member>
     <member refid="class_g_u_i___class_1a91db0ecb5a53420b1a2b62757328e114" kind="function"><name>loadConfFile</name></member>
+    <member refid="class_g_u_i___class_1acadffe99b600efea71c1322935cd1a2a" kind="function"><name>updateTopBar</name></member>
   </compound>
   <compound refid="classicon___class" kind="class"><name>icon_Class</name>
     <member refid="classicon___class_1aaf574747b89b2e31eb17a3b01364b2b5" kind="variable"><name>sprite</name></member>
@@ -76,7 +78,6 @@
     <member refid="classlist___class_1a1343001263263df83a0e2a09e528e7bb" kind="variable"><name>elementNum</name></member>
     <member refid="classlist___class_1ae578e30c59f80e55bef2b709e885c89d" kind="variable"><name>elementName</name></member>
     <member refid="classlist___class_1a54af455510377220a429c3ab5d3dc541" kind="variable"><name>pos</name></member>
-    <member refid="classlist___class_1a0114c18f9e57b6cd3c23f05b677ba5e5" kind="variable"><name>handler</name></member>
     <member refid="classlist___class_1ac4731610b332b83a2c9741c23cb7712d" kind="variable"><name>Display</name></member>
     <member refid="classlist___class_1aa237c376089fce7d563a51f4721cd9c4" kind="variable"><name>origin</name></member>
     <member refid="classlist___class_1a52b4d4daa14c969502e2e49147f2de19" kind="variable"><name>size</name></member>
@@ -87,34 +88,37 @@
     <member refid="classlist___class_1a77cd52ddd6832ae26001045a35ce7d19" kind="variable"><name>highlightColour</name></member>
     <member refid="classlist___class_1a3f196f0abbfff0245c8fd66bf6d424a4" kind="variable"><name>border</name></member>
     <member refid="classlist___class_1ae0e5d622a7b8d36d0c20f79d1edde567" kind="variable"><name>rows</name></member>
-    <member refid="classlist___class_1a978dd4124a5baec5cd27eeed29dd7c63" kind="function"><name>list_Class</name></member>
+    <member refid="classlist___class_1aaa491172eec7c8bc481c0beaf29cf520" kind="function"><name>list_Class</name></member>
     <member refid="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" kind="function"><name>draw</name></member>
     <member refid="classlist___class_1a8694d87f64e84085a5a65eed3906f130" kind="function"><name>del</name></member>
     <member refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" kind="function"><name>scroll</name></member>
     <member refid="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" kind="function"><name>scrollDown</name></member>
     <member refid="classlist___class_1a48eeb6911110ba094e2f979fc824f252" kind="function"><name>scrollUp</name></member>
-    <member refid="classlist___class_1acafcdd491b89bfd476dcfd43d32786a7" kind="function"><name>optnEvent</name></member>
     <member refid="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" kind="function"><name>enterEvent</name></member>
     <member refid="classlist___class_1aa1d6914207e6453e61d86fc4ee867f14" kind="function"><name>drawOptions</name></member>
     <member refid="classlist___class_1a55209f4763a54c2b2e2a7d39514cafdc" kind="function"><name>displayableRows</name></member>
     <member refid="classlist___class_1a32108743b53a5cd861b1670c92f8e777" kind="function"><name>displayableRows</name></member>
     <member refid="classlist___class_1a0f99364a80894e96121d2dbce38f4187" kind="function"><name>rowsOccupied</name></member>
-    <member refid="classlist___class_1a8cd17992d2ddd9f01a7c5b4bbee2bbdc" kind="function"><name>rowSize</name></member>
-    <member refid="classlist___class_1a4f6cb0796835c5f19811eb05e2003ab6" kind="function"><name>rowWidth</name></member>
   </compound>
   <compound refid="classtext_box___class" kind="class"><name>textBox_Class</name>
-    <member refid="classtext_box___class_1a1bf29022abb5d7ccb12bd242c136975e" kind="variable"><name>inputEnabled</name></member>
     <member refid="classtext_box___class_1a242cd8bd5d1c8e61b9b357316dd98e08" kind="variable"><name>defText</name></member>
     <member refid="classtext_box___class_1aeb44ef09332727d341dea481b6773f4d" kind="variable"><name>text</name></member>
     <member refid="classtext_box___class_1a28777adb9716c732e5f888dfdeb70c66" kind="variable"><name>pos</name></member>
     <member refid="classtext_box___class_1a42c9ec6421da276d00eb7af0e677f1e3" kind="variable"><name>size</name></member>
+    <member refid="classtext_box___class_1a263e11300f7dc11b2ca5edb2f2c52209" kind="variable"><name>border</name></member>
+    <member refid="classtext_box___class_1a78596cc60fe2f57b5b75bdbf626cb201" kind="variable"><name>Display</name></member>
+    <member refid="classtext_box___class_1a521ef164c413acf5c6b7ca2b361e5d82" kind="variable"><name>parent</name></member>
     <member refid="classtext_box___class_1a15d0a7411675ca7561e3ab9eafeaede3" kind="variable"><name>textSize</name></member>
     <member refid="classtext_box___class_1a8604cab0db9cf7899009b68c8e140fa4" kind="variable"><name>textColour</name></member>
     <member refid="classtext_box___class_1a644fe252eafc758a6a928e34ecba5008" kind="variable"><name>backColour</name></member>
     <member refid="classtext_box___class_1a836ab3fd6702ea6968a34068b9b96ad8" kind="variable"><name>cursorColour</name></member>
-    <member refid="classtext_box___class_1ac62b0360b7bedf1a9d30bd51f5e01007" kind="function"><name>textBox_Class</name></member>
+    <member refid="classtext_box___class_1a4334800d8f641d85f8123d304aa95c2b" kind="variable"><name>dispLen</name></member>
+    <member refid="classtext_box___class_1a3741862b1fc7efc8d97c55e9bf819a89" kind="variable"><name>cursorSize</name></member>
+    <member refid="classtext_box___class_1a18bd715d273db180c207aae9aa2f9abc" kind="function"><name>textBox_Class</name></member>
+    <member refid="classtext_box___class_1a29ff669d373aada7b03d59e502e031e0" kind="function"><name>draw</name></member>
     <member refid="classtext_box___class_1a4f508e0fd1645f5209b3dce4459adb07" kind="function"><name>enableTextInput</name></member>
     <member refid="classtext_box___class_1ae4b2f9d68261d89824bf496462067a4f" kind="function"><name>disableTextInput</name></member>
+    <member refid="classtext_box___class_1a367247bd7e19d1d4fc45828256e77b9a" kind="function"><name>update</name></member>
     <member refid="classtext_box___class_1a9341bfa7a03d269d49ca517db9064d38" kind="function"><name>getEnableTextInput</name></member>
   </compound>
   <compound refid="classtop_bar___class" kind="class"><name>topBar_Class</name>
@@ -126,6 +130,18 @@
     <member refid="classtop_bar___class_1a2a2e420feda4cf58b96ed363b918d633" kind="function"><name>topBar_Class</name></member>
     <member refid="classtop_bar___class_1a555351fcf48dbea120ac40f8c010dce8" kind="function"><name>updateIcons</name></member>
   </compound>
+  <compound refid="classwifi_menu___class" kind="class"><name>wifiMenu_Class</name>
+    <member refid="classwifi_menu___class_1a4cde420695872f0b148534a92dd15a0b" kind="variable"><name>encript</name></member>
+    <member refid="classwifi_menu___class_1a248a7400315565452628f45bea6fb97b" kind="variable"><name>RSSI</name></member>
+    <member refid="classwifi_menu___class_1a7c161d4db9566696358de379765e48a9" kind="variable"><name>BSSID</name></member>
+    <member refid="classwifi_menu___class_1aa21d8e75ca448ad1e2d632c18c46b7c1" kind="variable"><name>channel</name></member>
+    <member refid="classwifi_menu___class_1ad1587fd44b1956225c70328aae192157" kind="function"><name>wifiMenu_Class</name></member>
+    <member refid="classwifi_menu___class_1ab3c0dd806d2918230ad0b9165c239ef4" kind="function"><name>scan</name></member>
+    <member refid="classwifi_menu___class_1a39fe0cd27acdfd561f30886005174bd5" kind="function"><name>appLoop</name></member>
+    <member refid="classwifi_menu___class_1aa85befe97aeee813065860fe1e9231d6" kind="function"><name>optnEvent</name></member>
+    <member refid="classwifi_menu___class_1a12863a3752876d179d948879a75362a1" kind="function"><name>enterEvent</name></member>
+    <member refid="classwifi_menu___class_1a1dfd391a6071a80553b2f09355b64bbb" kind="function"><name>del</name></member>
+  </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
   </compound>
   <compound refid="readme_8md" kind="file"><name>readme.md</name>
@@ -134,8 +150,10 @@
     <member refid="compass_icon_8h_1a8a370c87aa842caf84fb94c8b742f762" kind="variable"><name>compassIcon</name></member>
   </compound>
   <compound refid="_g_u_i_8cpp" kind="file"><name>GUI.cpp</name>
+    <member refid="_g_u_i_8cpp_1ab2f02e535b2c3130cdfbf54d561a4625" kind="function"><name>encriptType</name></member>
     <member refid="_g_u_i_8cpp_1a2b01188edf99a98f9add079b790e9ff8" kind="function"><name>GUIloop</name></member>
-    <member refid="_g_u_i_8cpp_1a5db4d43cd4e019ceedf4debfe4d0b038" kind="function"><name>testHandler</name></member>
+    <member refid="_g_u_i_8cpp_1aa33e7376b3d44d36c422822c1085a807" kind="function"><name>topBarLoop</name></member>
+    <member refid="_g_u_i_8cpp_1a34f25ac42d32ac64ac88666235c27f37" kind="function"><name>timerISR</name></member>
   </compound>
   <compound refid="_g_u_i_8h" kind="file"><name>GUI.h</name>
     <member refid="_g_u_i_8h_1af884dec1383d9d7d8d6b7e5e25922c8c" kind="enum"><name>iconType</name></member>
@@ -144,7 +162,12 @@
     <member refid="_g_u_i_8h_1af884dec1383d9d7d8d6b7e5e25922c8ca83ac6cc3119966e1e5a7908c9e2e3b6a" kind="enumvalue"><name>BLE</name></member>
     <member refid="_g_u_i_8h_1a1c7831cab950a92c8124fe4e2f6723e5" kind="variable"><name>GUI</name></member>
     <member refid="_g_u_i_8h_1a7d37674f503dac4c08ab7830b07e282c" kind="variable"><name>Buffer</name></member>
+    <member refid="_g_u_i_8h_1a6efe300f0f32115a9c270b35982d5f12" kind="function"><name>rowSize</name></member>
+    <member refid="_g_u_i_8h_1a7a538f82119d8200471ec1ae8e6a3d3e" kind="function"><name>rowWidth</name></member>
+    <member refid="_g_u_i_8h_1a346b7c2b5868cc68587ac300ef34a8ce" kind="function"><name>rowWidth</name></member>
     <member refid="_g_u_i_8h_1a2b01188edf99a98f9add079b790e9ff8" kind="function"><name>GUIloop</name></member>
+    <member refid="_g_u_i_8h_1aa33e7376b3d44d36c422822c1085a807" kind="function"><name>topBarLoop</name></member>
+    <member refid="_g_u_i_8h_1a34f25ac42d32ac64ac88666235c27f37" kind="function"><name>timerISR</name></member>
   </compound>
   <compound refid="keyboard_task_8cpp" kind="file"><name>keyboardTask.cpp</name>
     <member refid="keyboard_task_8cpp_1ae64f4525ae457ae982db2ec17710180f" kind="function"><name>keyBoardLoop</name></member>
@@ -152,6 +175,8 @@
     <member refid="keyboard_task_8cpp_1af3ce5ff30e830a34b29fb2940e47630d" kind="function"><name>keyBoardISR</name></member>
   </compound>
   <compound refid="keyboard_task_8h" kind="file"><name>keyboardTask.h</name>
+    <member refid="keyboard_task_8h_1a938589e6512aafd0a06a5eca00e1a877" kind="define"><name>DEF_BUFFER_SIZE_NAV_MODE</name></member>
+    <member refid="keyboard_task_8h_1a0f2da88c0be588fed09ae3cf0e73412e" kind="define"><name>DEF_BUFFER_SIZE_TEXT_MODE</name></member>
     <member refid="keyboard_task_8h_1a1a6b6fb557d8d37d59700faf4e4c9167" kind="enum"><name>mode</name></member>
     <member refid="keyboard_task_8h_1a1a6b6fb557d8d37d59700faf4e4c9167a0e17259309839615d215adfe7a44fb50" kind="enumvalue"><name>text</name></member>
     <member refid="keyboard_task_8h_1a1a6b6fb557d8d37d59700faf4e4c9167a1c214f0c06a8280b10407774cb30d5b8" kind="enumvalue"><name>nav</name></member>
@@ -164,6 +189,7 @@
     <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2aec8379af7490bb9eaaf579cf17876f38" kind="enumvalue"><name>RIGHT</name></member>
     <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2a951ab68bb8f7daafb78951107080904e" kind="enumvalue"><name>ENTER</name></member>
     <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2afbd0f14f73cfbbf6b15ca1b4418a6209" kind="enumvalue"><name>OPT</name></member>
+    <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2a5ea73cf9a3f5928257b1e6bc796d8490" kind="enumvalue"><name>CTRL</name></member>
     <member refid="keyboard_task_8h_1a99dd7c3327176546a60f8a1ac7806de2a4bab504a61d7f2923c2225dc896c91c6" kind="enumvalue"><name>NP</name></member>
     <member refid="keyboard_task_8h_1a7d37674f503dac4c08ab7830b07e282c" kind="variable"><name>Buffer</name></member>
     <member refid="keyboard_task_8h_1ae64f4525ae457ae982db2ec17710180f" kind="function"><name>keyBoardLoop</name></member>
@@ -171,6 +197,7 @@
     <member refid="keyboard_task_8h_1aede5659edabbe94cde2dcdd9e0ccef4a" kind="function"><name>navSwitch</name></member>
   </compound>
   <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1aba0050d0d9182386e51d25ec355f4f8d" kind="define"><name>LOG_ENABLE</name></member>
     <member refid="main_8cpp_1a1c7831cab950a92c8124fe4e2f6723e5" kind="variable"><name>GUI</name></member>
     <member refid="main_8cpp_1a7d37674f503dac4c08ab7830b07e282c" kind="variable"><name>Buffer</name></member>
     <member refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kind="function"><name>setup</name></member>

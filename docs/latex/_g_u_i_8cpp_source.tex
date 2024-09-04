@@ -125,292 +125,636 @@
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00121}00121\ }
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00122}00122\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00123}00123\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00124}00124\ \textcolor{comment}{//list\_Class\ functions}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00125}00125\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00126}00126\ \textcolor{keywordtype}{int}\ list\_Class::displayableRows(\textcolor{keywordtype}{float}\ titleSize,\ \textcolor{keywordtype}{float}\ textSize,\ \textcolor{keywordtype}{int}\ height)\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordtype}{int}\ titleRowSize\ =\ rowSize(titleSize);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordtype}{int}\ rowSize\ =\ list\_Class::rowSize(textSize);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordtype}{int}\ rows\ =\ (height-\/\ titleRowSize)/rowSize;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{return}\ rows;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00132}00132\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00133}00133\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00134}00134\ \textcolor{keywordtype}{int}\ list\_Class::rowsOccupied(\textcolor{keywordtype}{int}\ textLen,\ \textcolor{keywordtype}{float}\ textSize,\ \textcolor{keywordtype}{int}\ spriteWidth)\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordtype}{int}\ pxWidth\ =\ list\_Class::rowWidth(textSize,\ textLen);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{return}\ ceil((\textcolor{keywordtype}{float})pxWidth/(\textcolor{keywordtype}{float})spriteWidth);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00137}00137\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00138}00138\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00139}00139\ \textcolor{keywordtype}{int}\ list\_Class::displayableRows(\textcolor{keywordtype}{float}\ textSize,\ \textcolor{keywordtype}{int}\ height)\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keywordtype}{int}\ rowSize\ =\ list\_Class::rowSize(textSize);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordtype}{int}\ rows\ =\ height/rowSize;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{return}\ rows;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00144}00144\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00145}00145\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00146}\mbox{\hyperlink{classlist___class_a978dd4124a5baec5cd27eeed29dd7c63}{00146}}\ \mbox{\hyperlink{classlist___class_a978dd4124a5baec5cd27eeed29dd7c63}{list\_Class::list\_Class}}(String\ title,\ \textcolor{keywordtype}{int}\ elementNum,\ String*\ elementName,\ \textcolor{keywordtype}{void}\ (*handler)(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*),\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00147}00147\ \mbox{\hyperlink{structcoord}{coord}}\ origin,\ \mbox{\hyperlink{structcoord}{coord}}\ size,\ \textcolor{keywordtype}{float}\ titleSize,\ \textcolor{keywordtype}{float}\ textSize,\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00148}00148\ \textcolor{keywordtype}{int}\ textColour,\ \textcolor{keywordtype}{int}\ backColour,\ \textcolor{keywordtype}{int}\ highlightColour,\ \mbox{\hyperlink{structcoord}{coord}}\ border)\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00149}00149\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00150}00150\ \ \ \ \ this-\/>title\ =\ title;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00151}00151\ \ \ \ \ this-\/>elementNum\ =\ elementNum;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00152}00152\ \ \ \ \ this-\/>elementName\ =\ elementName;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00153}00153\ \ \ \ \ this-\/>handler\ =\ handler;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00154}00154\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00155}00155\ \ \ \ \ this-\/>origin\ =\ origin;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00156}00156\ \ \ \ \ this-\/>size\ =\ size;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00157}00157\ \ \ \ \ this-\/>titleSize\ =\ titleSize;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00158}00158\ \ \ \ \ this-\/>textSize\ =\ textSize;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00159}00159\ \ \ \ \ this-\/>textColour\ =\ textColour;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00160}00160\ \ \ \ \ this-\/>backColour\ =\ backColour;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00161}00161\ \ \ \ \ this-\/>highlightColour\ =\ highlightColour;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00162}00162\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00163}00163\ \ \ \ \ this-\/>pos\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00164}00164\ \ \ \ \ this-\/>border\ =\ border;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00165}00165\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00166}00166\ \ \ \ \ this-\/>rows\ =\ displayableRows(textSize,\ size.y-\/3*this-\/>border.y-\/rowSize(this-\/>titleSize));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00124}00124\ \textcolor{comment}{//textBox\_class\ functions}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00125}\mbox{\hyperlink{classtext_box___class_a18bd715d273db180c207aae9aa2f9abc}{00125}}\ \mbox{\hyperlink{classtext_box___class_a18bd715d273db180c207aae9aa2f9abc}{textBox\_Class::textBox\_Class}}(\mbox{\hyperlink{structcoord}{coord}}\ pos,\ \mbox{\hyperlink{structcoord}{coord}}\ size,\ String*\ text,\ String\ defText,\ M5Canvas*\ parent,}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{structcoord}{coord}}\ border,\ \textcolor{keywordtype}{float}\ textSize,\ \textcolor{keywordtype}{int}\ textColour,\ \textcolor{keywordtype}{int}\ backColour,\ \textcolor{keywordtype}{int}\ cursorColour)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ this-\/>pos\ =\ pos;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ this-\/>size\ =\ size;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ this-\/>text\ =\ text;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ this-\/>border\ =\ border;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ this-\/>parent\ =\ parent;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ this-\/>defText\ =\ defText;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ this-\/>textSize\ =\ textSize;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ this-\/>textColour\ =\ textColour;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ this-\/>backColour\ =\ backColour;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ this-\/>cursorColour\ =\ cursorColour;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ this-\/>dispLen\ =\ rowWidth(this-\/>size.x\ -\/2*this-\/>border.x,\ this-\/>textSize);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ this-\/>cursorSize\ =\ \mbox{\hyperlink{structcoord}{coord}}(6*this-\/>textSize\ +1,\ 8*this-\/>textSize+1);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00139}00139\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00141}\mbox{\hyperlink{classtext_box___class_a29ff669d373aada7b03d59e502e031e0}{00141}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtext_box___class_a29ff669d373aada7b03d59e502e031e0}{textBox\_Class::draw}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00142}00142\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//Create\ sprite\ for\ background}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00144}00144\ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Drawing\ textBox"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00145}00145\ \ \ \ \ M5Canvas\ background\ =\ (this-\/>parent\ ==\ \textcolor{keyword}{nullptr})\ ?\ M5Canvas(\&Display):\ M5Canvas(parent);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00146}00146\ \ \ \ \ background.createSprite(this-\/>size.x,\ this-\/>size.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00147}00147\ \ \ \ \ background.setBaseColor(this-\/>backColour);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00148}00148\ \ \ \ \ background.clear();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00149}00149\ \ \ \ \ background.setColor(this-\/>textColour);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00150}00150\ \ \ \ \ background.drawRoundRect(0,0,this-\/>size.x,\ this-\/>size.y,\ 5);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00153}00153\ \ \ \ \ background.pushSprite(this-\/>pos.x,\ this-\/>pos.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00154}00154\ \ \ \ \ background.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{comment}{//Create\ sprite\ for\ text}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00157}00157\ \ \ \ \ M5Canvas\ text\ =\ (this-\/>parent\ ==\ \textcolor{keyword}{nullptr})\ ?\ M5Canvas(\&Display):\ M5Canvas(parent);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00158}00158\ \ \ \ \ text.createSprite(this-\/>size.x\ -\/2*this-\/>border.x,\ this-\/>size.y\ -\/2*this-\/>border.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00159}00159\ \ \ \ \ text.setTextScroll(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00160}00160\ \ \ \ \ text.setTextSize(this-\/>textSize);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00161}00161\ \ \ \ \ text.setTextColor(this-\/>textColour);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00162}00162\ \ \ \ \ text.print(this-\/>defText);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00165}00165\ \ \ \ \ text.pushSprite(this-\/>pos.x\ +\ this-\/>border.x,\ this-\/>pos.y\ +\ this-\/>border.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00166}00166\ \ \ \ \ text.deleteSprite();}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00167}00167\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00168}00168\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00168}00168\ \};}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00169}00169\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00170}\mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{00170}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{list\_Class::draw}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00170}\mbox{\hyperlink{classtext_box___class_a4f508e0fd1645f5209b3dce4459adb07}{00170}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtext_box___class_a4f508e0fd1645f5209b3dce4459adb07}{textBox\_Class::enableTextInput}}()\{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00171}00171\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{comment}{//Create\ the\ background\ sprite\ in\ RAM}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00173}00173\ \ \ \ \ M5Canvas\ background(\&Display);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00174}00174\ \ \ \ \ background.createSprite(this-\/>size.x,\ this-\/>size.y);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00175}00175\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{comment}{//Draw\ background\ rectangle}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00177}00177\ \ \ \ \ background.setBaseColor(this-\/>backColour);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00178}00178\ \ \ \ \ background.clear();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00179}00179\ \ \ \ \ background.setColor(this-\/>textColour);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00180}00180\ \ \ \ \ background.drawRoundRect(0,\ 0,\ this-\/>size.x\ ,\ this-\/>size.y,\ 3);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00181}00181\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00182}00182\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete\ the\ sprite}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00183}00183\ \ \ \ \ background.pushSprite(this-\/>origin.x,\ this-\/>origin.y);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00184}00184\ \ \ \ \ background.deleteSprite();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00185}00185\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{comment}{//Create\ title\ sprite\ in\ RAM\ \&\ Set\ text\ options}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00187}00187\ \ \ \ \ M5Canvas\ titleSprt(\&Display);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00188}00188\ \ \ \ \ titleSprt.createSprite(this-\/>size.x\ -\/2*this-\/>border.x,\ rowSize(this-\/>titleSize));}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00189}00189\ \ \ \ \ titleSprt.setTextColor(this-\/>textColour);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00190}00190\ \ \ \ \ titleSprt.setTextSize(this-\/>titleSize);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00191}00191\ \ \ \ \ titleSprt.println(title);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00192}00192\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete\ the\ sprite}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00194}00194\ \ \ \ \ titleSprt.pushSprite(origin.x\ +this-\/>border.x,\ origin.y\ +this-\/>border.y);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00195}00195\ \ \ \ \ titleSprt.deleteSprite();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00196}00196\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{comment}{//Draw\ options}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00198}00198\ \ \ \ \ this-\/>drawOptions();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00199}00199\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00200}00200\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00201}00201\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00202}00202\ \textcolor{keywordtype}{void}\ list\_Class::drawOptions()\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00203}00203\ \ \ \ \ \textcolor{comment}{//Create\ text\ sprite\ in\ RAM\ \&\ Set\ text\ options}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00204}00204\ \ \ \ \ M5Canvas\ text(\&Display);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00205}00205\ \ \ \ \ text.createSprite(this-\/>size.x\ -\/2*this-\/>border.x,\ this-\/>size.y\ -\/3*this-\/>border.y\ -\/rowSize(this-\/>titleSize));}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00206}00206\ \ \ \ \ text.setTextColor(this-\/>textColour);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00207}00207\ \ \ \ \ text.setTextSize(this-\/>textSize);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00208}00208\ \ \ \ \ text.setCursor(0,1);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00209}00209\ \ \ \ \ \textcolor{comment}{//For\ loop\ to\ draw\ the\ options\ (taking\ current\ pos\ into\ account)}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ pos\ -\/2;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00211}00211\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0)\ index\ =\ 0;\ \textcolor{comment}{//If\ the\ selected\ pos\ is\ on\ 0,1,2\ drawing\ starts\ @\ index\ 0}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>elementNum\ -\/\ index\ -\/1\ <\ this-\/>rows)\ index\ =\ this-\/>elementNum-\/this-\/>rows;\ \textcolor{comment}{//If\ the\ selected\ position\ is\ near\ the\ end,\ print\ enough\ to\ fill\ the\ rows}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00213}00213\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ index;\ (i\ <this-\/>elementNum\ \&\&\ count\ <\ this-\/>rows);\ i++)\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ pos)\ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ text.setColor(this-\/>highlightColour);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rows\ =\ list\_Class::rowsOccupied(this-\/>elementName[i].length()\ +1,\ this-\/>textSize,\ this-\/>size.x\ -\/2*this-\/>border.x);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ text.fillRoundRect(text.getCursorX()-\/1,\ text.getCursorY()-\/2,\ size.x\ -\/2*this-\/>border.x,\ rows*rowSize(this-\/>textSize)+1,\ 5);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ text.setTextColor(this-\/>backColour);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ text.println(\textcolor{stringliteral}{"{}\ "{}}+this-\/>elementName[i]);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ text.setTextColor(this-\/>textColour);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ text.println(this-\/>elementName[i]);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ count++;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00224}00224\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00225}00225\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00226}00226\ \ \ \ \ text.pushSprite(origin.x\ +this-\/>border.x,\ origin.y\ +2*this-\/>border.y\ +\ rowSize(this-\/>titleSize));}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00227}00227\ \ \ \ \ text.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{comment}{//First\ we\ change\ mode\ to\ text\ input,\ and\ increase\ the\ size\ of\ the\ buffer\ if\ it's\ not\ already\ set\ that\ way}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{if}(Buffer.\mbox{\hyperlink{classbuffer___class_a1ac63f7a07b68c3d7e13e56da6689413}{Mode}}\ !=\ mode::text\ ||\ Buffer.\mbox{\hyperlink{classbuffer___class_a6c2aa2166c5fafbbfe583eb1c4411e49}{getBufferSize}}()\ !=\ DEF\_BUFFER\_SIZE\_TEXT\_MODE}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ ||\ eTaskGetState(Buffer.\mbox{\hyperlink{classbuffer___class_a2db51cdf715f303efc54f2a97fad5785}{getTaskHandle}}())\ ==\ eTaskState::eDeleted}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ ||\ eTaskGetState(Buffer.\mbox{\hyperlink{classbuffer___class_a2db51cdf715f303efc54f2a97fad5785}{getTaskHandle}}())\ ==\ eTaskState::eInvalid)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Checks\ wether\ the\ Buffer\ is\ set\ to\ an\ incorrect\ mode,\ or\ the\ keyboard\ task\ has\ been\ killed}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ either\ of\ these\ conditions\ are\ met,\ it\ reinstantiates\ the\ buffer\ in\ the\ correct\ mode}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a9501def46c3074fc723c828e8b4fba03}{killTask}}();\ \textcolor{comment}{//Kill\ current\ buffer\ class,\ free\ up\ memory}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ Buffer\ =\ \mbox{\hyperlink{classbuffer___class}{buffer\_Class}}(mode::text);\ \textcolor{comment}{//Reinitilize\ Buffer\ in\ text\ mode\ w/DEF\_BUFFER\_SIZE\_TEXT\_MODE\ buffer}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a13060699985b87e93228f36f749b1d3c}{begin}}();\ \textcolor{comment}{//Create\ keyboard\ task\ and\ begin\ running\ it}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00181}00181\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{comment}{//Then\ we\ enable\ input}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00184}00184\ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00185}00185\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00187}\mbox{\hyperlink{classtext_box___class_ae4b2f9d68261d89824bf496462067a4f}{00187}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtext_box___class_ae4b2f9d68261d89824bf496462067a4f}{textBox\_Class::\ disableTextInput}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00188}00188\ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00191}\mbox{\hyperlink{classtext_box___class_a367247bd7e19d1d4fc45828256e77b9a}{00191}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtext_box___class_a367247bd7e19d1d4fc45828256e77b9a}{textBox\_Class::update}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{comment}{//Updates\ the\ text\ part\ of\ the\ sprite\ with\ the\ curent\ contents\ of\ the\ buffer}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00193}00193\ \ \ \ \ M5Canvas\ text\ =\ (this-\/>parent\ ==\ \textcolor{keyword}{nullptr})\ ?\ M5Canvas(\&Display):\ M5Canvas(parent);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00194}00194\ \ \ \ \ text.createSprite(this-\/>size.x\ -\/2*this-\/>border.x,\ this-\/>size.y\ -\/2*this-\/>border.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00195}00195\ \ \ \ \ text.setTextWrap(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00196}00196\ \ \ \ \ text.setTextScroll(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00197}00197\ \ \ \ \ text.setTextSize(this-\/>textSize);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00198}00198\ \ \ \ \ text.setTextColor(this-\/>textColour);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00200}00200\ \ \ \ \ String\ aux\ =\ Buffer.\mbox{\hyperlink{classbuffer___class_a9debd110754d53e4e49dab7391689ee5}{getDataStr}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00201}00201\ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ <\ this-\/>dispLen)\ \{\ \textcolor{comment}{//Text\ from\ 0\ to\ cursor\ fits}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Print\ everything\ before\ the\ cursor}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ text.print(aux.substring(0,\ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}));\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Print\ cursor}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ text.setColor(this-\/>cursorColour);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ text.setTextColor(this-\/>backColour);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ text.fillRect(text.getCursorX()-\/1,\ text.getCursorY()-\/1,\ this-\/>cursorSize.x,\ this-\/>cursorSize.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ text.print(aux[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ text.setTextColor(this-\/>textColour);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Print\ everything\ after\ the\ cursor\ that\ still\ fits}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ end\ =\ (aux.length()\ >\ this-\/>dispLen)\ ?\ this-\/>dispLen\ :\ aux.length();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ text.print(aux.substring(Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}+1,\ end));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00215}00215\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00216}00216\ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//Text\ from\ 0\ to\ cursor\ doesn't\ fit}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Shift\ the\ start\ to\ the\ right\ as\ much\ as\ the\ cursor\ is\ greater\ than\ the\ display\ length}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ text.print(aux.substring(Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}\ -\/\ (this-\/>dispLen\ -\/1),\ Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00219}00219\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Print\ cursor}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ text.setColor(this-\/>cursorColour);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ text.setTextColor(this-\/>backColour);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ text.fillRect(text.getCursorX()-\/1,\ text.getCursorY()-\/1,\ this-\/>cursorSize.x,\ this-\/>cursorSize.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ text.print(aux[Buffer.\mbox{\hyperlink{classbuffer___class_a3ab4b8088883189f50066d32c59f3761}{cursor}}]);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ text.setTextColor(this-\/>textColour);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{comment}{//There's\ no\ space\ to\ print\ anything\ after}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00228}00228\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00229}00229\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00230}00230\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00231}\mbox{\hyperlink{classlist___class_a0abc13669b1a6a16df89694545a173c5}{00231}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_a0abc13669b1a6a16df89694545a173c5}{list\_Class::scroll}}(\textcolor{keywordtype}{int}\ newPos)\ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00232}00232\ \ \ \ \ \textcolor{keywordflow}{if}\ (newPos\ >=\ 0\ \&\&\ newPos\ <\ this-\/>elementNum)\ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ this-\/>pos\ =\ newPos;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Maybe\ change\ this\ latter\ if\ a\ redraw\ will\ be\ already\ triggered\ by\ the\ mainloop\ each\ x\ ms}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ this-\/>drawOptions();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00236}00236\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00237}00237\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00238}00238\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00239}\mbox{\hyperlink{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}{00239}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}{list\_Class::scrollDown}}()\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00240}00240\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a0abc13669b1a6a16df89694545a173c5}{scroll}}(this-\/>pos+1);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00241}00241\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00242}00242\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00243}\mbox{\hyperlink{classlist___class_a48eeb6911110ba094e2f979fc824f252}{00243}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_a48eeb6911110ba094e2f979fc824f252}{list\_Class::scrollUp}}()\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00244}00244\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a0abc13669b1a6a16df89694545a173c5}{scroll}}(this-\/>pos-\/1);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00245}00245\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00246}00246\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00247}\mbox{\hyperlink{classlist___class_acafcdd491b89bfd476dcfd43d32786a7}{00247}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_acafcdd491b89bfd476dcfd43d32786a7}{list\_Class::optnEvent}}()\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00248}00248\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00249}00249\ \ \ \ \ \textcolor{comment}{//Create\ non\ scrollable\ daughter\ list,\ need\ to\ find\ a\ way\ to\ kill\ it}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00229}00229\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00230}00230\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00231}00231\ \ \ \ \ text.pushSprite(this-\/>pos.x\ +\ this-\/>border.x,\ this-\/>pos.y\ +\ this-\/>border.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00232}00232\ \ \ \ \ text.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00234}00234\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00237}00237\ \textcolor{comment}{//list\_Class\ functions}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00238}\mbox{\hyperlink{classlist___class_a55209f4763a54c2b2e2a7d39514cafdc}{00238}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlist___class_a55209f4763a54c2b2e2a7d39514cafdc}{list\_Class::displayableRows}}(\textcolor{keywordtype}{float}\ titleSize,\ \textcolor{keywordtype}{float}\ textSize,\ \textcolor{keywordtype}{int}\ height)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00239}00239\ \ \ \ \ \textcolor{keywordtype}{int}\ titleSizePx\ =\ rowSize(\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00240}00240\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}\ =\ rowSize(\mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{textSize}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00241}00241\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}}\ =\ (height-\/\ titleSizePx)/\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00243}00243\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00244}00244\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00246}\mbox{\hyperlink{classlist___class_a0f99364a80894e96121d2dbce38f4187}{00246}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlist___class_a0f99364a80894e96121d2dbce38f4187}{list\_Class::rowsOccupied}}(\textcolor{keywordtype}{int}\ textLen,\ \textcolor{keywordtype}{float}\ textSize,\ \textcolor{keywordtype}{int}\ spriteWidth)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00247}00247\ \ \ \ \ \textcolor{keywordtype}{int}\ pxWidth\ =\ rowWidth(\mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{textSize}},\ textLen);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keywordflow}{return}\ ceil((\textcolor{keywordtype}{float})pxWidth/(\textcolor{keywordtype}{float})spriteWidth);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00249}00249\ \}}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00250}00250\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00251}00251\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00252}00252\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00253}00253\ \textcolor{comment}{//GUI\ functions}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00254}00254\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00255}\mbox{\hyperlink{class_g_u_i___class_aca65997e1615dbb0ddee2671aa95ae92}{00255}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_aca65997e1615dbb0ddee2671aa95ae92}{GUI\_Class::begin}}()\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00256}00256\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00257}00257\ \ \ \ \ \textcolor{comment}{//Launch\ gui\ execution\ thread}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00258}00258\ \ \ \ \ BaseType\_t\ gui\ =\ xTaskCreatePinnedToCore(GUIloop,\ \textcolor{stringliteral}{"{}GUI\ thread"{}},\ 10000,\ NULL,\ 0,\ \&this-\/>task,\ 0);\ \textcolor{comment}{//Creates\ thread\ for\ the\ GUI\ code\ on\ core\ 0}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00259}00259\ \ \ \ \ \textcolor{keywordflow}{if}\ (gui\ !=\ pdPASS)\ log\_i(\textcolor{stringliteral}{"{}ERR"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00260}00260\ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a2c8542d9cbe7433a80c3a8dedc5dbb51}{begin}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Initialises\ Keyboard\ buffer\ in\ tis\ separate\ execution\ thread}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00251}\mbox{\hyperlink{classlist___class_a32108743b53a5cd861b1670c92f8e777}{00251}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlist___class_a55209f4763a54c2b2e2a7d39514cafdc}{list\_Class::displayableRows}}(\textcolor{keywordtype}{float}\ textSize,\ \textcolor{keywordtype}{int}\ height)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00252}00252\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}\ =\ rowSize(\mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{textSize}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00253}00253\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}}\ =\ height/\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00255}00255\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00256}00256\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00258}\mbox{\hyperlink{classlist___class_aaa491172eec7c8bc481c0beaf29cf520}{00258}}\ \mbox{\hyperlink{classlist___class_aaa491172eec7c8bc481c0beaf29cf520}{list\_Class::list\_Class}}(String\ title,\ \textcolor{keywordtype}{int}\ elementNum,\ String*\ elementName,\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00259}00259\ \mbox{\hyperlink{structcoord}{coord}}\ origin,\ \mbox{\hyperlink{structcoord}{coord}}\ size,\ \textcolor{keywordtype}{float}\ titleSize,\ \textcolor{keywordtype}{float}\ textSize,\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00260}00260\ \textcolor{keywordtype}{int}\ textColour,\ \textcolor{keywordtype}{int}\ backColour,\ \textcolor{keywordtype}{int}\ highlightColour,\ \mbox{\hyperlink{structcoord}{coord}}\ border)\{}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00261}00261\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00262}00262\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00263}00263\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00264}00264\ \textcolor{keywordtype}{void}\ GUIloop(\textcolor{keywordtype}{void}*\ parameter)\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00265}00265\ \ \ \ \ \textcolor{comment}{//This\ code\ runs\ on\ a\ separate\ core}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00266}00266\ \ \ \ \ GUI.\mbox{\hyperlink{class_g_u_i___class_a1e0dd033f8ab0d55d0e039ea5d305adb}{mainLoop}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00267}00267\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00268}00268\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00269}00269\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00270}\mbox{\hyperlink{class_g_u_i___class_af0d6b5d535fa64ef2fdecdf1a7771b49}{00270}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_af0d6b5d535fa64ef2fdecdf1a7771b49}{GUI\_Class::splashScreen}}()\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00271}00271\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00272}00272\ \ \ \ \ this-\/>Display.setBaseColor(BLACK);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00273}00273\ \ \ \ \ this-\/>Display.clearDisplay(BLACK);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00274}00274\ \ \ \ \ this-\/>Display.setTextSize(2.5);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00275}00275\ \ \ \ \ this-\/>Display.setTextDatum(textdatum\_t::top\_left);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00276}00276\ \ \ \ \ this-\/>Display.setTextColor(GREEN);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00277}00277\ \ \ \ \ this-\/>Display.pushImage(0,0,240,135,\ splashscreen);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00278}00278\ \ \ \ \ this-\/>Display.setCursor(15,10);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00279}00279\ \ \ \ \ this-\/>Display.print(\textcolor{stringliteral}{"{}Loading"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00280}00280\ \ \ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00281}00281\ \ \ \ \ this-\/>Display.print(\textcolor{stringliteral}{"{}."{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00282}00282\ \ \ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00283}00283\ \ \ \ \ this-\/>Display.print(\textcolor{stringliteral}{"{}."{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00284}00284\ \ \ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00285}00285\ \ \ \ \ this-\/>Display.print(\textcolor{stringliteral}{"{}."{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00286}00286\ \ \ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00287}00287\ \ \ \ \ this-\/>Display.clear();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00288}00288\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00289}00289\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00290}00290\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00291}00291\ \textcolor{keywordtype}{void}\ testHandler(\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{void}*\ b)\ \{\textcolor{keywordflow}{return};\};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00262}00262\ \ \ \ \ this-\/>title\ =\ \mbox{\hyperlink{classlist___class_a5414de1e8a8ac30ab1f03baf5e710f3c}{title}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00263}00263\ \ \ \ \ this-\/>elementNum\ =\ \mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{elementNum}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00264}00264\ \ \ \ \ this-\/>elementName\ =\ \mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{elementName}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00266}00266\ \ \ \ \ this-\/>origin\ =\ \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00267}00267\ \ \ \ \ this-\/>size\ =\ \mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00268}00268\ \ \ \ \ this-\/>titleSize\ =\ \mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00269}00269\ \ \ \ \ this-\/>textSize\ =\ \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{textSize}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00270}00270\ \ \ \ \ this-\/>textColour\ =\ \mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00271}00271\ \ \ \ \ this-\/>backColour\ =\ \mbox{\hyperlink{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f}{backColour}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00272}00272\ \ \ \ \ this-\/>highlightColour\ =\ \mbox{\hyperlink{classlist___class_a77cd52ddd6832ae26001045a35ce7d19}{highlightColour}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00274}00274\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a54af455510377220a429c3ab5d3dc541}{pos}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00275}00275\ \ \ \ \ this-\/>border\ =\ \mbox{\hyperlink{classlist___class_a3f196f0abbfff0245c8fd66bf6d424a4}{border}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00277}00277\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}}\ =\ \mbox{\hyperlink{classlist___class_a55209f4763a54c2b2e2a7d39514cafdc}{displayableRows}}(textSize,\ \mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.y-\/3*this-\/>border.y-\/rowSize(this-\/>titleSize));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00279}00279\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00281}\mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{00281}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{list\_Class::draw}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00283}00283\ \ \ \ \ \textcolor{comment}{//Create\ the\ background\ sprite\ in\ RAM}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00284}00284\ \ \ \ \ M5Canvas\ background(\&Display);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00285}00285\ \ \ \ \ background.createSprite(this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x,\ this-\/>size.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00287}00287\ \ \ \ \ \textcolor{comment}{//Draw\ background\ rectangle}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00288}00288\ \ \ \ \ background.setBaseColor(this-\/>\mbox{\hyperlink{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f}{backColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00289}00289\ \ \ \ \ background.clear();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00290}00290\ \ \ \ \ background.setColor(this-\/>\mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00291}00291\ \ \ \ \ background.drawRoundRect(0,\ 0,\ this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ ,\ this-\/>size.y,\ 3);}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00292}00292\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00293}\mbox{\hyperlink{class_g_u_i___class_ab6d29667f048b28a6d867cab6d4e958c}{00293}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_ab6d29667f048b28a6d867cab6d4e958c}{GUI\_Class::drawMainMenu}}()\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00294}00294\ \ \ \ \ \textcolor{comment}{//Draws\ the\ main\ menu}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00295}00295\ \ \ \ \ M5GFX\ disp\ =\ this-\/>Display;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00296}00296\ \ \ \ \ disp.pushImage(0,0,240,135,\ menuBackgroundTest);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00297}00297\ \ \ \ \ \textcolor{comment}{//disp.pushImage(90,41,\ 58,\ 74,\ terminalIcon);}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00298}00298\ \ \ \ \ \textcolor{comment}{//disp.setColor(BLACK);}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00299}00299\ \ \ \ \ \textcolor{comment}{//disp.fillRoundRect(50,\ 30,\ 140,\ 90,\ 3);}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00300}00300\ \ \ \ \ \textcolor{comment}{//disp.setColor(GREEN);}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00301}00301\ \ \ \ \ \textcolor{comment}{//disp.drawRoundRect(50,\ 30,\ 140,\ 90,\ 3);}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00302}00302\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00293}00293\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete\ the\ sprite}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00294}00294\ \ \ \ \ background.pushSprite(this-\/>\mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.x,\ this-\/>origin.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00295}00295\ \ \ \ \ background.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00296}00296\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00297}00297\ \ \ \ \ \textcolor{comment}{//Create\ title\ sprite\ in\ RAM\ \&\ Set\ text\ options}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00298}00298\ \ \ \ \ M5Canvas\ titleSprt(\&Display);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00299}00299\ \ \ \ \ titleSprt.createSprite(this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ -\/2*this-\/>border.x,\ rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00300}00300\ \ \ \ \ titleSprt.setTextColor(this-\/>\mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00301}00301\ \ \ \ \ titleSprt.setTextSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00302}00302\ \ \ \ \ titleSprt.println(\mbox{\hyperlink{classlist___class_a5414de1e8a8ac30ab1f03baf5e710f3c}{title}});}
 \DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00303}00303\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00304}\mbox{\hyperlink{class_g_u_i___class_a1e0dd033f8ab0d55d0e039ea5d305adb}{00304}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_a1e0dd033f8ab0d55d0e039ea5d305adb}{GUI\_Class::mainLoop}}()\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00305}00305\ \ \ \ \ \textcolor{comment}{//Draw\ splashscreen}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00306}00306\ \ \ \ \ this-\/>\mbox{\hyperlink{class_g_u_i___class_af0d6b5d535fa64ef2fdecdf1a7771b49}{splashScreen}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00307}00307\ \ \ \ \ \textcolor{comment}{//Create\ topBar}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00308}00308\ \ \ \ \ this-\/>topBar\ =\ \mbox{\hyperlink{classtop_bar___class}{topBar\_Class}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00309}00309\ \ \ \ \ \textcolor{comment}{//Draw\ main\ manu}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00310}00310\ \ \ \ \ this-\/>\mbox{\hyperlink{class_g_u_i___class_ab6d29667f048b28a6d867cab6d4e958c}{drawMainMenu}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00311}00311\ \ \ \ \ \textcolor{comment}{//MainLoop\ for\ the\ GUI,\ handles\ drawing\ the\ UI\ elements,\ reacts\ to\ inputs\ etc.}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00312}00312\ \ \ \ \ \textcolor{keywordflow}{for}(;;)\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00313}00313\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ this-\/>topBar.\mbox{\hyperlink{classtop_bar___class_a555351fcf48dbea120ac40f8c010dce8}{updateIcons}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*String\ elements[]\ =\ \{"{}Pos0"{},\ "{}Pos1"{},\ "{}Pos2"{},\ "{}Pos3"{},\ "{}Pos4"{},\ "{}Pos5"{},\ "{}Pos6"{},\ "{}Pos7"{},\ "{}Pos8"{},\ "{}Pos9"{}\};}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00316}00316\ \textcolor{comment}{\ \ \ \ \ \ \ \ String\ *ref\ =\ elements;}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00317}00317\ \textcolor{comment}{\ \ \ \ \ \ \ \ list\_Class\ test\ =\ list\_Class(String("{}Titulo"{}),\ 10,\ ref,\ \ \&testHandler,\ coord(50,30),\ coord(140,96));}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00318}00318\ \textcolor{comment}{\ \ \ \ \ \ \ \ test.draw();}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00319}00319\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00320}00320\ \textcolor{comment}{\ \ \ \ \ \ \ \ for(;;)\{}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00321}00321\ \textcolor{comment}{\ \ \ \ \ \ \ \ for(int\ i\ =\ 0;\ i\ <\ 10;\ i++)\{}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00322}00322\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ delay(500);}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00323}00323\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ test.scroll(i);}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00324}00324\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00325}00325\ \textcolor{comment}{\ \ \ \ \ \ \ \ delay(2000);}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00326}00326\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}*/}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_g_u_i___class_a72000c590917f97769bfaae8f97a19bd}{drawWifiMenu}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00328}00328\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00329}00329\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00330}00330\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00331}\mbox{\hyperlink{class_g_u_i___class_a91db0ecb5a53420b1a2b62757328e114}{00331}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_a91db0ecb5a53420b1a2b62757328e114}{GUI\_Class::loadConfFile}}()\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00332}00332\ \ \ \ \ \textcolor{comment}{//Loads\ all\ saved\ documentation\ from\ the\ SD\ card\ (if\ present)\ b4\ starting\ up\ the\ GUI}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00333}00333\ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00334}00334\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00335}\mbox{\hyperlink{class_g_u_i___class_a72000c590917f97769bfaae8f97a19bd}{00335}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_a72000c590917f97769bfaae8f97a19bd}{GUI\_Class::drawWifiMenu}}()\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00336}00336\ \ \ \ \ \textcolor{comment}{//Prints\ available\ wifi\ networks\ to\ allow\ selection\ \&\ connection}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00337}00337\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00338}00338\ \ \ \ \ \textcolor{comment}{//Starts\ async\ scan}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00339}00339\ \ \ \ \ WiFi.scanNetworks(\textcolor{keyword}{true},\ \textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00340}00340\ \ \ \ \ M5Canvas\ loadingAnim(\&Display);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00341}00341\ \ \ \ \ loadingAnim.createSprite(50,50);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00342}00342\ \ \ \ \ loadingAnim.pushImage(0,0,50,50,compassIcon);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00343}00343\ \ \ \ \ \textcolor{comment}{//Check\ if\ scan\ has\ finished}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00344}00344\ \ \ \ \ \textcolor{keywordtype}{float}\ i\ =\ 0.0;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00345}00345\ \ \ \ \ this-\/>Display.setCursor(70,100);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00346}00346\ \ \ \ \ this-\/>Display.setTextSize(1.5);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00347}00347\ \ \ \ \ this-\/>Display.print(\textcolor{stringliteral}{"{}Scanning..."{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00348}00348\ \ \ \ \ \textcolor{keywordflow}{while}(WiFi.scanComplete()\ <\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ loadingAnim.pushRotatedWithAA(i);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ i+=\ 5.0;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ delay(20);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00352}00352\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00353}00353\ \ \ \ \ loadingAnim.deleteSprite();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00354}00354\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00355}00355\ \ \ \ \ \textcolor{comment}{//Get\ number\ of\ available\ networks}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00356}00356\ \ \ \ \ \textcolor{keywordtype}{int}\ availableNetworks\ =\ WiFi.scanComplete();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00357}00357\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00358}00358\ \ \ \ \ String\ SSID[availableNetworks];}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00359}00359\ \ \ \ \ String*\ ptr\ =\ SSID;}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00360}00360\ \ \ \ \ uint8\_t\ encript[availableNetworks];}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00361}00361\ \ \ \ \ int32\_t\ RSSI[availableNetworks];}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00362}00362\ \ \ \ \ String\ BSSID[availableNetworks];}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00363}00363\ \ \ \ \ int32\_t\ channel[availableNetworks];}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00364}00364\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=\ 0;\ i\ <\ availableNetworks;\ i++)\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ SSID[i]\ =\ (WiFi.SSID(i)\ ==\ \textcolor{stringliteral}{"{}"{}})\ ?\ \textcolor{stringliteral}{"{}Hidden\_network"{}}\ :\ WiFi.SSID(i);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ encript[i]\ =\ WiFi.encryptionType(i);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ RSSI[i]\ =\ WiFi.RSSI(i);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ BSSID[i]\ =\ WiFi.BSSIDstr(i);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ channel[i]\ =\ WiFi.channel(i);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00370}00370\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00371}00371\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00372}00372\ \ \ \ \ \mbox{\hyperlink{classlist___class}{list\_Class}}\ wifiMenu(String(\textcolor{stringliteral}{"{}WiFi"{}}),\ availableNetworks,\ ptr,\ \&testHandler,\ \mbox{\hyperlink{structcoord}{coord}}(50,30),\ \mbox{\hyperlink{structcoord}{coord}}(140,96));}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00373}00373\ \ \ \ \ wifiMenu.\mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{draw}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00374}00374\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00375}00375\ \ \ \ \ \textcolor{comment}{//Wait\ for\ user\ input\ loop:}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00376}00376\ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00377}00377\ \ \ \ \ \textcolor{keywordflow}{for}(;;)\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Nav\ signal\ listener}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ vTaskDelay(10\ /\ portTICK\_PERIOD\_MS);}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ !=\ navSignal::NP)\ \{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Nav\ signal\ detected"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Deactivate\ keyboard\ during\ execution}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}})\{}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::ESC:\ \ \ \ \textcolor{comment}{//Close\ the\ menu,\ UNIMPLEMENTED}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::UP:}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::LEFT:\ \ \ \textcolor{comment}{//Scroll\ up}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Scroll\ up\ event"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wifiMenu.\mbox{\hyperlink{classlist___class_a48eeb6911110ba094e2f979fc824f252}{scrollUp}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::DOWN:\ \ \ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::RIGHT:\ \ \textcolor{comment}{//Scroll\ down}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Scroll\ down\ event"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wifiMenu.\mbox{\hyperlink{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}{scrollDown}}();}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::ENTER:\ \ \textcolor{comment}{//Element\ selected\ event\ must\ be\ triggered\ UNIMPLEMENTED}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::OPT:\ \ \ \ \textcolor{comment}{//Option\ event}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Option\ event"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//wifiMenu.option();}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::NP;\ \textcolor{comment}{//Clear\ signal\ flag}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//Reactivate\ after}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Keyboard\ input\ reactivated"{}});}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00406}00406\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00407}00407\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00408}00408\ \ \ \ \ \textcolor{comment}{//When\ selected,\ must\ ask\ for\ password,\ connect\ etc}}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00409}00409\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00410}00410\ \ \ \ \ \textcolor{comment}{//B4\ finishing\ the\ function\ a\ redraw\ must\ be\ called\ to\ get\ rid\ of\ the\ wifi\ UI,\ and\ delete\ the\ }}
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00411}00411\ }
-\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00412}00412\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00304}00304\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete\ the\ sprite}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00305}00305\ \ \ \ \ titleSprt.pushSprite(\mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.x\ +this-\/>border.x,\ \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.y\ +this-\/>border.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00306}00306\ \ \ \ \ titleSprt.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00308}00308\ \ \ \ \ \textcolor{comment}{//Draw\ options}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00309}00309\ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{elementNum}}>0)\ this-\/>\mbox{\hyperlink{classlist___class_aa1d6914207e6453e61d86fc4ee867f14}{drawOptions}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00310}00310\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00311}00311\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00313}\mbox{\hyperlink{classlist___class_aa1d6914207e6453e61d86fc4ee867f14}{00313}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_aa1d6914207e6453e61d86fc4ee867f14}{list\_Class::drawOptions}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00314}00314\ \ \ \ \ \textcolor{comment}{//Create\ text\ sprite\ in\ RAM\ \&\ Set\ text\ options}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00315}00315\ \ \ \ \ M5Canvas\ text(\&Display);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00316}00316\ \ \ \ \ text.createSprite(this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ -\/2*this-\/>border.x,\ this-\/>size.y\ -\/3*this-\/>border.y\ -\/rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00317}00317\ \ \ \ \ text.setTextColor(this-\/>\mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00318}00318\ \ \ \ \ text.setTextSize(this-\/>\mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{textSize}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00319}00319\ \ \ \ \ text.setCursor(0,1);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00320}00320\ \ \ \ \ \textcolor{comment}{//For\ loop\ to\ draw\ the\ options\ (taking\ current\ pos\ into\ account)}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00321}00321\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ \mbox{\hyperlink{classlist___class_a54af455510377220a429c3ab5d3dc541}{pos}}\ -\/2;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0)\ index\ =\ 0;\ \textcolor{comment}{//If\ the\ selected\ pos\ is\ on\ 0,1,2\ drawing\ starts\ @\ index\ 0}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00323}00323\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{elementNum}}\ -\/\ index\ -\/1\ <\ this-\/>\mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}})\ index\ =\ this-\/>\mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{elementNum}}-\/this-\/>\mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}};\ \textcolor{comment}{//If\ the\ selected\ position\ is\ near\ the\ end,\ print\ enough\ to\ fill\ the\ rows}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00324}00324\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00325}00325\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ index;\ (i\ <this-\/>\mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{elementNum}}\ \&\&\ count\ <\ this-\/>\mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}});\ i++)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ \mbox{\hyperlink{classlist___class_a54af455510377220a429c3ab5d3dc541}{pos}})\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ text.setColor(this-\/>\mbox{\hyperlink{classlist___class_a77cd52ddd6832ae26001045a35ce7d19}{highlightColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rows\ =\ \mbox{\hyperlink{classlist___class_a0f99364a80894e96121d2dbce38f4187}{list\_Class::rowsOccupied}}(this-\/>\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{elementName}}[i].length()\ +1,\ this-\/>\mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{textSize}},\ this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ -\/2*this-\/>border.x);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ text.fillRoundRect(text.getCursorX()-\/1,\ text.getCursorY()-\/2,\ \mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ -\/2*this-\/>border.x,\ \mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}}*rowSize(this-\/>\mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{textSize}})+1,\ 5);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ text.setTextColor(this-\/>\mbox{\hyperlink{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f}{backColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ text.println(\textcolor{stringliteral}{"{}\ "{}}+this-\/>\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{elementName}}[i]);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ text.setTextColor(this-\/>\mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ text.println(this-\/>\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{elementName}}[i]);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00335}00335\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00336}00336\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00337}00337\ \ \ \ \ text.pushSprite(\mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.x\ +this-\/>border.x,\ \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.y\ +2*this-\/>border.y\ +\ rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00338}00338\ \ \ \ \ text.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00340}00340\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00341}00341\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00342}\mbox{\hyperlink{classlist___class_a0abc13669b1a6a16df89694545a173c5}{00342}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_a0abc13669b1a6a16df89694545a173c5}{list\_Class::scroll}}(\textcolor{keywordtype}{int}\ newPos)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00343}00343\ \ \ \ \ \textcolor{keywordflow}{if}\ (newPos\ >=\ 0\ \&\&\ newPos\ <\ this-\/>\mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{elementNum}})\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a54af455510377220a429c3ab5d3dc541}{pos}}\ =\ newPos;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Maybe\ change\ this\ latter\ if\ a\ redraw\ will\ be\ already\ triggered\ by\ the\ mainloop\ each\ x\ ms}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_aa1d6914207e6453e61d86fc4ee867f14}{drawOptions}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00347}00347\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00348}00348\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00350}\mbox{\hyperlink{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}{00350}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}{list\_Class::scrollDown}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00351}00351\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a0abc13669b1a6a16df89694545a173c5}{scroll}}(this-\/>\mbox{\hyperlink{classlist___class_a54af455510377220a429c3ab5d3dc541}{pos}}+1);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00352}00352\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00353}00353\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00354}\mbox{\hyperlink{classlist___class_a48eeb6911110ba094e2f979fc824f252}{00354}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_a48eeb6911110ba094e2f979fc824f252}{list\_Class::scrollUp}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00355}00355\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a0abc13669b1a6a16df89694545a173c5}{scroll}}(this-\/>\mbox{\hyperlink{classlist___class_a54af455510377220a429c3ab5d3dc541}{pos}}-\/1);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00356}00356\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00357}\mbox{\hyperlink{classlist___class_ab2676ecc5c076b8159249d2726f7707d}{00357}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlist___class_ab2676ecc5c076b8159249d2726f7707d}{list\_Class::enterEvent}}()\{\};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00358}00358\ \textcolor{comment}{//wifiMenu\ fuctions}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00360}\mbox{\hyperlink{classwifi_menu___class_ad1587fd44b1956225c70328aae192157}{00360}}\ \mbox{\hyperlink{classwifi_menu___class_ad1587fd44b1956225c70328aae192157}{wifiMenu\_Class::wifiMenu\_Class}}()\ :\ \ \mbox{\hyperlink{classlist___class}{list\_Class}}(String(\textcolor{stringliteral}{"{}WiFi"{}}),\ 0,\ nullptr,\ \mbox{\hyperlink{structcoord}{coord}}(50,30),\ \mbox{\hyperlink{structcoord}{coord}}(140,96))\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00361}00361\ \ \ \ \ \textcolor{comment}{//Instantiates\ mother\ class\ (list\_CLass)\ with\ the\ correct\ parameters\ \&\ no\ given\ options}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00362}00362\ \ \ \ \ \textcolor{comment}{//Then\ initialises\ the\ elements\ of\ this\ class}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00363}00363\ \ \ \ \ \textcolor{comment}{//These\ fields\ are\ set\ to\ nullptr\ since\ they\ are\ only\ allocated\ by\ scan()}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00364}00364\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{elementName}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00365}00365\ \ \ \ \ this-\/>encript\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00366}00366\ \ \ \ \ this-\/>RSSI\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00367}00367\ \ \ \ \ this-\/>BSSID\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00368}00368\ \ \ \ \ this-\/>channel\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00370}00370\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00372}\mbox{\hyperlink{classwifi_menu___class_ab3c0dd806d2918230ad0b9165c239ef4}{00372}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwifi_menu___class_ab3c0dd806d2918230ad0b9165c239ef4}{wifiMenu\_Class::scan}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00373}00373\ \ \ \ \ \textcolor{comment}{//Deletes\ previous\ scan\ data}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00374}00374\ \ \ \ \ this-\/>\mbox{\hyperlink{classwifi_menu___class_a1dfd391a6071a80553b2f09355b64bbb}{del}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00375}00375\ \ \ \ \ \textcolor{comment}{//Draws\ the\ basic\ outline\ of\ an\ empty\ list}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00376}00376\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00377}00377\ \ \ \ \ \textcolor{comment}{//Starts\ async\ scan\ \&\ displays\ animation\ while\ it\ runs}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00378}00378\ \ \ \ \ WiFi.scanNetworks(\textcolor{keyword}{true},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00379}00379\ \ \ \ \ M5Canvas\ loadingAnim(\&this-\/>Display);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00380}00380\ \ \ \ \ loadingAnim.createSprite(50,50);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00381}00381\ \ \ \ \ loadingAnim.pushImage(0,0,50,50,compassIcon);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00382}00382\ \ \ \ \ \textcolor{keywordtype}{float}\ i\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00383}00383\ \ \ \ \ this-\/>Display.setCursor(70,110);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00384}00384\ \ \ \ \ this-\/>Display.setTextSize(1.5);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00385}00385\ \ \ \ \ this-\/>Display.print(\textcolor{stringliteral}{"{}Scanning..."{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00386}00386\ \ \ \ \ \textcolor{comment}{//Check\ if\ scan\ has\ finished}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00387}00387\ \ \ \ \ \textcolor{keywordflow}{while}(WiFi.scanComplete()\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ loadingAnim.pushRotateZoomWithAA(240/2,\ 135/2\ +\ 15,\ i,\ 1.0,\ 1.0,\ RED);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ i+=\ 5.0;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ delay(20);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00391}00391\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00392}00392\ \ \ \ \ loadingAnim.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00394}00394\ \ \ \ \ \textcolor{comment}{//Get\ number\ of\ available\ networks}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00395}00395\ \ \ \ \ \textcolor{keywordtype}{int}\ availableNetworks\ =\ WiFi.scanComplete();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00396}00396\ \ \ \ \ String*\ SSID\ =\ \textcolor{keyword}{new}\ String[availableNetworks];}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00397}00397\ \ \ \ \ uint8\_t*\ encript\ =\ \textcolor{keyword}{new}\ uint8\_t[availableNetworks];}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00398}00398\ \ \ \ \ int32\_t*\ RSSI\ =\ \textcolor{keyword}{new}\ int32\_t[availableNetworks];}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00399}00399\ \ \ \ \ String*\ BSSID\ =\ \textcolor{keyword}{new}\ String[availableNetworks];}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00400}00400\ \ \ \ \ int32\_t*\ channel\ =\ \textcolor{keyword}{new}\ int32\_t[availableNetworks];}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00401}00401\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=\ 0;\ i\ <\ availableNetworks;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ SSID[i]\ =\ (WiFi.SSID(i)\ ==\ \textcolor{stringliteral}{"{}"{}})\ ?\ \textcolor{stringliteral}{"{}Hidden\_network"{}}\ :\ WiFi.SSID(i);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ encript[i]\ =\ WiFi.encryptionType(i);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ RSSI[i]\ =\ WiFi.RSSI(i);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ BSSID[i]\ =\ WiFi.BSSIDstr(i);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ channel[i]\ =\ WiFi.channel(i);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00407}00407\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00409}00409\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{elementNum}}\ =\ availableNetworks;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00410}00410\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{elementName}}\ =\ SSID;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00411}00411\ \ \ \ \ this-\/>encript\ =\ encript;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00412}00412\ \ \ \ \ this-\/>RSSI\ =\ RSSI;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00413}00413\ \ \ \ \ this-\/>BSSID\ =\ BSSID;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00414}00414\ \ \ \ \ this-\/>channel\ =\ channel;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00415}00415\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00417}\mbox{\hyperlink{classwifi_menu___class_a39fe0cd27acdfd561f30886005174bd5}{00417}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwifi_menu___class_a39fe0cd27acdfd561f30886005174bd5}{wifiMenu\_Class::appLoop}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00418}00418\ \ \ \ \ \textcolor{comment}{//Perform\ primary\ scan}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00419}00419\ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{elementNum}}==\ 0)this-\/>\mbox{\hyperlink{classwifi_menu___class_ab3c0dd806d2918230ad0b9165c239ef4}{scan}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00420}00420\ \ \ \ \ \textcolor{comment}{//Draw\ the\ menu}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00421}00421\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00422}00422\ \ \ \ \ \textcolor{keywordtype}{bool}\ flag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00423}00423\ \ \ \ \ \textcolor{comment}{//Check\ keyboard\ mode\ \&\ that\ it\ is\ active}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00424}00424\ \ \ \ \ \textcolor{keywordflow}{while}(!flag)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00425}00425\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Endless\ application\ loop}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00426}00426\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Nav\ signal\ listener}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00427}00427\ \ \ \ \ \ \ \ \ vTaskDelay(10\ /\ portTICK\_PERIOD\_MS);\ \textcolor{comment}{//Alows\ other\ things\ to\ update,\ housekeeping\ etc}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00428}00428\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ !=\ navSignal::NP)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Nav\ signal\ detected"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Deactivate\ keyboard\ during\ execution}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}})\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::ESC:\ \ \ \ \textcolor{comment}{//Close\ the\ menu,\ UNIMPLEMENTED}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Close\ event"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::UP:}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::LEFT:\ \ \ \textcolor{comment}{//Scroll\ up}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Scroll\ up\ event"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a48eeb6911110ba094e2f979fc824f252}{scrollUp}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::DOWN:\ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::RIGHT:\ \ \textcolor{comment}{//Scroll\ down}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Scroll\ down\ event"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}{scrollDown}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::ENTER:\ \ \textcolor{comment}{//Element\ selected\ event}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Element\ selected\ event"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classwifi_menu___class_a12863a3752876d179d948879a75362a1}{enterEvent}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Prepare\ to\ exit\ the\ loop\ and\ return}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classwifi_menu___class_a1dfd391a6071a80553b2f09355b64bbb}{del}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::OPT:\ \ \ \ \textcolor{comment}{//Option\ event}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Option\ event"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classwifi_menu___class_aa85befe97aeee813065860fe1e9231d6}{optnEvent}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//After\ the\ opt\ event\ it\ return\ to\ the\ appLoop}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::CTRL:\ \ \ \textcolor{comment}{//Rescan\ event}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Rescan\ event"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classwifi_menu___class_ab3c0dd806d2918230ad0b9165c239ef4}{scan}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::NP;\ \textcolor{comment}{//Clear\ signal\ flag}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//Reactivate\ after}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Keyboard\ input\ reactivated"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00466}00466\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00467}00467\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00468}00468\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00470}00470\ String\ encriptType(\textcolor{keywordtype}{int}\ i)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00471}00471\ \ \ \ \ \textcolor{keywordflow}{switch}(i)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_OPEN:\ \textcolor{keywordflow}{return}\ String(\textcolor{stringliteral}{"{}Open"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_WEP:\ \textcolor{keywordflow}{return}\ String(\textcolor{stringliteral}{"{}WEP"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_WPA\_PSK:\ \textcolor{keywordflow}{return}\ String(\textcolor{stringliteral}{"{}WPA-\/PSK"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_WPA2\_PSK:\ \textcolor{keywordflow}{return}\ String(\textcolor{stringliteral}{"{}WPA2-\/PSK"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_WPA\_WPA2\_PSK:\ \textcolor{keywordflow}{return}\ String(\textcolor{stringliteral}{"{}WPA1/2-\/PSK"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_ENTERPRISE:}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_WPA3\_PSK:}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00479}00479\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_WPA2\_WPA3\_PSK:}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00480}00480\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_WAPI\_PSK:}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00481}00481\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_WPA3\_ENT\_192:}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00482}00482\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ wifi\_auth\_mode\_t::WIFI\_AUTH\_MAX:\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00483}00483\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ String(\textcolor{stringliteral}{"{}Weird"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00484}00484\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00485}00485\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00486}00486\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00487}\mbox{\hyperlink{classwifi_menu___class_aa85befe97aeee813065860fe1e9231d6}{00487}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwifi_menu___class_aa85befe97aeee813065860fe1e9231d6}{wifiMenu\_Class::optnEvent}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00488}00488\ \ \ \ \ \textcolor{comment}{//Create\ the\ background\ sprite\ in\ RAM}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00489}00489\ \ \ \ \ M5Canvas\ background(\&Display);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00490}00490\ \ \ \ \ background.createSprite(this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x,\ this-\/>size.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00492}00492\ \ \ \ \ \textcolor{comment}{//Draw\ background\ rectangle}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00493}00493\ \ \ \ \ background.setBaseColor(this-\/>\mbox{\hyperlink{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f}{backColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00494}00494\ \ \ \ \ background.clear();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00495}00495\ \ \ \ \ background.setColor(this-\/>\mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00496}00496\ \ \ \ \ background.drawRoundRect(0,\ 0,\ this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ ,\ this-\/>size.y,\ 3);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00497}00497\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00498}00498\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete\ the\ sprite}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00499}00499\ \ \ \ \ background.pushSprite(this-\/>\mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.x,\ this-\/>origin.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00500}00500\ \ \ \ \ background.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00501}00501\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00502}00502\ \ \ \ \ \textcolor{comment}{//Create\ title\ sprite\ in\ RAM\ \&\ Set\ text\ options}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00503}00503\ \ \ \ \ M5Canvas\ titleSprt(\&Display);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00504}00504\ \ \ \ \ titleSprt.createSprite(this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ -\/2*this-\/>border.x,\ rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00505}00505\ \ \ \ \ titleSprt.setTextColor(this-\/>\mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00506}00506\ \ \ \ \ titleSprt.setTextSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00507}00507\ \ \ \ \ titleSprt.println(this-\/>\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{elementName}}[this-\/>\mbox{\hyperlink{classlist___class_a54af455510377220a429c3ab5d3dc541}{pos}}]);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00508}00508\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00509}00509\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete\ the\ sprite}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00510}00510\ \ \ \ \ titleSprt.pushSprite(\mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.x\ +this-\/>border.x,\ \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.y\ +this-\/>border.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00511}00511\ \ \ \ \ titleSprt.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00512}00512\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00513}00513\ \ \ \ \ \textcolor{comment}{//Create\ text\ sprite\ in\ RAM\ \&\ Set\ text\ options}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00514}00514\ \ \ \ \ M5Canvas\ text(\&Display);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00515}00515\ \ \ \ \ text.createSprite(this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ -\/2*this-\/>border.x,\ this-\/>size.y\ -\/3*this-\/>border.y\ -\/rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00516}00516\ \ \ \ \ text.setTextColor(this-\/>\mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00517}00517\ \ \ \ \ text.setTextSize(1.5);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00518}00518\ \ \ \ \ text.setCursor(0,1);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00519}00519\ \ \ \ \ text.printf(\textcolor{stringliteral}{"{}RSSI:\ \%i\(\backslash\)n"{}},this-\/>RSSI[this-\/>pos]);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00520}00520\ \ \ \ \ text.printf(\textcolor{stringliteral}{"{}Channel:\ \%i\(\backslash\)n"{}},\ this-\/>channel[this-\/>pos]);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00521}00521\ \ \ \ \ text.setTextSize(1.0);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00522}00522\ \ \ \ \ text.printf(\textcolor{stringliteral}{"{}Encryption:\ \%s\(\backslash\)n"{}},\ encriptType(this-\/>encript[this-\/>pos]));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00523}00523\ \ \ \ \ text.printf(\textcolor{stringliteral}{"{}BSSID:\ \%i\(\backslash\)n"{}},\ this-\/>BSSID[this-\/>pos]);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00524}00524\ \ \ \ \ text.println(\textcolor{stringliteral}{"{}Press\ ESC\ to\ return."{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00525}00525\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00526}00526\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete\ the\ sprite}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00527}00527\ \ \ \ \ text.pushSprite(\mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.x\ +this-\/>border.x,\ \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.y\ +2*this-\/>border.y\ +\ rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00528}00528\ \ \ \ \ text.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00529}00529\ \ \ \ \ \textcolor{keywordtype}{bool}\ flag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00530}00530\ \ \ \ \ \textcolor{keywordflow}{while}(!flag)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00531}00531\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wait\ for\ user\ input}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00532}00532\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Nav\ signal\ listener}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00533}00533\ \ \ \ \ \ \ \ \ vTaskDelay(10\ /\ portTICK\_PERIOD\_MS);\ \textcolor{comment}{//Alows\ other\ things\ to\ update,\ housekeeping\ etc}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00534}00534\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ !=\ navSignal::NP)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Nav\ signal\ detected"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//Deactivate\ keyboard\ during\ execution}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}})\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ navSignal::ESC:\ \ \ \ \textcolor{comment}{//Close\ the\ menu,\ UNIMPLEMENTED}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Close\ event"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00542}00542\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00543}00543\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_af0d32aa1fdeac32dc3ee1a0282de80be}{signal}}\ =\ navSignal::NP;\ \textcolor{comment}{//Clear\ signal\ flag}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00544}00544\ \ \ \ \ \ \ \ \ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a0b98b8aef328ebdd93ae50b1139bc06e}{keyboardEnable}}\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//Reactivate\ after}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00545}00545\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Keyboard\ input\ reactivated"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00546}00546\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00547}00547\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00548}00548\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00549}00549\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00550}00550\ \};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00551}00551\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00552}\mbox{\hyperlink{classwifi_menu___class_a12863a3752876d179d948879a75362a1}{00552}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwifi_menu___class_a12863a3752876d179d948879a75362a1}{wifiMenu\_Class::enterEvent}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00553}00553\ \ \ \ \ \textcolor{comment}{//Handles\ conection\ to\ the\ selected\ network}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00554}00554\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00555}00555\ \ \ \ \ \textcolor{comment}{//Create\ the\ background\ sprite\ in\ RAM}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00556}00556\ \ \ \ \ M5Canvas\ background(\&Display);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00557}00557\ \ \ \ \ background.createSprite(this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x,\ this-\/>size.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00558}00558\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00559}00559\ \ \ \ \ \textcolor{comment}{//Draw\ background\ rectangle}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00560}00560\ \ \ \ \ background.setBaseColor(this-\/>\mbox{\hyperlink{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f}{backColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00561}00561\ \ \ \ \ background.clear();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00562}00562\ \ \ \ \ background.setColor(this-\/>\mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00563}00563\ \ \ \ \ background.drawRoundRect(0,\ 0,\ this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ ,\ this-\/>size.y,\ 3);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00564}00564\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00565}00565\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete\ the\ sprite}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00566}00566\ \ \ \ \ background.pushSprite(this-\/>\mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.x,\ this-\/>origin.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00567}00567\ \ \ \ \ background.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00568}00568\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00569}00569\ \ \ \ \ \textcolor{comment}{//Create\ title\ sprite\ in\ RAM\ \&\ Set\ text\ options}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00570}00570\ \ \ \ \ M5Canvas\ titleSprt(\&Display);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00571}00571\ \ \ \ \ titleSprt.createSprite(this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ -\/2*this-\/>border.x,\ rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00572}00572\ \ \ \ \ titleSprt.setTextColor(this-\/>\mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00573}00573\ \ \ \ \ titleSprt.setTextSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00574}00574\ \ \ \ \ titleSprt.println(this-\/>\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{elementName}}[this-\/>\mbox{\hyperlink{classlist___class_a54af455510377220a429c3ab5d3dc541}{pos}}]);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00575}00575\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00576}00576\ \ \ \ \ \textcolor{comment}{//Push\ \&\ delete\ the\ sprite}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00577}00577\ \ \ \ \ titleSprt.pushSprite(\mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.x\ +this-\/>border.x,\ \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.y\ +this-\/>border.y);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00578}00578\ \ \ \ \ titleSprt.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00579}00579\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00580}00580\ \ \ \ \ \textcolor{comment}{//Create\ text\ sprite}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00581}00581\ \ \ \ \ M5Canvas\ text(\&Display);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00582}00582\ \ \ \ \ text.createSprite(this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ -\/2*this-\/>border.x,\ this-\/>size.y\ -\/3*this-\/>border.y\ -\/rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00583}00583\ \ \ \ \ text.setTextColor(this-\/>\mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{textColour}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00584}00584\ \ \ \ \ text.setTextSize(1.3);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00585}00585\ \ \ \ \ text.setCursor(0,1);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00586}00586\ \ \ \ \ text.println(\textcolor{stringliteral}{"{}\(\backslash\)nEnter\ the\ network\ password:"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00587}00587\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00588}00588\ \ \ \ \ \textcolor{comment}{//Create\ textBox}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00589}00589\ \ \ \ \ String\ password\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00590}00590\ \ \ \ \ \mbox{\hyperlink{classtext_box___class}{textBox\_Class}}\ psswrd(\mbox{\hyperlink{structcoord}{coord}}(0,40),\ \mbox{\hyperlink{structcoord}{coord}}(this-\/>\mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}.x\ -\/2*this-\/>border.x,\ rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}})),\ \&password,\ \textcolor{stringliteral}{"{}Prueba"{}},\ \&text);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00591}00591\ \ \ \ \ \textcolor{comment}{//Push\ sprite}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00592}00592\ \ \ \ \ psswrd.\mbox{\hyperlink{classtext_box___class_a29ff669d373aada7b03d59e502e031e0}{draw}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00593}00593\ \ \ \ \ text.pushSprite(\mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.x\ +this-\/>border.x,\ \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.y\ +2*this-\/>border.y\ +\ rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00594}00594\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00595}00595\ \ \ \ \ \textcolor{keywordtype}{bool}\ flag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00596}00596\ \ \ \ \ psswrd.\mbox{\hyperlink{classtext_box___class_a4f508e0fd1645f5209b3dce4459adb07}{enableTextInput}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00597}00597\ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Entered\ input\ loop"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00598}00598\ \ \ \ \ \textcolor{keywordflow}{while}(!flag)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00599}00599\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wait\ for\ user\ input}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00600}00600\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Nav\ signal\ listener}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00601}00601\ \ \ \ \ \ \ \ \ vTaskDelay(10\ /\ portTICK\_PERIOD\_MS);\ \textcolor{comment}{//Alows\ other\ things\ to\ update,\ housekeeping\ etc}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00602}00602\ \ \ \ \ \ \ \ \ psswrd.\mbox{\hyperlink{classtext_box___class_a367247bd7e19d1d4fc45828256e77b9a}{update}}();\ \textcolor{comment}{//Updates\ the\ displayed\ string\ to\ be\ the\ current\ contents\ of\ the\ buffer}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00603}00603\ \ \ \ \ \ \ \ \ text.pushSprite(\mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.x\ +this-\/>border.x,\ \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}.y\ +2*this-\/>border.y\ +\ rowSize(this-\/>\mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{titleSize}}));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00604}00604\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00605}00605\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00606}00606\ \ \ \ \ text.deleteSprite();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00607}00607\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00608}00608\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00609}00609\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00610}00610\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00611}00611\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00612}00612\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00613}00613\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00614}\mbox{\hyperlink{classwifi_menu___class_a1dfd391a6071a80553b2f09355b64bbb}{00614}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwifi_menu___class_a1dfd391a6071a80553b2f09355b64bbb}{wifiMenu\_Class::del}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00615}00615\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00616}00616\ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Freeing\ up\ memory"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00617}00617\ \ \ \ \ \textcolor{comment}{//Frees\ dinamically\ allocated\ memory}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00618}00618\ \ \ \ \ \textcolor{keyword}{delete}[]\ this-\/>\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{elementName}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00619}00619\ \ \ \ \ \textcolor{keyword}{delete}[]\ this-\/>encript;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00620}00620\ \ \ \ \ \textcolor{keyword}{delete}[]\ this-\/>RSSI;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00621}00621\ \ \ \ \ \textcolor{keyword}{delete}[]\ this-\/>BSSID;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00622}00622\ \ \ \ \ \textcolor{keyword}{delete}[]\ this-\/>channel;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00623}00623\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00624}00624\ \ \ \ \ \textcolor{comment}{//resets\ everythin\ to\ behave\ as\ an\ empty\ list}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00625}00625\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{elementName}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00626}00626\ \ \ \ \ this-\/>encript\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00627}00627\ \ \ \ \ this-\/>RSSI\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00628}00628\ \ \ \ \ this-\/>BSSID\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00629}00629\ \ \ \ \ this-\/>channel\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00630}00630\ \ \ \ \ this-\/>\mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{elementNum}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00631}00631\ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00632}00632\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00633}00633\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00634}00634\ \textcolor{comment}{//GUI\ functions}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00635}\mbox{\hyperlink{class_g_u_i___class_aca65997e1615dbb0ddee2671aa95ae92}{00635}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_aca65997e1615dbb0ddee2671aa95ae92}{GUI\_Class::begin}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00636}00636\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00637}00637\ \ \ \ \ \textcolor{comment}{//Keyboard\ stuff}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00638}00638\ \ \ \ \ Buffer\ =\ \mbox{\hyperlink{classbuffer___class}{buffer\_Class}}();\ \ \textcolor{comment}{//Reinitilizes\ the\ Buffer\ class\ to\ make\ sure\ its\ on\ the\ correct\ mode}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00639}00639\ \ \ \ \ Buffer.\mbox{\hyperlink{classbuffer___class_a13060699985b87e93228f36f749b1d3c}{begin}}();\ \ \textcolor{comment}{//Starts\ up\ the\ separate\ thread\ that\ processes\ keyboard\ input,\ also\ enables\ input\ by\ def}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00640}00640\ \ \ \ \ \textcolor{comment}{//Launch\ gui\ execution\ thread}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00641}00641\ \ \ \ \ BaseType\_t\ gui\ =\ xTaskCreatePinnedToCore(GUIloop,\ \textcolor{stringliteral}{"{}GUI\ thread"{}},\ 10000,\ NULL,\ 0,\ \&this-\/>task,\ 0);\ \textcolor{comment}{//Creates\ thread\ for\ the\ GUI\ code\ on\ core\ 0}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00642}00642\ \ \ \ \ \textcolor{keywordflow}{if}\ (gui\ !=\ pdPASS)\ log\_i(\textcolor{stringliteral}{"{}ERR"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00643}00643\ \ \ \ \ \textcolor{comment}{//Launch\ topBar\ updater}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00644}00644\ \ \ \ \ BaseType\_t\ topBarUpdater\ =\ xTaskCreatePinnedToCore(topBarLoop,\ \textcolor{stringliteral}{"{}topBar\ updater"{}},\ 10000,\ NULL,\ 0,\ \&this-\/>topBarTask,\ 0);\ \textcolor{comment}{//Creates\ thread\ for\ the\ topBar\ updater\ code\ on\ core\ 0}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00645}00645\ \ \ \ \ \textcolor{keywordflow}{if}\ (topBarUpdater\ !=\ pdPASS)\ log\_i(\textcolor{stringliteral}{"{}ERR"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00646}00646\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00647}00647\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00648}00648\ \textcolor{keywordtype}{void}\ GUIloop(\textcolor{keywordtype}{void}*\ parameter)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00649}00649\ \ \ \ \ \textcolor{comment}{//This\ code\ runs\ on\ a\ separate\ core}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00650}00650\ \ \ \ \ GUI.\mbox{\hyperlink{class_g_u_i___class_a1e0dd033f8ab0d55d0e039ea5d305adb}{mainLoop}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00651}00651\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00652}00652\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00653}00653\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00654}00654\ \textcolor{keywordtype}{void}\ topBarLoop(\textcolor{keywordtype}{void}*\ parameter)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00655}00655\ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}topBar\ updater\ task\ created"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00656}00656\ \ \ \ \ \textcolor{comment}{//Create\ the\ interrupt\ we'll\ use\ to\ time\ when\ we\ update\ timed\ things\ on\ screen}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00657}00657\ \ \ \ \ hw\_timer\_t*\ timer\ =\ timerBegin(3,\ 80,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00658}00658\ \ \ \ \ timerAttachInterrupt(timer,\ \&timerISR,\ \textcolor{keyword}{false});\ \textcolor{comment}{//Atach\ interrupt\ to\ the\ timer}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00659}00659\ \ \ \ \ timerAlarmWrite(timer,\ 1000000,\ \textcolor{keyword}{true});\ \textcolor{comment}{//Set\ the\ alarm\ that\ triggers\ the\ interrupt}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00660}00660\ \ \ \ \ timerAlarmEnable(timer);\ \textcolor{comment}{//Enable\ the\ alarm}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00661}00661\ \ \ \ \ \textcolor{comment}{//Suspend\ the\ current\ task\ (it'll\ resume\ from\ here\ once\ the\ interrupt\ is\ triggered)}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00662}00662\ \ \ \ \ vTaskSuspend(NULL);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00663}00663\ \ \ \ \ \textcolor{comment}{//Infinite\ loop,\ each\ time\ xTaskResumeFromISR\ is\ called\ from\ within\ the\ ISR,\ a\ round\ of\ this\ loop\ will}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00664}00664\ \ \ \ \ \textcolor{comment}{//be\ executed,\ succesive\ calls\ to\ resuming\ won't\ affect\ an\ already\ resumed\ task,\ \&\ the\ loop\ suspends\ the\ task}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00665}00665\ \ \ \ \ \textcolor{comment}{//once\ the\ round\ is\ finished}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00666}00666\ \ \ \ \ \textcolor{keywordflow}{for}(;;)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00667}00667\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Update\ state\ of\ background\ important\ things}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00668}00668\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!WiFi.isConnected())\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00669}00669\ \ \ \ \ \ \ \ \ \ \ \ \ log\_i(\textcolor{stringliteral}{"{}Wifi\ disconnected"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00670}00670\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Need\ to\ implement\ this}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00671}00671\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00672}00672\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Update\ the\ topBar\ to\ reflect\ it}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00673}00673\ \ \ \ \ \ \ \ \ GUI.\mbox{\hyperlink{class_g_u_i___class_acadffe99b600efea71c1322935cd1a2a}{updateTopBar}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00674}00674\ \ \ \ \ \ \ \ \ vTaskSuspend(NULL);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00675}00675\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00676}00676\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00677}00677\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00678}00678\ \textcolor{keywordtype}{void}\ IRAM\_ATTR\ timerISR()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00679}00679\ \ \ \ \ \textcolor{comment}{//Change\ state\ of\ timeFlag}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00680}00680\ \ \ \ \ \textcolor{comment}{//timeFlag\ =\ (timeFlag)\ ?\ false\ :\ true;}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00681}00681\ \ \ \ \ \textcolor{comment}{//Wake\ up\ topBarLoop\ task}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00682}00682\ \ \ \ \ xTaskResumeFromISR(GUI.topBarTask);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00683}00683\ \}\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00684}00684\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00685}\mbox{\hyperlink{class_g_u_i___class_af0d6b5d535fa64ef2fdecdf1a7771b49}{00685}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_af0d6b5d535fa64ef2fdecdf1a7771b49}{GUI\_Class::splashScreen}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00686}00686\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00687}00687\ \ \ \ \ this-\/>Display.setBaseColor(BLACK);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00688}00688\ \ \ \ \ this-\/>Display.clearDisplay(BLACK);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00689}00689\ \ \ \ \ this-\/>Display.setTextSize(2.5);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00690}00690\ \ \ \ \ this-\/>Display.setTextDatum(textdatum\_t::top\_left);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00691}00691\ \ \ \ \ this-\/>Display.setTextColor(GREEN);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00692}00692\ \ \ \ \ this-\/>Display.pushImage(0,0,240,135,\ splashscreen);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00693}00693\ \ \ \ \ this-\/>Display.setCursor(15,10);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00694}00694\ \ \ \ \ this-\/>Display.print(\textcolor{stringliteral}{"{}Loading"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00695}00695\ \ \ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00696}00696\ \ \ \ \ this-\/>Display.print(\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00697}00697\ \ \ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00698}00698\ \ \ \ \ this-\/>Display.print(\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00699}00699\ \ \ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00700}00700\ \ \ \ \ this-\/>Display.print(\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00701}00701\ \ \ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00702}00702\ \ \ \ \ this-\/>Display.clear();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00703}00703\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00704}00704\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00705}00705\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00706}\mbox{\hyperlink{class_g_u_i___class_ab6d29667f048b28a6d867cab6d4e958c}{00706}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_ab6d29667f048b28a6d867cab6d4e958c}{GUI\_Class::drawMainMenu}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00707}00707\ \ \ \ \ \textcolor{comment}{//Draws\ the\ main\ menu}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00708}00708\ \ \ \ \ M5GFX\ disp\ =\ this-\/>Display;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00709}00709\ \ \ \ \ disp.pushImage(0,0,240,135,\ menuBackgroundTest);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00710}00710\ \ \ \ \ \textcolor{comment}{//disp.pushImage(90,41,\ 58,\ 74,\ terminalIcon);}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00711}00711\ \ \ \ \ \textcolor{comment}{//disp.setColor(BLACK);}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00712}00712\ \ \ \ \ \textcolor{comment}{//disp.fillRoundRect(50,\ 30,\ 140,\ 90,\ 3);}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00713}00713\ \ \ \ \ \textcolor{comment}{//disp.setColor(GREEN);}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00714}00714\ \ \ \ \ \textcolor{comment}{//disp.drawRoundRect(50,\ 30,\ 140,\ 90,\ 3);}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00715}00715\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00716}00716\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00717}\mbox{\hyperlink{class_g_u_i___class_a1e0dd033f8ab0d55d0e039ea5d305adb}{00717}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_a1e0dd033f8ab0d55d0e039ea5d305adb}{GUI\_Class::mainLoop}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00718}00718\ \ \ \ \ \textcolor{comment}{//Draw\ splashscreen}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00719}00719\ \ \ \ \ this-\/>\mbox{\hyperlink{class_g_u_i___class_af0d6b5d535fa64ef2fdecdf1a7771b49}{splashScreen}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00720}00720\ \ \ \ \ \textcolor{comment}{//Create\ topBar}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00721}00721\ \ \ \ \ this-\/>topBar\ =\ \mbox{\hyperlink{classtop_bar___class}{topBar\_Class}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00722}00722\ \ \ \ \ \textcolor{comment}{//Draw\ main\ manu}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00723}00723\ \ \ \ \ this-\/>\mbox{\hyperlink{class_g_u_i___class_ab6d29667f048b28a6d867cab6d4e958c}{drawMainMenu}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00724}00724\ \ \ \ \ \textcolor{comment}{//MainLoop\ for\ the\ GUI,\ handles\ drawing\ the\ UI\ elements,\ reacts\ to\ inputs\ etc.}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00725}00725\ \ \ \ \ \textcolor{keywordflow}{for}(;;)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00726}00726\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00727}00727\ \ \ \ \ \ \ \ \ this-\/>topBar.\mbox{\hyperlink{classtop_bar___class_a555351fcf48dbea120ac40f8c010dce8}{updateIcons}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00728}00728\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*String\ elements[]\ =\ \{"{}Pos0"{},\ "{}Pos1"{},\ "{}Pos2"{},\ "{}Pos3"{},\ "{}Pos4"{},\ "{}Pos5"{},\ "{}Pos6"{},\ "{}Pos7"{},\ "{}Pos8"{},\ "{}Pos9"{}\};}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00729}00729\ \textcolor{comment}{\ \ \ \ \ \ \ \ String\ *ref\ =\ elements;}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00730}00730\ \textcolor{comment}{\ \ \ \ \ \ \ \ list\_Class\ test\ =\ list\_Class(String("{}Titulo"{}),\ 10,\ ref,\ \ \&testHandler,\ coord(50,30),\ coord(140,96));}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00731}00731\ \textcolor{comment}{\ \ \ \ \ \ \ \ test.draw();}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00732}00732\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00733}00733\ \textcolor{comment}{\ \ \ \ \ \ \ \ for(;;)\{}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00734}00734\ \textcolor{comment}{\ \ \ \ \ \ \ \ for(int\ i\ =\ 0;\ i\ <\ 10;\ i++)\{}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00735}00735\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ delay(500);}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00736}00736\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ test.scroll(i);}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00737}00737\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00738}00738\ \textcolor{comment}{\ \ \ \ \ \ \ \ delay(2000);}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00739}00739\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00740}00740\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_g_u_i___class_a72000c590917f97769bfaae8f97a19bd}{drawWifiMenu}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00741}00741\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00742}00742\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00743}00743\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00744}\mbox{\hyperlink{class_g_u_i___class_a91db0ecb5a53420b1a2b62757328e114}{00744}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_a91db0ecb5a53420b1a2b62757328e114}{GUI\_Class::loadConfFile}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00745}00745\ \ \ \ \ \textcolor{comment}{//Loads\ all\ saved\ documentation\ from\ the\ SD\ card\ (if\ present)\ b4\ starting\ up\ the\ GUI}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00746}00746\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00747}00747\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00748}\mbox{\hyperlink{class_g_u_i___class_acadffe99b600efea71c1322935cd1a2a}{00748}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_acadffe99b600efea71c1322935cd1a2a}{GUI\_Class::updateTopBar}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00749}00749\ \ \ \ \ this-\/>topBar.\mbox{\hyperlink{classtop_bar___class_a555351fcf48dbea120ac40f8c010dce8}{updateIcons}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00750}00750\ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00751}00751\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00752}\mbox{\hyperlink{class_g_u_i___class_a72000c590917f97769bfaae8f97a19bd}{00752}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i___class_a72000c590917f97769bfaae8f97a19bd}{GUI\_Class::drawWifiMenu}}()\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00753}00753\ \ \ \ \ \textcolor{comment}{//Prints\ available\ wifi\ networks\ to\ allow\ selection\ \&\ connection}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00754}00754\ \ \ \ \ \mbox{\hyperlink{classwifi_menu___class}{wifiMenu\_Class}}\ wifiMenu;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00755}00755\ \ \ \ \ wifiMenu.\mbox{\hyperlink{classwifi_menu___class_a39fe0cd27acdfd561f30886005174bd5}{appLoop}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8cpp_source_l00756}00756\ \}}
 
 \end{DoxyCode}

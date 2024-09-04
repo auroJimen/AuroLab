@@ -9,10 +9,16 @@ Scrollable, selectable list class to construct menus.
 
 {\ttfamily \#include $<$GUI.\+h$>$}
 
+Inheritance diagram for list\+\_\+\+Class\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlist___class}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classlist___class_a978dd4124a5baec5cd27eeed29dd7c63}{list\+\_\+\+Class}} (String title, int element\+Num, String \texorpdfstring{$\ast$}{*}element\+Name, void(\texorpdfstring{$\ast$}{*}handler)(int, void \texorpdfstring{$\ast$}{*}), \mbox{\hyperlink{structcoord}{coord}} origin, \mbox{\hyperlink{structcoord}{coord}} size, float title\+Size=2.\+5, float text\+Size=1.\+5, int text\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, int back\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+BLACK, int highlight\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, \mbox{\hyperlink{structcoord}{coord}} border=\mbox{\hyperlink{structcoord}{coord}}(6, 5))
+\mbox{\hyperlink{classlist___class_aaa491172eec7c8bc481c0beaf29cf520}{list\+\_\+\+Class}} (String \mbox{\hyperlink{classlist___class_a5414de1e8a8ac30ab1f03baf5e710f3c}{title}}, int \mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{element\+Num}}, String \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{element\+Name}}, \mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}, \mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}, float \mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{title\+Size}}=2.\+5, float \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{text\+Size}}=1.\+5, int \mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{text\+Colour}}=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, int \mbox{\hyperlink{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f}{back\+Colour}}=m5gfx\+::ili9341\+\_\+colors\+::\+BLACK, int \mbox{\hyperlink{classlist___class_a77cd52ddd6832ae26001045a35ce7d19}{highlight\+Colour}}=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, \mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_a3f196f0abbfff0245c8fd66bf6d424a4}{border}}=\mbox{\hyperlink{structcoord}{coord}}(6, 5))
 \begin{DoxyCompactList}\small\item\em Constructor for the list class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{draw}} ()
 \begin{DoxyCompactList}\small\item\em Draws or redraws the list on the screen. \end{DoxyCompactList}\item 
@@ -25,26 +31,65 @@ void \mbox{\hyperlink{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}{scrol
 \begin{DoxyCompactList}\small\item\em Scrolls down one position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classlist___class_a48eeb6911110ba094e2f979fc824f252}{scroll\+Up}} ()
 \begin{DoxyCompactList}\small\item\em Scrolls up one positon. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classlist___class_acafcdd491b89bfd476dcfd43d32786a7}{optn\+Event}} ()
-\begin{DoxyCompactList}\small\item\em Handles the element options event trigerred by OPTN nav\+Signal. \end{DoxyCompactList}\item 
-\Hypertarget{classlist___class_ab2676ecc5c076b8159249d2726f7707d}\label{classlist___class_ab2676ecc5c076b8159249d2726f7707d} 
-void {\bfseries enter\+Event} ()
+virtual void \mbox{\hyperlink{classlist___class_ab2676ecc5c076b8159249d2726f7707d}{enter\+Event}} ()
 \begin{DoxyCompactList}\small\item\em Handles the element selected event triggered by ENTER nav\+Signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classlist___class_aa1d6914207e6453e61d86fc4ee867f14}{draw\+Options}} ()
+\begin{DoxyCompactList}\small\item\em Draws the options section with the current selection highlighted (called by draw \& scroll) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a55209f4763a54c2b2e2a7d39514cafdc}{displayable\+Rows}} (float \mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{title\+Size}}, float \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{text\+Size}}, int height)
+\begin{DoxyCompactList}\small\item\em Calculates the number of rows that fit on the screen given the height of the text sprite and the text size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a32108743b53a5cd861b1670c92f8e777}{displayable\+Rows}} (float \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{text\+Size}}, int height)
+\begin{DoxyCompactList}\small\item\em Calculates the number of rows that fit on the screen given the height of the text sprite. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a0f99364a80894e96121d2dbce38f4187}{rows\+Occupied}} (int text\+Len, float \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{text\+Size}}, int sprite\+Width)
+\begin{DoxyCompactList}\small\item\em How many rows of text will the given string takes up. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{classlist___class_a5414de1e8a8ac30ab1f03baf5e710f3c}{title}}
+\begin{DoxyCompactList}\small\item\em Title of the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{element\+Num}}
+\begin{DoxyCompactList}\small\item\em Number of elements on the list. \end{DoxyCompactList}\item 
+String \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{element\+Name}}
+\begin{DoxyCompactList}\small\item\em Names of the list elements. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a54af455510377220a429c3ab5d3dc541}{pos}}
+\begin{DoxyCompactList}\small\item\em Current highlighted position on the list. \end{DoxyCompactList}\item 
+M5\+GFX \mbox{\hyperlink{classlist___class_ac4731610b332b83a2c9741c23cb7712d}{Display}} = M5\+Cardputer.\+Display
+\item 
+\mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}
+\begin{DoxyCompactList}\small\item\em Coordinates where the list shall be drawn. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}
+\begin{DoxyCompactList}\small\item\em Absolute size of the list rectangle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{title\+Size}}
+\begin{DoxyCompactList}\small\item\em Text size multiplier for the title. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{text\+Size}}
+\begin{DoxyCompactList}\small\item\em Text size multiplier for the body. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{text\+Colour}}
+\begin{DoxyCompactList}\small\item\em Text colour (title \& body) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f}{back\+Colour}}
+\begin{DoxyCompactList}\small\item\em Background color. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a77cd52ddd6832ae26001045a35ce7d19}{highlight\+Colour}}
+\begin{DoxyCompactList}\small\item\em Highlight color for the currently selected option. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_a3f196f0abbfff0245c8fd66bf6d424a4}{border}}
+\begin{DoxyCompactList}\small\item\em Margin from the rectangle to the text (in both directions) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}}
+\begin{DoxyCompactList}\small\item\em Number of rows that can be displayed @ a time. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Scrollable, selectable list class to construct menus. 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00150}{150}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00156}{156}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classlist___class_a978dd4124a5baec5cd27eeed29dd7c63}\index{list\_Class@{list\_Class}!list\_Class@{list\_Class}}
+\Hypertarget{classlist___class_aaa491172eec7c8bc481c0beaf29cf520}\index{list\_Class@{list\_Class}!list\_Class@{list\_Class}}
 \index{list\_Class@{list\_Class}!list\_Class@{list\_Class}}
 \doxysubsubsection{\texorpdfstring{list\_Class()}{list\_Class()}}
-{\footnotesize\ttfamily \label{classlist___class_a978dd4124a5baec5cd27eeed29dd7c63} 
-list\+\_\+\+Class\+::list\+\_\+\+Class (\begin{DoxyParamCaption}\item[{String}]{title}{, }\item[{int}]{element\+Num}{, }\item[{String \texorpdfstring{$\ast$}{*}}]{element\+Name}{, }\item[{void(\texorpdfstring{$\ast$}{*}}]{handler~}{)(int, void \texorpdfstring{$\ast$}{*}), }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{origin}{, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{size}{, }\item[{float}]{title\+Size}{ = {\ttfamily 2.5}, }\item[{float}]{text\+Size}{ = {\ttfamily 1.5}, }\item[{int}]{text\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}, }\item[{int}]{back\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:BLACK}, }\item[{int}]{highlight\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{border}{ = {\ttfamily \mbox{\hyperlink{structcoord}{coord}}(6,~5)}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classlist___class_aaa491172eec7c8bc481c0beaf29cf520} 
+list\+\_\+\+Class\+::list\+\_\+\+Class (\begin{DoxyParamCaption}\item[{String}]{title}{, }\item[{int}]{element\+Num}{, }\item[{String \texorpdfstring{$\ast$}{*}}]{element\+Name}{, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{origin}{, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{size}{, }\item[{float}]{title\+Size}{ = {\ttfamily 2.5}, }\item[{float}]{text\+Size}{ = {\ttfamily 1.5}, }\item[{int}]{text\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}, }\item[{int}]{back\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:BLACK}, }\item[{int}]{highlight\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{border}{ = {\ttfamily \mbox{\hyperlink{structcoord}{coord}}(6,~5)}}\end{DoxyParamCaption})}
 
 
 
@@ -57,8 +102,6 @@ Constructor for the list class.
 {\em element\+Num} & Int, number of elements on the list \\
 \hline
 {\em element\+Name} & Pointer to the string array that holds the names of the list elements \\
-\hline
-{\em handler} & Function that triggers the proper event when an element is selected, its parameters are pos \& element\+Num \\
 \hline
 {\em origin} & Coordinates where the list rectangle will be drawn \\
 \hline
@@ -74,14 +117,66 @@ Constructor for the list class.
 \hline
 {\em highlight\+Colour} & Int, colour as defined in the m5gfx\+::ili9341\+\_\+colors space defaults to green \\
 \hline
+{\em border} & Coord, the border margin from the rectanle to text in both directions \\
+\hline
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00258}{258}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classlist___class_a32108743b53a5cd861b1670c92f8e777}\index{list\_Class@{list\_Class}!displayableRows@{displayableRows}}
+\index{displayableRows@{displayableRows}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{displayableRows()}{displayableRows()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlist___class_a32108743b53a5cd861b1670c92f8e777} 
+int list\+\_\+\+Class\+::displayable\+Rows (\begin{DoxyParamCaption}\item[{float}]{text\+Size}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculates the number of rows that fit on the screen given the height of the text sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+Size} & Float, the text size multiplier used in M5\+GFX for the body \\
+\hline
+{\em height} & The height in pixels of the text sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of rows that fit on the text sprite as an integer 
+\end{DoxyReturn}
+log\+\_\+i("{}\+Text size is \%f, height is \%i, row\+Size is \%i, \%i rows fit"{}, text\+Size, height, row\+Size, rows);
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00251}{251}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classlist___class_a55209f4763a54c2b2e2a7d39514cafdc}\index{list\_Class@{list\_Class}!displayableRows@{displayableRows}}
+\index{displayableRows@{displayableRows}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{displayableRows()}{displayableRows()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlist___class_a55209f4763a54c2b2e2a7d39514cafdc} 
+int list\+\_\+\+Class\+::displayable\+Rows (\begin{DoxyParamCaption}\item[{float}]{title\+Size}{, }\item[{float}]{text\+Size}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculates the number of rows that fit on the screen given the height of the text sprite and the text size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title\+Size} & Float, the text size multiplier used in M5\+GFX for the title \\
+\hline
+{\em text\+Size} & Float, the text size multiplier used in M5\+GFX for the body \\
+\hline
+{\em height} & The height in pixels of the text sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of rows that fit on the text sprite as an integer 
+\end{DoxyReturn}
+log\+\_\+i("{}\+Text size is \%f, height is \%i, row\+Size is \%i, \%i rows fit"{}, text\+Size, height, row\+Size, rows);
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00238}{238}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
 \Hypertarget{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}\index{list\_Class@{list\_Class}!draw@{draw}}
 \index{draw@{draw}!list\_Class@{list\_Class}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
@@ -94,21 +189,65 @@ Draws or redraws the list on the screen.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00281}{281}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
-\Hypertarget{classlist___class_acafcdd491b89bfd476dcfd43d32786a7}\index{list\_Class@{list\_Class}!optnEvent@{optnEvent}}
-\index{optnEvent@{optnEvent}!list\_Class@{list\_Class}}
-\doxysubsubsection{\texorpdfstring{optnEvent()}{optnEvent()}}
-{\footnotesize\ttfamily \label{classlist___class_acafcdd491b89bfd476dcfd43d32786a7} 
-void list\+\_\+\+Class\+::optn\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Handles the element options event trigerred by OPTN nav\+Signal. 
+\Hypertarget{classlist___class_aa1d6914207e6453e61d86fc4ee867f14}\index{list\_Class@{list\_Class}!drawOptions@{drawOptions}}
+\index{drawOptions@{drawOptions}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{drawOptions()}{drawOptions()}}
+{\footnotesize\ttfamily \label{classlist___class_aa1d6914207e6453e61d86fc4ee867f14} 
+void list\+\_\+\+Class\+::draw\+Options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00247}{247}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Draws the options section with the current selection highlighted (called by draw \& scroll) 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00313}{313}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classlist___class_ab2676ecc5c076b8159249d2726f7707d}\index{list\_Class@{list\_Class}!enterEvent@{enterEvent}}
+\index{enterEvent@{enterEvent}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{enterEvent()}{enterEvent()}}
+{\footnotesize\ttfamily \label{classlist___class_ab2676ecc5c076b8159249d2726f7707d} 
+void list\+\_\+\+Class\+::enter\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles the element selected event triggered by ENTER nav\+Signal. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classwifi_menu___class_a12863a3752876d179d948879a75362a1}{wifi\+Menu\+\_\+\+Class}}.
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00357}{357}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classlist___class_a0f99364a80894e96121d2dbce38f4187}\index{list\_Class@{list\_Class}!rowsOccupied@{rowsOccupied}}
+\index{rowsOccupied@{rowsOccupied}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{rowsOccupied()}{rowsOccupied()}}
+{\footnotesize\ttfamily \label{classlist___class_a0f99364a80894e96121d2dbce38f4187} 
+int list\+\_\+\+Class\+::rows\+Occupied (\begin{DoxyParamCaption}\item[{int}]{text\+Len}{, }\item[{float}]{text\+Size}{, }\item[{int}]{sprite\+Width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+How many rows of text will the given string takes up. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\+Len} & length of a string \\
+\hline
+{\em text\+Size} & Float, the text size multiplier used in M5\+GFX \\
+\hline
+{\em sprite\+Width} & Width of the sprite in px \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Int,l number of rows the string takes up 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00246}{246}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classlist___class_a0abc13669b1a6a16df89694545a173c5}\index{list\_Class@{list\_Class}!scroll@{scroll}}
 \index{scroll@{scroll}!list\_Class@{list\_Class}}
@@ -127,7 +266,7 @@ Scrolls the list to the given position if it\textquotesingle{}s a valid one.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00231}{231}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00342}{342}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}\index{list\_Class@{list\_Class}!scrollDown@{scrollDown}}
 \index{scrollDown@{scrollDown}!list\_Class@{list\_Class}}
@@ -141,7 +280,7 @@ Scrolls down one position.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00239}{239}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00350}{350}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classlist___class_a48eeb6911110ba094e2f979fc824f252}\index{list\_Class@{list\_Class}!scrollUp@{scrollUp}}
 \index{scrollUp@{scrollUp}!list\_Class@{list\_Class}}
@@ -155,7 +294,204 @@ Scrolls up one positon.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00243}{243}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00354}{354}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f}\index{list\_Class@{list\_Class}!backColour@{backColour}}
+\index{backColour@{backColour}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{backColour}{backColour}}
+{\footnotesize\ttfamily \label{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f} 
+int list\+\_\+\+Class\+::back\+Colour\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Background color. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00168}{168}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_a3f196f0abbfff0245c8fd66bf6d424a4}\index{list\_Class@{list\_Class}!border@{border}}
+\index{border@{border}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{border}{border}}
+{\footnotesize\ttfamily \label{classlist___class_a3f196f0abbfff0245c8fd66bf6d424a4} 
+\mbox{\hyperlink{structcoord}{coord}} list\+\_\+\+Class\+::border\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Margin from the rectangle to the text (in both directions) 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00170}{170}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_ac4731610b332b83a2c9741c23cb7712d}\index{list\_Class@{list\_Class}!Display@{Display}}
+\index{Display@{Display}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{Display}{Display}}
+{\footnotesize\ttfamily \label{classlist___class_ac4731610b332b83a2c9741c23cb7712d} 
+M5\+GFX list\+\_\+\+Class\+::\+Display = M5\+Cardputer.\+Display\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00162}{162}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_ae578e30c59f80e55bef2b709e885c89d}\index{list\_Class@{list\_Class}!elementName@{elementName}}
+\index{elementName@{elementName}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{elementName}{elementName}}
+{\footnotesize\ttfamily \label{classlist___class_ae578e30c59f80e55bef2b709e885c89d} 
+String\texorpdfstring{$\ast$}{*} list\+\_\+\+Class\+::element\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Names of the list elements. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00160}{160}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_a1343001263263df83a0e2a09e528e7bb}\index{list\_Class@{list\_Class}!elementNum@{elementNum}}
+\index{elementNum@{elementNum}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{elementNum}{elementNum}}
+{\footnotesize\ttfamily \label{classlist___class_a1343001263263df83a0e2a09e528e7bb} 
+int list\+\_\+\+Class\+::element\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of elements on the list. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00159}{159}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_a77cd52ddd6832ae26001045a35ce7d19}\index{list\_Class@{list\_Class}!highlightColour@{highlightColour}}
+\index{highlightColour@{highlightColour}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{highlightColour}{highlightColour}}
+{\footnotesize\ttfamily \label{classlist___class_a77cd52ddd6832ae26001045a35ce7d19} 
+int list\+\_\+\+Class\+::highlight\+Colour\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Highlight color for the currently selected option. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00169}{169}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_aa237c376089fce7d563a51f4721cd9c4}\index{list\_Class@{list\_Class}!origin@{origin}}
+\index{origin@{origin}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily \label{classlist___class_aa237c376089fce7d563a51f4721cd9c4} 
+\mbox{\hyperlink{structcoord}{coord}} list\+\_\+\+Class\+::origin\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Coordinates where the list shall be drawn. 
+
+\begin{quote}
+Display object \end{quote}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00163}{163}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_a54af455510377220a429c3ab5d3dc541}\index{list\_Class@{list\_Class}!pos@{pos}}
+\index{pos@{pos}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily \label{classlist___class_a54af455510377220a429c3ab5d3dc541} 
+int list\+\_\+\+Class\+::pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Current highlighted position on the list. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00161}{161}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}\index{list\_Class@{list\_Class}!rows@{rows}}
+\index{rows@{rows}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{rows}{rows}}
+{\footnotesize\ttfamily \label{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567} 
+int list\+\_\+\+Class\+::rows\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of rows that can be displayed @ a time. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00171}{171}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_a52b4d4daa14c969502e2e49147f2de19}\index{list\_Class@{list\_Class}!size@{size}}
+\index{size@{size}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{classlist___class_a52b4d4daa14c969502e2e49147f2de19} 
+\mbox{\hyperlink{structcoord}{coord}} list\+\_\+\+Class\+::size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Absolute size of the list rectangle. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00164}{164}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}\index{list\_Class@{list\_Class}!textColour@{textColour}}
+\index{textColour@{textColour}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{textColour}{textColour}}
+{\footnotesize\ttfamily \label{classlist___class_abcb0e01917cd2d39be92b51f5ea54162} 
+int list\+\_\+\+Class\+::text\+Colour\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Text colour (title \& body) 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00167}{167}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_a5e07639339dfc03d03045e911468d0b4}\index{list\_Class@{list\_Class}!textSize@{textSize}}
+\index{textSize@{textSize}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{textSize}{textSize}}
+{\footnotesize\ttfamily \label{classlist___class_a5e07639339dfc03d03045e911468d0b4} 
+float list\+\_\+\+Class\+::text\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Text size multiplier for the body. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00166}{166}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_a5414de1e8a8ac30ab1f03baf5e710f3c}\index{list\_Class@{list\_Class}!title@{title}}
+\index{title@{title}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily \label{classlist___class_a5414de1e8a8ac30ab1f03baf5e710f3c} 
+String list\+\_\+\+Class\+::title\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Title of the list. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00158}{158}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}\index{list\_Class@{list\_Class}!titleSize@{titleSize}}
+\index{titleSize@{titleSize}!list\_Class@{list\_Class}}
+\doxysubsubsection{\texorpdfstring{titleSize}{titleSize}}
+{\footnotesize\ttfamily \label{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0} 
+float list\+\_\+\+Class\+::title\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Text size multiplier for the title. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00165}{165}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 
 

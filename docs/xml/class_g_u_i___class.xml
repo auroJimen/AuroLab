@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="245" column="11" bodyfile="src/GUI.h" bodystart="245" bodyend="-1"/>
+        <location file="src/GUI.h" line="278" column="11" bodyfile="src/GUI.h" bodystart="278" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_g_u_i___class_1a9e1c41d173e6bff8e86b0be613ee5a87" prot="private" static="no" mutable="no">
         <type>Keyboard_Class</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="246" column="20" bodyfile="src/GUI.h" bodystart="246" bodyend="-1"/>
+        <location file="src/GUI.h" line="279" column="20" bodyfile="src/GUI.h" bodystart="279" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_g_u_i___class_1a6c38676f91154cd7e49a03ef143b4ade" prot="private" static="no" mutable="no">
         <type><ref refid="classtop_bar___class" kindref="compound">topBar_Class</ref></type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="247" column="18" bodyfile="src/GUI.h" bodystart="247" bodyend="-1"/>
+        <location file="src/GUI.h" line="280" column="18" bodyfile="src/GUI.h" bodystart="280" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-attrib">
@@ -62,7 +62,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="249" column="18" bodyfile="src/GUI.h" bodystart="249" bodyend="-1"/>
+        <location file="src/GUI.h" line="282" column="18" bodyfile="src/GUI.h" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_g_u_i___class_1a58293828d0e25452e060c4b169a4d20c" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t GUI_Class::topBarTask</definition>
+        <argsstring></argsstring>
+        <name>topBarTask</name>
+        <qualifiedname>GUI_Class::topBarTask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="283" column="18" bodyfile="src/GUI.h" bodystart="283" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -79,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="251" column="10" bodyfile="src/GUI.cpp" bodystart="255" bodyend="262"/>
+        <location file="src/GUI.h" line="285" column="10" bodyfile="src/GUI.cpp" bodystart="635" bodyend="646"/>
       </memberdef>
       <memberdef kind="function" id="class_g_u_i___class_1af0d6b5d535fa64ef2fdecdf1a7771b49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -94,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="254" column="10" bodyfile="src/GUI.cpp" bodystart="270" bodyend="289"/>
+        <location file="src/GUI.h" line="288" column="10" bodyfile="src/GUI.cpp" bodystart="685" bodyend="704"/>
       </memberdef>
       <memberdef kind="function" id="class_g_u_i___class_1ab6d29667f048b28a6d867cab6d4e958c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -109,7 +123,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="257" column="10" bodyfile="src/GUI.cpp" bodystart="293" bodyend="302"/>
+        <location file="src/GUI.h" line="291" column="10" bodyfile="src/GUI.cpp" bodystart="706" bodyend="715"/>
       </memberdef>
       <memberdef kind="function" id="class_g_u_i___class_1a72000c590917f97769bfaae8f97a19bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -124,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="260" column="10" bodyfile="src/GUI.cpp" bodystart="335" bodyend="412"/>
+        <location file="src/GUI.h" line="294" column="10" bodyfile="src/GUI.cpp" bodystart="752" bodyend="756"/>
       </memberdef>
       <memberdef kind="function" id="class_g_u_i___class_1a25bfb4fdb73cbb16298d09fbc12fb379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -165,7 +179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="266" column="10"/>
+        <location file="src/GUI.h" line="300" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_g_u_i___class_1a1e0dd033f8ab0d55d0e039ea5d305adb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -180,7 +194,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="269" column="10" bodyfile="src/GUI.cpp" bodystart="304" bodyend="329"/>
+        <location file="src/GUI.h" line="303" column="10" bodyfile="src/GUI.cpp" bodystart="717" bodyend="742"/>
       </memberdef>
       <memberdef kind="function" id="class_g_u_i___class_1a91db0ecb5a53420b1a2b62757328e114" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -195,7 +209,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="272" column="10" bodyfile="src/GUI.cpp" bodystart="331" bodyend="333"/>
+        <location file="src/GUI.h" line="306" column="10" bodyfile="src/GUI.cpp" bodystart="744" bodyend="746"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_u_i___class_1acadffe99b600efea71c1322935cd1a2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GUI_Class::updateTopBar</definition>
+        <argsstring>()</argsstring>
+        <name>updateTopBar</name>
+        <qualifiedname>GUI_Class::updateTopBar</qualifiedname>
+        <briefdescription>
+<para>Updates the state of the icons on the topBar. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="309" column="10" bodyfile="src/GUI.cpp" bodystart="748" bodyend="750"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -203,7 +232,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/GUI.h" line="242" column="1" bodyfile="src/GUI.h" bodystart="242" bodyend="274"/>
+    <location file="src/GUI.h" line="275" column="1" bodyfile="src/GUI.h" bodystart="275" bodyend="311"/>
     <listofallmembers>
       <member refid="class_g_u_i___class_1aca65997e1615dbb0ddee2671aa95ae92" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>begin</name></member>
       <member refid="class_g_u_i___class_1aaf95e362d0c7cfe31c44cf0a9cc30f4d" prot="private" virt="non-virtual"><scope>GUI_Class</scope><name>Display</name></member>
@@ -215,6 +244,8 @@
       <member refid="class_g_u_i___class_1af0d6b5d535fa64ef2fdecdf1a7771b49" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>splashScreen</name></member>
       <member refid="class_g_u_i___class_1a3b5933a3f4f189338a610019a3c0dae4" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>task</name></member>
       <member refid="class_g_u_i___class_1a6c38676f91154cd7e49a03ef143b4ade" prot="private" virt="non-virtual"><scope>GUI_Class</scope><name>topBar</name></member>
+      <member refid="class_g_u_i___class_1a58293828d0e25452e060c4b169a4d20c" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>topBarTask</name></member>
+      <member refid="class_g_u_i___class_1acadffe99b600efea71c1322935cd1a2a" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>updateTopBar</name></member>
       <member refid="class_g_u_i___class_1a25bfb4fdb73cbb16298d09fbc12fb379" prot="public" virt="non-virtual"><scope>GUI_Class</scope><name>wifiMenuHandler</name></member>
     </listofallmembers>
   </compounddef>

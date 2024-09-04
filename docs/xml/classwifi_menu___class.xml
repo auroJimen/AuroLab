@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="classwifi_menu___class" kind="class" language="C++" prot="public">
+    <compoundname>wifiMenu_Class</compoundname>
+    <basecompoundref refid="classlist___class" prot="public" virt="non-virtual">list_Class</basecompoundref>
+    <includes refid="_g_u_i_8h" local="no">GUI.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classwifi_menu___class_1a4cde420695872f0b148534a92dd15a0b" prot="private" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* wifiMenu_Class::encript</definition>
+        <argsstring></argsstring>
+        <name>encript</name>
+        <qualifiedname>wifiMenu_Class::encript</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="251" column="13" bodyfile="src/GUI.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwifi_menu___class_1a248a7400315565452628f45bea6fb97b" prot="private" static="no" mutable="no">
+        <type>int32_t *</type>
+        <definition>int32_t* wifiMenu_Class::RSSI</definition>
+        <argsstring></argsstring>
+        <name>RSSI</name>
+        <qualifiedname>wifiMenu_Class::RSSI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="252" column="13" bodyfile="src/GUI.h" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwifi_menu___class_1a7c161d4db9566696358de379765e48a9" prot="private" static="no" mutable="no">
+        <type>String *</type>
+        <definition>String* wifiMenu_Class::BSSID</definition>
+        <argsstring></argsstring>
+        <name>BSSID</name>
+        <qualifiedname>wifiMenu_Class::BSSID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="253" column="12" bodyfile="src/GUI.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwifi_menu___class_1aa21d8e75ca448ad1e2d632c18c46b7c1" prot="private" static="no" mutable="no">
+        <type>int32_t *</type>
+        <definition>int32_t* wifiMenu_Class::channel</definition>
+        <argsstring></argsstring>
+        <name>channel</name>
+        <qualifiedname>wifiMenu_Class::channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="254" column="13" bodyfile="src/GUI.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwifi_menu___class_1ad1587fd44b1956225c70328aae192157" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wifiMenu_Class::wifiMenu_Class</definition>
+        <argsstring>()</argsstring>
+        <name>wifiMenu_Class</name>
+        <qualifiedname>wifiMenu_Class::wifiMenu_Class</qualifiedname>
+        <briefdescription>
+<para>Constructor for the wifi menu class, creates an empty list with the correct name, size &amp; handlers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>optHandler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handler for the option event </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enterHandler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Handler for the option selected event; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="259" column="5" bodyfile="src/GUI.cpp" bodystart="360" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="classwifi_menu___class_1ab3c0dd806d2918230ad0b9165c239ef4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wifiMenu_Class::scan</definition>
+        <argsstring>()</argsstring>
+        <name>scan</name>
+        <qualifiedname>wifiMenu_Class::scan</qualifiedname>
+        <briefdescription>
+<para>Scans for available networks &amp; initialaizes them as options. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="261" column="10" bodyfile="src/GUI.cpp" bodystart="372" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="classwifi_menu___class_1a39fe0cd27acdfd561f30886005174bd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wifiMenu_Class::appLoop</definition>
+        <argsstring>()</argsstring>
+        <name>appLoop</name>
+        <qualifiedname>wifiMenu_Class::appLoop</qualifiedname>
+        <briefdescription>
+<para>The app loop for the scan menu, draws to the screen, listens to input... </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="263" column="10" bodyfile="src/GUI.cpp" bodystart="417" bodyend="468"/>
+      </memberdef>
+      <memberdef kind="function" id="classwifi_menu___class_1aa85befe97aeee813065860fe1e9231d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wifiMenu_Class::optnEvent</definition>
+        <argsstring>()</argsstring>
+        <name>optnEvent</name>
+        <qualifiedname>wifiMenu_Class::optnEvent</qualifiedname>
+        <briefdescription>
+<para>Handles the element options event trigerred by OPTN navSignal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="265" column="10" bodyfile="src/GUI.cpp" bodystart="487" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="classwifi_menu___class_1a12863a3752876d179d948879a75362a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void wifiMenu_Class::enterEvent</definition>
+        <argsstring>() override</argsstring>
+        <name>enterEvent</name>
+        <qualifiedname>wifiMenu_Class::enterEvent</qualifiedname>
+        <reimplements refid="classlist___class_1ab2676ecc5c076b8159249d2726f7707d">enterEvent</reimplements>
+        <briefdescription>
+<para>Handles the element selected event (is defined on parent, overridden here) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="267" column="10" bodyfile="src/GUI.cpp" bodystart="552" bodyend="610"/>
+      </memberdef>
+      <memberdef kind="function" id="classwifi_menu___class_1a1dfd391a6071a80553b2f09355b64bbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wifiMenu_Class::del</definition>
+        <argsstring>()</argsstring>
+        <name>del</name>
+        <qualifiedname>wifiMenu_Class::del</qualifiedname>
+        <briefdescription>
+<para>Frees up the dinamically allocated memory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GUI.h" line="269" column="10" bodyfile="src/GUI.cpp" bodystart="614" bodyend="632"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class for displaying the wifi connection menu, inherits from the <ref refid="classlist___class" kindref="compound">list_Class</ref> &amp; adds specific functionality. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>list_Class</label>
+        <link refid="classlist___class"/>
+      </node>
+      <node id="1">
+        <label>wifiMenu_Class</label>
+        <link refid="classwifi_menu___class"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>coord</label>
+        <link refid="structcoord"/>
+      </node>
+      <node id="2">
+        <label>list_Class</label>
+        <link refid="classlist___class"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>border</edgelabel>
+          <edgelabel>origin</edgelabel>
+          <edgelabel>size</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wifiMenu_Class</label>
+        <link refid="classwifi_menu___class"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/GUI.h" line="249" column="1" bodyfile="src/GUI.h" bodystart="249" bodyend="270"/>
+    <listofallmembers>
+      <member refid="classwifi_menu___class_1a39fe0cd27acdfd561f30886005174bd5" prot="public" virt="non-virtual"><scope>wifiMenu_Class</scope><name>appLoop</name></member>
+      <member refid="classlist___class_1a4f36c4dce78e0912a02b5625ad95bc7f" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>backColour</name></member>
+      <member refid="classlist___class_1a3f196f0abbfff0245c8fd66bf6d424a4" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>border</name></member>
+      <member refid="classwifi_menu___class_1a7c161d4db9566696358de379765e48a9" prot="private" virt="non-virtual"><scope>wifiMenu_Class</scope><name>BSSID</name></member>
+      <member refid="classwifi_menu___class_1aa21d8e75ca448ad1e2d632c18c46b7c1" prot="private" virt="non-virtual"><scope>wifiMenu_Class</scope><name>channel</name></member>
+      <member refid="classwifi_menu___class_1a1dfd391a6071a80553b2f09355b64bbb" prot="public" virt="non-virtual"><scope>wifiMenu_Class</scope><name>del</name></member>
+      <member refid="classlist___class_1ac4731610b332b83a2c9741c23cb7712d" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>Display</name></member>
+      <member refid="classlist___class_1a55209f4763a54c2b2e2a7d39514cafdc" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>displayableRows</name></member>
+      <member refid="classlist___class_1a32108743b53a5cd861b1670c92f8e777" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>displayableRows</name></member>
+      <member refid="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" prot="public" virt="non-virtual"><scope>wifiMenu_Class</scope><name>draw</name></member>
+      <member refid="classlist___class_1aa1d6914207e6453e61d86fc4ee867f14" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>drawOptions</name></member>
+      <member refid="classlist___class_1ae578e30c59f80e55bef2b709e885c89d" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>elementName</name></member>
+      <member refid="classlist___class_1a1343001263263df83a0e2a09e528e7bb" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>elementNum</name></member>
+      <member refid="classwifi_menu___class_1a4cde420695872f0b148534a92dd15a0b" prot="private" virt="non-virtual"><scope>wifiMenu_Class</scope><name>encript</name></member>
+      <member refid="classwifi_menu___class_1a12863a3752876d179d948879a75362a1" prot="public" virt="virtual"><scope>wifiMenu_Class</scope><name>enterEvent</name></member>
+      <member refid="classlist___class_1a77cd52ddd6832ae26001045a35ce7d19" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>highlightColour</name></member>
+      <member refid="classlist___class_1aaa491172eec7c8bc481c0beaf29cf520" prot="public" virt="non-virtual"><scope>wifiMenu_Class</scope><name>list_Class</name></member>
+      <member refid="classwifi_menu___class_1aa85befe97aeee813065860fe1e9231d6" prot="public" virt="non-virtual"><scope>wifiMenu_Class</scope><name>optnEvent</name></member>
+      <member refid="classlist___class_1aa237c376089fce7d563a51f4721cd9c4" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>origin</name></member>
+      <member refid="classlist___class_1a54af455510377220a429c3ab5d3dc541" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>pos</name></member>
+      <member refid="classlist___class_1ae0e5d622a7b8d36d0c20f79d1edde567" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>rows</name></member>
+      <member refid="classlist___class_1a0f99364a80894e96121d2dbce38f4187" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>rowsOccupied</name></member>
+      <member refid="classwifi_menu___class_1a248a7400315565452628f45bea6fb97b" prot="private" virt="non-virtual"><scope>wifiMenu_Class</scope><name>RSSI</name></member>
+      <member refid="classwifi_menu___class_1ab3c0dd806d2918230ad0b9165c239ef4" prot="public" virt="non-virtual"><scope>wifiMenu_Class</scope><name>scan</name></member>
+      <member refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" prot="public" virt="non-virtual"><scope>wifiMenu_Class</scope><name>scroll</name></member>
+      <member refid="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" prot="public" virt="non-virtual"><scope>wifiMenu_Class</scope><name>scrollDown</name></member>
+      <member refid="classlist___class_1a48eeb6911110ba094e2f979fc824f252" prot="public" virt="non-virtual"><scope>wifiMenu_Class</scope><name>scrollUp</name></member>
+      <member refid="classlist___class_1a52b4d4daa14c969502e2e49147f2de19" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>size</name></member>
+      <member refid="classlist___class_1abcb0e01917cd2d39be92b51f5ea54162" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>textColour</name></member>
+      <member refid="classlist___class_1a5e07639339dfc03d03045e911468d0b4" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>textSize</name></member>
+      <member refid="classlist___class_1a5414de1e8a8ac30ab1f03baf5e710f3c" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>title</name></member>
+      <member refid="classlist___class_1a6f62693d6a66d2c9b802200e12bf5db0" prot="protected" virt="non-virtual"><scope>wifiMenu_Class</scope><name>titleSize</name></member>
+      <member refid="classwifi_menu___class_1ad1587fd44b1956225c70328aae192157" prot="public" virt="non-virtual"><scope>wifiMenu_Class</scope><name>wifiMenu_Class</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

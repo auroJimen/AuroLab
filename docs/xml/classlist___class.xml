@@ -2,9 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
   <compounddef id="classlist___class" kind="class" language="C++" prot="public">
     <compoundname>list_Class</compoundname>
+    <derivedcompoundref refid="classwifi_menu___class" prot="public" virt="non-virtual">wifiMenu_Class</derivedcompoundref>
     <includes refid="_g_u_i_8h" local="no">GUI.h</includes>
-    <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classlist___class_1a5414de1e8a8ac30ab1f03baf5e710f3c" prot="private" static="no" mutable="no">
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classlist___class_1a5414de1e8a8ac30ab1f03baf5e710f3c" prot="protected" static="no" mutable="no">
         <type>String</type>
         <definition>String list_Class::title</definition>
         <argsstring></argsstring>
@@ -17,9 +18,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="152" column="12" bodyfile="src/GUI.h" bodystart="152" bodyend="-1"/>
+        <location file="src/GUI.h" line="158" column="12" bodyfile="src/GUI.h" bodystart="158" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1a1343001263263df83a0e2a09e528e7bb" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1a1343001263263df83a0e2a09e528e7bb" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int list_Class::elementNum</definition>
         <argsstring></argsstring>
@@ -32,9 +33,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="153" column="9" bodyfile="src/GUI.h" bodystart="153" bodyend="-1"/>
+        <location file="src/GUI.h" line="159" column="9" bodyfile="src/GUI.h" bodystart="159" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1ae578e30c59f80e55bef2b709e885c89d" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1ae578e30c59f80e55bef2b709e885c89d" prot="protected" static="no" mutable="no">
         <type>String *</type>
         <definition>String* list_Class::elementName</definition>
         <argsstring></argsstring>
@@ -47,9 +48,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="154" column="12" bodyfile="src/GUI.h" bodystart="154" bodyend="-1"/>
+        <location file="src/GUI.h" line="160" column="12" bodyfile="src/GUI.h" bodystart="160" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1a54af455510377220a429c3ab5d3dc541" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1a54af455510377220a429c3ab5d3dc541" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int list_Class::pos</definition>
         <argsstring></argsstring>
@@ -62,24 +63,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="155" column="9" bodyfile="src/GUI.h" bodystart="155" bodyend="-1"/>
+        <location file="src/GUI.h" line="161" column="9" bodyfile="src/GUI.h" bodystart="161" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1a0114c18f9e57b6cd3c23f05b677ba5e5" prot="private" static="no" mutable="no">
-        <type>void(*</type>
-        <definition>void(* list_Class::handler) (int, void *)</definition>
-        <argsstring>)(int, void *)</argsstring>
-        <name>handler</name>
-        <qualifiedname>list_Class::handler</qualifiedname>
-        <briefdescription>
-<para>Handler function to trigger events from selecting an element. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/GUI.h" line="156" column="5" bodyfile="src/GUI.h" bodystart="156" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classlist___class_1ac4731610b332b83a2c9741c23cb7712d" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1ac4731610b332b83a2c9741c23cb7712d" prot="protected" static="no" mutable="no">
         <type>M5GFX</type>
         <definition>M5GFX list_Class::Display</definition>
         <argsstring></argsstring>
@@ -92,9 +78,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="157" column="11" bodyfile="src/GUI.h" bodystart="157" bodyend="-1"/>
+        <location file="src/GUI.h" line="162" column="11" bodyfile="src/GUI.h" bodystart="162" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1aa237c376089fce7d563a51f4721cd9c4" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1aa237c376089fce7d563a51f4721cd9c4" prot="protected" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
         <definition>coord list_Class::origin</definition>
         <argsstring></argsstring>
@@ -109,9 +95,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="158" column="11" bodyfile="src/GUI.h" bodystart="158" bodyend="-1"/>
+        <location file="src/GUI.h" line="163" column="11" bodyfile="src/GUI.h" bodystart="163" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1a52b4d4daa14c969502e2e49147f2de19" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1a52b4d4daa14c969502e2e49147f2de19" prot="protected" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
         <definition>coord list_Class::size</definition>
         <argsstring></argsstring>
@@ -124,9 +110,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="159" column="11" bodyfile="src/GUI.h" bodystart="159" bodyend="-1"/>
+        <location file="src/GUI.h" line="164" column="11" bodyfile="src/GUI.h" bodystart="164" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1a6f62693d6a66d2c9b802200e12bf5db0" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1a6f62693d6a66d2c9b802200e12bf5db0" prot="protected" static="no" mutable="no">
         <type>float</type>
         <definition>float list_Class::titleSize</definition>
         <argsstring></argsstring>
@@ -139,9 +125,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="160" column="11" bodyfile="src/GUI.h" bodystart="160" bodyend="-1"/>
+        <location file="src/GUI.h" line="165" column="11" bodyfile="src/GUI.h" bodystart="165" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1a5e07639339dfc03d03045e911468d0b4" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1a5e07639339dfc03d03045e911468d0b4" prot="protected" static="no" mutable="no">
         <type>float</type>
         <definition>float list_Class::textSize</definition>
         <argsstring></argsstring>
@@ -154,9 +140,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="161" column="11" bodyfile="src/GUI.h" bodystart="161" bodyend="-1"/>
+        <location file="src/GUI.h" line="166" column="11" bodyfile="src/GUI.h" bodystart="166" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1abcb0e01917cd2d39be92b51f5ea54162" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1abcb0e01917cd2d39be92b51f5ea54162" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int list_Class::textColour</definition>
         <argsstring></argsstring>
@@ -169,9 +155,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="162" column="9" bodyfile="src/GUI.h" bodystart="162" bodyend="-1"/>
+        <location file="src/GUI.h" line="167" column="9" bodyfile="src/GUI.h" bodystart="167" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1a4f36c4dce78e0912a02b5625ad95bc7f" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1a4f36c4dce78e0912a02b5625ad95bc7f" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int list_Class::backColour</definition>
         <argsstring></argsstring>
@@ -184,9 +170,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="163" column="9" bodyfile="src/GUI.h" bodystart="163" bodyend="-1"/>
+        <location file="src/GUI.h" line="168" column="9" bodyfile="src/GUI.h" bodystart="168" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1a77cd52ddd6832ae26001045a35ce7d19" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1a77cd52ddd6832ae26001045a35ce7d19" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int list_Class::highlightColour</definition>
         <argsstring></argsstring>
@@ -199,9 +185,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="164" column="9" bodyfile="src/GUI.h" bodystart="164" bodyend="-1"/>
+        <location file="src/GUI.h" line="169" column="9" bodyfile="src/GUI.h" bodystart="169" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1a3f196f0abbfff0245c8fd66bf6d424a4" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1a3f196f0abbfff0245c8fd66bf6d424a4" prot="protected" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
         <definition>coord list_Class::border</definition>
         <argsstring></argsstring>
@@ -214,9 +200,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="165" column="11" bodyfile="src/GUI.h" bodystart="165" bodyend="-1"/>
+        <location file="src/GUI.h" line="170" column="11" bodyfile="src/GUI.h" bodystart="170" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classlist___class_1ae0e5d622a7b8d36d0c20f79d1edde567" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classlist___class_1ae0e5d622a7b8d36d0c20f79d1edde567" prot="protected" static="no" mutable="no">
         <type>int</type>
         <definition>int list_Class::rows</definition>
         <argsstring></argsstring>
@@ -229,14 +215,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="166" column="9" bodyfile="src/GUI.h" bodystart="166" bodyend="-1"/>
+        <location file="src/GUI.h" line="171" column="9" bodyfile="src/GUI.h" bodystart="171" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classlist___class_1a978dd4124a5baec5cd27eeed29dd7c63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classlist___class_1aaa491172eec7c8bc481c0beaf29cf520" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>list_Class::list_Class</definition>
-        <argsstring>(String title, int elementNum, String *elementName, void(*handler)(int, void *), coord origin, coord size, float titleSize=2.5, float textSize=1.5, int textColour=m5gfx::ili9341_colors::GREEN, int backColour=m5gfx::ili9341_colors::BLACK, int highlightColour=m5gfx::ili9341_colors::GREEN, coord border=coord(6, 5))</argsstring>
+        <argsstring>(String title, int elementNum, String *elementName, coord origin, coord size, float titleSize=2.5, float textSize=1.5, int textColour=m5gfx::ili9341_colors::GREEN, int backColour=m5gfx::ili9341_colors::BLACK, int highlightColour=m5gfx::ili9341_colors::GREEN, coord border=coord(6, 5))</argsstring>
         <name>list_Class</name>
         <qualifiedname>list_Class::list_Class</qualifiedname>
         <param>
@@ -250,10 +236,6 @@
         <param>
           <type>String *</type>
           <declname>elementName</declname>
-        </param>
-        <param>
-          <type>void(*)(int, void *)</type>
-          <declname>handler</declname>
         </param>
         <param>
           <type><ref refid="structcoord" kindref="compound">coord</ref></type>
@@ -323,14 +305,6 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>handler</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Function that triggers the proper event when an element is selected, its parameters are pos &amp; elementNum </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
 <parametername>origin</parametername>
 </parameternamelist>
 <parameterdescription>
@@ -385,12 +359,20 @@
 <para>Int, colour as defined in the m5gfx::ili9341_colors space defaults to green </para>
 </parameterdescription>
 </parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>border</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coord, the border margin from the rectanle to text in both directions </para>
+</parameterdescription>
+</parameteritem>
 </parameterlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="182" column="5" bodyfile="src/GUI.cpp" bodystart="146" bodyend="168"/>
+        <location file="src/GUI.h" line="186" column="5" bodyfile="src/GUI.cpp" bodystart="258" bodyend="279"/>
       </memberdef>
       <memberdef kind="function" id="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -405,7 +387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="187" column="10" bodyfile="src/GUI.cpp" bodystart="170" bodyend="200"/>
+        <location file="src/GUI.h" line="191" column="10" bodyfile="src/GUI.cpp" bodystart="281" bodyend="311"/>
       </memberdef>
       <memberdef kind="function" id="classlist___class_1a8694d87f64e84085a5a65eed3906f130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -420,7 +402,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="189" column="10"/>
+        <location file="src/GUI.h" line="193" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classlist___class_1a0abc13669b1a6a16df89694545a173c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -449,7 +431,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="192" column="10" bodyfile="src/GUI.cpp" bodystart="231" bodyend="237"/>
+        <location file="src/GUI.h" line="196" column="10" bodyfile="src/GUI.cpp" bodystart="342" bodyend="348"/>
       </memberdef>
       <memberdef kind="function" id="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -464,7 +446,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="194" column="10" bodyfile="src/GUI.cpp" bodystart="239" bodyend="241"/>
+        <location file="src/GUI.h" line="198" column="10" bodyfile="src/GUI.cpp" bodystart="350" bodyend="352"/>
       </memberdef>
       <memberdef kind="function" id="classlist___class_1a48eeb6911110ba094e2f979fc824f252" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -479,29 +461,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="196" column="10" bodyfile="src/GUI.cpp" bodystart="243" bodyend="245"/>
+        <location file="src/GUI.h" line="200" column="10" bodyfile="src/GUI.cpp" bodystart="354" bodyend="356"/>
       </memberdef>
-      <memberdef kind="function" id="classlist___class_1acafcdd491b89bfd476dcfd43d32786a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void list_Class::optnEvent</definition>
-        <argsstring>()</argsstring>
-        <name>optnEvent</name>
-        <qualifiedname>list_Class::optnEvent</qualifiedname>
-        <briefdescription>
-<para>Handles the element options event trigerred by OPTN navSignal. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/GUI.h" line="198" column="10" bodyfile="src/GUI.cpp" bodystart="247" bodyend="251"/>
-      </memberdef>
-      <memberdef kind="function" id="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void list_Class::enterEvent</definition>
         <argsstring>()</argsstring>
         <name>enterEvent</name>
         <qualifiedname>list_Class::enterEvent</qualifiedname>
+        <reimplementedby refid="classwifi_menu___class_1a12863a3752876d179d948879a75362a1">enterEvent</reimplementedby>
         <briefdescription>
 <para>Handles the element selected event triggered by ENTER navSignal. </para>
         </briefdescription>
@@ -509,11 +477,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="200" column="10"/>
+        <location file="src/GUI.h" line="202" column="18" bodyfile="src/GUI.cpp" bodystart="357" bodyend="357"/>
       </memberdef>
     </sectiondef>
-    <sectiondef kind="private-func">
-      <memberdef kind="function" id="classlist___class_1aa1d6914207e6453e61d86fc4ee867f14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classlist___class_1aa1d6914207e6453e61d86fc4ee867f14" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void list_Class::drawOptions</definition>
         <argsstring>()</argsstring>
@@ -526,9 +494,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="204" column="10" bodyfile="src/GUI.cpp" bodystart="202" bodyend="229"/>
+        <location file="src/GUI.h" line="206" column="10" bodyfile="src/GUI.cpp" bodystart="313" bodyend="340"/>
       </memberdef>
-      <memberdef kind="function" id="classlist___class_1a55209f4763a54c2b2e2a7d39514cafdc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classlist___class_1a55209f4763a54c2b2e2a7d39514cafdc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int list_Class::displayableRows</definition>
         <argsstring>(float titleSize, float textSize, int height)</argsstring>
@@ -582,9 +550,9 @@
         <inbodydescription>
 <para>log_i(&quot;Text size is %f, height is %i, rowSize is %i, %i rows fit&quot;, textSize, height, rowSize, rows);</para>
         </inbodydescription>
-        <location file="src/GUI.h" line="213" column="9" bodyfile="src/GUI.cpp" bodystart="126" bodyend="132"/>
+        <location file="src/GUI.h" line="215" column="9" bodyfile="src/GUI.cpp" bodystart="238" bodyend="244"/>
       </memberdef>
-      <memberdef kind="function" id="classlist___class_1a32108743b53a5cd861b1670c92f8e777" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classlist___class_1a32108743b53a5cd861b1670c92f8e777" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int list_Class::displayableRows</definition>
         <argsstring>(float textSize, int height)</argsstring>
@@ -626,9 +594,9 @@
         <inbodydescription>
 <para>log_i(&quot;Text size is %f, height is %i, rowSize is %i, %i rows fit&quot;, textSize, height, rowSize, rows);</para>
         </inbodydescription>
-        <location file="src/GUI.h" line="219" column="9" bodyfile="src/GUI.cpp" bodystart="139" bodyend="144"/>
+        <location file="src/GUI.h" line="221" column="9" bodyfile="src/GUI.cpp" bodystart="251" bodyend="256"/>
       </memberdef>
-      <memberdef kind="function" id="classlist___class_1a0f99364a80894e96121d2dbce38f4187" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classlist___class_1a0f99364a80894e96121d2dbce38f4187" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int list_Class::rowsOccupied</definition>
         <argsstring>(int textLen, float textSize, int spriteWidth)</argsstring>
@@ -681,81 +649,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="225" column="9" bodyfile="src/GUI.cpp" bodystart="134" bodyend="137"/>
-      </memberdef>
-      <memberdef kind="function" id="classlist___class_1a8cd17992d2ddd9f01a7c5b4bbee2bbdc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>int</type>
-        <definition>int list_Class::rowSize</definition>
-        <argsstring>(float textSize)</argsstring>
-        <name>rowSize</name>
-        <qualifiedname>list_Class::rowSize</qualifiedname>
-        <param>
-          <type>float</type>
-          <declname>textSize</declname>
-        </param>
-        <briefdescription>
-<para>Calculates height in px of a line of text of given size. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>textSize</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Float, the text size multiplier used in M5GFX </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Height in px of the line </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/GUI.h" line="230" column="16" bodyfile="src/GUI.h" bodystart="230" bodyend="230"/>
-      </memberdef>
-      <memberdef kind="function" id="classlist___class_1a4f6cb0796835c5f19811eb05e2003ab6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>int</type>
-        <definition>int list_Class::rowWidth</definition>
-        <argsstring>(float textSize, int length)</argsstring>
-        <name>rowWidth</name>
-        <qualifiedname>list_Class::rowWidth</qualifiedname>
-        <param>
-          <type>float</type>
-          <declname>textSize</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>length</declname>
-        </param>
-        <briefdescription>
-<para>Calculates length in px of a line of text of given size &amp; character length. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>textSize</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Float, the text size multiplier used in M5GFX </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>length</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Length of the string in characters </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Length of the string in pixels </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/GUI.h" line="235" column="16" bodyfile="src/GUI.h" bodystart="235" bodyend="235"/>
+        <location file="src/GUI.h" line="227" column="9" bodyfile="src/GUI.cpp" bodystart="246" bodyend="249"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -763,37 +657,60 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/GUI.h" line="150" column="1" bodyfile="src/GUI.h" bodystart="150" bodyend="237"/>
+    <inheritancegraph>
+      <node id="1">
+        <label>list_Class</label>
+        <link refid="classlist___class"/>
+      </node>
+      <node id="2">
+        <label>wifiMenu_Class</label>
+        <link refid="classwifi_menu___class"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>coord</label>
+        <link refid="structcoord"/>
+      </node>
+      <node id="1">
+        <label>list_Class</label>
+        <link refid="classlist___class"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>border</edgelabel>
+          <edgelabel>origin</edgelabel>
+          <edgelabel>size</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/GUI.h" line="156" column="1" bodyfile="src/GUI.h" bodystart="156" bodyend="229"/>
     <listofallmembers>
-      <member refid="classlist___class_1a4f36c4dce78e0912a02b5625ad95bc7f" prot="private" virt="non-virtual"><scope>list_Class</scope><name>backColour</name></member>
-      <member refid="classlist___class_1a3f196f0abbfff0245c8fd66bf6d424a4" prot="private" virt="non-virtual"><scope>list_Class</scope><name>border</name></member>
+      <member refid="classlist___class_1a4f36c4dce78e0912a02b5625ad95bc7f" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>backColour</name></member>
+      <member refid="classlist___class_1a3f196f0abbfff0245c8fd66bf6d424a4" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>border</name></member>
       <member refid="classlist___class_1a8694d87f64e84085a5a65eed3906f130" prot="public" virt="non-virtual"><scope>list_Class</scope><name>del</name></member>
-      <member refid="classlist___class_1ac4731610b332b83a2c9741c23cb7712d" prot="private" virt="non-virtual"><scope>list_Class</scope><name>Display</name></member>
-      <member refid="classlist___class_1a55209f4763a54c2b2e2a7d39514cafdc" prot="private" virt="non-virtual"><scope>list_Class</scope><name>displayableRows</name></member>
-      <member refid="classlist___class_1a32108743b53a5cd861b1670c92f8e777" prot="private" virt="non-virtual"><scope>list_Class</scope><name>displayableRows</name></member>
+      <member refid="classlist___class_1ac4731610b332b83a2c9741c23cb7712d" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>Display</name></member>
+      <member refid="classlist___class_1a55209f4763a54c2b2e2a7d39514cafdc" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>displayableRows</name></member>
+      <member refid="classlist___class_1a32108743b53a5cd861b1670c92f8e777" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>displayableRows</name></member>
       <member refid="classlist___class_1a1273f131504b3aac51886d1a0fb4da7f" prot="public" virt="non-virtual"><scope>list_Class</scope><name>draw</name></member>
-      <member refid="classlist___class_1aa1d6914207e6453e61d86fc4ee867f14" prot="private" virt="non-virtual"><scope>list_Class</scope><name>drawOptions</name></member>
-      <member refid="classlist___class_1ae578e30c59f80e55bef2b709e885c89d" prot="private" virt="non-virtual"><scope>list_Class</scope><name>elementName</name></member>
-      <member refid="classlist___class_1a1343001263263df83a0e2a09e528e7bb" prot="private" virt="non-virtual"><scope>list_Class</scope><name>elementNum</name></member>
-      <member refid="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" prot="public" virt="non-virtual"><scope>list_Class</scope><name>enterEvent</name></member>
-      <member refid="classlist___class_1a0114c18f9e57b6cd3c23f05b677ba5e5" prot="private" virt="non-virtual"><scope>list_Class</scope><name>handler</name></member>
-      <member refid="classlist___class_1a77cd52ddd6832ae26001045a35ce7d19" prot="private" virt="non-virtual"><scope>list_Class</scope><name>highlightColour</name></member>
-      <member refid="classlist___class_1a978dd4124a5baec5cd27eeed29dd7c63" prot="public" virt="non-virtual"><scope>list_Class</scope><name>list_Class</name></member>
-      <member refid="classlist___class_1acafcdd491b89bfd476dcfd43d32786a7" prot="public" virt="non-virtual"><scope>list_Class</scope><name>optnEvent</name></member>
-      <member refid="classlist___class_1aa237c376089fce7d563a51f4721cd9c4" prot="private" virt="non-virtual"><scope>list_Class</scope><name>origin</name></member>
-      <member refid="classlist___class_1a54af455510377220a429c3ab5d3dc541" prot="private" virt="non-virtual"><scope>list_Class</scope><name>pos</name></member>
-      <member refid="classlist___class_1ae0e5d622a7b8d36d0c20f79d1edde567" prot="private" virt="non-virtual"><scope>list_Class</scope><name>rows</name></member>
-      <member refid="classlist___class_1a8cd17992d2ddd9f01a7c5b4bbee2bbdc" prot="private" virt="non-virtual"><scope>list_Class</scope><name>rowSize</name></member>
-      <member refid="classlist___class_1a0f99364a80894e96121d2dbce38f4187" prot="private" virt="non-virtual"><scope>list_Class</scope><name>rowsOccupied</name></member>
-      <member refid="classlist___class_1a4f6cb0796835c5f19811eb05e2003ab6" prot="private" virt="non-virtual"><scope>list_Class</scope><name>rowWidth</name></member>
+      <member refid="classlist___class_1aa1d6914207e6453e61d86fc4ee867f14" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>drawOptions</name></member>
+      <member refid="classlist___class_1ae578e30c59f80e55bef2b709e885c89d" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>elementName</name></member>
+      <member refid="classlist___class_1a1343001263263df83a0e2a09e528e7bb" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>elementNum</name></member>
+      <member refid="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" prot="public" virt="virtual"><scope>list_Class</scope><name>enterEvent</name></member>
+      <member refid="classlist___class_1a77cd52ddd6832ae26001045a35ce7d19" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>highlightColour</name></member>
+      <member refid="classlist___class_1aaa491172eec7c8bc481c0beaf29cf520" prot="public" virt="non-virtual"><scope>list_Class</scope><name>list_Class</name></member>
+      <member refid="classlist___class_1aa237c376089fce7d563a51f4721cd9c4" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>origin</name></member>
+      <member refid="classlist___class_1a54af455510377220a429c3ab5d3dc541" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>pos</name></member>
+      <member refid="classlist___class_1ae0e5d622a7b8d36d0c20f79d1edde567" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>rows</name></member>
+      <member refid="classlist___class_1a0f99364a80894e96121d2dbce38f4187" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>rowsOccupied</name></member>
       <member refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" prot="public" virt="non-virtual"><scope>list_Class</scope><name>scroll</name></member>
       <member refid="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" prot="public" virt="non-virtual"><scope>list_Class</scope><name>scrollDown</name></member>
       <member refid="classlist___class_1a48eeb6911110ba094e2f979fc824f252" prot="public" virt="non-virtual"><scope>list_Class</scope><name>scrollUp</name></member>
-      <member refid="classlist___class_1a52b4d4daa14c969502e2e49147f2de19" prot="private" virt="non-virtual"><scope>list_Class</scope><name>size</name></member>
-      <member refid="classlist___class_1abcb0e01917cd2d39be92b51f5ea54162" prot="private" virt="non-virtual"><scope>list_Class</scope><name>textColour</name></member>
-      <member refid="classlist___class_1a5e07639339dfc03d03045e911468d0b4" prot="private" virt="non-virtual"><scope>list_Class</scope><name>textSize</name></member>
-      <member refid="classlist___class_1a5414de1e8a8ac30ab1f03baf5e710f3c" prot="private" virt="non-virtual"><scope>list_Class</scope><name>title</name></member>
-      <member refid="classlist___class_1a6f62693d6a66d2c9b802200e12bf5db0" prot="private" virt="non-virtual"><scope>list_Class</scope><name>titleSize</name></member>
+      <member refid="classlist___class_1a52b4d4daa14c969502e2e49147f2de19" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>size</name></member>
+      <member refid="classlist___class_1abcb0e01917cd2d39be92b51f5ea54162" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>textColour</name></member>
+      <member refid="classlist___class_1a5e07639339dfc03d03045e911468d0b4" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>textSize</name></member>
+      <member refid="classlist___class_1a5414de1e8a8ac30ab1f03baf5e710f3c" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>title</name></member>
+      <member refid="classlist___class_1a6f62693d6a66d2c9b802200e12bf5db0" prot="protected" virt="non-virtual"><scope>list_Class</scope><name>titleSize</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

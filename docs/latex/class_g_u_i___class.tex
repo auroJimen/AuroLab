@@ -25,18 +25,22 @@ void \mbox{\hyperlink{class_g_u_i___class_a25bfb4fdb73cbb16298d09fbc12fb379}{wif
 void \mbox{\hyperlink{class_g_u_i___class_a1e0dd033f8ab0d55d0e039ea5d305adb}{main\+Loop}} ()
 \begin{DoxyCompactList}\small\item\em Mainloop for the GUI, must be run on its own thread to prevent interference w/ backend. Handles drawing UI elements, inputs, etc. through an endless loop. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_g_u_i___class_a91db0ecb5a53420b1a2b62757328e114}{load\+Conf\+File}} ()
-\begin{DoxyCompactList}\small\item\em Loads configuration file from SD UNIMPLEMENTED. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Loads configuration file from SD UNIMPLEMENTED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_u_i___class_acadffe99b600efea71c1322935cd1a2a}{update\+Top\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the icons on the top\+Bar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Task\+Handle\+\_\+t \mbox{\hyperlink{class_g_u_i___class_a3b5933a3f4f189338a610019a3c0dae4}{task}}
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{class_g_u_i___class_a58293828d0e25452e060c4b169a4d20c}{top\+Bar\+Task}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 A global instance of this class controls all the GUI elements and provides the method for the backend and front end to communicate. The GUI class depends on the M5\+Cardputer object defined in M5\+Cardputer.\+h. 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00242}{242}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00275}{275}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 
 
@@ -53,7 +57,7 @@ Starts up the GUI, launching it\textquotesingle{}s execution thread and executin
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00255}{255}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00635}{635}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{class_g_u_i___class_ab6d29667f048b28a6d867cab6d4e958c}\index{GUI\_Class@{GUI\_Class}!drawMainMenu@{drawMainMenu}}
 \index{drawMainMenu@{drawMainMenu}!GUI\_Class@{GUI\_Class}}
@@ -67,7 +71,7 @@ Draws the main menu.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00293}{293}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00706}{706}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{class_g_u_i___class_a72000c590917f97769bfaae8f97a19bd}\index{GUI\_Class@{GUI\_Class}!drawWifiMenu@{drawWifiMenu}}
 \index{drawWifiMenu@{drawWifiMenu}!GUI\_Class@{GUI\_Class}}
@@ -81,7 +85,7 @@ Draws the wifi menu to scan \& connect to networks.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00335}{335}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00752}{752}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{class_g_u_i___class_a91db0ecb5a53420b1a2b62757328e114}\index{GUI\_Class@{GUI\_Class}!loadConfFile@{loadConfFile}}
 \index{loadConfFile@{loadConfFile}!GUI\_Class@{GUI\_Class}}
@@ -95,7 +99,7 @@ Loads configuration file from SD UNIMPLEMENTED.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00331}{331}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00744}{744}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{class_g_u_i___class_a1e0dd033f8ab0d55d0e039ea5d305adb}\index{GUI\_Class@{GUI\_Class}!mainLoop@{mainLoop}}
 \index{mainLoop@{mainLoop}!GUI\_Class@{GUI\_Class}}
@@ -109,7 +113,7 @@ Mainloop for the GUI, must be run on its own thread to prevent interference w/ b
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00304}{304}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00717}{717}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{class_g_u_i___class_af0d6b5d535fa64ef2fdecdf1a7771b49}\index{GUI\_Class@{GUI\_Class}!splashScreen@{splashScreen}}
 \index{splashScreen@{splashScreen}!GUI\_Class@{GUI\_Class}}
@@ -123,7 +127,21 @@ Draws the splashscreen.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00270}{270}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00685}{685}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{class_g_u_i___class_acadffe99b600efea71c1322935cd1a2a}\index{GUI\_Class@{GUI\_Class}!updateTopBar@{updateTopBar}}
+\index{updateTopBar@{updateTopBar}!GUI\_Class@{GUI\_Class}}
+\doxysubsubsection{\texorpdfstring{updateTopBar()}{updateTopBar()}}
+{\footnotesize\ttfamily \label{class_g_u_i___class_acadffe99b600efea71c1322935cd1a2a} 
+void GUI\+\_\+\+Class\+::update\+Top\+Bar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the state of the icons on the top\+Bar. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00748}{748}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{class_g_u_i___class_a25bfb4fdb73cbb16298d09fbc12fb379}\index{GUI\_Class@{GUI\_Class}!wifiMenuHandler@{wifiMenuHandler}}
 \index{wifiMenuHandler@{wifiMenuHandler}!GUI\_Class@{GUI\_Class}}
@@ -153,7 +171,17 @@ Task\+Handle\+\_\+t GUI\+\_\+\+Class\+::task}
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00249}{249}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00282}{282}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+\Hypertarget{class_g_u_i___class_a58293828d0e25452e060c4b169a4d20c}\index{GUI\_Class@{GUI\_Class}!topBarTask@{topBarTask}}
+\index{topBarTask@{topBarTask}!GUI\_Class@{GUI\_Class}}
+\doxysubsubsection{\texorpdfstring{topBarTask}{topBarTask}}
+{\footnotesize\ttfamily \label{class_g_u_i___class_a58293828d0e25452e060c4b169a4d20c} 
+Task\+Handle\+\_\+t GUI\+\_\+\+Class\+::top\+Bar\+Task}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00283}{283}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 
 

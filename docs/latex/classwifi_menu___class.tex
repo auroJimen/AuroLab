@@ -1,0 +1,204 @@
+\doxysection{wifi\+Menu\+\_\+\+Class Class Reference}
+\hypertarget{classwifi_menu___class}{}\label{classwifi_menu___class}\index{wifiMenu\_Class@{wifiMenu\_Class}}
+
+
+Class for displaying the wifi connection menu, inherits from the \doxylink{classlist___class}{list\+\_\+\+Class} \& adds specific functionality.  
+
+
+
+
+{\ttfamily \#include $<$GUI.\+h$>$}
+
+Inheritance diagram for wifi\+Menu\+\_\+\+Class\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classwifi_menu___class}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwifi_menu___class_ad1587fd44b1956225c70328aae192157}{wifi\+Menu\+\_\+\+Class}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the wifi menu class, creates an empty list with the correct name, size \& handlers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwifi_menu___class_ab3c0dd806d2918230ad0b9165c239ef4}{scan}} ()
+\begin{DoxyCompactList}\small\item\em Scans for available networks \& initialaizes them as options. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwifi_menu___class_a39fe0cd27acdfd561f30886005174bd5}{app\+Loop}} ()
+\begin{DoxyCompactList}\small\item\em The app loop for the scan menu, draws to the screen, listens to input... \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwifi_menu___class_aa85befe97aeee813065860fe1e9231d6}{optn\+Event}} ()
+\begin{DoxyCompactList}\small\item\em Handles the element options event trigerred by OPTN nav\+Signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwifi_menu___class_a12863a3752876d179d948879a75362a1}{enter\+Event}} () override
+\begin{DoxyCompactList}\small\item\em Handles the element selected event (is defined on parent, overridden here) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwifi_menu___class_a1dfd391a6071a80553b2f09355b64bbb}{del}} ()
+\begin{DoxyCompactList}\small\item\em Frees up the dinamically allocated memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlist___class}{list\+\_\+\+Class}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlist___class_aaa491172eec7c8bc481c0beaf29cf520}{list\+\_\+\+Class}} (String \mbox{\hyperlink{classlist___class_a5414de1e8a8ac30ab1f03baf5e710f3c}{title}}, int \mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{element\+Num}}, String \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{element\+Name}}, \mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}, \mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}, float \mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{title\+Size}}=2.\+5, float \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{text\+Size}}=1.\+5, int \mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{text\+Colour}}=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, int \mbox{\hyperlink{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f}{back\+Colour}}=m5gfx\+::ili9341\+\_\+colors\+::\+BLACK, int \mbox{\hyperlink{classlist___class_a77cd52ddd6832ae26001045a35ce7d19}{highlight\+Colour}}=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, \mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_a3f196f0abbfff0245c8fd66bf6d424a4}{border}}=\mbox{\hyperlink{structcoord}{coord}}(6, 5))
+\begin{DoxyCompactList}\small\item\em Constructor for the list class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Draws or redraws the list on the screen. \end{DoxyCompactList}\item 
+void {\bfseries del} ()
+\begin{DoxyCompactList}\small\item\em Deletes the list instance UNIMPLEMENTED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlist___class_a0abc13669b1a6a16df89694545a173c5}{scroll}} (int new\+Pos)
+\begin{DoxyCompactList}\small\item\em Scrolls the list to the given position if it\textquotesingle{}s a valid one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}{scroll\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Scrolls down one position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlist___class_a48eeb6911110ba094e2f979fc824f252}{scroll\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Scrolls up one positon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classlist___class}{list\+\_\+\+Class}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classlist___class_aa1d6914207e6453e61d86fc4ee867f14}{draw\+Options}} ()
+\begin{DoxyCompactList}\small\item\em Draws the options section with the current selection highlighted (called by draw \& scroll) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a55209f4763a54c2b2e2a7d39514cafdc}{displayable\+Rows}} (float \mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{title\+Size}}, float \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{text\+Size}}, int height)
+\begin{DoxyCompactList}\small\item\em Calculates the number of rows that fit on the screen given the height of the text sprite and the text size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a32108743b53a5cd861b1670c92f8e777}{displayable\+Rows}} (float \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{text\+Size}}, int height)
+\begin{DoxyCompactList}\small\item\em Calculates the number of rows that fit on the screen given the height of the text sprite. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a0f99364a80894e96121d2dbce38f4187}{rows\+Occupied}} (int text\+Len, float \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{text\+Size}}, int sprite\+Width)
+\begin{DoxyCompactList}\small\item\em How many rows of text will the given string takes up. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classlist___class}{list\+\_\+\+Class}}}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{classlist___class_a5414de1e8a8ac30ab1f03baf5e710f3c}{title}}
+\begin{DoxyCompactList}\small\item\em Title of the list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a1343001263263df83a0e2a09e528e7bb}{element\+Num}}
+\begin{DoxyCompactList}\small\item\em Number of elements on the list. \end{DoxyCompactList}\item 
+String \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classlist___class_ae578e30c59f80e55bef2b709e885c89d}{element\+Name}}
+\begin{DoxyCompactList}\small\item\em Names of the list elements. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a54af455510377220a429c3ab5d3dc541}{pos}}
+\begin{DoxyCompactList}\small\item\em Current highlighted position on the list. \end{DoxyCompactList}\item 
+M5\+GFX \mbox{\hyperlink{classlist___class_ac4731610b332b83a2c9741c23cb7712d}{Display}} = M5\+Cardputer.\+Display
+\item 
+\mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_aa237c376089fce7d563a51f4721cd9c4}{origin}}
+\begin{DoxyCompactList}\small\item\em Coordinates where the list shall be drawn. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_a52b4d4daa14c969502e2e49147f2de19}{size}}
+\begin{DoxyCompactList}\small\item\em Absolute size of the list rectangle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}{title\+Size}}
+\begin{DoxyCompactList}\small\item\em Text size multiplier for the title. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classlist___class_a5e07639339dfc03d03045e911468d0b4}{text\+Size}}
+\begin{DoxyCompactList}\small\item\em Text size multiplier for the body. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}{text\+Colour}}
+\begin{DoxyCompactList}\small\item\em Text colour (title \& body) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a4f36c4dce78e0912a02b5625ad95bc7f}{back\+Colour}}
+\begin{DoxyCompactList}\small\item\em Background color. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_a77cd52ddd6832ae26001045a35ce7d19}{highlight\+Colour}}
+\begin{DoxyCompactList}\small\item\em Highlight color for the currently selected option. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcoord}{coord}} \mbox{\hyperlink{classlist___class_a3f196f0abbfff0245c8fd66bf6d424a4}{border}}
+\begin{DoxyCompactList}\small\item\em Margin from the rectangle to the text (in both directions) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}}
+\begin{DoxyCompactList}\small\item\em Number of rows that can be displayed @ a time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for displaying the wifi connection menu, inherits from the \doxylink{classlist___class}{list\+\_\+\+Class} \& adds specific functionality. 
+
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00249}{249}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classwifi_menu___class_ad1587fd44b1956225c70328aae192157}\index{wifiMenu\_Class@{wifiMenu\_Class}!wifiMenu\_Class@{wifiMenu\_Class}}
+\index{wifiMenu\_Class@{wifiMenu\_Class}!wifiMenu\_Class@{wifiMenu\_Class}}
+\doxysubsubsection{\texorpdfstring{wifiMenu\_Class()}{wifiMenu\_Class()}}
+{\footnotesize\ttfamily \label{classwifi_menu___class_ad1587fd44b1956225c70328aae192157} 
+wifi\+Menu\+\_\+\+Class\+::wifi\+Menu\+\_\+\+Class (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the wifi menu class, creates an empty list with the correct name, size \& handlers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt\+Handler} & Handler for the option event \\
+\hline
+{\em enter\+Handler} & Handler for the option selected event; \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00360}{360}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classwifi_menu___class_a39fe0cd27acdfd561f30886005174bd5}\index{wifiMenu\_Class@{wifiMenu\_Class}!appLoop@{appLoop}}
+\index{appLoop@{appLoop}!wifiMenu\_Class@{wifiMenu\_Class}}
+\doxysubsubsection{\texorpdfstring{appLoop()}{appLoop()}}
+{\footnotesize\ttfamily \label{classwifi_menu___class_a39fe0cd27acdfd561f30886005174bd5} 
+void wifi\+Menu\+\_\+\+Class\+::app\+Loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+The app loop for the scan menu, draws to the screen, listens to input... 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00417}{417}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classwifi_menu___class_a1dfd391a6071a80553b2f09355b64bbb}\index{wifiMenu\_Class@{wifiMenu\_Class}!del@{del}}
+\index{del@{del}!wifiMenu\_Class@{wifiMenu\_Class}}
+\doxysubsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily \label{classwifi_menu___class_a1dfd391a6071a80553b2f09355b64bbb} 
+void wifi\+Menu\+\_\+\+Class\+::del (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Frees up the dinamically allocated memory. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00614}{614}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classwifi_menu___class_a12863a3752876d179d948879a75362a1}\index{wifiMenu\_Class@{wifiMenu\_Class}!enterEvent@{enterEvent}}
+\index{enterEvent@{enterEvent}!wifiMenu\_Class@{wifiMenu\_Class}}
+\doxysubsubsection{\texorpdfstring{enterEvent()}{enterEvent()}}
+{\footnotesize\ttfamily \label{classwifi_menu___class_a12863a3752876d179d948879a75362a1} 
+void wifi\+Menu\+\_\+\+Class\+::enter\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles the element selected event (is defined on parent, overridden here) 
+
+
+
+Reimplemented from \mbox{\hyperlink{classlist___class_ab2676ecc5c076b8159249d2726f7707d}{list\+\_\+\+Class}}.
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00552}{552}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classwifi_menu___class_aa85befe97aeee813065860fe1e9231d6}\index{wifiMenu\_Class@{wifiMenu\_Class}!optnEvent@{optnEvent}}
+\index{optnEvent@{optnEvent}!wifiMenu\_Class@{wifiMenu\_Class}}
+\doxysubsubsection{\texorpdfstring{optnEvent()}{optnEvent()}}
+{\footnotesize\ttfamily \label{classwifi_menu___class_aa85befe97aeee813065860fe1e9231d6} 
+void wifi\+Menu\+\_\+\+Class\+::optn\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles the element options event trigerred by OPTN nav\+Signal. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00487}{487}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classwifi_menu___class_ab3c0dd806d2918230ad0b9165c239ef4}\index{wifiMenu\_Class@{wifiMenu\_Class}!scan@{scan}}
+\index{scan@{scan}!wifiMenu\_Class@{wifiMenu\_Class}}
+\doxysubsubsection{\texorpdfstring{scan()}{scan()}}
+{\footnotesize\ttfamily \label{classwifi_menu___class_ab3c0dd806d2918230ad0b9165c239ef4} 
+void wifi\+Menu\+\_\+\+Class\+::scan (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Scans for available networks \& initialaizes them as options. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00372}{372}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/GUI.\+h\item 
+src/GUI.\+cpp\end{DoxyCompactItemize}

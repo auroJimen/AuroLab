@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="30" column="9" bodyfile="src/GUI.h" bodystart="30" bodyend="-1"/>
+        <location file="src/GUI.h" line="27" column="9" bodyfile="src/GUI.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classicon_bat___class_1abefa48b49e5011442cc10736853b43b8" prot="private" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="31" column="11" bodyfile="src/GUI.h" bodystart="31" bodyend="31"/>
+        <location file="src/GUI.h" line="28" column="11" bodyfile="src/GUI.h" bodystart="28" bodyend="28"/>
       </memberdef>
       <memberdef kind="variable" id="classicon_bat___class_1a0f13206c5fe92def1dd4bb50e7189e4f" prot="private" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="32" column="11" bodyfile="src/GUI.h" bodystart="32" bodyend="32"/>
+        <location file="src/GUI.h" line="29" column="11" bodyfile="src/GUI.h" bodystart="29" bodyend="29"/>
       </memberdef>
       <memberdef kind="variable" id="classicon_bat___class_1a566a57b09b5af8d19d15f74b75fb4f90" prot="private" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="33" column="11" bodyfile="src/GUI.h" bodystart="33" bodyend="33"/>
+        <location file="src/GUI.h" line="30" column="11" bodyfile="src/GUI.h" bodystart="30" bodyend="30"/>
       </memberdef>
       <memberdef kind="variable" id="classicon_bat___class_1a4fd2eaac8b05b30e8812599b4a8a2f42" prot="private" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="34" column="11" bodyfile="src/GUI.h" bodystart="34" bodyend="34"/>
+        <location file="src/GUI.h" line="31" column="11" bodyfile="src/GUI.h" bodystart="31" bodyend="31"/>
       </memberdef>
       <memberdef kind="variable" id="classicon_bat___class_1a055cc5ae2ab4dea9333985be9b32e0b4" prot="private" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="35" column="11" bodyfile="src/GUI.h" bodystart="35" bodyend="35"/>
+        <location file="src/GUI.h" line="32" column="11" bodyfile="src/GUI.h" bodystart="32" bodyend="32"/>
       </memberdef>
       <memberdef kind="variable" id="classicon_bat___class_1aa5245a59290af488725123719877a273" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="36" column="11" bodyfile="src/GUI.h" bodystart="36" bodyend="-1"/>
+        <location file="src/GUI.h" line="33" column="11" bodyfile="src/GUI.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classicon_bat___class_1a07687dff512a0ae545825a7e5ffd2fcc" prot="private" static="no" mutable="no">
         <type>M5GFX</type>
@@ -122,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="37" column="11" bodyfile="src/GUI.h" bodystart="37" bodyend="-1"/>
+        <location file="src/GUI.h" line="34" column="11" bodyfile="src/GUI.h" bodystart="34" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="40" column="5" bodyfile="src/GUI.cpp" bodystart="24" bodyend="24"/>
+        <location file="src/GUI.h" line="37" column="5" bodyfile="src/GUI.cpp" bodystart="24" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="classicon_bat___class_1af7a5643cf31119f4777ebc1c58c6f15a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -181,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="45" column="5" bodyfile="src/GUI.cpp" bodystart="26" bodyend="35"/>
+        <location file="src/GUI.h" line="42" column="5" bodyfile="src/GUI.cpp" bodystart="26" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classicon_bat___class_1af3a75b28723155bb2bd69f868b0ef3fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -199,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="48" column="10" bodyfile="src/GUI.cpp" bodystart="85" bodyend="90"/>
+        <location file="src/GUI.h" line="45" column="10" bodyfile="src/GUI.cpp" bodystart="85" bodyend="90"/>
       </memberdef>
       <memberdef kind="function" id="classicon_bat___class_1a523a17c318459aba2c8ae1c7635295af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -228,7 +228,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="52" column="10" bodyfile="src/GUI.cpp" bodystart="73" bodyend="83"/>
+        <location file="src/GUI.h" line="49" column="10" bodyfile="src/GUI.cpp" bodystart="73" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classicon_bat___class_1a3885a352f82a852267a5ceab6443f147" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -257,7 +257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="56" column="10" bodyfile="src/GUI.cpp" bodystart="92" bodyend="97"/>
+        <location file="src/GUI.h" line="53" column="10" bodyfile="src/GUI.cpp" bodystart="92" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classicon_bat___class_1abea3617d80f87acba7be39b078ea8611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -286,7 +286,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="60" column="10" bodyfile="src/GUI.cpp" bodystart="56" bodyend="71"/>
+        <location file="src/GUI.h" line="57" column="10" bodyfile="src/GUI.cpp" bodystart="56" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classicon_bat___class_1acb7cbb4f2b6cb2366fcd5f9e63587bc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -315,7 +315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="64" column="10" bodyfile="src/GUI.cpp" bodystart="45" bodyend="54"/>
+        <location file="src/GUI.h" line="61" column="10" bodyfile="src/GUI.cpp" bodystart="45" bodyend="54"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -335,7 +335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="68" column="9" bodyfile="src/GUI.cpp" bodystart="99" bodyend="103"/>
+        <location file="src/GUI.h" line="65" column="9" bodyfile="src/GUI.cpp" bodystart="99" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="classicon_bat___class_1ad991324620a0dde08fe72c7298ab065a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -366,7 +366,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="73" column="9" bodyfile="src/GUI.cpp" bodystart="37" bodyend="43"/>
+        <location file="src/GUI.h" line="70" column="9" bodyfile="src/GUI.cpp" bodystart="37" bodyend="43"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -374,7 +374,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/GUI.h" line="27" column="1" bodyfile="src/GUI.h" bodystart="27" bodyend="75"/>
+    <location file="src/GUI.h" line="24" column="1" bodyfile="src/GUI.h" bodystart="24" bodyend="72"/>
     <listofallmembers>
       <member refid="classicon_bat___class_1abefa48b49e5011442cc10736853b43b8" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>basePos</name></member>
       <member refid="classicon_bat___class_1a0f13206c5fe92def1dd4bb50e7189e4f" prot="private" virt="non-virtual"><scope>iconBat_Class</scope><name>baseSize</name></member>

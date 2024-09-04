@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="100" column="16" bodyfile="src/GUI.h" bodystart="100" bodyend="-1"/>
+        <location file="src/GUI.h" line="97" column="16" bodyfile="src/GUI.h" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtop_bar___class_1adb92bc4bf453489fce808f126fc5c785" prot="public" static="no" mutable="no">
         <type><ref refid="classicon___class" kindref="compound">icon_Class</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="101" column="16" bodyfile="src/GUI.h" bodystart="101" bodyend="-1"/>
+        <location file="src/GUI.h" line="98" column="16" bodyfile="src/GUI.h" bodystart="98" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtop_bar___class_1abd05d88cf9363e054fd2d0c3e8e23117" prot="public" static="no" mutable="no">
         <type><ref refid="classicon___class" kindref="compound">icon_Class</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="102" column="16" bodyfile="src/GUI.h" bodystart="102" bodyend="-1"/>
+        <location file="src/GUI.h" line="99" column="16" bodyfile="src/GUI.h" bodystart="99" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtop_bar___class_1a307dc7f3d2d7a6336895bdf6cb832fdc" prot="public" static="no" mutable="no">
         <type><ref refid="classicon_bat___class" kindref="compound">iconBat_Class</ref></type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="103" column="19" bodyfile="src/GUI.h" bodystart="103" bodyend="-1"/>
+        <location file="src/GUI.h" line="100" column="19" bodyfile="src/GUI.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtop_bar___class_1a5c7034f1807e682e9e96743b1c280a76" prot="public" static="no" mutable="no">
         <type>M5GFX</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="104" column="11" bodyfile="src/GUI.h" bodystart="104" bodyend="-1"/>
+        <location file="src/GUI.h" line="101" column="11" bodyfile="src/GUI.h" bodystart="101" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="107" column="5" bodyfile="src/GUI.cpp" bodystart="107" bodyend="115"/>
+        <location file="src/GUI.h" line="104" column="5" bodyfile="src/GUI.cpp" bodystart="107" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classtop_bar___class_1a555351fcf48dbea120ac40f8c010dce8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="109" column="10" bodyfile="src/GUI.cpp" bodystart="117" bodyend="122"/>
+        <location file="src/GUI.h" line="106" column="10" bodyfile="src/GUI.cpp" bodystart="117" bodyend="122"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -135,7 +135,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/GUI.h" line="97" column="1" bodyfile="src/GUI.h" bodystart="97" bodyend="112"/>
+    <location file="src/GUI.h" line="94" column="1" bodyfile="src/GUI.h" bodystart="94" bodyend="109"/>
     <listofallmembers>
       <member refid="classtop_bar___class_1a307dc7f3d2d7a6336895bdf6cb832fdc" prot="public" virt="non-virtual"><scope>topBar_Class</scope><name>Bat</name></member>
       <member refid="classtop_bar___class_1adb92bc4bf453489fce808f126fc5c785" prot="public" virt="non-virtual"><scope>topBar_Class</scope><name>BLE</name></member>
