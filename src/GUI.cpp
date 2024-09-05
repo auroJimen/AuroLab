@@ -99,7 +99,6 @@ void iconBat_Class::updateChargeLevel(int perc){
 int iconBat_Class::fetchBatLevel(){
     //Fetches current battery level from the Power class
     return (int)M5Cardputer.Power.getBatteryLevel();
-
 }
 
 //topBar_Class functions
@@ -640,6 +639,9 @@ void GUI_Class::begin(){
     //Launch gui execution thread
     BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->task, 0); //Creates thread for the GUI code on core 0
     if (gui != pdPASS) log_i("ERR");
+    //Launch topBar updater
+    BaseType_t topBarUpdater = xTaskCreatePinnedToCore(topBarLoop, "topBar updater", 10000, NULL, 0, &this->topBarTask, 0); //Creates thread for the topBar updater code on core 0
+    if (topBarUpdater != pdPASS) log_i("ERR");
 }
 
 void GUIloop(void* parameter){
@@ -647,6 +649,37 @@ void GUIloop(void* parameter){
     GUI.mainLoop();
 
 }
+
+void topBarLoop(void* parameter){
+    log_i("topBar updater task created");
+    //Create the interrupt we'll use to time when we update timed things on screen
+    hw_timer_t* timer = timerBegin(3, 80, true);
+    timerAttachInterrupt(timer, &timerISR, false); //Atach interrupt to the timer
+    timerAlarmWrite(timer, 1000000, true); //Set the alarm that triggers the interrupt
+    timerAlarmEnable(timer); //Enable the alarm
+    //Suspend the current task (it'll resume from here once the interrupt is triggered)
+    vTaskSuspend(NULL);
+    //Infinite loop, each time xTaskResumeFromISR is called from within the ISR, a round of this loop will
+    //be executed, succesive calls to resuming won't affect an already resumed task, & the loop suspends the task
+    //once the round is finished
+    for(;;){
+        //Update state of background important things
+        if (!WiFi.isConnected()) {
+            log_i("Wifi disconnected");
+            //Need to implement this
+        }
+        //Update the topBar to reflect it
+        GUI.updateTopBar();
+        vTaskSuspend(NULL);
+    }
+}
+
+void IRAM_ATTR timerISR(){
+    //Change state of timeFlag
+    //timeFlag = (timeFlag) ? false : true;
+    //Wake up topBarLoop task
+    xTaskResumeFromISR(GUI.topBarTask);
+}     
 
 void GUI_Class::splashScreen(){
 
@@ -709,6 +742,10 @@ void GUI_Class::mainLoop(){
 
 void GUI_Class::loadConfFile(){
     //Loads all saved documentation from the SD card (if present) b4 starting up the GUI
+}
+
+void GUI_Class::updateTopBar(){
+    this->topBar.updateIcons();
 }
 
 void GUI_Class::drawWifiMenu(){

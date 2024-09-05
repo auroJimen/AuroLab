@@ -7,9 +7,6 @@
 #include "menuBackground.h"
 #include "keyboardTask.h"
 
-//In the future put here the rest of the object instances to control all periferals
-
-
 //Declaration of all relevant classes
 
 
@@ -283,6 +280,7 @@ class GUI_Class {
     topBar_Class topBar;
     public:
     TaskHandle_t task;
+    TaskHandle_t topBarTask;
     /// @brief Starts up the GUI, launching it's execution thread and executing mainLoop()
     void begin();
 
@@ -307,11 +305,23 @@ class GUI_Class {
     /// @brief Loads configuration file from SD UNIMPLEMENTED
     void loadConfFile();
 
+    /// @brief Updates the state of the icons on the topBar
+    void updateTopBar();
+
 };
 
 /// @brief Task handler function, isolated since it mustn't be a class function
 /// @param parameter Standar parameter for handler functions, a nullptr is passed if it is not needed
 void GUIloop(void* parameter);
+
+/// @brief Task andler function for the update topBar task (must be executed async with the rest of the GUI)
+/// @param parameter Standar parameter for handler functions, a nullptr is passed if it is not needed
+void topBarLoop(void* parameter);
+
+/// @brief ISR for the timer interrupt, one a second, wakes up the update topBar task & 
+/// changes the timeFlag state to perform timed events
+/// @return 
+void IRAM_ATTR timerISR();
 
 //Global GUI instance 
 extern GUI_Class GUI;

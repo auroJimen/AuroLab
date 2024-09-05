@@ -6,14 +6,14 @@
 //Functions that handle the independent keyboard ex thread & its communication with other threads
 enum mode {text, nav};
 enum navSignal {ESC, DEL, UP, DOWN, LEFT, RIGHT,ENTER, OPT, CTRL, NP};
-/// @brief A struct with all needed elements & functions to create & control a 
-///50 character buffer htat serves as the connection between the leyboard thread
+/// @brief A class with all needed elements & functions to create & control a 
+///50 character buffer that serves as the connection between the keyboard thread
 ///& the rest of the system
 class buffer_Class {
   private:
   TaskHandle_t keyboardTask; ///< Task handle for the keyboard execution thread
-  hw_timer_t* timer;
-  int size;
+  hw_timer_t* timer; ///< Timer used to update the keyboard
+  int size; ///< Buffer size (in chars)
   char* data; ///< Pointer to the char buffer
   public:
   int cursor; ///< Current position of the cursor on the array
@@ -71,7 +71,7 @@ void keyBoardLoop(void* parameters);
 /// @return 
 void IRAM_ATTR keyBoardISR();
 
-/// @brief A simple switch statement that trnslates keystrokes to the proper nav signals
+/// @brief A simple switch statement that translates keystrokes to the proper nav signals
 /// @param aux A char character
 /// @return A nav signal (enum)
 navSignal navSwitch(char aux);
