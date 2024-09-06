@@ -353,7 +353,7 @@ void list_Class::scrollDown(){
 void list_Class::scrollUp(){
     this->scroll(this->pos-1);
 }
-void list_Class::enterEvent(){};
+bool list_Class::enterEvent(){return true;};
 //wifiMenu fuctions
 
 wifiMenu_Class::wifiMenu_Class() :  list_Class(String("WiFi"), 0, nullptr, coord(50,30), coord(140,96)){
@@ -443,15 +443,20 @@ void wifiMenu_Class::appLoop(){
                                         break;
                 case navSignal::ENTER:  //Element selected event
                                         log_i("Element selected event");
-                                        this->enterEvent();
-                                        //Prepare to exit the loop and return
-                                        flag = true;
-                                        this->del();
-                                        break;
+                                        if (this->enterEvent()){
+                                            //Prepare to exit the loop and return (wifi was connected)
+                                            flag = true;
+                                            this->del();
+                                        } else {
+                                            //If esc is triggered it returns to the appLoop
+                                            //MUST CHANGE BACK THE INPUT MODE @ THIS POINT, CAN'T DECIDE MOST ELEGANT WAY
+                                            this->draw();
+                                            break;
+                                        }
                 case navSignal::OPT:    //Option event
                                         log_i("Option event");
                                         this->optnEvent();
-                                        //After the opt event it return to the appLoop
+                                        //After the opt event it returns to the appLoop
                                         this->draw();
                                         break;
                 case navSignal::CTRL:   //Rescan event
@@ -548,7 +553,7 @@ void wifiMenu_Class::optnEvent(){
 
 };
 
-void wifiMenu_Class::enterEvent(){
+bool wifiMenu_Class::enterEvent(){
     //Handles conection to the selected network
 
     //Create the background sprite in RAM
@@ -594,17 +599,21 @@ void wifiMenu_Class::enterEvent(){
     bool flag = false;
     psswrd.enableTextInput();
     log_i("Entered input loop");
-    while(!flag) {
+    while(true) {
         //Wait for user input
         //Nav signal listener
+        if (Buffer.signal == navSignal::ESC) break; //Exiting
+        else if (Buffer.signal == navSignal::ENTER) {
+            flag = true; //Connecting
+            break;
+        }
         vTaskDelay(10 / portTICK_PERIOD_MS); //Alows other things to update, housekeeping etc
         psswrd.update(); //Updates the displayed string to be the current contents of the buffer
         text.pushSprite(origin.x +this->border.x, origin.y +2*this->border.y + rowSize(this->titleSize));
     }
 
     text.deleteSprite();
-
-
+    return flag;
 
 }
 
@@ -640,7 +649,7 @@ void GUI_Class::begin(){
     BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->task, 0); //Creates thread for the GUI code on core 0
     if (gui != pdPASS) log_i("ERR");
     //Launch topBar updater
-    BaseType_t topBarUpdater = xTaskCreatePinnedToCore(topBarLoop, "topBar updater", 10000, NULL, 0, &this->topBarTask, 0); //Creates thread for the topBar updater code on core 0
+    BaseType_t topBarUpdater = xTaskCreatePinnedToCore(topBarLoop, "topBar updater", 10000, NULL, 1, &this->topBarTask, 0); //Creates thread for the topBar updater code on core 0
     if (topBarUpdater != pdPASS) log_i("ERR");
 }
 

@@ -199,7 +199,7 @@ class list_Class{
     /// @brief Scrolls up one positon
     void scrollUp();
     /// @brief Handles the element selected event triggered by ENTER navSignal
-    virtual void enterEvent();
+    virtual bool enterEvent();
 
     protected:
     /// @brief Draws the options section with the current selection highlighted (called by draw & scroll)
@@ -264,7 +264,8 @@ class wifiMenu_Class : public list_Class{
     /// @brief  Handles the element options event trigerred by OPTN navSignal
     void optnEvent();
     /// @brief Handles the element selected event (is defined on parent, overridden here)
-    void enterEvent() override;
+    /// @return Bool, true if the task was completed, flase if not
+    bool enterEvent() override;
     /// @brief Frees up the dinamically allocated memory
     void del();
 };
