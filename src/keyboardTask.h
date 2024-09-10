@@ -22,7 +22,7 @@ class buffer_Class {
   navSignal signal; ///< Last processed nav signal
 
   public:
-  /// @brief Def constructor, 50 char buffer
+  /// @brief Def constructor, node and DEF_BUFFER_SIZE_NAV_MODE buffer
   buffer_Class();
   /// @brief Constructor with specified mode & buffer size, if called with only mode, 
   ///defaults to DEF_BUFFER_SIZE_TEXT_MODE buffer size
