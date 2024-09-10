@@ -3,7 +3,6 @@
 #include <M5GFX.h>
 #include <WiFi.h>
 #include "sprites.h"
-#include "compassIcon.h"
 #include "menuBackground.h"
 #include "keyboardTask.h"
 
@@ -112,7 +111,6 @@ class topBar_Class{
 class textBox_Class{
     private:
     String defText; ///< Text displayed on the text box when its first created
-    String* text; ///< Pointer to the string where the text will be saved when a enter event is triggered
     coord pos; ///< Where the text box should be drawn
     coord size; ///< Size of the text box
     coord border; ///< Margin from the rectangle to the text (in both directions)
@@ -128,7 +126,6 @@ class textBox_Class{
     /// @brief Constructor for the textBox class
     /// @param pos Coord position where the textBox will be drawn
     /// @param size Coord size of the textBox
-    /// @param text Pointer to a string where the text will be saved when an enter event is triggered
     /// @param defText Text displayed on the box when it's created, def to ""
     /// @param parent Parent M5Canvas object to print to instead of directly to the screen (def to NULL)
     /// @param border Coord, the border margin from the rectanle to text in both directions
@@ -136,17 +133,18 @@ class textBox_Class{
     /// @param textColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
     /// @param backColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to black
     /// @param cursorColour Int, colour as defined in the m5gfx::ili9341_colors space defaults to green
-    textBox_Class(coord pos, coord size, String* text, String defText="", M5Canvas* parent = nullptr, coord border=coord(4, 6), 
+    textBox_Class(coord pos, coord size, String defText="", M5Canvas* parent = nullptr, coord border=coord(4, 6), 
      float textSize=1.1, int textColour = m5gfx::ili9341_colors::GREEN,
      int backColour = m5gfx::ili9341_colors::BLACK, int cursorColour = m5gfx::ili9341_colors::GREEN);
     /// @brief Draws or redraws the textBox on the screen
     void draw();
     /// @brief Enables the textInput and launches a keyboard listener if it isn't already running
     void enableTextInput();
-    /// @brief Disables textInput and kills the keyboard listener process
+    /// @brief Disables textInput and changes the keyboard listener back to nav mode
     void disableTextInput();
     /// @brief Updates the contents of the displayed textBox to the current buffer contents
-    void update();
+    /// @return A string with the current contents of the buffer
+    String update();
     /// @brief Returns the value of enableTextInput
     /// @return Bool, enableTextInput
     bool getEnableTextInput();
@@ -264,8 +262,13 @@ class wifiMenu_Class : public list_Class{
     /// @brief  Handles the element options event trigerred by OPTN navSignal
     void optnEvent();
     /// @brief Handles the element selected event (is defined on parent, overridden here)
-    /// @return Bool, true if the task was completed, flase if not
+    /// @return Bool, true if the task was completed, false if not
     bool enterEvent() override;
+    ///@brief Attempts to connect to a networl with the given details, showing an animation on the GUI
+    ///@param ssid SSID of the network we are connecting to
+    ///@param password Password of the network
+    ///@return Bool, wether the conection was succesfull
+    bool connectToNetWork(String ssid, String password);
     /// @brief Frees up the dinamically allocated memory
     void del();
 };

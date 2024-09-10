@@ -121,11 +121,10 @@ void topBar_Class::updateIcons(){
 }
 
 //textBox_class functions
-textBox_Class::textBox_Class(coord pos, coord size, String* text, String defText, M5Canvas* parent,
+textBox_Class::textBox_Class(coord pos, coord size, String defText, M5Canvas* parent,
     coord border, float textSize, int textColour, int backColour, int cursorColour){
         this->pos = pos;
         this->size = size;
-        this->text = text;
         this->border = border;
         this->parent = parent;
         this->defText = defText;
@@ -184,10 +183,25 @@ void textBox_Class::enableTextInput(){
 }
 
 void textBox_Class:: disableTextInput(){
+    //First we change mode to navigation, and decrease the buffer size
+
+    if(Buffer.Mode != mode::nav || Buffer.getBufferSize() != DEF_BUFFER_SIZE_NAV_MODE
+        || eTaskGetState(Buffer.getTaskHandle()) == eTaskState::eDeleted
+        || eTaskGetState(Buffer.getTaskHandle()) == eTaskState::eInvalid) {
+        //Checks wether the Buffer is set to an incorrect mode, or the keyboard task has been killed
+        //if either of these conditions are met, it reinstantiates the buffer in the correct mode
+        Buffer.killTask(); //Kill current buffer class, free up memory
+        Buffer = buffer_Class(); //Reinitilize Buffer in nav mode w/DEF_BUFFER_SIZE_TEXT_MODE buffer
+        Buffer.begin(); //Create keyboard task and begin running it
+    }
+
+    //Then we disable the input
     Buffer.keyboardEnable = false;
+    log_i("Keyboard back to nav mode, input disabled");
+    
 }
 
-void textBox_Class::update(){
+String textBox_Class::update(){
     //Updates the text part of the sprite with the curent contents of the buffer
     M5Canvas text = (this->parent == nullptr) ? M5Canvas(&Display): M5Canvas(parent);
     text.createSprite(this->size.x -2*this->border.x, this->size.y -2*this->border.y);
@@ -229,6 +243,8 @@ void textBox_Class::update(){
     //Push & delete
     text.pushSprite(this->pos.x + this->border.x, this->pos.y + this->border.y);
     text.deleteSprite();
+
+    return aux;
 
 }
 
@@ -423,7 +439,7 @@ void wifiMenu_Class::appLoop(){
     while(!flag){
         //Endless application loop
         //Nav signal listener
-        vTaskDelay(10 / portTICK_PERIOD_MS); //Alows other things to update, housekeeping etc
+        vTaskDelay(10 / portTICK_PERIOD_MS); //Allows other things to update, housekeeping etc
         if (Buffer.signal != navSignal::NP) {
             log_i("Nav signal detected");
             Buffer.keyboardEnable = false; //Deactivate keyboard during execution
@@ -447,9 +463,9 @@ void wifiMenu_Class::appLoop(){
                                             //Prepare to exit the loop and return (wifi was connected)
                                             flag = true;
                                             this->del();
+                                            break;
                                         } else {
                                             //If esc is triggered it returns to the appLoop
-                                            //MUST CHANGE BACK THE INPUT MODE @ THIS POINT, CAN'T DECIDE MOST ELEGANT WAY
                                             this->draw();
                                             break;
                                         }
@@ -554,7 +570,7 @@ void wifiMenu_Class::optnEvent(){
 };
 
 bool wifiMenu_Class::enterEvent(){
-    //Handles conection to the selected network
+    //Handles input of the password to the network
 
     //Create the background sprite in RAM
     M5Canvas background(&Display);
@@ -590,8 +606,7 @@ bool wifiMenu_Class::enterEvent(){
     text.println("\nEnter the network password:");
 
     //Create textBox
-    String password = "";
-    textBox_Class psswrd(coord(0,40), coord(this->size.x -2*this->border.x, rowSize(this->titleSize)), &password, "Prueba", &text);
+    textBox_Class psswrd(coord(0,40), coord(this->size.x -2*this->border.x, rowSize(this->titleSize)), "Prueba", &text);
     //Push sprite
     psswrd.draw();
     text.pushSprite(origin.x +this->border.x, origin.y +2*this->border.y + rowSize(this->titleSize));
@@ -599,29 +614,78 @@ bool wifiMenu_Class::enterEvent(){
     bool flag = false;
     psswrd.enableTextInput();
     log_i("Entered input loop");
+    String password;
     while(true) {
         //Wait for user input
         //Nav signal listener
-        if (Buffer.signal == navSignal::ESC) break; //Exiting
+        if (Buffer.signal == navSignal::ESC) {
+            Buffer.signal = navSignal::NP; //Clear signal
+            break; //Exiting
+        }
         else if (Buffer.signal == navSignal::ENTER) {
-            flag = true; //Connecting
-            break;
+            Buffer.signal = navSignal::NP; //Clear signal
+            flag = true; //Attempting to connect to the WiFi
+            break; //Exiting
         }
         vTaskDelay(10 / portTICK_PERIOD_MS); //Alows other things to update, housekeeping etc
-        psswrd.update(); //Updates the displayed string to be the current contents of the buffer
+        password = psswrd.update(); //Updates the displayed string to be the current contents of the buffer
         text.pushSprite(origin.x +this->border.x, origin.y +2*this->border.y + rowSize(this->titleSize));
     }
 
     text.deleteSprite();
+    if (flag) {
+        this->connectToNetWork(this->elementName[this->pos], password);
+    }
+    else psswrd.disableTextInput(); //Return keyboard to nav mode for the menu
     return flag;
 
+}
+
+bool wifiMenu_Class::connectToNetWork(String ssid, String password){
+    //Handles the actual connection
+
+    //Create the background sprite in RAM
+    M5Canvas base(&Display);
+    base.createSprite(this->size.x, this->size.y);
+
+    //Draw background rectangle
+    base.setBaseColor(this->backColour);
+    base.clear();
+    base.setColor(this->textColour);
+    base.drawRoundRect(0, 0, this->size.x , this->size.y, 3);
+    base.pushImage(20,10, 45,74, telefonoBase);
+    
+    M5Canvas text(&base);
+    text.createSprite(60,60);
+    text.setTextColor(GREEN);
+    text.print("Connecting\nto:\n");
+    text.print(ssid);
+    text.pushSprite(55,20);
+    text.deleteSprite();
+
+    base.pushSprite(this->origin.x, this->origin.y, RED);
+
+    M5Canvas anim(&Display);
+    anim.createSprite(13,13);
+    anim.pushImage(0,0,13,13,ruedaTelefono);
+
+
+    //WiFi.begin(ssid, password);
+    float i = 0.0;
+    while(WiFi.status() != WL_CONNECTED) {
+        log_i("Attempting to connect");
+        anim.pushRotateZoomWithAA(92, 77, i, 1.0, 1.0, RED);
+        i+= 5.0;
+        delay(50);
+
+    }
 }
 
 
 
 void wifiMenu_Class::del() {
     
-    log_i("Freeing up memory");
+    log_i("Deleting saved scan");
     //Frees dinamically allocated memory
     delete[] this->elementName;
     delete[] this->encript;
