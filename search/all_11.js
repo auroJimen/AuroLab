@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['update_0',['update',['../classtext_box___class.html#a367247bd7e19d1d4fc45828256e77b9a',1,'textBox_Class']]],
+  ['update_0',['update',['../classtext_box___class.html#af1c6c03c08f5c365e5e079d5c5d4afd1',1,'textBox_Class']]],
   ['updatechargelevel_1',['updateChargeLevel',['../classicon_bat___class.html#a3885a352f82a852267a5ceab6443f147',1,'iconBat_Class']]],
   ['updateicons_2',['updateIcons',['../classtop_bar___class.html#a555351fcf48dbea120ac40f8c010dce8',1,'topBar_Class']]],
   ['updatepercent_3',['updatePercent',['../classicon_bat___class.html#abea3617d80f87acba7be39b078ea8611',1,'iconBat_Class']]],

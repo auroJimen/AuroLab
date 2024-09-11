@@ -119,9 +119,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa85befe97aeee813065860fe1e9231d6" id="r_aa85befe97aeee813065860fe1e9231d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa85befe97aeee813065860fe1e9231d6">optnEvent</a> ()</td></tr>
 <tr class="memdesc:aa85befe97aeee813065860fe1e9231d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the element options event trigerred by OPTN navSignal.  <br /></td></tr>
 <tr class="separator:aa85befe97aeee813065860fe1e9231d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12863a3752876d179d948879a75362a1" id="r_a12863a3752876d179d948879a75362a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12863a3752876d179d948879a75362a1">enterEvent</a> () override</td></tr>
-<tr class="memdesc:a12863a3752876d179d948879a75362a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the element selected event (is defined on parent, overridden here)  <br /></td></tr>
-<tr class="separator:a12863a3752876d179d948879a75362a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a7bccf484d37d27a114c52429c6572" id="r_af7a7bccf484d37d27a114c52429c6572"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7a7bccf484d37d27a114c52429c6572">enterEvent</a> () override</td></tr>
+<tr class="memdesc:af7a7bccf484d37d27a114c52429c6572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the element selected event (is defined on parent, overridden here)  <br /></td></tr>
+<tr class="separator:af7a7bccf484d37d27a114c52429c6572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad647b8ab84c06993815b6eca2c218d9c" id="r_ad647b8ab84c06993815b6eca2c218d9c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad647b8ab84c06993815b6eca2c218d9c">connectToNetWork</a> (String ssid, String password)</td></tr>
+<tr class="memdesc:ad647b8ab84c06993815b6eca2c218d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to connect to a networl with the given details, showing an animation on the GUI.  <br /></td></tr>
+<tr class="separator:ad647b8ab84c06993815b6eca2c218d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dfd391a6071a80553b2f09355b64bbb" id="r_a1dfd391a6071a80553b2f09355b64bbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dfd391a6071a80553b2f09355b64bbb">del</a> ()</td></tr>
 <tr class="memdesc:a1dfd391a6071a80553b2f09355b64bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees up the dinamically allocated memory.  <br /></td></tr>
 <tr class="separator:a1dfd391a6071a80553b2f09355b64bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,7 +210,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for displaying the wifi connection menu, inherits from the <a class="el" href="classlist___class.html" title="Scrollable, selectable list class to construct menus.">list_Class</a> &amp; adds specific functionality. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00249">249</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8h_source.html#l00247">247</a> of file <a class="el" href="_g_u_i_8h_source.html">GUI.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1587fd44b1956225c70328aae192157" name="ad1587fd44b1956225c70328aae192157"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1587fd44b1956225c70328aae192157">&#9670;&#160;</a></span>wifiMenu_Class()</h2>
@@ -233,7 +236,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00360">360</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00375">375</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
@@ -255,7 +258,40 @@ Additional Inherited Members</h2></td></tr>
 
 <p>The app loop for the scan menu, draws to the screen, listens to input... </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00417">417</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00432">432</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad647b8ab84c06993815b6eca2c218d9c" name="ad647b8ab84c06993815b6eca2c218d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad647b8ab84c06993815b6eca2c218d9c">&#9670;&#160;</a></span>connectToNetWork()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool wifiMenu_Class::connectToNetWork </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>ssid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>password</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Attempts to connect to a networl with the given details, showing an animation on the GUI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ssid</td><td>SSID of the network we are connecting to </td></tr>
+    <tr><td class="paramname">password</td><td>Password of the network </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Bool, wether the conection was succesfull </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00644">644</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,12 +312,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Frees up the dinamically allocated memory. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00614">614</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00686">686</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a12863a3752876d179d948879a75362a1" name="a12863a3752876d179d948879a75362a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12863a3752876d179d948879a75362a1">&#9670;&#160;</a></span>enterEvent()</h2>
+<a id="af7a7bccf484d37d27a114c52429c6572" name="af7a7bccf484d37d27a114c52429c6572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a7bccf484d37d27a114c52429c6572">&#9670;&#160;</a></span>enterEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,7 +326,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void wifiMenu_Class::enterEvent </td>
+          <td class="memname">bool wifiMenu_Class::enterEvent </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -304,10 +340,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles the element selected event (is defined on parent, overridden here) </p>
+<dl class="section return"><dt>Returns</dt><dd>Bool, true if the task was completed, false if not </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classlist___class.html#ab2676ecc5c076b8159249d2726f7707d">list_Class</a>.</p>
+<p>Reimplemented from <a class="el" href="classlist___class.html#ae72807af43934ff2686d131eec10d51b">list_Class</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00552">552</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00572">572</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
@@ -328,7 +365,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Handles the element options event trigerred by OPTN navSignal. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00487">487</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00507">507</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
@@ -349,7 +386,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Scans for available networks &amp; initialaizes them as options. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00372">372</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00387">387</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 
 </div>
 </div>
