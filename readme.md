@@ -9,6 +9,7 @@
 
 - Main menu
     - [x] Top Bar
+        - [x] Top bar async updater
         - [x] Battery indicator
             - [x] Icon
                 - [x] Asset created
@@ -21,6 +22,7 @@
         - [ ] WiFi indicator
             - [ ] Icon asset created
             - [ ] Code implementation
+                - Should check current commection, reconmect if it fails etc.
     - [ ] Terminal App
         - [x] Icon asset created
         - [ ] Terminal core app
@@ -40,7 +42,7 @@
                 - [x] Code implementation
             - [x] Display available networks via list
                 - [x] Display wifi info when OPTN is presed
-            - [ ] Connect
+            - [x] Connect
 - General GUI/IO
     - [x] Interactive list class
         - [x] Create & display scrollable class
@@ -52,6 +54,7 @@
                 - [x] Event handler function assigned
             - [x] Trigger event from keyboard
     - [x] Input via keyboard & G0 button
+        - [ ] Support for spanish characters (need ñ)
         - [ ] G0 button support
         - [x] Asincronous keyboard buffer
             - [x] Customizable size
@@ -61,10 +64,9 @@
                     - [x] Insert text (standard) mode
                     - [x] Overwrite text when OPT is pressed
             - [x] Navigtion mode for menus
-    - [ ] Interactive text box class
+    - [x] Interactive text box class
         - [x] Custom size
         - [x] Async update (from the Keyboard thread)
-        - [ ] GUI editing with cursor movements
-            - Solving bugs with proper cursor placement and text rendering
+        - [x] GUI editing with cursor movements
 - Future objectives:
     - [ ] Port to non M5 alternative libraries
