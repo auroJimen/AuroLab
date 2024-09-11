@@ -294,8 +294,8 @@
 <codeline lineno="12" refid="classbuffer___class" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classbuffer___class" kindref="compound">buffer_Class</ref><sp/>{</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/>TaskHandle_t<sp/>keyboardTask;<sp/></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/>hw_timer_t*<sp/>timer;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>hw_timer_t*<sp/>timer;<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size;<sp/></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>data;<sp/></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="19" refid="classbuffer___class_1a3ab4b8088883189f50066d32c59f3761" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classbuffer___class_1a3ab4b8088883189f50066d32c59f3761" kindref="member">cursor</ref>;<sp/></highlight></codeline>

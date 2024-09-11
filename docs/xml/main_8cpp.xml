@@ -28,16 +28,8 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
       </node>
-      <node id="10">
-        <label>compassIcon.h</label>
-        <link refid="compass_icon_8h_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
+      <node id="11">
         <label>keyboardTask.h</label>
         <link refid="keyboard_task_8h_source"/>
         <childnode refid="2" relation="include">
@@ -59,7 +51,7 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>menuBackground.h</label>
         <link refid="menu_background_8h_source"/>
         <childnode refid="9" relation="include">

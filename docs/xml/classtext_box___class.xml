@@ -17,22 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="114" column="12" bodyfile="src/GUI.h" bodystart="114" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classtext_box___class_1aeb44ef09332727d341dea481b6773f4d" prot="private" static="no" mutable="no">
-        <type>String *</type>
-        <definition>String* textBox_Class::text</definition>
-        <argsstring></argsstring>
-        <name>text</name>
-        <qualifiedname>textBox_Class::text</qualifiedname>
-        <briefdescription>
-<para>Pointer to the string where the text will be saved when a enter event is triggered. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/GUI.h" line="115" column="12" bodyfile="src/GUI.h" bodystart="115" bodyend="-1"/>
+        <location file="src/GUI.h" line="113" column="12" bodyfile="src/GUI.h" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a28777adb9716c732e5f888dfdeb70c66" prot="private" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
@@ -47,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="116" column="11" bodyfile="src/GUI.h" bodystart="116" bodyend="-1"/>
+        <location file="src/GUI.h" line="114" column="11" bodyfile="src/GUI.h" bodystart="114" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a42c9ec6421da276d00eb7af0e677f1e3" prot="private" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
@@ -62,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="117" column="11" bodyfile="src/GUI.h" bodystart="117" bodyend="-1"/>
+        <location file="src/GUI.h" line="115" column="11" bodyfile="src/GUI.h" bodystart="115" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a263e11300f7dc11b2ca5edb2f2c52209" prot="private" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
@@ -77,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="118" column="11" bodyfile="src/GUI.h" bodystart="118" bodyend="-1"/>
+        <location file="src/GUI.h" line="116" column="11" bodyfile="src/GUI.h" bodystart="116" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a78596cc60fe2f57b5b75bdbf626cb201" prot="private" static="no" mutable="no">
         <type>M5GFX</type>
@@ -92,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="119" column="11" bodyfile="src/GUI.h" bodystart="119" bodyend="-1"/>
+        <location file="src/GUI.h" line="117" column="11" bodyfile="src/GUI.h" bodystart="117" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a521ef164c413acf5c6b7ca2b361e5d82" prot="private" static="no" mutable="no">
         <type>M5Canvas *</type>
@@ -109,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="120" column="14" bodyfile="src/GUI.h" bodystart="120" bodyend="-1"/>
+        <location file="src/GUI.h" line="118" column="14" bodyfile="src/GUI.h" bodystart="118" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a15d0a7411675ca7561e3ab9eafeaede3" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -124,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="121" column="11" bodyfile="src/GUI.h" bodystart="121" bodyend="-1"/>
+        <location file="src/GUI.h" line="119" column="11" bodyfile="src/GUI.h" bodystart="119" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a8604cab0db9cf7899009b68c8e140fa4" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -139,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="122" column="9" bodyfile="src/GUI.h" bodystart="122" bodyend="-1"/>
+        <location file="src/GUI.h" line="120" column="9" bodyfile="src/GUI.h" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a644fe252eafc758a6a928e34ecba5008" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -154,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="123" column="9" bodyfile="src/GUI.h" bodystart="123" bodyend="-1"/>
+        <location file="src/GUI.h" line="121" column="9" bodyfile="src/GUI.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a836ab3fd6702ea6968a34068b9b96ad8" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -169,7 +154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="124" column="9" bodyfile="src/GUI.h" bodystart="124" bodyend="-1"/>
+        <location file="src/GUI.h" line="122" column="9" bodyfile="src/GUI.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a4334800d8f641d85f8123d304aa95c2b" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -184,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="125" column="9" bodyfile="src/GUI.h" bodystart="125" bodyend="-1"/>
+        <location file="src/GUI.h" line="123" column="9" bodyfile="src/GUI.h" bodystart="123" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classtext_box___class_1a3741862b1fc7efc8d97c55e9bf819a89" prot="private" static="no" mutable="no">
         <type><ref refid="structcoord" kindref="compound">coord</ref></type>
@@ -199,14 +184,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="126" column="11" bodyfile="src/GUI.h" bodystart="126" bodyend="-1"/>
+        <location file="src/GUI.h" line="124" column="11" bodyfile="src/GUI.h" bodystart="124" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classtext_box___class_1a18bd715d273db180c207aae9aa2f9abc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classtext_box___class_1aa4915e9aceac8eb51dc57cce3e5a1832" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>textBox_Class::textBox_Class</definition>
-        <argsstring>(coord pos, coord size, String *text, String defText=&quot;&quot;, M5Canvas *parent=nullptr, coord border=coord(4, 6), float textSize=1.1, int textColour=m5gfx::ili9341_colors::GREEN, int backColour=m5gfx::ili9341_colors::BLACK, int cursorColour=m5gfx::ili9341_colors::GREEN)</argsstring>
+        <argsstring>(coord pos, coord size, String defText=&quot;&quot;, M5Canvas *parent=nullptr, coord border=coord(4, 6), float textSize=1.1, int textColour=m5gfx::ili9341_colors::GREEN, int backColour=m5gfx::ili9341_colors::BLACK, int cursorColour=m5gfx::ili9341_colors::GREEN)</argsstring>
         <name>textBox_Class</name>
         <qualifiedname>textBox_Class::textBox_Class</qualifiedname>
         <param>
@@ -216,10 +201,6 @@
         <param>
           <type><ref refid="structcoord" kindref="compound">coord</ref></type>
           <declname>size</declname>
-        </param>
-        <param>
-          <type>String *</type>
-          <declname>text</declname>
         </param>
         <param>
           <type>String</type>
@@ -274,14 +255,6 @@
 </parameternamelist>
 <parameterdescription>
 <para>Coord size of the textBox </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>text</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Pointer to a string where the text will be saved when an enter event is triggered </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -345,7 +318,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="139" column="5" bodyfile="src/GUI.cpp" bodystart="125" bodyend="139"/>
+        <location file="src/GUI.h" line="136" column="5" bodyfile="src/GUI.cpp" bodystart="124" bodyend="137"/>
       </memberdef>
       <memberdef kind="function" id="classtext_box___class_1a29ff669d373aada7b03d59e502e031e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -360,7 +333,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="143" column="10" bodyfile="src/GUI.cpp" bodystart="141" bodyend="168"/>
+        <location file="src/GUI.h" line="140" column="10" bodyfile="src/GUI.cpp" bodystart="139" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="classtext_box___class_1a4f508e0fd1645f5209b3dce4459adb07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -375,7 +348,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="145" column="10" bodyfile="src/GUI.cpp" bodystart="170" bodyend="185"/>
+        <location file="src/GUI.h" line="142" column="10" bodyfile="src/GUI.cpp" bodystart="168" bodyend="183"/>
       </memberdef>
       <memberdef kind="function" id="classtext_box___class_1ae4b2f9d68261d89824bf496462067a4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -384,17 +357,17 @@
         <name>disableTextInput</name>
         <qualifiedname>textBox_Class::disableTextInput</qualifiedname>
         <briefdescription>
-<para>Disables textInput and kills the keyboard listener process. </para>
+<para>Disables textInput and changes the keyboard listener back to nav mode. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="147" column="10" bodyfile="src/GUI.cpp" bodystart="187" bodyend="189"/>
+        <location file="src/GUI.h" line="144" column="10" bodyfile="src/GUI.cpp" bodystart="185" bodyend="202"/>
       </memberdef>
-      <memberdef kind="function" id="classtext_box___class_1a367247bd7e19d1d4fc45828256e77b9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void textBox_Class::update</definition>
+      <memberdef kind="function" id="classtext_box___class_1af1c6c03c08f5c365e5e079d5c5d4afd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String textBox_Class::update</definition>
         <argsstring>()</argsstring>
         <name>update</name>
         <qualifiedname>textBox_Class::update</qualifiedname>
@@ -402,10 +375,13 @@
 <para>Updates the contents of the displayed textBox to the current buffer contents. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>A string with the current contents of the buffer </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="149" column="10" bodyfile="src/GUI.cpp" bodystart="191" bodyend="234"/>
+        <location file="src/GUI.h" line="147" column="12" bodyfile="src/GUI.cpp" bodystart="204" bodyend="249"/>
       </memberdef>
       <memberdef kind="function" id="classtext_box___class_1a9341bfa7a03d269d49ca517db9064d38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -423,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/GUI.h" line="152" column="10"/>
+        <location file="src/GUI.h" line="150" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -431,7 +407,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/GUI.h" line="112" column="1" bodyfile="src/GUI.h" bodystart="112" bodyend="153"/>
+    <location file="src/GUI.h" line="111" column="1" bodyfile="src/GUI.h" bodystart="111" bodyend="151"/>
     <listofallmembers>
       <member refid="classtext_box___class_1a644fe252eafc758a6a928e34ecba5008" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>backColour</name></member>
       <member refid="classtext_box___class_1a263e11300f7dc11b2ca5edb2f2c52209" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>border</name></member>
@@ -447,11 +423,10 @@
       <member refid="classtext_box___class_1a521ef164c413acf5c6b7ca2b361e5d82" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>parent</name></member>
       <member refid="classtext_box___class_1a28777adb9716c732e5f888dfdeb70c66" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>pos</name></member>
       <member refid="classtext_box___class_1a42c9ec6421da276d00eb7af0e677f1e3" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>size</name></member>
-      <member refid="classtext_box___class_1aeb44ef09332727d341dea481b6773f4d" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>text</name></member>
-      <member refid="classtext_box___class_1a18bd715d273db180c207aae9aa2f9abc" prot="public" virt="non-virtual"><scope>textBox_Class</scope><name>textBox_Class</name></member>
+      <member refid="classtext_box___class_1aa4915e9aceac8eb51dc57cce3e5a1832" prot="public" virt="non-virtual"><scope>textBox_Class</scope><name>textBox_Class</name></member>
       <member refid="classtext_box___class_1a8604cab0db9cf7899009b68c8e140fa4" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>textColour</name></member>
       <member refid="classtext_box___class_1a15d0a7411675ca7561e3ab9eafeaede3" prot="private" virt="non-virtual"><scope>textBox_Class</scope><name>textSize</name></member>
-      <member refid="classtext_box___class_1a367247bd7e19d1d4fc45828256e77b9a" prot="public" virt="non-virtual"><scope>textBox_Class</scope><name>update</name></member>
+      <member refid="classtext_box___class_1af1c6c03c08f5c365e5e079d5c5d4afd1" prot="public" virt="non-virtual"><scope>textBox_Class</scope><name>update</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

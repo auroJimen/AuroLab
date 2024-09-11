@@ -12,15 +12,15 @@ Text input box class to construct menus.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classtext_box___class_a18bd715d273db180c207aae9aa2f9abc}{text\+Box\+\_\+\+Class}} (\mbox{\hyperlink{structcoord}{coord}} pos, \mbox{\hyperlink{structcoord}{coord}} size, String \texorpdfstring{$\ast$}{*}text, String def\+Text="{}"{}, M5\+Canvas \texorpdfstring{$\ast$}{*}parent=nullptr, \mbox{\hyperlink{structcoord}{coord}} border=\mbox{\hyperlink{structcoord}{coord}}(4, 6), float text\+Size=1.\+1, int text\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, int back\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+BLACK, int cursor\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN)
+\mbox{\hyperlink{classtext_box___class_aa4915e9aceac8eb51dc57cce3e5a1832}{text\+Box\+\_\+\+Class}} (\mbox{\hyperlink{structcoord}{coord}} pos, \mbox{\hyperlink{structcoord}{coord}} size, String def\+Text="{}"{}, M5\+Canvas \texorpdfstring{$\ast$}{*}parent=nullptr, \mbox{\hyperlink{structcoord}{coord}} border=\mbox{\hyperlink{structcoord}{coord}}(4, 6), float text\+Size=1.\+1, int text\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN, int back\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+BLACK, int cursor\+Colour=m5gfx\+::ili9341\+\_\+colors\+::\+GREEN)
 \begin{DoxyCompactList}\small\item\em Constructor for the text\+Box class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classtext_box___class_a29ff669d373aada7b03d59e502e031e0}{draw}} ()
 \begin{DoxyCompactList}\small\item\em Draws or redraws the text\+Box on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classtext_box___class_a4f508e0fd1645f5209b3dce4459adb07}{enable\+Text\+Input}} ()
 \begin{DoxyCompactList}\small\item\em Enables the text\+Input and launches a keyboard listener if it isn\textquotesingle{}t already running. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classtext_box___class_ae4b2f9d68261d89824bf496462067a4f}{disable\+Text\+Input}} ()
-\begin{DoxyCompactList}\small\item\em Disables text\+Input and kills the keyboard listener process. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classtext_box___class_a367247bd7e19d1d4fc45828256e77b9a}{update}} ()
+\begin{DoxyCompactList}\small\item\em Disables text\+Input and changes the keyboard listener back to nav mode. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classtext_box___class_af1c6c03c08f5c365e5e079d5c5d4afd1}{update}} ()
 \begin{DoxyCompactList}\small\item\em Updates the contents of the displayed text\+Box to the current buffer contents. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classtext_box___class_a9341bfa7a03d269d49ca517db9064d38}{get\+Enable\+Text\+Input}} ()
 \begin{DoxyCompactList}\small\item\em Returns the value of enable\+Text\+Input. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -29,16 +29,16 @@ bool \mbox{\hyperlink{classtext_box___class_a9341bfa7a03d269d49ca517db9064d38}{g
 \doxysubsection{Detailed Description}
 Text input box class to construct menus. 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00112}{112}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00111}{111}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classtext_box___class_a18bd715d273db180c207aae9aa2f9abc}\index{textBox\_Class@{textBox\_Class}!textBox\_Class@{textBox\_Class}}
+\Hypertarget{classtext_box___class_aa4915e9aceac8eb51dc57cce3e5a1832}\index{textBox\_Class@{textBox\_Class}!textBox\_Class@{textBox\_Class}}
 \index{textBox\_Class@{textBox\_Class}!textBox\_Class@{textBox\_Class}}
 \doxysubsubsection{\texorpdfstring{textBox\_Class()}{textBox\_Class()}}
-{\footnotesize\ttfamily \label{classtext_box___class_a18bd715d273db180c207aae9aa2f9abc} 
-text\+Box\+\_\+\+Class\+::text\+Box\+\_\+\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoord}{coord}}}]{pos}{, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{size}{, }\item[{String \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{String}]{def\+Text}{ = {\ttfamily "{}"{}}, }\item[{M5\+Canvas \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{border}{ = {\ttfamily \mbox{\hyperlink{structcoord}{coord}}(4,~6)}, }\item[{float}]{text\+Size}{ = {\ttfamily 1.1}, }\item[{int}]{text\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}, }\item[{int}]{back\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:BLACK}, }\item[{int}]{cursor\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classtext_box___class_aa4915e9aceac8eb51dc57cce3e5a1832} 
+text\+Box\+\_\+\+Class\+::text\+Box\+\_\+\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcoord}{coord}}}]{pos}{, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{size}{, }\item[{String}]{def\+Text}{ = {\ttfamily "{}"{}}, }\item[{M5\+Canvas \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}, }\item[{\mbox{\hyperlink{structcoord}{coord}}}]{border}{ = {\ttfamily \mbox{\hyperlink{structcoord}{coord}}(4,~6)}, }\item[{float}]{text\+Size}{ = {\ttfamily 1.1}, }\item[{int}]{text\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}, }\item[{int}]{back\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:BLACK}, }\item[{int}]{cursor\+Colour}{ = {\ttfamily m5gfx\+:\+:ili9341\+\_\+colors\+:\+:GREEN}}\end{DoxyParamCaption})}
 
 
 
@@ -49,8 +49,6 @@ Constructor for the text\+Box class.
 {\em pos} & Coord position where the text\+Box will be drawn \\
 \hline
 {\em size} & Coord size of the text\+Box \\
-\hline
-{\em text} & Pointer to a string where the text will be saved when an enter event is triggered \\
 \hline
 {\em def\+Text} & Text displayed on the box when it\textquotesingle{}s created, def to "{}"{} \\
 \hline
@@ -69,7 +67,7 @@ Constructor for the text\+Box class.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00125}{125}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 
 
@@ -82,11 +80,11 @@ void text\+Box\+\_\+\+Class\+::disable\+Text\+Input (\begin{DoxyParamCaption}{}{
 
 
 
-Disables text\+Input and kills the keyboard listener process. 
+Disables text\+Input and changes the keyboard listener back to nav mode. 
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00187}{187}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00185}{185}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classtext_box___class_a29ff669d373aada7b03d59e502e031e0}\index{textBox\_Class@{textBox\_Class}!draw@{draw}}
 \index{draw@{draw}!textBox\_Class@{textBox\_Class}}
@@ -100,7 +98,7 @@ Draws or redraws the text\+Box on the screen.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00141}{141}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classtext_box___class_a4f508e0fd1645f5209b3dce4459adb07}\index{textBox\_Class@{textBox\_Class}!enableTextInput@{enableTextInput}}
 \index{enableTextInput@{enableTextInput}!textBox\_Class@{textBox\_Class}}
@@ -114,7 +112,7 @@ Enables the text\+Input and launches a keyboard listener if it isn\textquotesing
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classtext_box___class_a9341bfa7a03d269d49ca517db9064d38}\index{textBox\_Class@{textBox\_Class}!getEnableTextInput@{getEnableTextInput}}
 \index{getEnableTextInput@{getEnableTextInput}!textBox\_Class@{textBox\_Class}}
@@ -129,19 +127,22 @@ Returns the value of enable\+Text\+Input.
 \begin{DoxyReturn}{Returns}
 Bool, enable\+Text\+Input 
 \end{DoxyReturn}
-\Hypertarget{classtext_box___class_a367247bd7e19d1d4fc45828256e77b9a}\index{textBox\_Class@{textBox\_Class}!update@{update}}
+\Hypertarget{classtext_box___class_af1c6c03c08f5c365e5e079d5c5d4afd1}\index{textBox\_Class@{textBox\_Class}!update@{update}}
 \index{update@{update}!textBox\_Class@{textBox\_Class}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily \label{classtext_box___class_a367247bd7e19d1d4fc45828256e77b9a} 
-void text\+Box\+\_\+\+Class\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classtext_box___class_af1c6c03c08f5c365e5e079d5c5d4afd1} 
+String text\+Box\+\_\+\+Class\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Updates the contents of the displayed text\+Box to the current buffer contents. 
 
+\begin{DoxyReturn}{Returns}
+A string with the current contents of the buffer 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00191}{191}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00204}{204}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 
 

@@ -26,6 +26,7 @@
         <name>timer</name>
         <qualifiedname>buffer_Class::timer</qualifiedname>
         <briefdescription>
+<para>Timer used to update the keyboard. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -40,6 +41,7 @@
         <name>size</name>
         <qualifiedname>buffer_Class::size</qualifiedname>
         <briefdescription>
+<para>Buffer size (in chars) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -133,7 +135,7 @@
         <name>buffer_Class</name>
         <qualifiedname>buffer_Class::buffer_Class</qualifiedname>
         <briefdescription>
-<para>Def constructor, 50 char buffer. </para>
+<para>Def constructor, node and DEF_BUFFER_SIZE_NAV_MODE buffer. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -378,7 +380,7 @@
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>A struct with all needed elements &amp; functions to create &amp; control a 50 character buffer htat serves as the connection between the leyboard thread &amp; the rest of the system. </para>
+<para>A class with all needed elements &amp; functions to create &amp; control a 50 character buffer that serves as the connection between the keyboard thread &amp; the rest of the system. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

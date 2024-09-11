@@ -26,8 +26,10 @@ void \mbox{\hyperlink{classwifi_menu___class_a39fe0cd27acdfd561f30886005174bd5}{
 \begin{DoxyCompactList}\small\item\em The app loop for the scan menu, draws to the screen, listens to input... \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classwifi_menu___class_aa85befe97aeee813065860fe1e9231d6}{optn\+Event}} ()
 \begin{DoxyCompactList}\small\item\em Handles the element options event trigerred by OPTN nav\+Signal. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classwifi_menu___class_a12863a3752876d179d948879a75362a1}{enter\+Event}} () override
+bool \mbox{\hyperlink{classwifi_menu___class_af7a7bccf484d37d27a114c52429c6572}{enter\+Event}} () override
 \begin{DoxyCompactList}\small\item\em Handles the element selected event (is defined on parent, overridden here) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classwifi_menu___class_ad647b8ab84c06993815b6eca2c218d9c}{connect\+To\+Net\+Work}} (String ssid, String password)
+\begin{DoxyCompactList}\small\item\em Attempts to connect to a networl with the given details, showing an animation on the GUI. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classwifi_menu___class_a1dfd391a6071a80553b2f09355b64bbb}{del}} ()
 \begin{DoxyCompactList}\small\item\em Frees up the dinamically allocated memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classlist___class}{list\+\_\+\+Class}}}
@@ -93,7 +95,7 @@ int \mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}}
 \doxysubsection{Detailed Description}
 Class for displaying the wifi connection menu, inherits from the \doxylink{classlist___class}{list\+\_\+\+Class} \& adds specific functionality. 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00249}{249}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00247}{247}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 
 
@@ -117,7 +119,7 @@ Constructor for the wifi menu class, creates an empty list with the correct name
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00360}{360}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00375}{375}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 
 
@@ -134,7 +136,31 @@ The app loop for the scan menu, draws to the screen, listens to input...
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00417}{417}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00432}{432}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+
+\Hypertarget{classwifi_menu___class_ad647b8ab84c06993815b6eca2c218d9c}\index{wifiMenu\_Class@{wifiMenu\_Class}!connectToNetWork@{connectToNetWork}}
+\index{connectToNetWork@{connectToNetWork}!wifiMenu\_Class@{wifiMenu\_Class}}
+\doxysubsubsection{\texorpdfstring{connectToNetWork()}{connectToNetWork()}}
+{\footnotesize\ttfamily \label{classwifi_menu___class_ad647b8ab84c06993815b6eca2c218d9c} 
+bool wifi\+Menu\+\_\+\+Class\+::connect\+To\+Net\+Work (\begin{DoxyParamCaption}\item[{String}]{ssid}{, }\item[{String}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Attempts to connect to a networl with the given details, showing an animation on the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid} & SSID of the network we are connecting to \\
+\hline
+{\em password} & Password of the network \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bool, wether the conection was succesfull 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00644}{644}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classwifi_menu___class_a1dfd391a6071a80553b2f09355b64bbb}\index{wifiMenu\_Class@{wifiMenu\_Class}!del@{del}}
 \index{del@{del}!wifiMenu\_Class@{wifiMenu\_Class}}
@@ -148,25 +174,28 @@ Frees up the dinamically allocated memory.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00614}{614}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00686}{686}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
-\Hypertarget{classwifi_menu___class_a12863a3752876d179d948879a75362a1}\index{wifiMenu\_Class@{wifiMenu\_Class}!enterEvent@{enterEvent}}
+\Hypertarget{classwifi_menu___class_af7a7bccf484d37d27a114c52429c6572}\index{wifiMenu\_Class@{wifiMenu\_Class}!enterEvent@{enterEvent}}
 \index{enterEvent@{enterEvent}!wifiMenu\_Class@{wifiMenu\_Class}}
 \doxysubsubsection{\texorpdfstring{enterEvent()}{enterEvent()}}
-{\footnotesize\ttfamily \label{classwifi_menu___class_a12863a3752876d179d948879a75362a1} 
-void wifi\+Menu\+\_\+\+Class\+::enter\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classwifi_menu___class_af7a7bccf484d37d27a114c52429c6572} 
+bool wifi\+Menu\+\_\+\+Class\+::enter\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
 Handles the element selected event (is defined on parent, overridden here) 
 
+\begin{DoxyReturn}{Returns}
+Bool, true if the task was completed, false if not 
+\end{DoxyReturn}
 
 
-Reimplemented from \mbox{\hyperlink{classlist___class_ab2676ecc5c076b8159249d2726f7707d}{list\+\_\+\+Class}}.
+Reimplemented from \mbox{\hyperlink{classlist___class_ae72807af43934ff2686d131eec10d51b}{list\+\_\+\+Class}}.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00552}{552}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00572}{572}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classwifi_menu___class_aa85befe97aeee813065860fe1e9231d6}\index{wifiMenu\_Class@{wifiMenu\_Class}!optnEvent@{optnEvent}}
 \index{optnEvent@{optnEvent}!wifiMenu\_Class@{wifiMenu\_Class}}
@@ -180,7 +209,7 @@ Handles the element options event trigerred by OPTN nav\+Signal.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00487}{487}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00507}{507}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classwifi_menu___class_ab3c0dd806d2918230ad0b9165c239ef4}\index{wifiMenu\_Class@{wifiMenu\_Class}!scan@{scan}}
 \index{scan@{scan}!wifiMenu\_Class@{wifiMenu\_Class}}
@@ -194,7 +223,7 @@ Scans for available networks \& initialaizes them as options.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00372}{372}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00387}{387}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 
 

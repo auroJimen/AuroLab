@@ -31,7 +31,7 @@ void \mbox{\hyperlink{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}{scrol
 \begin{DoxyCompactList}\small\item\em Scrolls down one position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classlist___class_a48eeb6911110ba094e2f979fc824f252}{scroll\+Up}} ()
 \begin{DoxyCompactList}\small\item\em Scrolls up one positon. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classlist___class_ab2676ecc5c076b8159249d2726f7707d}{enter\+Event}} ()
+virtual bool \mbox{\hyperlink{classlist___class_ae72807af43934ff2686d131eec10d51b}{enter\+Event}} ()
 \begin{DoxyCompactList}\small\item\em Handles the element selected event triggered by ENTER nav\+Signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -80,7 +80,7 @@ int \mbox{\hyperlink{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}{rows}}
 \doxysubsection{Detailed Description}
 Scrollable, selectable list class to construct menus. 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00156}{156}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00154}{154}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 
 
@@ -122,7 +122,7 @@ Constructor for the list class.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00258}{258}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00273}{273}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 
 
@@ -149,7 +149,7 @@ The number of rows that fit on the text sprite as an integer
 \end{DoxyReturn}
 log\+\_\+i("{}\+Text size is \%f, height is \%i, row\+Size is \%i, \%i rows fit"{}, text\+Size, height, row\+Size, rows);
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00251}{251}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00266}{266}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classlist___class_a55209f4763a54c2b2e2a7d39514cafdc}\index{list\_Class@{list\_Class}!displayableRows@{displayableRows}}
 \index{displayableRows@{displayableRows}!list\_Class@{list\_Class}}
@@ -175,7 +175,7 @@ The number of rows that fit on the text sprite as an integer
 \end{DoxyReturn}
 log\+\_\+i("{}\+Text size is \%f, height is \%i, row\+Size is \%i, \%i rows fit"{}, text\+Size, height, row\+Size, rows);
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00238}{238}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00253}{253}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classlist___class_a1273f131504b3aac51886d1a0fb4da7f}\index{list\_Class@{list\_Class}!draw@{draw}}
 \index{draw@{draw}!list\_Class@{list\_Class}}
@@ -189,7 +189,7 @@ Draws or redraws the list on the screen.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00281}{281}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00296}{296}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classlist___class_aa1d6914207e6453e61d86fc4ee867f14}\index{list\_Class@{list\_Class}!drawOptions@{drawOptions}}
 \index{drawOptions@{drawOptions}!list\_Class@{list\_Class}}
@@ -203,13 +203,13 @@ Draws the options section with the current selection highlighted (called by draw
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00313}{313}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00328}{328}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
-\Hypertarget{classlist___class_ab2676ecc5c076b8159249d2726f7707d}\index{list\_Class@{list\_Class}!enterEvent@{enterEvent}}
+\Hypertarget{classlist___class_ae72807af43934ff2686d131eec10d51b}\index{list\_Class@{list\_Class}!enterEvent@{enterEvent}}
 \index{enterEvent@{enterEvent}!list\_Class@{list\_Class}}
 \doxysubsubsection{\texorpdfstring{enterEvent()}{enterEvent()}}
-{\footnotesize\ttfamily \label{classlist___class_ab2676ecc5c076b8159249d2726f7707d} 
-void list\+\_\+\+Class\+::enter\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classlist___class_ae72807af43934ff2686d131eec10d51b} 
+bool list\+\_\+\+Class\+::enter\+Event (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -217,11 +217,11 @@ Handles the element selected event triggered by ENTER nav\+Signal.
 
 
 
-Reimplemented in \mbox{\hyperlink{classwifi_menu___class_a12863a3752876d179d948879a75362a1}{wifi\+Menu\+\_\+\+Class}}.
+Reimplemented in \mbox{\hyperlink{classwifi_menu___class_af7a7bccf484d37d27a114c52429c6572}{wifi\+Menu\+\_\+\+Class}}.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00357}{357}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00372}{372}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classlist___class_a0f99364a80894e96121d2dbce38f4187}\index{list\_Class@{list\_Class}!rowsOccupied@{rowsOccupied}}
 \index{rowsOccupied@{rowsOccupied}!list\_Class@{list\_Class}}
@@ -247,7 +247,7 @@ Int,l number of rows the string takes up
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00246}{246}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00261}{261}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classlist___class_a0abc13669b1a6a16df89694545a173c5}\index{list\_Class@{list\_Class}!scroll@{scroll}}
 \index{scroll@{scroll}!list\_Class@{list\_Class}}
@@ -266,7 +266,7 @@ Scrolls the list to the given position if it\textquotesingle{}s a valid one.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00342}{342}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00357}{357}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classlist___class_acf90db9b4d96f50415436d5ddac7a3af}\index{list\_Class@{list\_Class}!scrollDown@{scrollDown}}
 \index{scrollDown@{scrollDown}!list\_Class@{list\_Class}}
@@ -280,7 +280,7 @@ Scrolls down one position.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00350}{350}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00365}{365}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 \Hypertarget{classlist___class_a48eeb6911110ba094e2f979fc824f252}\index{list\_Class@{list\_Class}!scrollUp@{scrollUp}}
 \index{scrollUp@{scrollUp}!list\_Class@{list\_Class}}
@@ -294,7 +294,7 @@ Scrolls up one positon.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00354}{354}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8cpp_source_l00369}{369}} of file \mbox{\hyperlink{_g_u_i_8cpp_source}{GUI.\+cpp}}.
 
 
 
@@ -311,7 +311,7 @@ Background color.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00168}{168}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00166}{166}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_a3f196f0abbfff0245c8fd66bf6d424a4}\index{list\_Class@{list\_Class}!border@{border}}
 \index{border@{border}!list\_Class@{list\_Class}}
@@ -325,7 +325,7 @@ Margin from the rectangle to the text (in both directions)
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00170}{170}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00168}{168}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_ac4731610b332b83a2c9741c23cb7712d}\index{list\_Class@{list\_Class}!Display@{Display}}
 \index{Display@{Display}!list\_Class@{list\_Class}}
@@ -335,7 +335,7 @@ M5\+GFX list\+\_\+\+Class\+::\+Display = M5\+Cardputer.\+Display\hspace{0.3cm}{\
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00162}{162}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00160}{160}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_ae578e30c59f80e55bef2b709e885c89d}\index{list\_Class@{list\_Class}!elementName@{elementName}}
 \index{elementName@{elementName}!list\_Class@{list\_Class}}
@@ -349,7 +349,7 @@ Names of the list elements.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00160}{160}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00158}{158}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_a1343001263263df83a0e2a09e528e7bb}\index{list\_Class@{list\_Class}!elementNum@{elementNum}}
 \index{elementNum@{elementNum}!list\_Class@{list\_Class}}
@@ -363,7 +363,7 @@ Number of elements on the list.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00159}{159}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00157}{157}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_a77cd52ddd6832ae26001045a35ce7d19}\index{list\_Class@{list\_Class}!highlightColour@{highlightColour}}
 \index{highlightColour@{highlightColour}!list\_Class@{list\_Class}}
@@ -377,7 +377,7 @@ Highlight color for the currently selected option.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00169}{169}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00167}{167}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_aa237c376089fce7d563a51f4721cd9c4}\index{list\_Class@{list\_Class}!origin@{origin}}
 \index{origin@{origin}!list\_Class@{list\_Class}}
@@ -393,7 +393,7 @@ Coordinates where the list shall be drawn.
 Display object \end{quote}
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00163}{163}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00161}{161}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_a54af455510377220a429c3ab5d3dc541}\index{list\_Class@{list\_Class}!pos@{pos}}
 \index{pos@{pos}!list\_Class@{list\_Class}}
@@ -407,7 +407,7 @@ Current highlighted position on the list.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00161}{161}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00159}{159}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_ae0e5d622a7b8d36d0c20f79d1edde567}\index{list\_Class@{list\_Class}!rows@{rows}}
 \index{rows@{rows}!list\_Class@{list\_Class}}
@@ -421,7 +421,7 @@ Number of rows that can be displayed @ a time.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00171}{171}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00169}{169}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_a52b4d4daa14c969502e2e49147f2de19}\index{list\_Class@{list\_Class}!size@{size}}
 \index{size@{size}!list\_Class@{list\_Class}}
@@ -435,7 +435,7 @@ Absolute size of the list rectangle.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00164}{164}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00162}{162}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_abcb0e01917cd2d39be92b51f5ea54162}\index{list\_Class@{list\_Class}!textColour@{textColour}}
 \index{textColour@{textColour}!list\_Class@{list\_Class}}
@@ -449,7 +449,7 @@ Text colour (title \& body)
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00167}{167}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00165}{165}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_a5e07639339dfc03d03045e911468d0b4}\index{list\_Class@{list\_Class}!textSize@{textSize}}
 \index{textSize@{textSize}!list\_Class@{list\_Class}}
@@ -463,7 +463,7 @@ Text size multiplier for the body.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00166}{166}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00164}{164}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_a5414de1e8a8ac30ab1f03baf5e710f3c}\index{list\_Class@{list\_Class}!title@{title}}
 \index{title@{title}!list\_Class@{list\_Class}}
@@ -477,7 +477,7 @@ Title of the list.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00158}{158}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00156}{156}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 \Hypertarget{classlist___class_a6f62693d6a66d2c9b802200e12bf5db0}\index{list\_Class@{list\_Class}!titleSize@{titleSize}}
 \index{titleSize@{titleSize}!list\_Class@{list\_Class}}
@@ -491,7 +491,7 @@ Text size multiplier for the title.
 
 
 
-Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00165}{165}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
+Definition at line \mbox{\hyperlink{_g_u_i_8h_source_l00163}{163}} of file \mbox{\hyperlink{_g_u_i_8h_source}{GUI.\+h}}.
 
 
 

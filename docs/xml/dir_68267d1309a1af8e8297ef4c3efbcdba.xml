@@ -3,7 +3,6 @@
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
     <compoundname>src</compoundname>
     <innerdir refid="dir_b7878ad5ecbf2506f4125b9d34c97e45">src/util</innerdir>
-    <innerfile refid="compass_icon_8h">compassIcon.h</innerfile>
     <innerfile refid="_g_u_i_8cpp">GUI.cpp</innerfile>
     <innerfile refid="_g_u_i_8h">GUI.h</innerfile>
     <innerfile refid="keyboard_task_8cpp">keyboardTask.cpp</innerfile>

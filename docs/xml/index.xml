@@ -94,7 +94,7 @@
     <member refid="classlist___class_1a0abc13669b1a6a16df89694545a173c5" kind="function"><name>scroll</name></member>
     <member refid="classlist___class_1acf90db9b4d96f50415436d5ddac7a3af" kind="function"><name>scrollDown</name></member>
     <member refid="classlist___class_1a48eeb6911110ba094e2f979fc824f252" kind="function"><name>scrollUp</name></member>
-    <member refid="classlist___class_1ab2676ecc5c076b8159249d2726f7707d" kind="function"><name>enterEvent</name></member>
+    <member refid="classlist___class_1ae72807af43934ff2686d131eec10d51b" kind="function"><name>enterEvent</name></member>
     <member refid="classlist___class_1aa1d6914207e6453e61d86fc4ee867f14" kind="function"><name>drawOptions</name></member>
     <member refid="classlist___class_1a55209f4763a54c2b2e2a7d39514cafdc" kind="function"><name>displayableRows</name></member>
     <member refid="classlist___class_1a32108743b53a5cd861b1670c92f8e777" kind="function"><name>displayableRows</name></member>
@@ -102,7 +102,6 @@
   </compound>
   <compound refid="classtext_box___class" kind="class"><name>textBox_Class</name>
     <member refid="classtext_box___class_1a242cd8bd5d1c8e61b9b357316dd98e08" kind="variable"><name>defText</name></member>
-    <member refid="classtext_box___class_1aeb44ef09332727d341dea481b6773f4d" kind="variable"><name>text</name></member>
     <member refid="classtext_box___class_1a28777adb9716c732e5f888dfdeb70c66" kind="variable"><name>pos</name></member>
     <member refid="classtext_box___class_1a42c9ec6421da276d00eb7af0e677f1e3" kind="variable"><name>size</name></member>
     <member refid="classtext_box___class_1a263e11300f7dc11b2ca5edb2f2c52209" kind="variable"><name>border</name></member>
@@ -114,11 +113,11 @@
     <member refid="classtext_box___class_1a836ab3fd6702ea6968a34068b9b96ad8" kind="variable"><name>cursorColour</name></member>
     <member refid="classtext_box___class_1a4334800d8f641d85f8123d304aa95c2b" kind="variable"><name>dispLen</name></member>
     <member refid="classtext_box___class_1a3741862b1fc7efc8d97c55e9bf819a89" kind="variable"><name>cursorSize</name></member>
-    <member refid="classtext_box___class_1a18bd715d273db180c207aae9aa2f9abc" kind="function"><name>textBox_Class</name></member>
+    <member refid="classtext_box___class_1aa4915e9aceac8eb51dc57cce3e5a1832" kind="function"><name>textBox_Class</name></member>
     <member refid="classtext_box___class_1a29ff669d373aada7b03d59e502e031e0" kind="function"><name>draw</name></member>
     <member refid="classtext_box___class_1a4f508e0fd1645f5209b3dce4459adb07" kind="function"><name>enableTextInput</name></member>
     <member refid="classtext_box___class_1ae4b2f9d68261d89824bf496462067a4f" kind="function"><name>disableTextInput</name></member>
-    <member refid="classtext_box___class_1a367247bd7e19d1d4fc45828256e77b9a" kind="function"><name>update</name></member>
+    <member refid="classtext_box___class_1af1c6c03c08f5c365e5e079d5c5d4afd1" kind="function"><name>update</name></member>
     <member refid="classtext_box___class_1a9341bfa7a03d269d49ca517db9064d38" kind="function"><name>getEnableTextInput</name></member>
   </compound>
   <compound refid="classtop_bar___class" kind="class"><name>topBar_Class</name>
@@ -139,15 +138,13 @@
     <member refid="classwifi_menu___class_1ab3c0dd806d2918230ad0b9165c239ef4" kind="function"><name>scan</name></member>
     <member refid="classwifi_menu___class_1a39fe0cd27acdfd561f30886005174bd5" kind="function"><name>appLoop</name></member>
     <member refid="classwifi_menu___class_1aa85befe97aeee813065860fe1e9231d6" kind="function"><name>optnEvent</name></member>
-    <member refid="classwifi_menu___class_1a12863a3752876d179d948879a75362a1" kind="function"><name>enterEvent</name></member>
+    <member refid="classwifi_menu___class_1af7a7bccf484d37d27a114c52429c6572" kind="function"><name>enterEvent</name></member>
+    <member refid="classwifi_menu___class_1ad647b8ab84c06993815b6eca2c218d9c" kind="function"><name>connectToNetWork</name></member>
     <member refid="classwifi_menu___class_1a1dfd391a6071a80553b2f09355b64bbb" kind="function"><name>del</name></member>
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
   </compound>
   <compound refid="readme_8md" kind="file"><name>readme.md</name>
-  </compound>
-  <compound refid="compass_icon_8h" kind="file"><name>compassIcon.h</name>
-    <member refid="compass_icon_8h_1a8a370c87aa842caf84fb94c8b742f762" kind="variable"><name>compassIcon</name></member>
   </compound>
   <compound refid="_g_u_i_8cpp" kind="file"><name>GUI.cpp</name>
     <member refid="_g_u_i_8cpp_1ab2f02e535b2c3130cdfbf54d561a4625" kind="function"><name>encriptType</name></member>
@@ -220,6 +217,9 @@
     <member refid="sprites_8h_1aa3e47194f92c165793a2f0c3bacd2581" kind="variable"><name>batIconBase</name></member>
     <member refid="sprites_8h_1ab21970e195826b3d0fdb2da93c9bf60f" kind="variable"><name>batIcons</name></member>
     <member refid="sprites_8h_1afdd7a40490d400556f3661481a23f103" kind="variable"><name>terminalIcon</name></member>
+    <member refid="sprites_8h_1a8a370c87aa842caf84fb94c8b742f762" kind="variable"><name>compassIcon</name></member>
+    <member refid="sprites_8h_1a35ffb4bbc25f28d3bd027b3976333a98" kind="variable"><name>telefonoBase</name></member>
+    <member refid="sprites_8h_1a7112bd1d4a0603e2ded72bb1eeeacbb4" kind="variable"><name>ruedaTelefono</name></member>
   </compound>
   <compound refid="sprites_cpy_8h" kind="file"><name>spritesCpy.h</name>
     <member refid="sprites_cpy_8h_1aa1e9c0d31c4a40384771c4aef54fc466" kind="variable"><name>splashscreen</name></member>
