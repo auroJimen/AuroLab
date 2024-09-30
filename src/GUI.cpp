@@ -11,6 +11,59 @@ coord coord::add(coord a){
     return coord(x+a.x, y+a.y);
 }
 
+//iconWiFi functions
+
+iconWiFi_Class::iconWiFi_Class(){};
+
+iconWiFi_Class::iconWiFi_Class(M5GFX disp){
+    this->screen = disp;
+
+    //Initialice the icon with the no conexion state
+    this->screen.pushImage(pos.x, pos.y, size.x, size.y, wifiIcon[0]);
+    
+}
+
+void iconWiFi_Class::update(){
+    int signal = WiFi.RSSI();
+    WiFi_level newLevel = nil;
+
+    if (signal == 0) newLevel = WiFi_level::nil;
+    else if (signal >  -30) newLevel = WiFi_level::great;
+    else if (signal > -67) newLevel = WiFi_level::good;
+    else if (signal > -70) newLevel = WiFi_level::med;
+    else if (signal > -80) newLevel = WiFi_level::fair;
+    else if (signal > -90) newLevel = WiFi_level::bad;
+
+    log_i("\nRSSI = %i\nNew Level = %i\nCurrent level = %i", signal, newLevel, this->level);
+    vTaskDelay(20); //Allow other tasks to do their shit to avoid screen corruption
+
+    if (newLevel != this->level) {
+        this->level = newLevel;
+        this->draw();
+    }
+
+}
+
+void iconWiFi_Class::draw(){
+    switch(this->level){
+        case WiFi_level::great: this->screen.pushImage(pos.x, pos.y, size.x, size.y, wifiIcon[5]);
+                                break;
+        case WiFi_level::good: this->screen.pushImage(pos.x, pos.y, size.x, size.y, wifiIcon[4]);
+                                break;
+        case WiFi_level::med: this->screen.pushImage(pos.x, pos.y, size.x, size.y, wifiIcon[3]);
+                                break;
+        case WiFi_level::fair: this->screen.pushImage(pos.x, pos.y, size.x, size.y, wifiIcon[2]);
+                                break;
+        case WiFi_level::bad: this->screen.pushImage(pos.x, pos.y, size.x, size.y, wifiIcon[1]);
+                                break;
+        case WiFi_level::nil: this->screen.pushImage(pos.x, pos.y, size.x, size.y, wifiIcon[0]);
+                                break;
+
+    }
+}
+
+
+
 //icon functions
 
 icon_Class::icon_Class(){}
@@ -107,7 +160,7 @@ topBar_Class::topBar_Class(){
     //Constructor
     M5GFX disp = this->Display;
     this->Bat = iconBat_Class(disp);
-    this->Wifi = icon_Class(disp, iconType::Wifi, false);
+    this->Wifi = iconWiFi_Class(disp);
     this->BLE = icon_Class(disp, iconType::BLE, false);
     this->SDpresent = icon_Class(disp, iconType::SDpresent, false);
 
@@ -117,6 +170,7 @@ void topBar_Class::updateIcons(){
     //Updates the status of all topbar icons
 
     this->Bat.updateState();
+    this->Wifi.update();
 
 }
 
@@ -634,7 +688,9 @@ bool wifiMenu_Class::enterEvent(){
 
     text.deleteSprite();
     if (flag) {
-        this->connectToNetWork(this->elementName[this->pos], password);
+        flag = this->connectToNetWork(this->elementName[this->pos], password);
+        psswrd.disableTextInput(); //Return keyboard to nav mode for the menu
+        return flag;
     }
     else psswrd.disableTextInput(); //Return keyboard to nav mode for the menu
     return flag;
@@ -669,16 +725,45 @@ bool wifiMenu_Class::connectToNetWork(String ssid, String password){
     anim.createSprite(13,13);
     anim.pushImage(0,0,13,13,ruedaTelefono);
 
+    M5Canvas banner(&Display);
+    banner.createSprite(60,20);
 
-    //WiFi.begin(ssid, password);
+    WiFi.begin(ssid, password);
     float i = 0.0;
-    while(WiFi.status() != WL_CONNECTED) {
-        log_i("Attempting to connect");
+    float delta = 5.0;
+    int ctr = 0;
+    while(WiFi.status() != WL_CONNECTED && ctr < 10) {
         anim.pushRotateZoomWithAA(92, 77, i, 1.0, 1.0, RED);
-        i+= 5.0;
-        delay(50);
+        i+= delta;
+        vTaskDelay(50);
+        if (i > 90 || i < 0) {
+            log_i("Attempting to connect, %i", ctr);
+            delta = - delta;
+            ctr ++;
+        }
 
     }
+
+    if (WiFi.isConnected()){
+        log_i("Connected to: %s", ssid.c_str());
+        banner.setTextColor(GREEN);
+        banner.print("SUCCESS!!");
+        banner.pushSprite(this->origin.x + 55, this->origin.y + 60);
+        banner.deleteSprite();
+        vTaskDelay(1000/portTICK_PERIOD_MS);
+        return true;
+    } else {
+        log_i("Connection failed");
+        WiFi.disconnect(); //cancel connection
+        log_printf("WiFi status is %i", WiFi.status());
+        banner.setTextColor(RED);
+        banner.print("FAILED!!");
+        banner.pushSprite(this->origin.x + 55, this->origin.y + 60);
+        banner.deleteSprite();
+        vTaskDelay(1000/portTICK_PERIOD_MS);
+        return false;
+    }
+
 }
 
 
@@ -693,13 +778,16 @@ void wifiMenu_Class::del() {
     delete[] this->BSSID;
     delete[] this->channel;
 
-    //resets everythin to behave as an empty list
+    //resets everything to behave as an empty list
     this->elementName = nullptr;
     this->encript = nullptr;
     this->RSSI = nullptr;
     this->BSSID = nullptr;
     this->channel = nullptr;
     this->elementNum = 0;
+
+    //Deletes the scan date from the WiFi class
+    WiFi.scanDelete();
  
 }
 
@@ -713,7 +801,7 @@ void GUI_Class::begin(){
     BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->task, 0); //Creates thread for the GUI code on core 0
     if (gui != pdPASS) log_i("ERR");
     //Launch topBar updater
-    BaseType_t topBarUpdater = xTaskCreatePinnedToCore(topBarLoop, "topBar updater", 10000, NULL, 1, &this->topBarTask, 0); //Creates thread for the topBar updater code on core 0
+    BaseType_t topBarUpdater = xTaskCreatePinnedToCore(topBarLoop, "topBar updater", 10000, NULL, 0, &this->topBarTask, 0); //Creates thread for the topBar updater code on core 0
     if (topBarUpdater != pdPASS) log_i("ERR");
 }
 
@@ -728,7 +816,7 @@ void topBarLoop(void* parameter){
     //Create the interrupt we'll use to time when we update timed things on screen
     hw_timer_t* timer = timerBegin(3, 80, true);
     timerAttachInterrupt(timer, &timerISR, false); //Atach interrupt to the timer
-    timerAlarmWrite(timer, 1000000, true); //Set the alarm that triggers the interrupt
+    timerAlarmWrite(timer, 2000000, true); //Set the alarm that triggers the interrupt
     timerAlarmEnable(timer); //Enable the alarm
     //Suspend the current task (it'll resume from here once the interrupt is triggered)
     vTaskSuspend(NULL);
@@ -736,12 +824,8 @@ void topBarLoop(void* parameter){
     //be executed, succesive calls to resuming won't affect an already resumed task, & the loop suspends the task
     //once the round is finished
     for(;;){
-        //Update state of background important things
-        if (!WiFi.isConnected()) {
-            log_i("Wifi disconnected");
-            //Need to implement this
-        }
         //Update the topBar to reflect it
+        vTaskDelay(100);
         GUI.updateTopBar();
         vTaskSuspend(NULL);
     }
@@ -779,11 +863,11 @@ void GUI_Class::drawMainMenu(){
     //Draws the main menu
     M5GFX disp = this->Display;
     disp.pushImage(0,0,240,135, menuBackgroundTest);
-    //disp.pushImage(90,41, 58, 74, terminalIcon);
-    //disp.setColor(BLACK);
-    //disp.fillRoundRect(50, 30, 140, 90, 3);
-    //disp.setColor(GREEN);
-    //disp.drawRoundRect(50, 30, 140, 90, 3);
+    disp.pushImage(90,41, 58, 74, terminalIcon);
+    disp.setColor(BLACK);
+    disp.fillRoundRect(50, 30, 140, 90, 3);
+    disp.setColor(GREEN);
+    disp.drawRoundRect(50, 30, 140, 90, 3);
 }
 
 void GUI_Class::mainLoop(){

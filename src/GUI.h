@@ -70,13 +70,36 @@ class iconBat_Class {
 
 };
 
+enum WiFi_level {nil, bad, med, fair, good, great};
+/// @brief WiFi level icon class, handles the wifi icon shown @ the top bar
+class iconWiFi_Class {
+
+    private:
+    M5GFX screen;                ///> Screen object
+    WiFi_level level;            ///> Current wifi level
+    coord pos = {160,3};     ///> Coordinates to draw sprite 
+    coord size = {16,15};    ///> Sprite base size
+
+    public:
+    /// @brief Empty constructor
+    iconWiFi_Class();
+    ///@brief Def constructor
+    ///@param disp The display object
+    iconWiFi_Class(M5GFX disp);
+    ///@brief Updates the state of the icon to thew current WiFi state
+    void update();
+    /// @brief Draws the current state of the icon (also called by update directly)
+    void draw();
+
+
+};
+
 /// @brief Enum of the diffent types of icons
-enum iconType {SDpresent, Wifi, BLE};
+enum iconType {SDpresent, BLE};
 
 /// @brief Icon class for the contents of the topBar
 class icon_Class {
     private:
-    M5GFX sprite;
     iconType type;
     int state;
     coord pos; 
@@ -84,6 +107,10 @@ class icon_Class {
 
     public:
     icon_Class();
+    /// @brief Standar constructor for the icon class
+    /// @param screen The display object
+    /// @param type Enum, wether its a sd or BT icon
+    /// @param state Bool, wether the icon should initialice on the present or absent state
     icon_Class(M5GFX screen, iconType type, int state);
     bool changeState(bool newState);
 
@@ -93,7 +120,7 @@ class icon_Class {
 class topBar_Class{
     public:
     //Time element to display current time if theres wifi
-    icon_Class Wifi; //Wifi element to display a small sprite and the SSID
+    iconWiFi_Class Wifi; //Wifi element to display a small sprite and the SSID
     icon_Class BLE;  //Bluetooth low energy icon
     icon_Class SDpresent;   //SD card icon
     iconBat_Class Bat;  //Battery indicator
