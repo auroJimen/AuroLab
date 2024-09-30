@@ -34,6 +34,9 @@ void iconWiFi_Class::update(){
     else if (signal > -80) newLevel = WiFi_level::fair;
     else if (signal > -90) newLevel = WiFi_level::bad;
 
+    log_i("\nRSSI = %i\nNew Level = %i\nCurrent level = %i", signal, newLevel, this->level);
+    vTaskDelay(20); //Allow other tasks to do their shit to avoid screen corruption
+
     if (newLevel != this->level) {
         this->level = newLevel;
         this->draw();
@@ -751,7 +754,8 @@ bool wifiMenu_Class::connectToNetWork(String ssid, String password){
         return true;
     } else {
         log_i("Connection failed");
-        WiFi.eraseAP(); //Delete saved AP (cancelling reconnection)
+        WiFi.disconnect(); //cancel connection
+        log_printf("WiFi status is %i", WiFi.status());
         banner.setTextColor(RED);
         banner.print("FAILED!!");
         banner.pushSprite(this->origin.x + 55, this->origin.y + 60);
@@ -797,7 +801,7 @@ void GUI_Class::begin(){
     BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->task, 0); //Creates thread for the GUI code on core 0
     if (gui != pdPASS) log_i("ERR");
     //Launch topBar updater
-    BaseType_t topBarUpdater = xTaskCreatePinnedToCore(topBarLoop, "topBar updater", 10000, NULL, 1, &this->topBarTask, 0); //Creates thread for the topBar updater code on core 0
+    BaseType_t topBarUpdater = xTaskCreatePinnedToCore(topBarLoop, "topBar updater", 10000, NULL, 0, &this->topBarTask, 0); //Creates thread for the topBar updater code on core 0
     if (topBarUpdater != pdPASS) log_i("ERR");
 }
 
@@ -812,7 +816,7 @@ void topBarLoop(void* parameter){
     //Create the interrupt we'll use to time when we update timed things on screen
     hw_timer_t* timer = timerBegin(3, 80, true);
     timerAttachInterrupt(timer, &timerISR, false); //Atach interrupt to the timer
-    timerAlarmWrite(timer, 1000000, true); //Set the alarm that triggers the interrupt
+    timerAlarmWrite(timer, 2000000, true); //Set the alarm that triggers the interrupt
     timerAlarmEnable(timer); //Enable the alarm
     //Suspend the current task (it'll resume from here once the interrupt is triggered)
     vTaskSuspend(NULL);
@@ -821,6 +825,7 @@ void topBarLoop(void* parameter){
     //once the round is finished
     for(;;){
         //Update the topBar to reflect it
+        vTaskDelay(100);
         GUI.updateTopBar();
         vTaskSuspend(NULL);
     }
