@@ -5,9 +5,19 @@
 //Must work out the split between cores for the app 
 //(gui should be processed @ 0 while the backend stuff should be @ one)
 
+#include "terminal.h"
 
-//Includes
-#include "GUI.h" //Must be able to call the GUI library to write to screen
-#include "libssh_esp32.h" //SSH libraries used
-#include <libssh/libssh.h> //SSH libraries used
+//Base terminal class functions
 
+terminal::terminal(){
+    ///Constructor for the base terminal class
+    this->history = *new String(); //Dynamically reserve the String class
+};
+
+//SSh terminal class functions
+
+sshTerminal::sshTerminal(String host, String user, String pass) : terminal::terminal(){
+    this->hostname = host;
+    this->user = user;
+    this->passphrase = pass;
+}
