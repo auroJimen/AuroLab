@@ -21,3 +21,59 @@ sshTerminal::sshTerminal(String host, String user, String pass) : terminal::term
     this->user = user;
     this->passphrase = pass;
 }
+
+int sshTerminal::connect(){
+
+    //Attempting to start the ssh session
+    this->session = ssh_new();
+    if (this->session == NULL) {
+        log_i("Session error");
+        return sshState::SESSION_ERROR;
+    }
+    //Attempting to connect to user@host
+    ssh_options_set(this->session, SSH_OPTIONS_HOST, this->hostname.c_str());
+    ssh_options_set(this->session, SSH_OPTIONS_USER, this->user.c_str());
+    if (ssh_connect(this->session) != SSH_OK) {
+        log_i("Connection error");
+        ssh_free(this->session);
+        return sshState::CONNECTION_ERROR;
+    }
+    //Attempting log in if password was provided
+    if (this->passphrase != String("")){
+        if (ssh_userauth_password(this->session, NULL, this->passphrase.c_str()) !=
+        SSH_AUTH_SUCCESS) {
+            log_i("Log in error");
+            ssh_disconnect(this->session);
+            ssh_free(this->session);
+            return sshState::AUTH_ERROR;
+        }
+    }
+    //Attempting to open a channel
+    this->channel = ssh_channel_new(this->session);
+    if (this->channel == NULL || ssh_channel_open_session(this->channel) != SSH_OK) {
+        log_i("SSH Channel open error.");
+        ssh_disconnect(this->session);
+        ssh_free(this->session);
+        return sshState::CHANNEL_ERROR;
+    }
+    //Requesting PTY from channel
+    if (ssh_channel_request_pty(channel) != SSH_OK) {
+        log_i("SSH PTY request error.");
+        ssh_channel_close(this->channel);
+        ssh_channel_free(this->channel);
+        ssh_disconnect(this->session);
+        ssh_free(this->session);
+        return sshState::PYT_ERROR;
+    }
+    //Requesting shell
+    if (ssh_channel_request_shell(this->channel) != SSH_OK) {
+        Serial.println("SSH Shell request error.");
+        ssh_channel_close(this->channel);
+        ssh_channel_free(this->channel);
+        ssh_disconnect(this->session);
+        ssh_free(this->session);
+        return sshState::SHELL_ERROR;
+    }
+    log_i("SSH conection finalized");
+    return sshState::SUCCESS;
+}

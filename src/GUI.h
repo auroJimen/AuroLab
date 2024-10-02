@@ -107,7 +107,7 @@ class icon_Class {
 
     public:
     icon_Class();
-    /// @brief Standar constructor for the icon class
+    /// @brief Standard constructor for the icon class
     /// @param screen The display object
     /// @param type Enum, wether its a sd or BT icon
     /// @param state Bool, wether the icon should initialice on the present or absent state

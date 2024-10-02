@@ -24,10 +24,12 @@ class terminal {
     terminal();
     //Prototype functions that must be virtual so that daughter classes define actual behaviour
     /// @brief Starts up the terminal session & launches the terminal GUI
-    /// @returns Bool wether the conection was succesfull 
-    virtual bool connect();
+    /// @returns Int wether the conection was succesfull or an error ocurred (via a enum defined for every terminal type)
+    virtual int connect();
 
 };
+
+enum sshState {SUCCESS, SESSION_ERROR, CONNECTION_ERROR, AUTH_ERROR, CHANNEL_ERROR, PYT_ERROR, SHELL_ERROR};
 
 /// @brief Terminal mode for ssh
 class sshTerminal: public terminal {
@@ -47,6 +49,6 @@ class sshTerminal: public terminal {
     sshTerminal(String host, String user = String(""), String pass = String(""));
     /// @brief Starts up the terminal session, attempting to connect to host if launches terminal GUI
     /// @return Bool, true if the conection was succesfull
-    bool connect() override;
+    int connect() override;
 
 };
