@@ -38,3 +38,9 @@ void loop() {
   vTaskDelay(3000 / portTICK_PERIOD_MS);
   
 }
+
+//I'm moving the GUIloop to here so thtat the gui class can better serve as a 
+//GUI functions library intended to be called from different apps ans such
+void GUIloop() {
+
+}
