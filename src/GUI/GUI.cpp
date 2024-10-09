@@ -1,4 +1,5 @@
-//GUI file, contains all functions needed for our GUI to work properly
+//GUI file, contains all functions needed for our GUI to work properly & exports classes
+//ease of use by the APPS
 #include "GUI.h"
 
 //cord functions
@@ -862,7 +863,7 @@ void GUI_Class::splashScreen(){
 void GUI_Class::drawMainMenu(){
     //Draws the main menu
     M5GFX disp = this->Display;
-    disp.pushImage(0,0,240,135, menuBackgroundTest);
+    disp.pushImage(0,0,240,135, menuBackground);
     disp.pushImage(90,41, 58, 74, terminalIcon);
     disp.setColor(BLACK);
     disp.fillRoundRect(50, 30, 140, 90, 3);
@@ -880,7 +881,7 @@ void GUI_Class::mainLoop(){
     //MainLoop for the GUI, handles drawing the UI elements, reacts to inputs etc.
     for(;;){
 
-        this->topBar.updateIcons();
+        //this->topBar.updateIcons();
         /*String elements[] = {"Pos0", "Pos1", "Pos2", "Pos3", "Pos4", "Pos5", "Pos6", "Pos7", "Pos8", "Pos9"};
         String *ref = elements;
         list_Class test = list_Class(String("Titulo"), 10, ref,  &testHandler, coord(50,30), coord(140,96));
@@ -894,6 +895,7 @@ void GUI_Class::mainLoop(){
         delay(2000);
         }*/
         this->drawWifiMenu();
+
     }
 }
 

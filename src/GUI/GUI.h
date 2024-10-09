@@ -3,8 +3,7 @@
 #include <M5GFX.h>
 #include <WiFi.h>
 #include "sprites.h"
-#include "menuBackground.h"
-#include "keyboardTask.h"
+#include "../Keyboard/keyboardTask.h"
 
 //Declaration of all relevant classes
 

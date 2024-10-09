@@ -17,6 +17,7 @@ terminal::terminal(){
 //SSh terminal class functions
 
 sshTerminal::sshTerminal(String host, String user, String pass) : terminal::terminal(){
+    //Constructs the base terminal class and then the derived SSH terminal
     this->hostname = host;
     this->user = user;
     this->passphrase = pass;

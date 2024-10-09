@@ -2,7 +2,7 @@
 #include <M5Cardputer.h>
 #include <SD.h>
 #include <M5GFX.h>
-#include "GUI.h"
+#include "GUI/GUI.h"
 
 #define LOG_ENABLE false
 
