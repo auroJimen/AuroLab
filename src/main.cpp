@@ -1,8 +1,20 @@
+//Mainlibraries
 #include <Arduino.h>
 #include <M5Cardputer.h>
 #include <SD.h>
 #include <M5GFX.h>
+#ifndef GUI_H_INCLUDED
+#define GUI_H_INCLUDED
+
 #include "GUI/GUI.h"
+
+#endif
+
+//Our APPS
+#include "Apps/MainMenu/mainMenuGUI.h"
+#include "Apps/Settings/settingsGUI.h"
+#include "Apps/Terminal/terminal.h"
+
 
 #define LOG_ENABLE false
 
@@ -39,7 +51,7 @@ void loop() {
   
 }
 
-//I'm moving the GUIloop to here so thtat the gui class can better serve as a 
+//I'm moving the GUIloop to here so that the gui class can better serve as a 
 //GUI functions library intended to be called from different apps ans such
 void GUIloop() {
 

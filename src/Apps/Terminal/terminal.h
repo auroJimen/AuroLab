@@ -7,7 +7,12 @@
 
 
 //Includes
-#include "../../GUI/GUI.h" //Must be able to call the GUI library to write to screen & keyboard
+#ifndef GUI_H_INCLUDED
+#define GUI_H_INCLUDED
+
+#include "GUI/GUI.h" //Must be able to call the GUI library to write to screen & keyboard
+
+#endif
 #include "libssh_esp32.h" //SSH libraries used
 #include <libssh/libssh.h> //SSH libraries used
 
