@@ -6,6 +6,9 @@
 
 #endif
 
+//Include the terminal back-end
+#include "terminal.h"
+
 extern GUI_Class GUI;
 
-//Here everything about the Settings app front-end will be declared
+//Here everything about the Terminal app front-end will be declared
