@@ -34,6 +34,7 @@ void setup() {
 }
 
 void loop() {
+  //This should be a macro? Seems more efficient to decide this on compile time
   if (CORE_DEBUG_LEVEL >= 5 && LOG_ENABLE){
     // Debuggin what's running in which core
     TaskHandle_t  core0 = xTaskGetCurrentTaskHandleForCPU(0);
@@ -49,10 +50,4 @@ void loop() {
   }
   vTaskDelay(3000 / portTICK_PERIOD_MS);
   
-}
-
-//I'm moving the GUIloop to here so that the gui class can better serve as a 
-//GUI functions library intended to be called from different apps ans such
-void GUIloop() {
-
 }

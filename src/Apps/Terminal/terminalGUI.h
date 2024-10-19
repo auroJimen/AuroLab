@@ -12,3 +12,5 @@
 extern GUI_Class GUI;
 
 //Here everything about the Terminal app front-end will be declared
+
+//Ok i wanna start building this soon actually, I wanna test it
