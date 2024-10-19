@@ -5,7 +5,7 @@
 #include "GUI/GUI.h"
 
 #endif
-
+#include "Apps/Terminal/terminalGUI.h"
 extern GUI_Class GUI;
 
 //Here everything about the Main menu app frontend will be declared

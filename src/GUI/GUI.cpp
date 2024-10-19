@@ -433,16 +433,21 @@ void GUI_Class::begin(){
     //Keyboard stuff
     Buffer = buffer_Class();  //Reinitilizes the Buffer class to make sure its on the correct mode
     Buffer.begin();  //Starts up the separate thread that processes keyboard input, also enables input by def
-    //Launch gui execution thread
-    BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->task, 0); //Creates thread for the GUI code on core 0
-    if (gui != pdPASS) log_i("ERR");
+    //Create topBar
+    this->topBar = topBar_Class();
     //Launch topBar updater
     BaseType_t topBarUpdater = xTaskCreatePinnedToCore(topBarLoop, "topBar updater", 10000, NULL, 0, &this->topBarTask, 0); //Creates thread for the topBar updater code on core 0
     if (topBarUpdater != pdPASS) log_i("ERR");
+    //Launch gui execution thread
+    BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->task, 0); //Creates thread for the GUI code on core 0
+    if (gui != pdPASS) log_i("ERR");
 }
 
 void GUIloop(void* parameter){
     //This code runs on a separate core
+
+    //Maybe fix latter so that we're not forever on func call deep for no string reason?
+    //There must be a better way to do this??
     GUI.mainLoop();
 
 }
@@ -509,29 +514,8 @@ void GUI_Class::drawMainMenu(){
 void GUI_Class::mainLoop(){
     //Draw splashscreen
     this->splashScreen();
-    //Create topBar
-    this->topBar = topBar_Class();
-    //Draw main manu
+    //Draw main menu
     this->drawMainMenu();
-    //MainLoop for the GUI, handles drawing the UI elements, reacts to inputs etc.
-    for(;;){
-
-        //this->topBar.updateIcons();
-        /*String elements[] = {"Pos0", "Pos1", "Pos2", "Pos3", "Pos4", "Pos5", "Pos6", "Pos7", "Pos8", "Pos9"};
-        String *ref = elements;
-        list_Class test = list_Class(String("Titulo"), 10, ref,  &testHandler, coord(50,30), coord(140,96));
-        test.draw();
-
-        for(;;){
-        for(int i = 0; i < 10; i++){
-            delay(500);
-            test.scroll(i);
-        }
-        delay(2000);
-        }*/
-        this->drawWifiMenu();
-
-    }
 }
 
 void GUI_Class::loadConfFile(){

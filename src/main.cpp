@@ -10,10 +10,8 @@
 
 #endif
 
-//Our APPS
 #include "Apps/MainMenu/mainMenuGUI.h"
-#include "Apps/Settings/settingsGUI.h"
-#include "Apps/Terminal/terminal.h"
+
 
 
 #define LOG_ENABLE false

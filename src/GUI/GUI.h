@@ -281,7 +281,7 @@ class GUI_Class {
     public:
     TaskHandle_t task;
     TaskHandle_t topBarTask;
-    /// @brief Starts up the GUI, launching it's execution thread and executing mainLoop()
+    /// @brief Starts up the GUI, launching it's execution thread, cretated a keyBoard task and a topBar updater thread & then starts executing the main loop
     void begin();
 
     /// @brief Draws the splashscreen
