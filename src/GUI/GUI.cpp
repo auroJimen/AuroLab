@@ -426,8 +426,18 @@ void list_Class::scrollUp(){
 }
 bool list_Class::enterEvent(){return true;};
 
+//APP_Class functions
 
-//GUI functions
+APP_Class::APP_Class(void f(void*)){
+    //This launches the GUI thread
+    BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->GUI_task, 0); //Creates thread for the GUI code on core 0
+    if (gui != pdPASS) log_i("ERR");
+    //Send to sleep the mother thread if it's not null
+    
+
+}
+
+//GUI_Class functions
 void GUI_Class::begin(){
 
     //Keyboard stuff
@@ -528,6 +538,6 @@ void GUI_Class::updateTopBar(){
 
 void GUI_Class::drawWifiMenu(){
     //Prints available wifi networks to allow selection & connection
-    wifiMenu_Class wifiMenu;
-    wifiMenu.appLoop();
+    //wifiMenu_Class wifiMenu;
+    //wifiMenu.appLoop();
 }

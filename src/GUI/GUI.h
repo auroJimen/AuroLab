@@ -252,6 +252,28 @@ class list_Class{
     
 };
 
+//Mother app class definition
+
+/// @brief A mother app class that defines the behaviour of a generic app on AuroLab, it defines
+/// APP creation (A different app  must create the APP_GUI thread, put itslef to sleep and the 
+/// new APP GUI thread subsequentially created the APP_BCKEND thread) & destruction 
+/// (kill backend --> kill gui --> wake up other app)
+class APP_Class {
+
+    protected: //So that daughter classes can access them
+    TaskHandle_t GUI_task; ///> The task for the GUI of the app, first created
+    TaskHandle_t BCKEND_task; ///> The task for the Backend of the app, second created (if at all NEEDED)
+    TaskHandle_t MOTHER_task; //> The mother GUi task that called the app, it's sent to sleep by the constructor and woken up by the destructor
+
+    public:
+    /// @brief The constructor must initialize the object & then launch the GUI thread, sending to sleep the mother GUI thread
+    /// @param f The mainloop function for the GUI portion of the app
+    APP_Class(void f(void*));
+    /// @brief The destructor (I HAVEN'T YET DECIDED HOW IT FUNCTIONS)
+    ~APP_Class();
+
+};
+
 /// Auxiliary shared GUI related functions
 
 /// @brief Calculates height in px of a line of text of given size 
@@ -268,25 +290,6 @@ inline int rowWidth(float textSize, int length) {return floor(length*6*textSize)
 /// @param textSize Float, the text size multiplier used in M5GFX
 /// @return Length of the maximum possible displayable stirng in characterts
 inline int rowWidth(int pxSize, float textSize){return ceil(pxSize/(floor(6*textSize)));}
-
-//Mother app class definition
-
-/// @brief A mother app class that defines the behaviour of a generic app on AuroLab, it defines
-/// APP creation (A different app  must create the APP_GUI thread, put itslef to sleep and the 
-/// new APP GUI thread subsequentially created the APP_BCKEND thread) & destruction 
-/// (kill backend --> kill gui --> wake up other app)
-class APP_Class {
-
-    protected: //So that daughter classes can access them
-    TaskHandle_t GUI_task; ///> The task for the GUI of the app, first created
-    TaskHandle_t BCKEND_task; ///> The task for the Backend of the app, second created
-
-    public:
-    /// @brief The constructor must initialize the object & then launch the GUI thread 
-    /// @param f The mainloop function for the GUI portion of the app
-    APP_Class(void f(void*));
-
-};
 
 /// @brief A global instance of this class controls all the GUI elements and provides the
 /// method for the backend and front end to communicate.

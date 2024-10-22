@@ -15,3 +15,7 @@ extern GUI_Class GUI;
 //all apps share common elements & live on the "app space" the rectangle bellow the topBar
 
 //I've moved the task handle here so that i rememeber to move the GUI task creation to this file
+
+class mainMenu_Class : public APP_Class {
+
+};
