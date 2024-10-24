@@ -17,5 +17,11 @@ extern GUI_Class GUI;
 //I've moved the task handle here so that i rememeber to move the GUI task creation to this file
 
 class mainMenu_Class : public APP_Class {
-
+    public:
+    void mainLoop();
 };
+
+//Must create the mainloop for the GUI thread here!
+///@brief The method that the mainMenuApp gui thread runs
+///@param parameter The standar parameter for a funtion w/ this prototype, in this case we will pass a ref to the mainMenuAPP object we want to run
+void GUIloop(void* parameter);

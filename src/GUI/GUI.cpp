@@ -433,8 +433,15 @@ APP_Class::APP_Class(void f(void*)){
     BaseType_t gui = xTaskCreatePinnedToCore(GUIloop, "GUI thread", 10000, NULL, 0, &this->GUI_task, 0); //Creates thread for the GUI code on core 0
     if (gui != pdPASS) log_i("ERR");
     //Send to sleep the mother thread if it's not null
-    
+    if (this->MOTHER_task != nullptr) vTaskSuspend(this->MOTHER_task);
 
+}
+
+APP_Class::~APP_Class(){
+    //Must be called from the GUI thread!!
+    if (this->BCKEND_task != nullptr) vTaskDelete(this->BCKEND_task); //Kill backend
+    if (this->MOTHER_task != nullptr) vTaskResume(this->MOTHER_task); //Wake up mother
+    if (this->GUI_task != nullptr) vTaskDelete(this->GUI_task);       //Kill self
 }
 
 //GUI_Class functions
