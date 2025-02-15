@@ -19,7 +19,7 @@
 //Global variables
 GUI_Class GUI;
 buffer_Class Buffer;
-//In the future put here the rest of the object instances to control all periferal
+//In the future put here the rest of the object instances to control all periferalas
 
 
 void setup() {

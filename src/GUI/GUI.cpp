@@ -1,5 +1,5 @@
 //GUI file, contains all functions needed for our GUI to work properly & exports classes
-//ease of use by the APPS
+//for ease of use by the APPS
 #include "GUI.h"
 
 //cord functions
@@ -13,7 +13,6 @@ coord coord::add(coord a){
 }
 
 //iconWiFi functions
-
 iconWiFi_Class::iconWiFi_Class(){};
 
 iconWiFi_Class::iconWiFi_Class(M5GFX disp){
@@ -463,7 +462,7 @@ void GUI_Class::begin(){
 void GUIloop(void* parameter){
     //This code runs on a separate core
 
-    //Maybe fix latter so that we're not forever on func call deep for no string reason?
+    //Maybe fix latter so that we're not forever on func call deep for no reason?
     //There must be a better way to do this??
     GUI.mainLoop();
 

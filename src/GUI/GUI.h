@@ -256,7 +256,7 @@ class list_Class{
 
 /// @brief A mother app class that defines the behaviour of a generic app on AuroLab, it defines
 /// APP creation (A different app  must create the APP_GUI thread, put itslef to sleep and the 
-/// new APP GUI thread subsequentially created the APP_BCKEND thread) & destruction 
+/// new APP GUI thread subsequentially creates the APP_BCKEND thread) & destruction 
 /// (kill backend --> kill gui --> wake up other app)
 class APP_Class {
 
