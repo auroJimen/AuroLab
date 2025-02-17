@@ -7,6 +7,7 @@
 
 //Declaration of all relevant classes
 
+//------------------------------ AUX STRUCTS/FUNCTIONS --------------------------------------------------
 
 /// @brief Simple coordinates struct to handle positions on the LCD
 struct coord {
@@ -18,6 +19,25 @@ struct coord {
     coord(int x, int y);
     coord add(coord a);
 };
+
+/// Auxiliary shared GUI related functions
+
+/// @brief Calculates height in px of a line of text of given size 
+/// @param textSize Float, the text size multiplier used in M5GFX
+/// @return Height in px of the line
+inline int rowSize(float textSize) {return floor(8*textSize);}
+/// @brief Calculates length in px of a line of text of given size & character length
+/// @param textSize Float, the text size multiplier used in M5GFX
+/// @param length Length of the string in characters
+/// @return Length of the string in pixel
+inline int rowWidth(float textSize, int length) {return floor(length*6*textSize);}
+/// @brief Calculates the maximum length of a String to be displayed in the given px w/ the given size
+/// @param pxSize Int, width in px of the space were the string will be displayed
+/// @param textSize Float, the text size multiplier used in M5GFX
+/// @return Length of the maximum possible displayable stirng in characterts
+inline int rowWidth(int pxSize, float textSize){return ceil(pxSize/(floor(6*textSize)));}
+
+//------------------------------ TOPBAR RELATED -------------------------------------------------------- 
 /// @brief Battery Icon class, handles the battery icon shown on the top bar
 class iconBat_Class {
 
@@ -132,6 +152,10 @@ class topBar_Class{
     //There should be methods to update everything in here
 
 };
+
+
+//------------------------------- GUI ELEMENTS LIBRARY ----------------------------------------------
+
 
 /// @brief Text input box class to construct menus
 class textBox_Class{
@@ -252,7 +276,46 @@ class list_Class{
     
 };
 
-//Mother app class definition
+//--------------------------------- MAIN MENU CLASS --------------------------------------------------
+
+/// @brief The main menu object is an elements of the GUI object that controls everything on the screen. 
+/// It handles the displaying & interactivity of the main menu, showing icons & launching apps
+class mainMenu_Class {
+
+    private:
+    appIcon_Class* icons; ///< Array containing the app icons that form the menu
+    int num; ///< Length of the icons array
+    int pos; ///< Current position of the menu
+
+    ///CONSTRUCTOR LACKING RN
+
+    /// @brief Scrolls menu to given position
+    /// @param newPos Index pos to scroll to
+    void scroll(int newPos);
+    /// @brief Scrolls up one position
+    void scrollUp();
+    /// @brief Scrolls down one position
+    void scrollDown();
+
+};
+
+/// @brief Basic element of the main menu object, shows the app name and its icon, launches the corresponding
+/// app when interacted with
+class appIcon_Class {
+
+    public:
+
+    String name; ///< Name of the app the icon points to
+    uint16_t* icon; ///< Sprite of the app icon
+
+    //COSNTRUCTOR!!!
+
+    //Must decide the form of app launching from here
+
+
+};
+
+//--------------------------------- APP CLASS --------------------------------------------------------
 
 /// @brief A mother app class that defines the behaviour of a generic app on AuroLab, it defines
 /// APP creation (A different app  must create the APP_GUI thread, put itslef to sleep and the 
@@ -274,22 +337,7 @@ class APP_Class {
 
 };
 
-/// Auxiliary shared GUI related functions
-
-/// @brief Calculates height in px of a line of text of given size 
-/// @param textSize Float, the text size multiplier used in M5GFX
-/// @return Height in px of the line
-inline int rowSize(float textSize) {return floor(8*textSize);}
-/// @brief Calculates length in px of a line of text of given size & character length
-/// @param textSize Float, the text size multiplier used in M5GFX
-/// @param length Length of the string in characters
-/// @return Length of the string in pixel
-inline int rowWidth(float textSize, int length) {return floor(length*6*textSize);}
-/// @brief Calculates the maximum length of a String to be displayed in the given px w/ the given size
-/// @param pxSize Int, width in px of the space were the string will be displayed
-/// @param textSize Float, the text size multiplier used in M5GFX
-/// @return Length of the maximum possible displayable stirng in characterts
-inline int rowWidth(int pxSize, float textSize){return ceil(pxSize/(floor(6*textSize)));}
+// ----------------------------------GUI MASTER CLASS --------------------------------------------------
 
 /// @brief A global instance of this class controls all the GUI elements and provides the
 /// method for the backend and front end to communicate.

@@ -530,8 +530,10 @@ void GUI_Class::drawMainMenu(){
 void GUI_Class::mainLoop(){
     //Draw splashscreen
     this->splashScreen();
-    //Draw main menu
-    this->drawMainMenu();
+    //Eternal main menu loop
+    for (;;) {
+        this->drawMainMenu();
+    }
 }
 
 void GUI_Class::loadConfFile(){
